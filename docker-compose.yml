@@ -1,0 +1,34 @@
+# Docker Compose file for development
+
+version: '2.1'
+services:
+
+  odoo:
+    image: odoo:10
+    depends_on:
+      - postgres
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=postgres
+      - USER=odoo
+      - PASSWORD=odoo
+    volumes:
+      - odoo_web_data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./src:/mnt/extra-addons
+
+  postgres:
+    image: postgres:9.4
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo_db_data:/var/lib/postgresql/data/pgdata
+
+volumes:
+  odoo_web_data:
+    driver: local
+  odoo_db_data:
+    driver: local
