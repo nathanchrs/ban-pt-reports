@@ -1,0 +1,10 @@
+<odoo>
+  <data>
+    <record id="report_manager" model="res.groups">
+      <field name="name">BAN-PT Report Generator / Report Manager</field>
+    </record>
+    <record id="report_viewer" model="res.groups">
+      <field name="name">BAN-PT Report Generator / Report Viewer</field>
+    </record>
+  </data>
+</odoo>

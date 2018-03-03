@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- window action -->
+        <!--
+            The following tag is an action definition for a "window action",
+            that is an action opening a view or a set of views
+        -->
+        
+        <record model="ir.actions.act_window" id="report_action">
+            <field name="name">Laporan</field>
+            <field name="res_model">banpt_report_generator.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Belum ada laporan yang telah dibuat</p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="pengisi_action">
+            <field name="name">Laporan</field>
+            <field name="res_model">banpt_report_generator.pengisi</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Belum ada pengisi yang telah dicantumkan</p>
+            </field>
+        </record>
+
+        <!-- top level menu: no parent -->
+        <menuitem id="main_banpt_report_generator_menu" name="BAN-PT Report Generator"/>
+        <!-- A first level in the left side menu is needed
+             before using action= attribute -->
+        <menuitem id="banpt_report_generator_menu" name="BAN-PT Report Generator"
+                  parent="main_banpt_report_generator_menu"/>
+
+        <menuitem id="report_menu" name="Laporan" parent="banpt_report_generator_menu"
+                  action="report_action"/>
+
+        <menuitem id="pengisi_menu" name="Pengisi" parent="banpt_report_generator_menu"
+                  action="pengisi_action"/>
+    </data>
+</odoo>

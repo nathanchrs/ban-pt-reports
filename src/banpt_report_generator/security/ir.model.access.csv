@@ -1,0 +1,7 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+
+report_manager_report,report.report_manager,model_banpt_report_generator_report,report_manager,1,1,1,1
+report_viewer_report,report.report_viewer,model_banpt_report_generator_report,report_viewer,1,0,0,0
+
+report_manager_pengisi,pengisi.report_manager,model_banpt_report_generator_pengisi,report_manager,1,1,1,1
+report_viewer_pengisi,pengisi.report_viewer,model_banpt_report_generator_pengisi,report_viewer,1,0,0,0
