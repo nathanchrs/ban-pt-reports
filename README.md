@@ -51,3 +51,8 @@ Note: if you change the security configurations (any file in the `security` dire
 
 - Restart the Odoo Docker containers.
 - Log in as the admin, then find this module in the `Apps` page, then click `Upgrade`.
+
+### pgAdmin
+
+A pgAdmin 4 container is provided on port 5050. Use `odoo` as the username and password.
+After login, add new server. Use `postgres` as the hostname, `odoo` as the user and password.
