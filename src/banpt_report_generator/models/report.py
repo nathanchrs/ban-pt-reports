@@ -10,17 +10,27 @@ class Report(models.Model):
     start_year = fields.Integer(string='Tahun awal', required=True)
     end_year = fields.Integer(string='Tahun akhir', required=True)
     department = fields.Char(string='Prodi', required=True)
-    description = fields.Text()
+    description = fields.Text(string='Keterangan')
+
+    pengisi = fields.One2many(comodel_name='banpt_report_generator.pengisi', inverse_name='report')
+    identitas = fields.One2many(comodel_name='banpt_report_generator.identitas', inverse_name='report')
+    dosen = fields.One2many(comodel_name='banpt_report_generator.dosen', inverse_name='report')
 
     @api.model
     def create(self, values):
         record = super(Report, self).create(values)
-        print('[Report]: create(vals) override') # DEBUG
-        print(values)
+
+        # TODO: generate reports here
+
         return record
+
+    @api.multi
+    def write(self, values, ignore_state_change=False):
+        # Set state to 'pending_review' if object is edited
+        values['state'] = 'pending_review'
+        return super(Report, self).write(values)
 
     @api.one
     def approve(self):
-        self.write({
-            'state': 'approved'
-        })
+        # Set state to 'approved'; bypass edit object check
+        super(Report, self).write({'state': 'approved'})

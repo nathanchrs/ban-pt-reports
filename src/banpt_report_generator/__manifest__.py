@@ -18,6 +18,9 @@
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
+
+        'views/report_views.xml',
+        'views/identitas_views.xml',
         'views/banpt_report_generator.xml'
     ],
 
