@@ -24,7 +24,7 @@
                     <field name="alamat" />
                     <field name="faks" />
                     <field name="homepage" />
-                    <field name="email" />                 
+                    <field name="email" />
                 </tree>
             </field>
         </record>
@@ -35,9 +35,6 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Identitas">
-                    <group>
-                        <field name="report" />
-                    </group>
                     <group>
                         <field name="nama_prodi" />
                         <field name="departemen" />

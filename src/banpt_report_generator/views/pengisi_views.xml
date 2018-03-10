@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_pengisi_tree">
+            <field name="name">Pengisi</field>
+            <field name="model">banpt_report_generator.pengisi</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="nama" />
+                    <field name="nidn" />
+                    <field name="jabatan" />
+                    <field name="tanggal_pengisian" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_pengisi_form">
+            <field name="name">Pengisi</field>
+            <field name="model">banpt_report_generator.pengisi</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Pengisi">
+                    <group>
+                        <field name="nama" />
+                        <field name="nidn" />
+                        <field name="jabatan" />
+                        <field name="tanggal_pengisian" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+         <record model="ir.actions.act_window" id="view_pengisi_action">
+            <field name="name">Pengisi</field>
+            <field name="res_model">banpt_report_generator.pengisi</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Belum ada pengisi yang telah dibuat</p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="view_pengisi_tree_action">
+            <field name="sequence" eval="0" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_pengisi_tree" />
+            <field name="act_window_id" ref="view_pengisi_action" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="view_pengisi_form_action">
+            <field name="sequence" eval="1" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_pengisi_form" />
+            <field name="act_window_id" ref="view_pengisi_action" />
+        </record>
+    </data>
+</odoo>
