@@ -13,10 +13,10 @@
                         <field name="state" widget="statusbar" />
                     </header>
                     <group>
+                        <field name="id" invisible="1" />
                         <field name="name" />
-                        <field name="start_year" />
-                        <field name="end_year" />
-                        <field name="department" />
+                        <field name="year" attrs="{'readonly': [('id', '!=', False)]}" />
+                        <field name="prodi" attrs="{'readonly': [('id', '!=', False)]}" />
                         <field name="description" />
                     </group>
                     <group>
@@ -24,10 +24,10 @@
                             <page string="Pengisi">
                                 <field name="pengisi" />
                             </page>
-                            <page string="Identitas">
+                            <page string="Identitas" attrs="{'invisible': [('id', '=', False)]}">
                                 <field name="identitas" />
                             </page>
-                            <page string="Dosen">
+                            <page string="Dosen" attrs="{'invisible': [('id', '=', False)]}">
                                 <field name="dosen" />
                             </page>
                         </notebook>

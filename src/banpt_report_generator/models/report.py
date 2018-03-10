@@ -7,9 +7,8 @@ class Report(models.Model):
 
     name = fields.Char(string='Judul', required=True)
     state = fields.Selection(string='Status', required=True, selection=[('pending_review', 'Menunggu review'), ('approved', 'Disetujui')], default='pending_review') 
-    start_year = fields.Integer(string='Tahun awal', required=True)
-    end_year = fields.Integer(string='Tahun akhir', required=True)
-    department = fields.Char(string='Prodi', required=True)
+    year = fields.Integer(string='Tahun', required=True)
+    prodi = fields.Char(string='Prodi', required=True)
     description = fields.Text(string='Keterangan')
 
     pengisi = fields.One2many(comodel_name='banpt_report_generator.pengisi', inverse_name='report')
