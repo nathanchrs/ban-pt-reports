@@ -21,7 +21,7 @@
             <field name="arch" type="xml">
                 <form string="Laporan">
                     <header>
-                        <button string="Setujui" type="object" name="approve" attrs="{'invisible': [('state', '=', 'approved')]}" />
+                        <button string="Setujui" type="object" name="approve" attrs="{'invisible': [('state', '=', 'approved')]}" class="oe_highlight" />
                         <field name="state" widget="statusbar" />
                     </header>
                     <group>
