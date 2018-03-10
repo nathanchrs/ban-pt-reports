@@ -8,6 +8,7 @@
     'version': '1.0',
     'author': "I01K01",
     'category': 'BAN-PT',
+    'application': True,
     'description': 'BAN-PT accreditation report generator for STEI ITB',
 
     # List of module dependencies of this module.
