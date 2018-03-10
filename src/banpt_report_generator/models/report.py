@@ -7,7 +7,7 @@ class Report(models.Model):
 
     name = fields.Char(string='Judul', required=True)
     state = fields.Selection(string='Status', required=True, selection=[('pending_review', 'Menunggu review'), ('approved', 'Disetujui')], default='pending_review') 
-    year = fields.Integer(string='Tahun', required=True)
+    year = fields.Selection(string='Tahun', required=True, selection=[(year, str(year)) for year in range(2010, 2050)])
     prodi = fields.Char(string='Prodi', required=True)
     description = fields.Text(string='Keterangan')
 
