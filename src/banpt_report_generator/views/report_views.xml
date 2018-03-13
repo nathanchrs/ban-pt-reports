@@ -31,15 +31,18 @@
                         <field name="prodi" attrs="{'readonly': [('id', '!=', False)]}" />
                         <field name="description" />
                     </group>
-                    <group class="banpt_notebook_group">
+                    <group class="banpt_notebook_group banpt_report_tables">
                         <notebook>
                             <page string="Pengisi">
+                                <h3 class="banpt_notebook_page_title">Pengisi</h3>
                                 <field name="pengisi" />
                             </page>
                             <page string="Identitas" attrs="{'invisible': [('id', '=', False)]}">
+                                <h3 class="banpt_notebook_page_title">Identitas</h3>
                                 <field name="identitas" />
                             </page>
                             <page string="Dosen" attrs="{'invisible': [('id', '=', False)]}">
+                                <h3 class="banpt_notebook_page_title">Dosen</h3>
                                 <field name="dosen" />
                             </page>
                         </notebook>
