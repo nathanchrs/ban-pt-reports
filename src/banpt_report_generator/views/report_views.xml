@@ -31,19 +31,35 @@
                         <field name="prodi" attrs="{'readonly': [('id', '!=', False)]}" />
                         <field name="description" />
                     </group>
-                    <group class="banpt_notebook_group">
-                        <notebook>
-                            <page string="Pengisi">
+                    <hr/>
+                    <div class="banpt_notebook_group banpt_report_tables">
+                        <div class="dropdown" id="banpt_report_tables_menu_container">
+                            <a class="btn dropdown-toggle banpt_report_tables_menu" data-toggle="dropdown" href="#">
+                                <span class="banpt_report_tables_menu_text">Pilih tabel </span><span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu banpt_report_tables_dropdown" role="tablist">
+                                <!-- Add table report dropdown menu items here -->
+                                <li role="presentation"><a href="#tab_pengisi" aria-controls="tab_pengisi" role="tab" data-toggle="tab">Pengisi</a></li>
+                                <li role="presentation"><a href="#tab_identitas" aria-controls="tab_identitas" role="tab" data-toggle="tab">Identitas</a></li>
+                                <li role="presentation"><a href="#tab_dosen" aria-controls="tab_dosen" role="tab" data-toggle="tab">Dosen</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <!-- Add table report contents here -->
+                            <div role="tabpanel" class="tab-pane active" id="tab_pengisi">
+                                <h3 class="banpt_notebook_page_title">Pengisi</h3>
                                 <field name="pengisi" />
-                            </page>
-                            <page string="Identitas" attrs="{'invisible': [('id', '=', False)]}">
+                            </div>
+                             <div role="tabpanel" class="tab-pane" id="tab_identitas">
+                                <h3 class="banpt_notebook_page_title">Identitas</h3>
                                 <field name="identitas" />
-                            </page>
-                            <page string="Dosen" attrs="{'invisible': [('id', '=', False)]}">
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_dosen">
+                                <h3 class="banpt_notebook_page_title">Dosen</h3>
                                 <field name="dosen" />
-                            </page>
-                        </notebook>
-                    </group>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </field>
         </record>
