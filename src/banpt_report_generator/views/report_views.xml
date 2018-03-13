@@ -31,7 +31,7 @@
                         <field name="prodi" attrs="{'readonly': [('id', '!=', False)]}" />
                         <field name="description" />
                     </group>
-                    <group>
+                    <group class="banpt_notebook_group">
                         <notebook>
                             <page string="Pengisi">
                                 <field name="pengisi" />

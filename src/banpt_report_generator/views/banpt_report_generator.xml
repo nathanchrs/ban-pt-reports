@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+        <!-- Apply custom styles -->
+        <template id="scroll_group_style" name="Scroll group style" inherit_id="web.assets_backend">
+            <xpath expr="link[last()]" position="after">
+                <link href="/banpt_report_generator/views/styles.less" rel="stylesheet" type="text/less"/>
+            </xpath>
+        </template>
+
         <!-- Navbar top-level menu -->
         <menuitem id="main_banpt_report_generator_menu" name="BAN-PT Report Generator" />
 
