@@ -1,8 +1,6 @@
 
-var banpt_applyJqueryFixesInterval;
-
 $(document).ready(function () {
-  banpt_collapseReportTablesTabsInterval = setInterval(function () {
+  setInterval(function () {
     // Clear all active classes on tab change as it won't be cleared automatically due to the HTML changes
     var tabs = $('.banpt_report_tables_dropdown a[data-toggle="tab"]');
     tabs.parent().removeClass('active');
