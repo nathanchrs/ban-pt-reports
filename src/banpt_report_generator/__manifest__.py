@@ -8,6 +8,7 @@
     'version': '1.0',
     'author': "I01K01",
     'category': 'BAN-PT',
+    'application': True,
     'description': 'BAN-PT accreditation report generator for STEI ITB',
 
     # List of module dependencies of this module.
@@ -18,6 +19,14 @@
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
+
+        # Add view files here
+        'views/report_views.xml',
+        'views/identitas_views.xml',
+        'views/pengisi_views.xml',
+        'views/dosen_views.xml',
+
+        # This line must be last (after all other view files)
         'views/banpt_report_generator.xml'
     ],
 
