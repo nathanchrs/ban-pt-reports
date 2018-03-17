@@ -39,24 +39,30 @@
                             </a>
                             <ul class="dropdown-menu banpt_report_tables_dropdown" role="tablist">
                                 <!-- Add table report dropdown menu items here -->
-                                <li role="presentation"><a href="#tab_pengisi" aria-controls="tab_pengisi" role="tab" data-toggle="tab">Pengisi</a></li>
-                                <li role="presentation"><a href="#tab_identitas" aria-controls="tab_identitas" role="tab" data-toggle="tab">Identitas</a></li>
-                                <li role="presentation"><a href="#tab_dosen" aria-controls="tab_dosen" role="tab" data-toggle="tab">Dosen</a></li>
+                                <li role="presentation">
+                                    <a href="#tab_dosen" aria-controls="tab_dosen" role="tab" data-toggle="tab">Dosen</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_identitas" aria-controls="tab_identitas" role="tab" data-toggle="tab">Identitas</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_pengisi" aria-controls="tab_pengisi" role="tab" data-toggle="tab">Pengisi</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="tab-content">
                             <!-- Add table report contents here -->
-                            <div role="tabpanel" class="tab-pane active" id="tab_pengisi">
-                                <h3 class="banpt_notebook_page_title">Pengisi</h3>
-                                <field name="pengisi" />
+                            <div role="tabpanel" class="tab-pane active" id="tab_dosen">
+                                <h3 class="banpt_notebook_page_title">Dosen</h3>
+                                <field name="dosen" />
                             </div>
-                             <div role="tabpanel" class="tab-pane" id="tab_identitas">
+                            <div role="tabpanel" class="tab-pane" id="tab_identitas">
                                 <h3 class="banpt_notebook_page_title">Identitas</h3>
                                 <field name="identitas" />
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="tab_dosen">
-                                <h3 class="banpt_notebook_page_title">Dosen</h3>
-                                <field name="dosen" />
+                            <div role="tabpanel" class="tab-pane" id="tab_pengisi">
+                                <h3 class="banpt_notebook_page_title">Pengisi</h3>
+                                <field name="pengisi" />
                             </div>
                         </div>
                     </div>
@@ -89,4 +95,3 @@
         </record>
     </data>
 </odoo>
-

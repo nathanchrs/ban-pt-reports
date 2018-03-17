@@ -20,8 +20,8 @@
                     <field name="peringkat_akreditasi_ban_pt" />
                     <field name="nilai_akreditasi_ban_pt" />
                     <field name="nomor_sk_akreditasi_ban_pt" />
-                    <field name="telepon" />
                     <field name="alamat" />
+                    <field name="telepon" />
                     <field name="faks" />
                     <field name="homepage" />
                     <field name="email" />
@@ -40,8 +40,6 @@
                         <field name="departemen" />
                         <field name="fakultas" />
                         <field name="perguruan_tinggi" />
-                    </group>
-                    <group>
                         <field name="nomor_sk_pendirian" />
                         <field name="tanggal_sk_pendirian" />
                         <field name="pejabat_sk_pendirian" />
@@ -51,14 +49,12 @@
                         <field name="peringkat_akreditasi_ban_pt" />
                         <field name="nilai_akreditasi_ban_pt" />
                         <field name="nomor_sk_akreditasi_ban_pt" />
-                    </group>
-                    <group>
-                        <field name="telepon" />
                         <field name="alamat" />
+                        <field name="telepon" />
                         <field name="faks" />
                         <field name="homepage" />
                         <field name="email" />
-                    </group>                    
+                    </group>
                 </form>
             </field>
         </record>
@@ -68,9 +64,6 @@
             <field name="res_model">banpt_report_generator.identitas</field>
             <field name="view_mode">tree,form</field>
             <field name="view_type">form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Belum ada identitas yang telah dibuat</p>
-            </field>
         </record>
 
         <record model="ir.actions.act_window.view" id="view_identitas_tree_action">
