@@ -28,7 +28,7 @@ view_template = string.Template(
                 <form string="Laporan">
                     <header>
                         <button string="Mutakhirkan data" type="object" name="refresh" />
-                        <button string="Setujui" type="object" name="approve" attrs="{'invisible': [('state', '=', 'approved')]}" class="oe_highlight" />
+                        <button string="Setujui" type="object" name="approve" attrs="{'invisible': [('state', '=', 'approved')]}" />
                         <field name="state" widget="statusbar" />
                     </header>
                     <group>
