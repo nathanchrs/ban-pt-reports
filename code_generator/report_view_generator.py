@@ -91,7 +91,7 @@ dropdown_menu_item_template = string.Template(
 )
 
 content_template = string.Template(
-"""                            <div role="tabpanel" class="tab-pane active" id="tab_${model_name}">
+"""                            <div role="tabpanel" class="tab-pane${is_active}" id="tab_${model_name}">
                                 <h3 class="banpt_notebook_page_title">${model_title}</h3>
                                 <field name="${model_name}" />
                             </div>"""
@@ -100,9 +100,16 @@ content_template = string.Template(
 def generate_report_view(models, directory):
     dropdown_menu_items = []
     contents = []
+    first_model = True
     for model in models:
         model_params = dict(model_name=model['name'], model_title=model['title'])
         dropdown_menu_items.append(dropdown_menu_item_template.substitute(model_params))
+
+        # Only the first tab should be active
+        model_params['is_active'] = ''
+        if first_model: 
+            model_params['is_active'] = ' active'
+            first_model = False
         contents.append(content_template.substitute(model_params))
 
     view_template_params = dict(

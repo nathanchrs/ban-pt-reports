@@ -54,6 +54,6 @@ def generate_module_manifest(models, directory):
     )
     generated_view = view_template.substitute(view_template_params)
 
-    view_path = path.join(directory, 'module__manifest__.py')
+    view_path = path.join(directory, '__manifest__.py')
     with open(view_path, 'w') as fout:
         fout.write(generated_view)

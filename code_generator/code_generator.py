@@ -2,7 +2,6 @@
 
 from os import listdir, path
 import re
-import pprint
 import string
 from model_view_generator import generate_model_view
 from report_view_generator import generate_report_view
@@ -11,13 +10,12 @@ from model_init_generator import generate_model_init
 from module_manifest_generator import generate_module_manifest
 
 ignore_model_files = ['__init__.py', 'report.py']
-model_directory = '../src/banpt_report_generator/models'
-generated_directory = './generated'
-generated_model_views_directory = './generated/model_views'
+module_directory = '../src/banpt_report_generator'
+model_directory = module_directory + '/models'
+security_directory = module_directory + '/security'
+view_directory = module_directory + '/views'
 
 if __name__ == "__main__":
-
-    pp = pprint.PrettyPrinter(indent=2)
 
     # List model files
 
@@ -48,10 +46,10 @@ if __name__ == "__main__":
             name=model_file,
             title=model_title,
             fields=[f[0] for f in model_fields],
-            directory=generated_model_views_directory
+            directory=view_directory
         )
 
-    generate_report_view(models=models, directory=generated_directory)
-    generate_model_access(models=models, directory=generated_directory)
-    generate_model_init(models=models, directory=generated_directory)
-    generate_module_manifest(models=models, directory=generated_directory)
+    generate_report_view(models=models, directory=view_directory)
+    generate_model_access(models=models, directory=security_directory)
+    generate_model_init(models=models, directory=model_directory)
+    generate_module_manifest(models=models, directory=module_directory)

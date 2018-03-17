@@ -62,8 +62,9 @@ def generate_model_view(name, title, fields, directory):
     tree_fields = []
     form_fields = []
     for field in fields:
-        tree_fields.append(tree_field_template.substitute(dict(field_name=field)))
-        form_fields.append(form_field_template.substitute(dict(field_name=field)))
+        if field != 'report':
+            tree_fields.append(tree_field_template.substitute(dict(field_name=field)))
+            form_fields.append(form_field_template.substitute(dict(field_name=field)))
 
     view_template_params = dict(
         name=name,

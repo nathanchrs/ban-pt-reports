@@ -7,7 +7,7 @@ view_template = string.Template(
 """# -*- coding: utf-8 -*-
 
 # Python package definition file
-# Import all directories containing Python code here
+# Import all model classes here
 
 from . import report
 
@@ -28,6 +28,6 @@ def generate_model_init(models, directory):
     )
     generated_view = view_template.substitute(view_template_params)
 
-    view_path = path.join(directory, 'model__init__.py')
+    view_path = path.join(directory, '__init__.py')
     with open(view_path, 'w') as fout:
         fout.write(generated_view)

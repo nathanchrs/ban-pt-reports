@@ -99,11 +99,3 @@ ENV/
 
 # mypy
 .mypy_cache/
-
-# Generated files
-/code_generator/generated/model_views/*
-!/code_generator/generated/model_views/.gitkeep
-/code_generator/generated/report_views.xml
-/code_generator/generated/ir.model.access.csv
-/code_generator/generated/model__init__.py
-/code_generator/generated/module__manifest__.py
