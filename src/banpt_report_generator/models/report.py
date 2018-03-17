@@ -33,4 +33,4 @@ class Report(models.Model):
 
         # TODO: generate reports here based on year and prodi
 
-        refresh_date = fields.datetime.now()
+        self.write({'refresh_date': fields.datetime.now()})

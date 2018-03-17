@@ -27,6 +27,7 @@ view_template = string.Template(
             <field name="arch" type="xml">
                 <form string="Laporan">
                     <header>
+                        <button string="Mutakhirkan data" type="object" name="refresh" />
                         <button string="Setujui" type="object" name="approve" attrs="{'invisible': [('state', '=', 'approved')]}" class="oe_highlight" />
                         <field name="state" widget="statusbar" />
                     </header>
