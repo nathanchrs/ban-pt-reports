@@ -7,6 +7,8 @@ import string
 from model_view_generator import generate_model_view
 from report_view_generator import generate_report_view
 from model_access_generator import generate_model_access
+from model_init_generator import generate_model_init
+from module_manifest_generator import generate_module_manifest
 
 ignore_model_files = ['__init__.py', 'report.py']
 model_directory = '../src/banpt_report_generator/models'
@@ -51,3 +53,5 @@ if __name__ == "__main__":
 
     generate_report_view(models=models, directory=generated_directory)
     generate_model_access(models=models, directory=generated_directory)
+    generate_model_init(models=models, directory=generated_directory)
+    generate_module_manifest(models=models, directory=generated_directory)
