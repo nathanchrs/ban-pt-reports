@@ -36,9 +36,6 @@
             <field name="res_model">banpt_report_generator.pengisi</field>
             <field name="view_mode">tree,form</field>
             <field name="view_type">form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Belum ada pengisi yang telah dibuat</p>
-            </field>
         </record>
 
         <record model="ir.actions.act_window.view" id="view_pengisi_tree_action">

@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+# -*- coding: utf-8 -*-
+
+import string
+from os import path
+
+view_template = string.Template(
+"""<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
         <record model="ir.ui.view" id="view_report_tree">
@@ -39,31 +45,12 @@
                             </a>
                             <ul class="dropdown-menu banpt_report_tables_dropdown" role="tablist">
                                 <!-- Add table report dropdown menu items here -->
-                                <li role="presentation">
-                                    <a href="#tab_dosen" aria-controls="tab_dosen" role="tab" data-toggle="tab">Dosen</a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#tab_identitas" aria-controls="tab_identitas" role="tab" data-toggle="tab">Identitas</a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#tab_pengisi" aria-controls="tab_pengisi" role="tab" data-toggle="tab">Pengisi</a>
-                                </li>
+${dropdown_menu_items}
                             </ul>
                         </div>
                         <div class="tab-content">
                             <!-- Add table report contents here -->
-                            <div role="tabpanel" class="tab-pane active" id="tab_dosen">
-                                <h3 class="banpt_notebook_page_title">Dosen</h3>
-                                <field name="dosen" />
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="tab_identitas">
-                                <h3 class="banpt_notebook_page_title">Identitas</h3>
-                                <field name="identitas" />
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="tab_pengisi">
-                                <h3 class="banpt_notebook_page_title">Pengisi</h3>
-                                <field name="pengisi" />
-                            </div>
+${contents}
                         </div>
                     </div>
                 </form>
@@ -95,3 +82,42 @@
         </record>
     </data>
 </odoo>
+""")
+
+dropdown_menu_item_template = string.Template(
+"""                                <li role="presentation">
+                                    <a href="#tab_${model_name}" aria-controls="tab_${model_name}" role="tab" data-toggle="tab">${model_title}</a>
+                                </li>"""
+)
+
+content_template = string.Template(
+"""                            <div role="tabpanel" class="tab-pane${is_active}" id="tab_${model_name}">
+                                <h3 class="banpt_notebook_page_title">${model_title}</h3>
+                                <field name="${model_name}" />
+                            </div>"""
+)
+
+def generate_report_view(models, directory):
+    dropdown_menu_items = []
+    contents = []
+    first_model = True
+    for model in models:
+        model_params = dict(model_name=model['name'], model_title=model['title'])
+        dropdown_menu_items.append(dropdown_menu_item_template.substitute(model_params))
+
+        # Only the first tab should be active
+        model_params['is_active'] = ''
+        if first_model: 
+            model_params['is_active'] = ' active'
+            first_model = False
+        contents.append(content_template.substitute(model_params))
+
+    view_template_params = dict(
+        dropdown_menu_items=string.join(dropdown_menu_items, '\n'),
+        contents=string.join(contents, '\n')
+    )
+    generated_view = view_template.substitute(view_template_params)
+
+    view_path = path.join(directory, 'report_views.xml')
+    with open(view_path, 'w') as fout:
+        fout.write(generated_view)

@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class Record_Identitas(models.Model):
     _name = 'banpt_report_generator.identitas'
     _rec_name = 'nama_prodi'
+    _title = 'Identitas Prodi'
 
     nama_prodi = fields.Char(string='Nama prodi', required=True)
     departemen = fields.Char(string='Departemen')

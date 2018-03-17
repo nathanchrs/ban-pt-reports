@@ -4,4 +4,7 @@
 # Import all model classes here
 
 from . import report
-from . import pengisi, identitas, dosen
+
+from . import dosen
+from . import identitas
+from . import pengisi

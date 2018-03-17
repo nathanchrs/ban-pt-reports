@@ -56,3 +56,9 @@ Note: if you change the security configurations (any file in the `security` dire
 
 A pgAdmin 4 container is provided on port 5050. Use `odoo` as the username and password.
 After login, add new server. Use `postgres` as the hostname, `odoo` as the user and password.
+
+### Code generator
+
+Automatically create views, imports, manifest, and model access files from model files.
+To run, `cd code_generator`, then `python code_generator.py`.
+Check changes first by running a Git diff before committing.

@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class Record_Pengisi(models.Model):
     _name = 'banpt_report_generator.pengisi'
     _rec_name = 'nama'
+    _title = 'Pengisi'
 
     nama = fields.Char(string='Nama', required=True)
     nidn = fields.Char(string='NIDN', required=True)

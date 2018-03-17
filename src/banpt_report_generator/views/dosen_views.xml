@@ -35,18 +35,12 @@
                         <field name="nidn" />
                         <field name="tanggal_lahir" />
                         <field name="jabatan" />
-                    </group>
-                    <group>
                         <field name="gelar_s1" />
                         <field name="asal_pt_s1" />
                         <field name="bidang_keahlian_s1" />
-                    </group>
-                    <group>
                         <field name="gelar_s2" />
                         <field name="asal_pt_s2" />
                         <field name="bidang_keahlian_s2" />
-                    </group>
-                    <group>
                         <field name="gelar_s3" />
                         <field name="asal_pt_s3" />
                         <field name="bidang_keahlian_s3" />
@@ -60,9 +54,6 @@
             <field name="res_model">banpt_report_generator.dosen</field>
             <field name="view_mode">tree,form</field>
             <field name="view_type">form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Belum ada dosen yang telah ditambahkan</p>
-            </field>
         </record>
 
         <record model="ir.actions.act_window.view" id="view_dosen_tree_action">
