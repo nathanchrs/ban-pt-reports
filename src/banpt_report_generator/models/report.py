@@ -11,17 +11,11 @@ class Report(models.Model):
     prodi = fields.Char(string='Prodi', required=True)
     description = fields.Text(string='Keterangan')
 
+    refresh_date = fields.Datetime(string='Waktu pemutakhiran terakhir', default=fields.datetime.now())
+
     pengisi = fields.One2many(comodel_name='banpt_report_generator.pengisi', inverse_name='report')
     identitas = fields.One2many(comodel_name='banpt_report_generator.identitas', inverse_name='report')
     dosen = fields.One2many(comodel_name='banpt_report_generator.dosen', inverse_name='report')
-
-    @api.model
-    def create(self, values):
-        record = super(Report, self).create(values)
-
-        # TODO: generate reports here
-
-        return record
 
     @api.multi
     def write(self, values, ignore_state_change=False):
@@ -33,3 +27,10 @@ class Report(models.Model):
     def approve(self):
         # Set state to 'approved'; bypass edit object check
         super(Report, self).write({'state': 'approved'})
+
+    @api.one
+    def refresh(self):
+
+        # TODO: generate reports here based on year and prodi
+
+        refresh_date = fields.datetime.now()

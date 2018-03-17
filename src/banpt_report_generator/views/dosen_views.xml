@@ -6,7 +6,9 @@
             <field name="model">banpt_report_generator.dosen</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree editable="bottom">
+                <tree editable="bottom" decoration-info="write_date > report_refresh_date">
+                    <field name="write_date" invisible="1" />
+                    <field name="report_refresh_date" invisible="1" />
                     <field name="nama" />
                     <field name="nidn" />
                     <field name="tanggal_lahir" />

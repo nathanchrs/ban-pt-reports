@@ -14,3 +14,4 @@ class Record_Pengisi(models.Model):
     
     # The report this record belongs to
     report = fields.Many2one(comodel_name='banpt_report_generator.report')
+    report_refresh_date = fields.Datetime(related='report.refresh_date')

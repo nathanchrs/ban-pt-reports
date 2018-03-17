@@ -12,7 +12,9 @@ view_template = string.Template(
             <field name="model">banpt_report_generator.${name}</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree editable="bottom">
+                <tree editable="bottom" decoration-info="write_date > report_refresh_date">
+                    <field name="write_date" invisible="1" />
+                    <field name="report_refresh_date" invisible="1" />
 ${tree_fields}
                 </tree>
             </field>
@@ -62,7 +64,7 @@ def generate_model_view(name, title, fields, directory):
     tree_fields = []
     form_fields = []
     for field in fields:
-        if field != 'report':
+        if field != 'report' and field != 'report_refresh_date':
             tree_fields.append(tree_field_template.substitute(dict(field_name=field)))
             form_fields.append(form_field_template.substitute(dict(field_name=field)))
 
