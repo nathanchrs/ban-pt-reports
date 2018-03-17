@@ -75,4 +75,4 @@ Note: the pgAdmin instance can't be used for backup or restore since the Postgre
 1. Ensure the PostgreSQL container is running (`docker-compose up`).
 2. Get the name of the PostgreSQL Docker container using `docker ps` (should be like `banptreports_postgres_1`).
 3. Create the database if it does not exist yet: `docker exec -i <POSTGRESQL_CONTAINER_NAME> createdb -U odoo <DESTINATION_DB>`.
-4. Run `docker exec -i <POSTGRESQL_CONTAINER_NAME> -U odoo <DESTINATION_DB> < <FILE_TO_IMPORT_FROM_HOST>`.
+4. Run `docker exec -i <POSTGRESQL_CONTAINER_NAME> psql -U odoo <DESTINATION_DB> < <FILE_TO_IMPORT_FROM_HOST>`.
