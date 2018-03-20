@@ -44,10 +44,22 @@
                                     <a href="#tab_dosen" aria-controls="tab_dosen" role="tab" data-toggle="tab">Dosen</a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#tab_identitas" aria-controls="tab_identitas" role="tab" data-toggle="tab">Identitas</a>
+                                    <a href="#tab_identitas" aria-controls="tab_identitas" role="tab" data-toggle="tab">Identitas Prodi</a>
                                 </li>
                                 <li role="presentation">
                                     <a href="#tab_pengisi" aria-controls="tab_pengisi" role="tab" data-toggle="tab">Pengisi</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_311" aria-controls="tab_record_3a_311" role="tab" data-toggle="tab">3A-3.1.1 Data Mahasiswa Reguler</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_312" aria-controls="tab_record_3a_312" role="tab" data-toggle="tab">3A-3.1.2 Data Mahasiswa Non-Reguler</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_314" aria-controls="tab_record_3a_314" role="tab" data-toggle="tab">3A-3.1.4 Jumlah Mahasiswa Reguler 7 Tahun Terakhir</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_331" aria-controls="tab_record_3a_331" role="tab" data-toggle="tab">3A-3.3.1 Evaluasi Kinerja Lulusan</a>
                                 </li>
                             </ul>
                         </div>
@@ -58,12 +70,28 @@
                                 <field name="dosen" />
                             </div>
                             <div role="tabpanel" class="tab-pane" id="tab_identitas">
-                                <h3 class="banpt_notebook_page_title">Identitas</h3>
+                                <h3 class="banpt_notebook_page_title">Identitas Prodi</h3>
                                 <field name="identitas" />
                             </div>
                             <div role="tabpanel" class="tab-pane" id="tab_pengisi">
                                 <h3 class="banpt_notebook_page_title">Pengisi</h3>
                                 <field name="pengisi" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_311">
+                                <h3 class="banpt_notebook_page_title">3A-3.1.1 Data Mahasiswa Reguler</h3>
+                                <field name="record_3a_311" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_312">
+                                <h3 class="banpt_notebook_page_title">3A-3.1.2 Data Mahasiswa Non-Reguler</h3>
+                                <field name="record_3a_312" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_314">
+                                <h3 class="banpt_notebook_page_title">3A-3.1.4 Jumlah Mahasiswa Reguler 7 Tahun Terakhir</h3>
+                                <field name="record_3a_314" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_331">
+                                <h3 class="banpt_notebook_page_title">3A-3.3.1 Evaluasi Kinerja Lulusan</h3>
+                                <field name="record_3a_331" />
                             </div>
                         </div>
                     </div>

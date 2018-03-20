@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_record_3a_311_tree">
+            <field name="name">3A-3.1.1 Data Mahasiswa Reguler</field>
+            <field name="model">banpt_report_generator.record_3a_311</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" decoration-info="write_date > report_refresh_date">
+                    <field name="write_date" invisible="1" />
+                    <field name="report_refresh_date" invisible="1" />
+                    <field name="tahun" />
+                    <field name="daya_tampung" />
+                    <field name="calon_ikut_seleksi" />
+                    <field name="calon_lulus_seleksi" />
+                    <field name="mahasiswa_baru_reguler" />
+                    <field name="mahasiswa_baru_transfer" />
+                    <field name="total_mahasiswa_reguler" />
+                    <field name="total_mahasiswa_transfer" />
+                    <field name="lulusan_reguler" />
+                    <field name="lulusan_transfer" />
+                    <field name="ipk_reguler_min" />
+                    <field name="ipk_reguler_avg" />
+                    <field name="ipk_reguler_max" />
+                    <field name="persen_ipk_275" />
+                    <field name="persen_ipk_275_350" />
+                    <field name="persen_ipk_350" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_record_3a_311_form">
+            <field name="name">3A-3.1.1 Data Mahasiswa Reguler</field>
+            <field name="model">banpt_report_generator.record_3a_311</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="3A-3.1.1 Data Mahasiswa Reguler">
+                    <group>
+                        <field name="tahun" />
+                        <field name="daya_tampung" />
+                        <field name="calon_ikut_seleksi" />
+                        <field name="calon_lulus_seleksi" />
+                        <field name="mahasiswa_baru_reguler" />
+                        <field name="mahasiswa_baru_transfer" />
+                        <field name="total_mahasiswa_reguler" />
+                        <field name="total_mahasiswa_transfer" />
+                        <field name="lulusan_reguler" />
+                        <field name="lulusan_transfer" />
+                        <field name="ipk_reguler_min" />
+                        <field name="ipk_reguler_avg" />
+                        <field name="ipk_reguler_max" />
+                        <field name="persen_ipk_275" />
+                        <field name="persen_ipk_275_350" />
+                        <field name="persen_ipk_350" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+         <record model="ir.actions.act_window" id="view_record_3a_311_action">
+            <field name="name">3A-3.1.1 Data Mahasiswa Reguler</field>
+            <field name="res_model">banpt_report_generator.record_3a_311</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="view_record_3a_311_tree_action">
+            <field name="sequence" eval="0" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_record_3a_311_tree" />
+            <field name="act_window_id" ref="view_record_3a_311_action" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="view_record_3a_311_form_action">
+            <field name="sequence" eval="1" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_record_3a_311_form" />
+            <field name="act_window_id" ref="view_record_3a_311_action" />
+        </record>
+    </data>
+</odoo>
