@@ -24,6 +24,7 @@ class Report(models.Model):
     record_3a_432 = fields.One2many(comodel_name='banpt_report_generator.record_3a_432', inverse_name='report')
     record_3a_433 = fields.One2many(comodel_name='banpt_report_generator.record_3a_433', inverse_name='report')
     record_3a_434 = fields.One2many(comodel_name='banpt_report_generator.record_3a_434', inverse_name='report')
+    record_3a_435 = fields.One2many(comodel_name='banpt_report_generator.record_3a_435', inverse_name='report')
 
     @api.multi
     def write(self, values, ignore_state_change=False):
