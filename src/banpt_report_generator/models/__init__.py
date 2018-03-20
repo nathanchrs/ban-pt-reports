@@ -12,3 +12,7 @@ from . import record_3a_311
 from . import record_3a_312
 from . import record_3a_314
 from . import record_3a_331
+from . import record_3a_431
+from . import record_3a_432
+from . import record_3a_433
+from . import record_3a_434

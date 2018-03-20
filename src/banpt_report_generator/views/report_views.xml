@@ -61,6 +61,18 @@
                                 <li role="presentation">
                                     <a href="#tab_record_3a_331" aria-controls="tab_record_3a_331" role="tab" data-toggle="tab">3A-3.3.1 Evaluasi Kinerja Lulusan</a>
                                 </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_431" aria-controls="tab_record_3a_431" role="tab" data-toggle="tab">3A-4.3.1 Dosen Tetap yang Bidang Keahliannya Sesuai Bidang PS</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_432" aria-controls="tab_record_3a_432" role="tab" data-toggle="tab">3A-4.3.2 Dosen Tetap yang Bidang Keahliannya Di Luar PS</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_433" aria-controls="tab_record_3a_433" role="tab" data-toggle="tab">3A-4.3.3 Aktivitas Dosen Tetap yang Bidang Keahliannya Sesuai Dengan PS</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_434" aria-controls="tab_record_3a_434" role="tab" data-toggle="tab">3A-4.3.4 Aktivitas Mengajar Dosen Tetap yang Bidang Keahliannya Sesuai Dengan PS</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="tab-content">
@@ -92,6 +104,22 @@
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_331">
                                 <h3 class="banpt_notebook_page_title">3A-3.3.1 Evaluasi Kinerja Lulusan</h3>
                                 <field name="record_3a_331" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_431">
+                                <h3 class="banpt_notebook_page_title">3A-4.3.1 Dosen Tetap yang Bidang Keahliannya Sesuai Bidang PS</h3>
+                                <field name="record_3a_431" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_432">
+                                <h3 class="banpt_notebook_page_title">3A-4.3.2 Dosen Tetap yang Bidang Keahliannya Di Luar PS</h3>
+                                <field name="record_3a_432" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_433">
+                                <h3 class="banpt_notebook_page_title">3A-4.3.3 Aktivitas Dosen Tetap yang Bidang Keahliannya Sesuai Dengan PS</h3>
+                                <field name="record_3a_433" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_434">
+                                <h3 class="banpt_notebook_page_title">3A-4.3.4 Aktivitas Mengajar Dosen Tetap yang Bidang Keahliannya Sesuai Dengan PS</h3>
+                                <field name="record_3a_434" />
                             </div>
                         </div>
                     </div>
