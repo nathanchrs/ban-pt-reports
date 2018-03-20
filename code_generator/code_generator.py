@@ -5,6 +5,7 @@ import re
 import string
 from model_view_generator import generate_model_view
 from report_view_generator import generate_report_view
+from report_model_generator import generate_report_model
 from model_access_generator import generate_model_access
 from model_init_generator import generate_model_init
 from module_manifest_generator import generate_module_manifest
@@ -20,12 +21,13 @@ if __name__ == "__main__":
     # List model files
 
     model_files = [f[:-3] for f in listdir(model_directory) if path.isfile(path.join(model_directory, f)) and f not in ignore_model_files and f[-3:] == '.py']
+    model_files.sort()
     print 'Generating views for models:'
 
     # Read and parse model fields, then generate model views
 
-    title_pattern = re.compile("^\s*_title = ["'](.*)['"]\s*$")
-    field_pattern = re.compile("^\s*([a-zA-Z0-9_]+) = fields\.([a-zA-Z0-9_]+)\((.*)\)\s*$")
+    title_pattern = re.compile('^\s*_title\s*=\s*["\'](.*)[\'"]\s*$')
+    field_pattern = re.compile('^\s*([a-zA-Z0-9_]+) = fields\.([a-zA-Z0-9_]+)\((.*)\)\s*$')
 
     models = []
     for model_file in model_files:
@@ -34,8 +36,9 @@ if __name__ == "__main__":
         model_title = string.capwords(model_file)
 
         for i, line in enumerate(open(model_path)):
-            for match in re.finditer(title_pattern, line):
-                model_title = match.groups()[0]
+            match_title = re.match(title_pattern, line)
+            if match_title:
+                model_title = match_title.groups()[0]
             for match in re.finditer(field_pattern, line):
                 model_fields.append(match.groups())
 
@@ -50,6 +53,7 @@ if __name__ == "__main__":
         )
 
     generate_report_view(models=models, directory=view_directory)
+    generate_report_model(models=models, directory=model_directory)
     generate_model_access(models=models, directory=security_directory)
     generate_model_init(models=models, directory=model_directory)
     generate_module_manifest(models=models, directory=module_directory)
