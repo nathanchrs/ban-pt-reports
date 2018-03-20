@@ -26,6 +26,10 @@
         'views/dosen_views.xml',
         'views/identitas_views.xml',
         'views/pengisi_views.xml',
+        'views/record_3a_311_views.xml',
+        'views/record_3a_312_views.xml',
+        'views/record_3a_314_views.xml',
+        'views/record_3a_331_views.xml',
 
         # This line must be last (after all other view files)
         'views/banpt_report_generator.xml'

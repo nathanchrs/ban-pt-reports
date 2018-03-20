@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <record model="ir.ui.view" id="view_identitas_tree">
-            <field name="name">Identitas</field>
+            <field name="name">Identitas Prodi</field>
             <field name="model">banpt_report_generator.identitas</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
@@ -32,11 +32,11 @@
         </record>
 
         <record model="ir.ui.view" id="view_identitas_form">
-            <field name="name">Identitas</field>
+            <field name="name">Identitas Prodi</field>
             <field name="model">banpt_report_generator.identitas</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="Identitas">
+                <form string="Identitas Prodi">
                     <group>
                         <field name="nama_prodi" />
                         <field name="departemen" />
@@ -62,7 +62,7 @@
         </record>
 
          <record model="ir.actions.act_window" id="view_identitas_action">
-            <field name="name">Identitas</field>
+            <field name="name">Identitas Prodi</field>
             <field name="res_model">banpt_report_generator.identitas</field>
             <field name="view_mode">tree,form</field>
             <field name="view_type">form</field>

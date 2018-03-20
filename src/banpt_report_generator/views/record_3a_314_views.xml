@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_record_3a_314_tree">
+            <field name="name">3A-3.1.4 Jumlah Mahasiswa Reguler 7 Tahun Terakhir</field>
+            <field name="model">banpt_report_generator.record_3a_314</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" decoration-info="write_date > report_refresh_date">
+                    <field name="write_date" invisible="1" />
+                    <field name="report_refresh_date" invisible="1" />
+                    <field name="tahun_masuk" />
+                    <field name="ts6" />
+                    <field name="ts5" />
+                    <field name="ts4" />
+                    <field name="ts3" />
+                    <field name="ts2" />
+                    <field name="ts1" />
+                    <field name="ts" />
+                    <field name="lulusan_reguler_sampai_ts" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_record_3a_314_form">
+            <field name="name">3A-3.1.4 Jumlah Mahasiswa Reguler 7 Tahun Terakhir</field>
+            <field name="model">banpt_report_generator.record_3a_314</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="3A-3.1.4 Jumlah Mahasiswa Reguler 7 Tahun Terakhir">
+                    <group>
+                        <field name="tahun_masuk" />
+                        <field name="ts6" />
+                        <field name="ts5" />
+                        <field name="ts4" />
+                        <field name="ts3" />
+                        <field name="ts2" />
+                        <field name="ts1" />
+                        <field name="ts" />
+                        <field name="lulusan_reguler_sampai_ts" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+         <record model="ir.actions.act_window" id="view_record_3a_314_action">
+            <field name="name">3A-3.1.4 Jumlah Mahasiswa Reguler 7 Tahun Terakhir</field>
+            <field name="res_model">banpt_report_generator.record_3a_314</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="view_record_3a_314_tree_action">
+            <field name="sequence" eval="0" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_record_3a_314_tree" />
+            <field name="act_window_id" ref="view_record_3a_314_action" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="view_record_3a_314_form_action">
+            <field name="sequence" eval="1" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_record_3a_314_form" />
+            <field name="act_window_id" ref="view_record_3a_314_action" />
+        </record>
+    </data>
+</odoo>
