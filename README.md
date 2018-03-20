@@ -40,7 +40,7 @@ Note: Docker commands might need root privileges/sudo. If this happens, you prob
 
 ### How to add a new table
 
-1. Ensure you are on the `master` branch (`git checkout master`). Create a new branch (`git checkout -b <BRANCH_NAME>`). Branch name for a table must be equal to `table_` followed by the table code in lower case and with symbols replaced with underscore (e.g. `table_3a_3_1_1`).
+1. Ensure you are on the `master` branch (`git checkout master`). Create a new branch (`git checkout -b <BRANCH_NAME>`). Branch name for a table must be equal to the table code in lower case and with `-` replaced with `_` and `.` removed (e.g. `3a_311`).
 2. Create model file in `src/banpt_report_generator/models` directory.
 3. Run the code generator: `cd code_generator`, then `python code_generator.py`. Don't forget to return to the main directory using `cd ..`.
 4. Check changes by running a Git diff, ensure all of the changes are correct.
