@@ -27,7 +27,7 @@ class Record_Identitas(models.Model):
     faks = fields.Char(string='Faks')
     homepage = fields.Char(string='Homepage')
     email = fields.Char(string='Email')
-    
+
     # The report this record belongs to
     report = fields.Many2one(comodel_name='banpt_report_generator.report')
     report_refresh_date = fields.Datetime(related='report.refresh_date')
