@@ -5,6 +5,7 @@ services:
 
   odoo:
     image: odoo:10
+    command: /bin/bash -c "sleep 5 && odoo --db_host postgres --db_port 5432 --db_user odoo --db_password odoo -d banpt --test-enable -i banpt_report_generator -u banpt_report_generator"
     depends_on:
       - postgres
     ports:
