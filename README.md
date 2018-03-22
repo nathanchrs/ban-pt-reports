@@ -45,12 +45,19 @@ Note: these steps are not needed if using the Docker development container.
 3. Run the code generator: `cd code_generator`, then `python code_generator.py`. Don't forget to return to the main directory using `cd ..`.
 4. Check changes by running a Git diff, ensure all of the changes are correct.
 5. Restart the Docker containers if they are running (`Ctrl+c` any running Docker Compose processes, then `docker-compose up` again).
-6. Ensure all tests were run succesfully.
-7. Stage (`git add --all`), commit (`git commit -m <COMMIT_MESSAGE>`, and push changes to Git (`git push -u origin <BRANCH_NAME>`), then make a new pull request to `master` on Github.
+6. Lint the code using `pylint src/banpt_report_generator` (requires `pylint` to be installed, see Linting section below). Fix all errors or warnings.
+7. Ensure all tests were run succesfully.
+8. Stage (`git add --all`), commit (`git commit -m <COMMIT_MESSAGE>`, and push changes to Git (`git push -u origin <BRANCH_NAME>`), then make a new pull request to `master` on Github.
 
 ### How to refresh changes in Odoo
 
 Restart the Docker containers if they are running (`Ctrl+c` any running Docker Compose processes, then `docker-compose up` again). The `banpt_report_generator` module will be upgraded automatically.
+
+### Linting
+
+Prerequisite: [pylint](https://docs.pylint.org/en/1.8/user_guide/installation.html).
+To lint, run `pylint src/banpt_report_generator`.
+If there are any errors or warning, fix the source code before committing.
 
 ### Tests
 
