@@ -11,11 +11,21 @@ sample_report_1 = dict(
 )
 
 class TestReport(common.TransactionCase):
-    def test_write(self):
-        pass
+    def test_write_and_approve(self):
+        record = self.env['banpt_report_generator.report'].create(sample_report_1)
+        self.assertEqual(record.state, 'pending_review')
 
-    def test_approve(self):
-        pass
+        record.approve()
+        self.assertEqual(record.state, 'approved')
+
+        record.approve()
+        self.assertEqual(record.state, 'approved')
+
+        record.write({'name': 'Sample Report 1 edited'})
+        self.assertEqual(record.state, 'pending_review')
+
+        record.approve()
+        self.assertEqual(record.state, 'approved')
 
     def test_refresh(self):
         record = self.env['banpt_report_generator.report'].create(sample_report_1)

@@ -66,6 +66,8 @@ Place your tests in the `src/banpt_report_generator/tests` directory, then impor
 
 To run tests, run `docker-compose -f docker-compose.test.yml up --abort-on-container-exit`. Check if there are any `ERROR` when the test finishes.
 
+For convenience, to see only relevant test output, use `docker-compose -f docker-compose.test.yml up --abort-on-container-exit | grep banpt_report_generator`.
+
 ### Code generator
 
 Automatically create views, imports, manifest, and model access files from model files.
