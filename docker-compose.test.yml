@@ -5,7 +5,7 @@ services:
 
   odoo:
     image: odoo:10
-    command: /bin/bash -c "sleep 5 && odoo --db_host postgres --db_port 5432 --db_user odoo --db_password odoo -d banpt -i banpt_report_generator -u banpt_report_generator"
+    command: /bin/bash -c "sleep 5 && odoo --db_host postgres --db_port 5432 --db_user odoo --db_password odoo -d banpt --test-enable --stop-after-init --workers=0 -i banpt_report_generator -u banpt_report_generator"
     depends_on:
       - postgres
     ports:
@@ -27,16 +27,6 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - odoo_db_data:/var/lib/postgresql/data/pgdata
-
-  pgadmin:
-    image: fenglc/pgadmin4
-    ports:
-      - "5050:5050"
-    environment:
-      - DEFAULT_USER=odoo
-      - DEFAULT_PASSWORD=odoo
-    depends_on:
-      - postgres
 
 volumes:
   odoo_web_data:
