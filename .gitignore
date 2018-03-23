@@ -99,3 +99,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# iBOS modules/dependencies
+/src/itb_academic
+/src/itb_hr
