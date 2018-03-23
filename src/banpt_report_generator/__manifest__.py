@@ -13,7 +13,7 @@
     'description': 'BAN-PT accreditation report generator for STEI ITB',
 
     # List of module dependencies of this module.
-    'depends': ['base', 'web'],
+    'depends': ['base', 'web', 'itb_academic', 'itb_hr'],
 
     # Data files always loaded at installation.
     # Add all non-Python files required by this module here.

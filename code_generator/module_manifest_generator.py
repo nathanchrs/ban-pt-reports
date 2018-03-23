@@ -5,6 +5,7 @@ from os import path
 
 view_template = string.Template(
 """# -*- coding: utf-8 -*-
+# pylint: skip-file
 
 # Odoo module definition file for BAN-PT Report Generator.
 
@@ -18,7 +19,7 @@ view_template = string.Template(
     'description': 'BAN-PT accreditation report generator for STEI ITB',
 
     # List of module dependencies of this module.
-    'depends': ['base'],
+    'depends': ['base', 'web', 'itb_academic', 'itb_hr'],
 
     # Data files always loaded at installation.
     # Add all non-Python files required by this module here.
