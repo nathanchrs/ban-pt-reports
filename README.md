@@ -46,7 +46,7 @@ Note: these steps are not needed if using the Docker development container.
 4. Check changes by running a Git diff, ensure all of the changes are correct.
 5. Restart the Docker containers if they are running (`Ctrl+c` any running Docker Compose processes, then `docker-compose up` again).
 6. Lint the code using `pylint src/banpt_report_generator` (requires `pylint` to be installed, see Linting section below). Fix all errors or warnings.
-7. Ensure all tests were run succesfully.
+7. Run tests using `docker-compose -f docker-compose.test.yml up --abort-on-container-exit`, ensure there are no `ERROR` lines. Fix all errors.
 8. Stage (`git add --all`), commit (`git commit -m <COMMIT_MESSAGE>`, and push changes to Git (`git push -u origin <BRANCH_NAME>`), then make a new pull request to `master` on Github.
 
 ### How to refresh changes in Odoo
@@ -61,7 +61,9 @@ If there are any errors or warning, fix the source code before committing.
 
 ### Tests
 
-Automated tests will run automatically at container startup. Place your tests in the `src/banpt_report_generator/tests` directory.
+Place your tests in the `src/banpt_report_generator/tests` directory, then import it in `src/banpt_report_generator/tests/__init__.py`.
+
+To run tests, run `docker-compose -f docker-compose.test.yml up --abort-on-container-exit`. Check if there are any `ERROR` when the test finishes.
 
 ### Code generator
 
