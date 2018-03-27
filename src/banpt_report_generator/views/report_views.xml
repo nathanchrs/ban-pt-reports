@@ -76,6 +76,21 @@
                                 <li role="presentation">
                                     <a href="#tab_record_3a_435" aria-controls="tab_record_3a_435" role="tab" data-toggle="tab">3A-4.3.5 Aktivitas Mengajar Dosen Tetap yang Bidang Keahliannya Di Luar PS</a>
                                 </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_441" aria-controls="tab_record_3a_441" role="tab" data-toggle="tab">3A-4.4.1 Data Dosen Tidak Tetap</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_442" aria-controls="tab_record_3a_442" role="tab" data-toggle="tab">3A-4.4.2 Aktivitas Mengajar Data Dosen Tidak Tetap</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_451" aria-controls="tab_record_3a_451" role="tab" data-toggle="tab">3A-4.5.1 Kegiatan Tenaga Ahli/Pakar (Tidak Termasuk Dosen Tetap)</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_452" aria-controls="tab_record_3a_452" role="tab" data-toggle="tab">3A-4.5.2 Peningkatan Kemampuan Dosen Tetap Melalui Tugas Belajar</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_453" aria-controls="tab_record_3a_453" role="tab" data-toggle="tab">3A-4.5.3 Kegiatan Dosen Tetap</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="tab-content">
@@ -127,6 +142,26 @@
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_435">
                                 <h3 class="banpt_notebook_page_title">3A-4.3.5 Aktivitas Mengajar Dosen Tetap yang Bidang Keahliannya Di Luar PS</h3>
                                 <field name="record_3a_435" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_441">
+                                <h3 class="banpt_notebook_page_title">3A-4.4.1 Data Dosen Tidak Tetap</h3>
+                                <field name="record_3a_441" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_442">
+                                <h3 class="banpt_notebook_page_title">3A-4.4.2 Aktivitas Mengajar Data Dosen Tidak Tetap</h3>
+                                <field name="record_3a_442" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_451">
+                                <h3 class="banpt_notebook_page_title">3A-4.5.1 Kegiatan Tenaga Ahli/Pakar (Tidak Termasuk Dosen Tetap)</h3>
+                                <field name="record_3a_451" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_452">
+                                <h3 class="banpt_notebook_page_title">3A-4.5.2 Peningkatan Kemampuan Dosen Tetap Melalui Tugas Belajar</h3>
+                                <field name="record_3a_452" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_453">
+                                <h3 class="banpt_notebook_page_title">3A-4.5.3 Kegiatan Dosen Tetap</h3>
+                                <field name="record_3a_453" />
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_record_3a_453_tree">
+            <field name="name">3A-4.5.3 Kegiatan Dosen Tetap</field>
+            <field name="model">banpt_report_generator.record_3a_453</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" decoration-info="write_date > report_refresh_date">
+                    <field name="write_date" invisible="1" />
+                    <field name="report_refresh_date" invisible="1" />
+                    <field name="nama_dosen" />
+                    <field name="jenis_kegiatan" />
+                    <field name="tempat" />
+                    <field name="tahun" />
+                    <field name="sebagai_penyaji" />
+                    <field name="sebagai_peserta" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_record_3a_453_form">
+            <field name="name">3A-4.5.3 Kegiatan Dosen Tetap</field>
+            <field name="model">banpt_report_generator.record_3a_453</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="3A-4.5.3 Kegiatan Dosen Tetap">
+                    <group>
+                        <field name="nama_dosen" />
+                        <field name="jenis_kegiatan" />
+                        <field name="tempat" />
+                        <field name="tahun" />
+                        <field name="sebagai_penyaji" />
+                        <field name="sebagai_peserta" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+         <record model="ir.actions.act_window" id="view_record_3a_453_action">
+            <field name="name">3A-4.5.3 Kegiatan Dosen Tetap</field>
+            <field name="res_model">banpt_report_generator.record_3a_453</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="view_record_3a_453_tree_action">
+            <field name="sequence" eval="0" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_record_3a_453_tree" />
+            <field name="act_window_id" ref="view_record_3a_453_action" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="view_record_3a_453_form_action">
+            <field name="sequence" eval="1" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_record_3a_453_form" />
+            <field name="act_window_id" ref="view_record_3a_453_action" />
+        </record>
+    </data>
+</odoo>

@@ -2,10 +2,10 @@
 
 from odoo import models, fields, api
 
-class Record_3A_432(models.Model):
-    _name = 'banpt_report_generator.record_3a_432'
+class Record_3A_441(models.Model):
+    _name = 'banpt_report_generator.record_3a_441'
     _rec_name = 'nama'
-    _title = '3A-4.3.2 Dosen Tetap yang Bidang Keahliannya Di Luar PS'
+    _title = '3A-4.4.1 Data Dosen Tidak Tetap'
 
     nama = fields.Char(string='Nama Dosen Tetap', required=True)
     nidn = fields.Char(string='NIDN', required=True)

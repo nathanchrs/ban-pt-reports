@@ -7,7 +7,7 @@ class Record_3A_431(models.Model):
     _rec_name = 'nama'
     _title = '3A-4.3.1 Dosen Tetap yang Bidang Keahliannya Sesuai Bidang PS'
 
-    nama = fields.Char(string='Nama', required=True)
+    nama = fields.Char(string='Nama Dosen Tetap', required=True)
     nidn = fields.Char(string='NIDN', required=True)
     tanggal_lahir = fields.Date(string='Tanggal lahir')
     jabatan = fields.Char(string='Jabatan')
