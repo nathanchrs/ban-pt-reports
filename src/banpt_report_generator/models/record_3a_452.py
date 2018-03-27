@@ -13,7 +13,7 @@ class Record_3A_452(models.Model):
     perguruan_tinggi = fields.Char(string='Perguruan Tinggi')
     negara = fields.Char(string='Negara')
     tahun_pelaksanaan = fields.Char(string='Tahun Pelaksanaan')
-    
+
     # The report this record belongs to
     report = fields.Many2one(comodel_name='banpt_report_generator.report')
     report_refresh_date = fields.Datetime(related='report.refresh_date')
