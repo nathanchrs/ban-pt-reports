@@ -13,6 +13,12 @@ class Report(models.Model):
 
     refresh_date = fields.Datetime(string='Waktu pemutakhiran terakhir', default=fields.datetime.now())
 
+    Record_3A_454 = fields.One2many(comodel_name='banpt_report_generator.Record_3A_454', inverse_name='report')
+    Record_3A_455 = fields.One2many(comodel_name='banpt_report_generator.Record_3A_455', inverse_name='report')
+    Record_3A_461 = fields.One2many(comodel_name='banpt_report_generator.Record_3A_461', inverse_name='report')
+    Record_3A_622 = fields.One2many(comodel_name='banpt_report_generator.Record_3A_622', inverse_name='report')
+    Record_3A_623 = fields.One2many(comodel_name='banpt_report_generator.Record_3A_623', inverse_name='report')
+    Record_3A_631 = fields.One2many(comodel_name='banpt_report_generator.Record_3A_631', inverse_name='report')
     dosen = fields.One2many(comodel_name='banpt_report_generator.dosen', inverse_name='report')
     identitas = fields.One2many(comodel_name='banpt_report_generator.identitas', inverse_name='report')
     pengisi = fields.One2many(comodel_name='banpt_report_generator.pengisi', inverse_name='report')
@@ -23,18 +29,17 @@ class Report(models.Model):
 
     @api.multi
     def write(self, values):
-        "Set state to 'pending_review' if object is edited"
+        # Set state to 'pending_review' if object is edited
         values['state'] = 'pending_review'
         return super(Report, self).write(values)
 
-    @api.multi
+    @api.one
     def approve(self):
-        "Set state to 'approved'; bypass edit object check"
+        # Set state to 'approved'; bypass edit object check
         super(Report, self).write({'state': 'approved'})
 
-    @api.multi
+    @api.one
     def refresh(self):
-        "Load or refresh report data from iBOS, then update the refresh_date"
 
         # TODO: generate reports here based on year and prodi
 
