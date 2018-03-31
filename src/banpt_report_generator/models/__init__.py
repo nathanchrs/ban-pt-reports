@@ -5,6 +5,12 @@
 
 from . import report
 
+from . import Record_3A_454
+from . import Record_3A_455
+from . import Record_3A_461
+from . import Record_3A_622
+from . import Record_3A_623
+from . import Record_3A_631
 from . import dosen
 from . import identitas
 from . import pengisi
