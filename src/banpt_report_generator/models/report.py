@@ -20,21 +20,25 @@ class Report(models.Model):
     record_3a_312 = fields.One2many(comodel_name='banpt_report_generator.record_3a_312', inverse_name='report')
     record_3a_314 = fields.One2many(comodel_name='banpt_report_generator.record_3a_314', inverse_name='report')
     record_3a_331 = fields.One2many(comodel_name='banpt_report_generator.record_3a_331', inverse_name='report')
+    record_3a_5121 = fields.One2many(comodel_name='banpt_report_generator.record_3a_5121', inverse_name='report')
+    record_3a_5122 = fields.One2many(comodel_name='banpt_report_generator.record_3a_5122', inverse_name='report')
+    record_3a_513 = fields.One2many(comodel_name='banpt_report_generator.record_3a_513', inverse_name='report')
+    record_3a_541 = fields.One2many(comodel_name='banpt_report_generator.record_3a_541', inverse_name='report')
+    record_3a_551 = fields.One2many(comodel_name='banpt_report_generator.record_3a_551', inverse_name='report')
 
     @api.multi
     def write(self, values):
-        "Set state to 'pending_review' if object is edited"
+        # Set state to 'pending_review' if object is edited
         values['state'] = 'pending_review'
         return super(Report, self).write(values)
 
-    @api.multi
+    @api.one
     def approve(self):
-        "Set state to 'approved'; bypass edit object check"
+        # Set state to 'approved'; bypass edit object check
         super(Report, self).write({'state': 'approved'})
 
-    @api.multi
+    @api.one
     def refresh(self):
-        "Load or refresh report data from iBOS, then update the refresh_date"
 
         # TODO: generate reports here based on year and prodi
 
