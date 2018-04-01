@@ -109,6 +109,21 @@
                                 <li role="presentation">
                                     <a href="#tab_record_3a_453" aria-controls="tab_record_3a_453" role="tab" data-toggle="tab">3A-4.5.3 Kegiatan Dosen Tetap</a>
                                 </li>
+                                <li role="presentation>
+                                    <a href="#tab_record_3a_5121" aria-controls="tab_record_3a_5121" role="tab" data-toggle="tab">3A-5.1.2.1 Jumlah SKS Mata Kuliah Wajib dan Pilihan</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_5122" aria-controls="tab_record_3a_5122" role="tab" data-toggle="tab">3A-5.1.2.2 Struktur Kurikulum Berdasarkan Urutan Mata Kuliah</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_513" aria-controls="tab_record_3a_513" role="tab" data-toggle="tab">3A-5.1.3 Mata Kuliah Pilihan</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_541" aria-controls="tab_record_3a_541" role="tab" data-toggle="tab">3A-5.4.1 Dosen Pembimbing Akademik dan Jumlah Mahasiswa</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_551" aria-controls="tab_record_3a_551" role="tab" data-toggle="tab">3A-5.5.1 Dosen Pembimbing Tugas Akhir dan Jumlah Mahasiswa</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="tab-content">
@@ -204,6 +219,26 @@
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_453">
                                 <h3 class="banpt_notebook_page_title">3A-4.5.3 Kegiatan Dosen Tetap</h3>
                                 <field name="record_3a_453" />
+                            </div>                                                           
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_5121">
+                                <h3 class="banpt_notebook_page_title">3A-5.1.2.1 Jumlah SKS Mata Kuliah Wajib dan Pilihan</h3>
+                                <field name="record_3a_5121" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_5122">
+                                <h3 class="banpt_notebook_page_title">3A-5.1.2.2 Struktur Kurikulum Berdasarkan Urutan Mata Kuliah</h3>
+                                <field name="record_3a_5122" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_513">
+                                <h3 class="banpt_notebook_page_title">3A-5.1.3 Mata Kuliah Pilihan</h3>
+                                <field name="record_3a_513" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_541">
+                                <h3 class="banpt_notebook_page_title">3A-5.4.1 Dosen Pembimbing Akademik dan Jumlah Mahasiswa</h3>
+                                <field name="record_3a_541" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_551">
+                                <h3 class="banpt_notebook_page_title">3A-5.5.1 Dosen Pembimbing Tugas Akhir dan Jumlah Mahasiswa</h3>
+                                <field name="record_3a_551" />
                             </div>
                         </div>
                     </div>
