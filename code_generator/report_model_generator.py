@@ -24,18 +24,18 @@ ${one2many_fields}
 
     @api.multi
     def write(self, values):
-        "Set state to 'pending_review' if object is edited"
+        "Set state to 'pending_review' if object is edited."
         values['state'] = 'pending_review'
         return super(Report, self).write(values)
 
     @api.multi
     def approve(self):
-        "Set state to 'approved'; bypass edit object check"
+        "Set state to 'approved'; bypass edit object check."
         super(Report, self).write({'state': 'approved'})
 
     @api.multi
     def refresh(self):
-        "Load or refresh report data from iBOS, then update the refresh_date"
+        "Load or refresh report data from iBOS, then update the refresh_date."
 
 ${refresh_calls}
 

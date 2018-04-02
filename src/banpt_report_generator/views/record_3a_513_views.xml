@@ -14,7 +14,7 @@
                     <field name="nama_mk" />
                     <field name="bobot_sks" />
                     <field name="bobot_tugas" />
-                    <field name="unit_jur_fak_penyelenggara" />
+                    <field name="unit_penyelenggara" />
                 </tree>
             </field>
         </record>
@@ -31,7 +31,7 @@
                         <field name="nama_mk" />
                         <field name="bobot_sks" />
                         <field name="bobot_tugas" />
-                        <field name="unit_jur_fak_penyelenggara" />
+                        <field name="unit_penyelenggara" />
                     </group>
                 </form>
             </field>

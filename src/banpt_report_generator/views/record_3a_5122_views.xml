@@ -13,13 +13,13 @@
                     <field name="kode_mk" />
                     <field name="nama_mk" />
                     <field name="bobot_sks" />
-                    <field name="sks_mk_dlm_kurikulum_inti" />
-                    <field name="sks_mk_dlm_kurikulum_institusional" />
+                    <field name="sks_mk_dalam_kurikulum_inti" />
+                    <field name="sks_mk_dalam_kurikulum_institusional" />
                     <field name="bobot_tugas" />
                     <field name="kelengkapan_deskripsi" />
                     <field name="kelengkapan_silabus" />
                     <field name="kelengkapan_sap" />
-                    <field name="unit_jur_fak_penyelenggara" />
+                    <field name="unit_penyelenggara" />
                 </tree>
             </field>
         </record>
@@ -35,13 +35,13 @@
                         <field name="kode_mk" />
                         <field name="nama_mk" />
                         <field name="bobot_sks" />
-                        <field name="sks_mk_dlm_kurikulum_inti" />
-                        <field name="sks_mk_dlm_kurikulum_institusional" />
+                        <field name="sks_mk_dalam_kurikulum_inti" />
+                        <field name="sks_mk_dalam_kurikulum_institusional" />
                         <field name="bobot_tugas" />
                         <field name="kelengkapan_deskripsi" />
                         <field name="kelengkapan_silabus" />
                         <field name="kelengkapan_sap" />
-                        <field name="unit_jur_fak_penyelenggara" />
+                        <field name="unit_penyelenggara" />
                     </group>
                 </form>
             </field>

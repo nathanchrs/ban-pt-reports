@@ -10,8 +10,8 @@
                     <field name="write_date" invisible="1" />
                     <field name="report_refresh_date" invisible="1" />
                     <field name="nama_dosen" />
-                    <field name="jumlah_mhs_bimbingan" />
-                    <field name="rata_banyaknya_mahasiswa_per_smt" />
+                    <field name="jumlah_mahasiswa_bimbingan" />
+                    <field name="pertemuan_per_semester" />
                 </tree>
             </field>
         </record>
@@ -24,8 +24,8 @@
                 <form string="3A-5.4.1 Dosen Pembimbing Akademik dan Jumlah Mahasiswa">
                     <group>
                         <field name="nama_dosen" />
-                        <field name="jumlah_mhs_bimbingan" />
-                        <field name="rata_banyaknya_mahasiswa_per_smt" />
+                        <field name="jumlah_mahasiswa_bimbingan" />
+                        <field name="pertemuan_per_semester" />
                     </group>
                 </form>
             </field>

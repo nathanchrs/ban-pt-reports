@@ -13,9 +13,9 @@
                     <field name="nama_organisasi" />
                     <field name="tahun_awal" />
                     <field name="tahun_akhir" />
-                    <field name="internasional_tingkat" />
-                    <field name="nasional_tingkat" />
-                    <field name="lokal_tingkat" />
+                    <field name="tingkat_internasional" />
+                    <field name="tingkat_nasional" />
+                    <field name="tingkat_lokal" />
                 </tree>
             </field>
         </record>
@@ -31,9 +31,9 @@
                         <field name="nama_organisasi" />
                         <field name="tahun_awal" />
                         <field name="tahun_akhir" />
-                        <field name="internasional_tingkat" />
-                        <field name="nasional_tingkat" />
-                        <field name="lokal_tingkat" />
+                        <field name="tingkat_internasional" />
+                        <field name="tingkat_nasional" />
+                        <field name="tingkat_lokal" />
                     </group>
                 </form>
             </field>

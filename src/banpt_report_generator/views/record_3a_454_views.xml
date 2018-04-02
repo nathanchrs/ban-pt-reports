@@ -12,9 +12,9 @@
                     <field name="nama" />
                     <field name="prestasi_yang_dicapai" />
                     <field name="tahun_pencapaian" />
-                    <field name="internasional_tingkat" />
-                    <field name="nasional_tingkat" />
-                    <field name="lokal_tingkat" />
+                    <field name="tingkat_internasional" />
+                    <field name="tingkat_nasional" />
+                    <field name="tingkat_lokal" />
                 </tree>
             </field>
         </record>
@@ -29,9 +29,9 @@
                         <field name="nama" />
                         <field name="prestasi_yang_dicapai" />
                         <field name="tahun_pencapaian" />
-                        <field name="internasional_tingkat" />
-                        <field name="nasional_tingkat" />
-                        <field name="lokal_tingkat" />
+                        <field name="tingkat_internasional" />
+                        <field name="tingkat_nasional" />
+                        <field name="tingkat_lokal" />
                     </group>
                 </form>
             </field>

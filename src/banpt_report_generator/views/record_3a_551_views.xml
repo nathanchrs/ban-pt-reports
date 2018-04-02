@@ -10,7 +10,7 @@
                     <field name="write_date" invisible="1" />
                     <field name="report_refresh_date" invisible="1" />
                     <field name="nama_dosen" />
-                    <field name="jumlah_mhs_bimbingan" />
+                    <field name="jumlah_mahasiswa_bimbingan" />
                 </tree>
             </field>
         </record>
@@ -23,7 +23,7 @@
                 <form string="3A-5.5.1 Dosen Pembimbing Tugas Akhir dan Jumlah Mahasiswa">
                     <group>
                         <field name="nama_dosen" />
-                        <field name="jumlah_mhs_bimbingan" />
+                        <field name="jumlah_mahasiswa_bimbingan" />
                     </group>
                 </form>
             </field>
