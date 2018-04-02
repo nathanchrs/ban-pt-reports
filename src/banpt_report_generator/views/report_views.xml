@@ -41,24 +41,6 @@
                             <ul class="dropdown-menu banpt_report_tables_dropdown" role="tablist">
                                 <!-- Add table report dropdown menu items here -->
                                 <li role="presentation">
-                                    <a href="#tab_Record_3A_454" aria-controls="tab_Record_3A_454" role="tab" data-toggle="tab">3A-4.5.4 Pencapai Prestasi/Reputasi Dosen</a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#tab_Record_3A_455" aria-controls="tab_Record_3A_455" role="tab" data-toggle="tab">3A-4.5.5 Keikutsertaan Dosen Tetap Dalam Organisasi Keilmuan/Profesi</a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#tab_Record_3A_461" aria-controls="tab_Record_3A_461" role="tab" data-toggle="tab">3A-4.6.1 Tenaga Kependidikan</a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#tab_Record_3A_622" aria-controls="tab_Record_3A_622" role="tab" data-toggle="tab">3A-6.2.2 Dana Untuk Kegiatan Penelitian</a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#tab_Record_3A_623" aria-controls="tab_Record_3A_623" role="tab" data-toggle="tab">3A-6.3.1 Dana Pelayanan/Pengabdian Kepada Masyarakat</a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#tab_Record_3A_631" aria-controls="tab_Record_3A_631" role="tab" data-toggle="tab">3A-6.3.1 Data Ruang Kerja Dosen Tetap</a>
-                                </li>
-                                <li role="presentation">
                                     <a href="#tab_dosen" aria-controls="tab_dosen" role="tab" data-toggle="tab">Dosen</a>
                                 </li>
                                 <li role="presentation">
@@ -109,7 +91,16 @@
                                 <li role="presentation">
                                     <a href="#tab_record_3a_453" aria-controls="tab_record_3a_453" role="tab" data-toggle="tab">3A-4.5.3 Kegiatan Dosen Tetap</a>
                                 </li>
-                                <li role="presentation>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_454" aria-controls="tab_record_3a_454" role="tab" data-toggle="tab">3A-4.5.4 Pencapai Prestasi/Reputasi Dosen</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_455" aria-controls="tab_record_3a_455" role="tab" data-toggle="tab">3A-4.5.5 Keikutsertaan Dosen Tetap Dalam Organisasi Keilmuan/Profesi</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_461" aria-controls="tab_record_3a_461" role="tab" data-toggle="tab">3A-4.6.1 Tenaga Kependidikan</a>
+                                </li>
+                                <li role="presentation">
                                     <a href="#tab_record_3a_5121" aria-controls="tab_record_3a_5121" role="tab" data-toggle="tab">3A-5.1.2.1 Jumlah SKS Mata Kuliah Wajib dan Pilihan</a>
                                 </li>
                                 <li role="presentation">
@@ -124,35 +115,20 @@
                                 <li role="presentation">
                                     <a href="#tab_record_3a_551" aria-controls="tab_record_3a_551" role="tab" data-toggle="tab">3A-5.5.1 Dosen Pembimbing Tugas Akhir dan Jumlah Mahasiswa</a>
                                 </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_622" aria-controls="tab_record_3a_622" role="tab" data-toggle="tab">3A-6.2.2 Dana Untuk Kegiatan Penelitian</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_623" aria-controls="tab_record_3a_623" role="tab" data-toggle="tab">3A-6.3.1 Dana Pelayanan/Pengabdian Kepada Masyarakat</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_631" aria-controls="tab_record_3a_631" role="tab" data-toggle="tab">3A-6.3.1 Data Ruang Kerja Dosen Tetap</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="tab-content">
                             <!-- Add table report contents here -->
-                            <div role="tabpanel" class="tab-pane active" id="tab_Record_3A_454">
-                                <h3 class="banpt_notebook_page_title">3A-4.5.4 Pencapai Prestasi/Reputasi Dosen</h3>
-                                <field name="Record_3A_454" />
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="tab_Record_3A_455">
-                                <h3 class="banpt_notebook_page_title">3A-4.5.5 Keikutsertaan Dosen Tetap Dalam Organisasi Keilmuan/Profesi</h3>
-                                <field name="Record_3A_455" />
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="tab_Record_3A_461">
-                                <h3 class="banpt_notebook_page_title">3A-4.6.1 Tenaga Kependidikan</h3>
-                                <field name="Record_3A_461" />
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="tab_Record_3A_622">
-                                <h3 class="banpt_notebook_page_title">3A-6.2.2 Dana Untuk Kegiatan Penelitian</h3>
-                                <field name="Record_3A_622" />
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="tab_Record_3A_623">
-                                <h3 class="banpt_notebook_page_title">3A-6.3.1 Dana Pelayanan/Pengabdian Kepada Masyarakat</h3>
-                                <field name="Record_3A_623" />
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="tab_Record_3A_631">
-                                <h3 class="banpt_notebook_page_title">3A-6.3.1 Data Ruang Kerja Dosen Tetap</h3>
-                                <field name="Record_3A_631" />
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="tab_dosen">
+                            <div role="tabpanel" class="tab-pane active" id="tab_dosen">
                                 <h3 class="banpt_notebook_page_title">Dosen</h3>
                                 <field name="dosen" />
                             </div>
@@ -219,7 +195,19 @@
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_453">
                                 <h3 class="banpt_notebook_page_title">3A-4.5.3 Kegiatan Dosen Tetap</h3>
                                 <field name="record_3a_453" />
-                            </div>                                                           
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_454">
+                                <h3 class="banpt_notebook_page_title">3A-4.5.4 Pencapai Prestasi/Reputasi Dosen</h3>
+                                <field name="record_3a_454" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_455">
+                                <h3 class="banpt_notebook_page_title">3A-4.5.5 Keikutsertaan Dosen Tetap Dalam Organisasi Keilmuan/Profesi</h3>
+                                <field name="record_3a_455" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_461">
+                                <h3 class="banpt_notebook_page_title">3A-4.6.1 Tenaga Kependidikan</h3>
+                                <field name="record_3a_461" />
+                            </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_5121">
                                 <h3 class="banpt_notebook_page_title">3A-5.1.2.1 Jumlah SKS Mata Kuliah Wajib dan Pilihan</h3>
                                 <field name="record_3a_5121" />
@@ -239,6 +227,18 @@
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_551">
                                 <h3 class="banpt_notebook_page_title">3A-5.5.1 Dosen Pembimbing Tugas Akhir dan Jumlah Mahasiswa</h3>
                                 <field name="record_3a_551" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_622">
+                                <h3 class="banpt_notebook_page_title">3A-6.2.2 Dana Untuk Kegiatan Penelitian</h3>
+                                <field name="record_3a_622" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_623">
+                                <h3 class="banpt_notebook_page_title">3A-6.3.1 Dana Pelayanan/Pengabdian Kepada Masyarakat</h3>
+                                <field name="record_3a_623" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_631">
+                                <h3 class="banpt_notebook_page_title">3A-6.3.1 Data Ruang Kerja Dosen Tetap</h3>
+                                <field name="record_3a_631" />
                             </div>
                         </div>
                     </div>

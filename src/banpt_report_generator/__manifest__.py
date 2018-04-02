@@ -24,12 +24,6 @@
         # Add view files here
         'views/report_views.xml',
 
-        'views/Record_3A_454_views.xml',
-        'views/Record_3A_455_views.xml',
-        'views/Record_3A_461_views.xml',
-        'views/Record_3A_622_views.xml',
-        'views/Record_3A_623_views.xml',
-        'views/Record_3A_631_views.xml',
         'views/dosen_views.xml',
         'views/identitas_views.xml',
         'views/pengisi_views.xml',
@@ -47,11 +41,17 @@
         'views/record_3a_451_views.xml',
         'views/record_3a_452_views.xml',
         'views/record_3a_453_views.xml',
+        'views/record_3a_454_views.xml',
+        'views/record_3a_455_views.xml',
+        'views/record_3a_461_views.xml',
         'views/record_3a_5121_views.xml',
         'views/record_3a_5122_views.xml',
         'views/record_3a_513_views.xml',
         'views/record_3a_541_views.xml',
         'views/record_3a_551_views.xml',
+        'views/record_3a_622_views.xml',
+        'views/record_3a_623_views.xml',
+        'views/record_3a_631_views.xml',
 
         # This line must be last (after all other view files)
         'views/banpt_report_generator.xml'

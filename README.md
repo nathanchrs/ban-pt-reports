@@ -78,7 +78,7 @@ Check changes first by running a Git diff before committing.
 
 A pgAdmin 4 container is provided on port 5050. Use `odoo` as the username and password.
 After login, add new server. Use `postgres` as the hostname, `odoo` as the user and password.
-Note: the pgAdmin instance can't be used for backup or restore since the PostgreSQL binaries are installed in a separate container.
+Note: to use the pgAdmin instance for backup or restore, add `/usr/bin` as the PostgreSQL binary path in the `Preferences` menu in pgAdmin. Exported files are in the `/var/lib/pgadmin/storage/odoo` directory in the `pgadmin` container by default. Use `docker cp <PGADMIN_CONTAINER_NAME>:/var/lib/pgadmin/storage/odoo/<FILE_NAME> <DESTINATION_FILE_NAME>` to copy exported files from the container to the host.
 
 ### Restore/Import sample DB to the PostgreSQL container
 
@@ -93,3 +93,6 @@ Note: the pgAdmin instance can't be used for backup or restore since the Postgre
 - Set correct dosen prodi IDs on `prodi` field of `hr.employee` model
 - Add `gelar` field in `itb.hr_education` model
 
+### Identitas
+- Add missing fields to `itb_academic_program`
+- Add table recording akreditasi BAN-PT results for each prodi

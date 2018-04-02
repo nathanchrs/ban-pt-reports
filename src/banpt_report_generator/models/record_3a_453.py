@@ -11,9 +11,12 @@ class Record_3A_453(models.Model):
     jenis_kegiatan = fields.Char(string='Jenis Kegiatan')
     tempat = fields.Char(string='Tempat')
     tahun = fields.Char(string='Tahun')
-    sebagai_penyaji = fields.Char(string='Sebagai Penyaji')
-    sebagai_peserta = fields.Char(string='Sebagai Peserta')
+    sebagai_penyaji = fields.Boolean(string='Sebagai Penyaji')
+    sebagai_peserta = fields.Boolean(string='Sebagai Peserta')
 
     # The report this record belongs to
     report = fields.Many2one(comodel_name='banpt_report_generator.report')
     report_refresh_date = fields.Datetime(related='report.refresh_date')
+
+def refresh(reports):
+    pass

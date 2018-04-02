@@ -11,7 +11,7 @@ class Record_3A_432(models.Model):
     nidn = fields.Char(string='NIDN', required=True)
     tanggal_lahir = fields.Date(string='Tanggal lahir')
     jabatan = fields.Char(string='Jabatan')
-    sertifikasi = fields.Char(string='Sertifikasi (Ya/Tidak)')
+    sertifikasi = fields.Boolean(string='Sertifikasi (Ya/Tidak)')
     asal_pt_s1 = fields.Char(string='Asal PT S1')
     bidang_keahlian_s1 = fields.Char(string='Bidang keahlian S1')
     gelar_s1 = fields.Char(string='Gelar S1')
@@ -25,3 +25,6 @@ class Record_3A_432(models.Model):
     # The report this record belongs to
     report = fields.Many2one(comodel_name='banpt_report_generator.report')
     report_refresh_date = fields.Datetime(related='report.refresh_date')
+
+def refresh(reports):
+    pass

@@ -12,8 +12,11 @@ class Record_3A_513(models.Model):
     nama_mk = fields.Text(string='Nama Mata Kuliah', required=True)
     bobot_sks = fields.Integer(string='Bobot SKS', required=True)
     bobot_tugas = fields.Char(string='Bobot Tugas')
-    unit_jur_fak_penyelenggara = fields.Char(string='Unit/Jurusan/Fakultas Penyelenggara', required=True)
+    unit_penyelenggara = fields.Char(string='Unit/Jurusan/Fakultas Penyelenggara', required=True)
 
     # The report this record belongs to
     report = fields.Many2one(comodel_name='banpt_report_generator.report')
     report_refresh_date = fields.Datetime(related='report.refresh_date')
+
+def refresh(reports):
+    pass

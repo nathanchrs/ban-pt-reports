@@ -8,6 +8,27 @@ from . import record_3a_311
 from . import record_3a_312
 from . import record_3a_314
 from . import record_3a_331
+from . import record_3a_431
+from . import record_3a_432
+from . import record_3a_433
+from . import record_3a_434
+from . import record_3a_435
+from . import record_3a_441
+from . import record_3a_442
+from . import record_3a_451
+from . import record_3a_452
+from . import record_3a_453
+from . import record_3a_454
+from . import record_3a_455
+from . import record_3a_461
+from . import record_3a_5121
+from . import record_3a_5122
+from . import record_3a_513
+from . import record_3a_541
+from . import record_3a_551
+from . import record_3a_622
+from . import record_3a_623
+from . import record_3a_631
 
 class Report(models.Model):
     _name = 'banpt_report_generator.report'
@@ -20,12 +41,6 @@ class Report(models.Model):
 
     refresh_date = fields.Datetime(string='Waktu pemutakhiran terakhir', default=fields.datetime.now())
 
-    Record_3A_454 = fields.One2many(comodel_name='banpt_report_generator.Record_3A_454', inverse_name='report')
-    Record_3A_455 = fields.One2many(comodel_name='banpt_report_generator.Record_3A_455', inverse_name='report')
-    Record_3A_461 = fields.One2many(comodel_name='banpt_report_generator.Record_3A_461', inverse_name='report')
-    Record_3A_622 = fields.One2many(comodel_name='banpt_report_generator.Record_3A_622', inverse_name='report')
-    Record_3A_623 = fields.One2many(comodel_name='banpt_report_generator.Record_3A_623', inverse_name='report')
-    Record_3A_631 = fields.One2many(comodel_name='banpt_report_generator.Record_3A_631', inverse_name='report')
     dosen = fields.One2many(comodel_name='banpt_report_generator.dosen', inverse_name='report')
     identitas = fields.One2many(comodel_name='banpt_report_generator.identitas', inverse_name='report')
     pengisi = fields.One2many(comodel_name='banpt_report_generator.pengisi', inverse_name='report')
@@ -43,11 +58,17 @@ class Report(models.Model):
     record_3a_451 = fields.One2many(comodel_name='banpt_report_generator.record_3a_451', inverse_name='report')
     record_3a_452 = fields.One2many(comodel_name='banpt_report_generator.record_3a_452', inverse_name='report')
     record_3a_453 = fields.One2many(comodel_name='banpt_report_generator.record_3a_453', inverse_name='report')
+    record_3a_454 = fields.One2many(comodel_name='banpt_report_generator.record_3a_454', inverse_name='report')
+    record_3a_455 = fields.One2many(comodel_name='banpt_report_generator.record_3a_455', inverse_name='report')
+    record_3a_461 = fields.One2many(comodel_name='banpt_report_generator.record_3a_461', inverse_name='report')
     record_3a_5121 = fields.One2many(comodel_name='banpt_report_generator.record_3a_5121', inverse_name='report')
     record_3a_5122 = fields.One2many(comodel_name='banpt_report_generator.record_3a_5122', inverse_name='report')
     record_3a_513 = fields.One2many(comodel_name='banpt_report_generator.record_3a_513', inverse_name='report')
     record_3a_541 = fields.One2many(comodel_name='banpt_report_generator.record_3a_541', inverse_name='report')
     record_3a_551 = fields.One2many(comodel_name='banpt_report_generator.record_3a_551', inverse_name='report')
+    record_3a_622 = fields.One2many(comodel_name='banpt_report_generator.record_3a_622', inverse_name='report')
+    record_3a_623 = fields.One2many(comodel_name='banpt_report_generator.record_3a_623', inverse_name='report')
+    record_3a_631 = fields.One2many(comodel_name='banpt_report_generator.record_3a_631', inverse_name='report')
 
     @api.multi
     def write(self, values):
@@ -62,6 +83,7 @@ class Report(models.Model):
 
     @api.multi
     def refresh(self):
+        "Load or refresh report data from iBOS, then update the refresh_date."
 
         dosen.refresh(self)
         identitas.refresh(self)
@@ -70,5 +92,26 @@ class Report(models.Model):
         record_3a_312.refresh(self)
         record_3a_314.refresh(self)
         record_3a_331.refresh(self)
+        record_3a_431.refresh(self)
+        record_3a_432.refresh(self)
+        record_3a_433.refresh(self)
+        record_3a_434.refresh(self)
+        record_3a_435.refresh(self)
+        record_3a_441.refresh(self)
+        record_3a_442.refresh(self)
+        record_3a_451.refresh(self)
+        record_3a_452.refresh(self)
+        record_3a_453.refresh(self)
+        record_3a_454.refresh(self)
+        record_3a_455.refresh(self)
+        record_3a_461.refresh(self)
+        record_3a_5121.refresh(self)
+        record_3a_5122.refresh(self)
+        record_3a_513.refresh(self)
+        record_3a_541.refresh(self)
+        record_3a_551.refresh(self)
+        record_3a_622.refresh(self)
+        record_3a_623.refresh(self)
+        record_3a_631.refresh(self)
 
         self.write({'refresh_date': fields.datetime.now()})

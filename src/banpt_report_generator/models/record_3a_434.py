@@ -11,9 +11,12 @@ class Record_3A_434(models.Model):
     kode_matkul = fields.Char(string='Kode Mata Kuliah')
     nama_matkul = fields.Char(string='Nama Mata Kuliah')
     jumlah_sks_matkul = fields.Integer(string='Jumlah SKS')
-    jumlah_pertemuan_terencana_matkul = fields.Integer(string='Jumlah Pertemuan : Direncanakan')
-    jumlah_pertemuan_terlaksana_matkul = fields.Integer(string='Jumlah Pertemuan : Dilaksanakan')
+    jumlah_pertemuan_terencana_matkul = fields.Integer(string='Jumlah Pertemuan Direncanakan')
+    jumlah_pertemuan_terlaksana_matkul = fields.Integer(string='Jumlah Pertemuan Dilaksanakan')
 
     # The report this record belongs to
     report = fields.Many2one(comodel_name='banpt_report_generator.report')
     report_refresh_date = fields.Datetime(related='report.refresh_date')
+
+def refresh(reports):
+    pass
