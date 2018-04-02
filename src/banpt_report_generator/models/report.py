@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from . import dosen
+from . import identitas
+from . import pengisi
+from . import record_3a_311
+from . import record_3a_312
+from . import record_3a_314
+from . import record_3a_331
 
 class Report(models.Model):
     _name = 'banpt_report_generator.report'
@@ -8,7 +15,7 @@ class Report(models.Model):
     name = fields.Char(string='Judul', required=True)
     state = fields.Selection(string='Status', required=True, selection=[('pending_review', 'Menunggu review'), ('approved', 'Disetujui')], default='pending_review')
     year = fields.Selection(string='Tahun', required=True, selection=[(year, str(year)) for year in range(2010, 2050)])
-    prodi = fields.Char(string='Prodi', required=True)
+    prodi = fields.Many2one(string='Prodi', required=True, comodel_name='itb.academic_program')
     description = fields.Text(string='Keterangan')
 
     refresh_date = fields.Datetime(string='Waktu pemutakhiran terakhir', default=fields.datetime.now())
@@ -56,6 +63,12 @@ class Report(models.Model):
     @api.multi
     def refresh(self):
 
-        # TODO: generate reports here based on year and prodi
+        dosen.refresh(self)
+        identitas.refresh(self)
+        pengisi.refresh(self)
+        record_3a_311.refresh(self)
+        record_3a_312.refresh(self)
+        record_3a_314.refresh(self)
+        record_3a_331.refresh(self)
 
         self.write({'refresh_date': fields.datetime.now()})
