@@ -16,5 +16,10 @@ pipeline {
         sh 'zip -r banpt_report_generator.zip src/banpt_report_generator'
       }
     }
+    stage('Archive artifact') {
+      steps {
+        archiveArtifacts 'banpt_report_generator.zip'
+      }
+    }
   }
 }
