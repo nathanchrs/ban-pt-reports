@@ -68,6 +68,8 @@ To run tests, run `docker-compose -f docker-compose.test.yml up --abort-on-conta
 
 For convenience, to see only relevant test output, use `docker-compose -f docker-compose.test.yml up --abort-on-container-exit | grep banpt_report_generator`.
 
+For automated testing, to return with a non-zero exit code on test failure, use `docker-compose -f docker-compose.test.yml up --abort-on-container-exit | grep FAIL; test $? -eq 1`.
+
 ### Code generator
 
 Automatically create views, imports, manifest, and model access files from model files.
