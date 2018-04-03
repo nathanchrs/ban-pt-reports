@@ -103,3 +103,6 @@ ENV/
 # iBOS modules/dependencies
 /src/itb_academic
 /src/itb_hr
+
+# Build artifact
+/banpt_report_generator.zip
