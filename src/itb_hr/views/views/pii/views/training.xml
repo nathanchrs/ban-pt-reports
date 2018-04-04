@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="pii_training_search_view" model="ir.ui.view">
+			<field name="name">pii_training_search</field>
+			<field name="model">pii.training</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="partner_id" string='Anggota'/>
+					<field name="name" />
+					<group expand="0" string="Group By">
+						<filter name="date" string="Tahun" context="{'group_by': 'date:year'}"/>
+						<filter name="provider" string="Lembaga" context="{'group_by': 'provider'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record id="pii_training_graph_view" model="ir.ui.view">
+			<field name="name">pii_training_graph</field>
+			<field name="model">pii.training</field>
+			<field name="arch" type="xml">
+				<graph type="pivot">
+					<field name="date" interval="year" type="col" />
+					<field name="provider" type="row" />
+				</graph>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="pii_training_list_view">
+			<field name="name">pii_training_list</field>
+			<field name="model">pii.training</field>
+			<field name="arch" type="xml">
+				<tree string="training List">
+					<field name="name" />
+					<field name="date" />
+					<field name="provider" />
+					<field name="credit" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="pii_training_form_view">
+			<field name="name">pii_training_form</field>
+			<field name="model">pii.training</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="partner_id" placeholder="Anggota" /></h1>
+						<group>
+							<group>
+								<field name="name" />
+								<field name="provider" />
+								<field name="date" />
+								<field name="credit" />
+							</group>
+							<group>
+								<field name="note" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

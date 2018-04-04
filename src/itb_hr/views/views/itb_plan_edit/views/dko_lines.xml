@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="dko_taken_search_view">
+			<field name="name">dko_taken_search</field>
+			<field name="model">itb.plan_dko_taken</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="actual_id" string="All" filter_domain="['|',('unit_id','ilike',self),('initiative','ilike',self),('program_id','ilike',self),('activity_id','ilike',self),('subactivity','ilike',self)]"/>
+					<filter name="unit" string="Unit" domain="[('unit_id','ilike','self')]" />
+					<filter name="program" string="Program" domain="[('program_id','ilike','self')]" />
+					<filter name="activity" string="Activity" domain="[('activity_id','ilike','self')]" />
+					<filter name="subactivity" string="Subactivity" domain="[('subactivity_id','ilike',self)]" />
+					<group expand="0" string="Group By">
+						<filter string="Unit" domain="[]" context="{'group_by':'unit_id'}" />
+						<filter string="Program" domain="[]" context="{'group_by':'program_id'}" />
+						<filter string="Activity" domain="[]" context="{'group_by':'activity_id'}" />
+						<filter string="Sub Activity" domain="[]" context="{'group_by':'subactivity_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<!--record model="ir.ui.view" id="tax_graph_view">
+			<field name="name">tax_graph</field>
+			<field name="model">itb.plan_tax</field>
+			<field name="arch" type="xml">
+				<graph type="pivot">
+					<field name="plan_id" type="row" />
+					<field name="plan_line_id" type="row" />
+					<field name="type" type="col" />
+					<field name="day" interval="month" type="col" />
+					<field name="total" type="measure" />
+					<field name="used" type="measure" />
+					<field name="available" type="measure" />
+					<field name="paid" type="measure" />
+				</graph>
+			</field>
+		</record-->
+		<record model="ir.ui.view" id="dko_taken_list_view">
+            <field name="name">taken_list</field>
+            <field name="model">itb.plan_dko_taken</field>
+            <field name="arch" type="xml">
+                <tree string="Dkon Taken List">
+					<field name="dko_taken_id" string="Taken" />
+					<field name="actual_id" string="Actual" />
+					<field name="initiative" string="Initiative" />
+					<field name="tot_taken" string="Total" />
+					<field name="unit_id" string="Unit" />
+					<field name="used" string="Used" />
+					<field name="avai_taken" string="Available" />
+					<field name="month" string="Month" />
+					<field name="program_id" string="Program" />
+					<field name="activity_id" string="Activity" />
+					<field name="subactivity_id" string="Subactivity" />
+				</tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="dko_taken_form_view">
+            <field name="name">dko_taken_form</field>
+            <field name="model">itb.plan_dko_taken</field>
+            <field name="arch" type="xml">
+                <form>
+					<sheet>
+						<h1><field name="dko_taken_id" /></h1>
+						<group>
+							<group>
+								<field name="actual_id" string="actual" />
+								<field name="initiative" string="Initiative" />
+								<field name="tot_taken" string="total" />
+								<field name="unit_id" string="Unit" />
+								<field name="used" string="Used" />
+							</group>
+							<group>
+								<field name="avai_taken" string="Available" />
+								<field name="month" string="Month" />
+								<field name="program_id" string="Program" />
+								<field name="activity_id" string="Activity" />
+								<field name="subactivity_id" string="Subactivity" />
+							</group>
+                		</group>
+					</sheet>
+				</form>
+            </field>
+        </record>
+		<!--record id="view_report_spending_actual_dko_pivot" model="ir.ui.view">
+            <field name="name">spending_actual_dko_pivot</field>
+            <field name="model">itb.plan_spending_actual_dko</field>
+            <field name="arch" type="xml">
+                <pivot string="spending Actual Dko">
+                    <field name="day" interval="month" type="col" />
+                    <field name="unit_id" type="row"/>
+					<field name="total" type="measure" />
+					<field name="used" type="measure" />
+					<field name="available" type="measure" />
+				</pivot>
+            </field>
+        </record-->
+	</data>
+</odoo>

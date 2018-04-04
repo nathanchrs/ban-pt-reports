@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="employment_search_view" model="ir.ui.view">
+			<field name="name">employment_search</field>
+			<field name="model">itb.hr_employment</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="employee_id" string='Employee Name'/>
+					<field name="name" string='Employment Type'/>
+					<field name="research_group_id" string='Research group' filter_domain="['|',('employee_id.name','ilike',self),('research_group_id','ilike',self)]"/>
+					<separator/>
+					<filter name="bhmn" string="BHMN" domain="[('name','like','BHMN')]"/>
+					<filter name="pns" string="PNS" domain="[('name','ilike','PNS')]"/>
+					<group expand="0" string="Group By">
+						<filter name="name" string="Type" context="{'group_by': 'name'}"/>
+						<filter name="start_year" string="Start Year" context="{'group_by': 'start:year'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record id="employment_graph_view" model="ir.ui.view">
+			<field name="name">employment_graph</field>
+			<field name="model">itb.hr_employment</field>
+			<field name="arch" type="xml">
+				<graph type="bar" stacked="True">
+					<field name="start" interval="year" />
+					<field name="name" />
+				</graph>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="employment_list_view">
+			<field name="name">employment_list</field>
+			<field name="model">itb.hr_employment</field>
+			<field name="arch" type="xml">
+				<tree string="Employment List">
+					<field name="employee_id" />
+					<field name="name" />
+					<field name="reference" />
+					<field name="signed_by" />
+					<field name="decision" />
+					<field name="start" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="employment_form_view">
+			<field name="name">employment_form</field>
+			<field name="model">itb.hr_employment</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="employee_id" /></h1>
+						<group>
+							<group string="Employment">
+								<field name="name" />
+                                <field name="decision" />
+								<field name="signed_by" />
+								<field name="reference" />
+							</group>
+							<group string="Period">
+								<field name="start" />
+                                <field name="finish" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

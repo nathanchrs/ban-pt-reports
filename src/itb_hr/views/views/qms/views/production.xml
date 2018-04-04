@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="production_list_view" model="ir.ui.view">
+		<field name="name">production_list</field>
+		<field name="model">qms.production</field>
+		<field name="arch" type="xml">
+			<tree string="production List">
+				<field name="name" />
+				<field name="date" />
+				<field name="product_id" />
+				<field name="sku" />
+				<field name="quantity" />
+				<field name="reject" />
+				<field name="release" />
+				<field name="expire" />
+				<field name="state" />
+			</tree>
+		</field>
+	</record>
+	<record id="production_form_view" model="ir.ui.view" >
+		<field name="name">production_form</field>
+		<field name="model">qms.production</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>
+					<button name="create_coa" string="Create CoA" type="object" />
+					<field name="state" widget="statusbar" clickable="True" />
+				</header>
+				<sheet>
+                    <div class="oe_title">
+                        <h1><field name="product_id" placeholder="Product"/></h1>
+                    </div>
+					<group>
+						<group>
+							<field name="sku" />
+							<field name="name" />
+							<field name="batch" />
+							<field name="date" />
+							<field name="site_id" />
+							<field name="coa" invisible="1" />
+						</group>
+						<group>
+                            <field name="quantity" />
+							<field name="reject" />
+							<field name="release" />
+							<field name="expire" />
+							<field name="analysis_date" attrs="{'invisible':[('coa','=',False)]}"/>
+						</group>
+                    </group>
+					<field name="coa_ids" context="{'production_id':active_id}" attrs="{'invisible':[('coa','=',False)]}">
+						<tree editable="bottom">
+							<field name="parameter_id" readonly="1" />
+							<field name="specification" readonly="1" />
+							<field name="result" />
+							<field name="comply" />
+						</tree>
+					</field>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="production_search_view" model="ir.ui.view">
+		<field name="name">production_search</field>
+		<field name="model">qms.production</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name" string='PO Ref' />
+				<field name="product_id" string='Product' filter_domain="['|',('product_id.name','ilike',self),('sku.name','ilike',self)]"/>
+				<filter name="coa" string="Has CoA" domain="[('coa_ids','!=',False)]"/>
+				<filter name="nc" string="Non-Comply" domain="[('nc','!=',0)]"/>
+				<filter name="reject" string="Rejected" domain="[('reject','!=',0)]"/>
+				<filter name="expire" string="Expired" domain="[('expire','&lt;=',current_date)]"/>
+				<group expand="0" string="Group By">
+					<filter name="product" string="Product" context="{'group_by': 'product_id'}"/>
+					<filter name="sku" string="SKU" context="{'group_by': 'sku'}"/>
+					<filter name="month" string="Month" context="{'group_by': 'date:month'}"/>
+				</group>
+			</search>
+		</field>
+	</record>
+	<record id="production_graph_view" model="ir.ui.view">
+		<field name="name">production_graph</field>
+		<field name="model">qms.production</field>
+		<field name="arch" type="xml">
+			<graph type="bar" stacked="True">
+				<field name="date" interval="month" type="row" />
+				<field name="sku" type="col" />
+			</graph>
+		</field>
+	</record>
+	<record id="production_pivot_view" model="ir.ui.view">
+		<field name="name">production_pivot</field>
+		<field name="model">qms.production</field>
+		<field name="arch" type="xml">
+			<pivot>
+				<field name="date" type="col" interval="month" />
+				<field name="product_id" type="row" />
+				<field name="sku" type="row" />
+			</pivot>
+		</field>
+	</record>		
+	<record id="production_calendar_view" model="ir.ui.view">
+        <field name="name">production_calendar</field>
+        <field name="model">qms.production</field>
+        <field name="arch" type="xml">
+            <calendar string="Production Calendar" date_start="date" color="product_id">
+                <field name="name"/>
+				<field name="sku"/>
+            </calendar>
+        </field>
+    </record>
+</odoo>

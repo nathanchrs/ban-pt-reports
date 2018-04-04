@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<act_window id="tnix.secapa_wizard_action" name="Alokasi SECAPA" src_model="tnix.kandidat" res_model="tnix.secapa_wizard" view_mode="form" target="new" multi="True" groups="base.group_erp_manager" />
+		
+        <record id="secapa_wizard_view" model="ir.ui.view">
+			<field name="name">Alokasi SECAPA</field>
+			<field name="model">tnix.secapa_wizard</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+                        <field name="secapa" />
+					</group>
+					<footer>
+                        <button type="object" name="alokasi" string="Alokasikan" class="oe_highlight" attrs="{'invisible':[('secapa','=',False)]}" />
+                    	<button special="cancel" string="Cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+	</data>
+</odoo>

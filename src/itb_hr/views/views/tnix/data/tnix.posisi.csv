@@ -1,0 +1,249 @@
+id,nama,kode,kesatuan_id/id,kecabangan_id/id,kuota
+tnix.posisi_dam_xiii_inf,Infanteri DAM XIII,INF-DAM XIII,tnix.kesatuan_dam_xiii,tnix.inf,2
+tnix.posisi_dam_xiii_kav,Kavaleri DAM XIII,KAV-DAM XIII,tnix.kesatuan_dam_xiii,tnix.kav,2
+tnix.posisi_dam_xiii_arm,Artileri Medan DAM XIII,ARM-DAM XIII,tnix.kesatuan_dam_xiii,tnix.arm,2
+tnix.posisi_dam_xiii_arh,Artileri Pertahanan Udara DAM XIII,ARH-DAM XIII,tnix.kesatuan_dam_xiii,tnix.arh,2
+tnix.posisi_dam_xiii_czi,Zeni DAM XIII,CZI-DAM XIII,tnix.kesatuan_dam_xiii,tnix.czi,2
+tnix.posisi_dam_xiii_chb,Perhubungan DAM XIII,CHB-DAM XIII,tnix.kesatuan_dam_xiii,tnix.chb,2
+tnix.posisi_dam_xiii_cpl,Peralatan DAM XIII,CPL-DAM XIII,tnix.kesatuan_dam_xiii,tnix.cpl,2
+tnix.posisi_dam_xiii_cba,Perbekalan & Angkutan DAM XIII,CBA-DAM XIII,tnix.kesatuan_dam_xiii,tnix.cba,2
+tnix.posisi_dam_xiii_ckm,Kesehatan Militer DAM XIII,CKM-DAM XIII,tnix.kesatuan_dam_xiii,tnix.ckm,2
+tnix.posisi_dam_xiii_cpm,Polisi Militer DAM XIII,CPM-DAM XIII,tnix.kesatuan_dam_xiii,tnix.cpm,2
+tnix.posisi_dam_xiii_caj,Ajudan Jenderal DAM XIII,CAJ-DAM XIII,tnix.kesatuan_dam_xiii,tnix.caj,2
+tnix.posisi_dam_xiii_ctp,Topografi DAM XIII,CTP-DAM XIII,tnix.kesatuan_dam_xiii,tnix.ctp,2
+tnix.posisi_dam_xiii_chk,Hukum DAM XIII,CHK-DAM XIII,tnix.kesatuan_dam_xiii,tnix.chk,2
+tnix.posisi_dam_xiii_cku,Keuangan DAM XIII,CKU-DAM XIII,tnix.kesatuan_dam_xiii,tnix.cku,2
+tnix.posisi_dam_xvi_inf,Infanteri DAM XVI,INF-DAM XVI,tnix.kesatuan_dam_xvi,tnix.inf,2
+tnix.posisi_dam_xvi_kav,Kavaleri DAM XVI,KAV-DAM XVI,tnix.kesatuan_dam_xvi,tnix.kav,2
+tnix.posisi_dam_xvi_arm,Artileri Medan DAM XVI,ARM-DAM XVI,tnix.kesatuan_dam_xvi,tnix.arm,2
+tnix.posisi_dam_xvi_arh,Artileri Pertahanan Udara DAM XVI,ARH-DAM XVI,tnix.kesatuan_dam_xvi,tnix.arh,2
+tnix.posisi_dam_xvi_czi,Zeni DAM XVI,CZI-DAM XVI,tnix.kesatuan_dam_xvi,tnix.czi,2
+tnix.posisi_dam_xvi_chb,Perhubungan DAM XVI,CHB-DAM XVI,tnix.kesatuan_dam_xvi,tnix.chb,2
+tnix.posisi_dam_xvi_cpl,Peralatan DAM XVI,CPL-DAM XVI,tnix.kesatuan_dam_xvi,tnix.cpl,2
+tnix.posisi_dam_xvi_cba,Perbekalan & Angkutan DAM XVI,CBA-DAM XVI,tnix.kesatuan_dam_xvi,tnix.cba,2
+tnix.posisi_dam_xvi_ckm,Kesehatan Militer DAM XVI,CKM-DAM XVI,tnix.kesatuan_dam_xvi,tnix.ckm,2
+tnix.posisi_dam_xvi_cpm,Polisi Militer DAM XVI,CPM-DAM XVI,tnix.kesatuan_dam_xvi,tnix.cpm,2
+tnix.posisi_dam_xvi_caj,Ajudan Jenderal DAM XVI,CAJ-DAM XVI,tnix.kesatuan_dam_xvi,tnix.caj,2
+tnix.posisi_dam_xvi_ctp,Topografi DAM XVI,CTP-DAM XVI,tnix.kesatuan_dam_xvi,tnix.ctp,2
+tnix.posisi_dam_xvi_chk,Hukum DAM XVI,CHK-DAM XVI,tnix.kesatuan_dam_xvi,tnix.chk,2
+tnix.posisi_dam_xvi_cku,Keuangan DAM XVI,CKU-DAM XVI,tnix.kesatuan_dam_xvi,tnix.cku,2
+tnix.posisi_dam_xvii_inf,Infanteri DAM XVII,INF-DAM XVII,tnix.kesatuan_dam_xvii,tnix.inf,2
+tnix.posisi_dam_xvii_kav,Kavaleri DAM XVII,KAV-DAM XVII,tnix.kesatuan_dam_xvii,tnix.kav,2
+tnix.posisi_dam_xvii_arm,Artileri Medan DAM XVII,ARM-DAM XVII,tnix.kesatuan_dam_xvii,tnix.arm,2
+tnix.posisi_dam_xvii_arh,Artileri Pertahanan Udara DAM XVII,ARH-DAM XVII,tnix.kesatuan_dam_xvii,tnix.arh,2
+tnix.posisi_dam_xvii_czi,Zeni DAM XVII,CZI-DAM XVII,tnix.kesatuan_dam_xvii,tnix.czi,2
+tnix.posisi_dam_xvii_chb,Perhubungan DAM XVII,CHB-DAM XVII,tnix.kesatuan_dam_xvii,tnix.chb,2
+tnix.posisi_dam_xvii_cpl,Peralatan DAM XVII,CPL-DAM XVII,tnix.kesatuan_dam_xvii,tnix.cpl,2
+tnix.posisi_dam_xvii_cba,Perbekalan & Angkutan DAM XVII,CBA-DAM XVII,tnix.kesatuan_dam_xvii,tnix.cba,2
+tnix.posisi_dam_xvii_ckm,Kesehatan Militer DAM XVII,CKM-DAM XVII,tnix.kesatuan_dam_xvii,tnix.ckm,2
+tnix.posisi_dam_xvii_cpm,Polisi Militer DAM XVII,CPM-DAM XVII,tnix.kesatuan_dam_xvii,tnix.cpm,2
+tnix.posisi_dam_xvii_caj,Ajudan Jenderal DAM XVII,CAJ-DAM XVII,tnix.kesatuan_dam_xvii,tnix.caj,2
+tnix.posisi_dam_xvii_ctp,Topografi DAM XVII,CTP-DAM XVII,tnix.kesatuan_dam_xvii,tnix.ctp,2
+tnix.posisi_dam_xvii_chk,Hukum DAM XVII,CHK-DAM XVII,tnix.kesatuan_dam_xvii,tnix.chk,2
+tnix.posisi_dam_xvii_cku,Keuangan DAM XVII,CKU-DAM XVII,tnix.kesatuan_dam_xvii,tnix.cku,2
+tnix.posisi_dam_xviii_inf,Infanteri DAM XVIII,INF-DAM XVIII,tnix.kesatuan_dam_xviii,tnix.inf,2
+tnix.posisi_dam_xviii_kav,Kavaleri DAM XVIII,KAV-DAM XVIII,tnix.kesatuan_dam_xviii,tnix.kav,2
+tnix.posisi_dam_xviii_arm,Artileri Medan DAM XVIII,ARM-DAM XVIII,tnix.kesatuan_dam_xviii,tnix.arm,2
+tnix.posisi_dam_xviii_arh,Artileri Pertahanan Udara DAM XVIII,ARH-DAM XVIII,tnix.kesatuan_dam_xviii,tnix.arh,2
+tnix.posisi_dam_xviii_czi,Zeni DAM XVIII,CZI-DAM XVIII,tnix.kesatuan_dam_xviii,tnix.czi,2
+tnix.posisi_dam_xviii_chb,Perhubungan DAM XVIII,CHB-DAM XVIII,tnix.kesatuan_dam_xviii,tnix.chb,2
+tnix.posisi_dam_xviii_cpl,Peralatan DAM XVIII,CPL-DAM XVIII,tnix.kesatuan_dam_xviii,tnix.cpl,2
+tnix.posisi_dam_xviii_cba,Perbekalan & Angkutan DAM XVIII,CBA-DAM XVIII,tnix.kesatuan_dam_xviii,tnix.cba,2
+tnix.posisi_dam_xviii_ckm,Kesehatan Militer DAM XVIII,CKM-DAM XVIII,tnix.kesatuan_dam_xviii,tnix.ckm,2
+tnix.posisi_dam_xviii_cpm,Polisi Militer DAM XVIII,CPM-DAM XVIII,tnix.kesatuan_dam_xviii,tnix.cpm,2
+tnix.posisi_dam_xviii_caj,Ajudan Jenderal DAM XVIII,CAJ-DAM XVIII,tnix.kesatuan_dam_xviii,tnix.caj,2
+tnix.posisi_dam_xviii_ctp,Topografi DAM XVIII,CTP-DAM XVIII,tnix.kesatuan_dam_xviii,tnix.ctp,2
+tnix.posisi_dam_xviii_chk,Hukum DAM XVIII,CHK-DAM XVIII,tnix.kesatuan_dam_xviii,tnix.chk,2
+tnix.posisi_dam_xviii_cku,Keuangan DAM XVIII,CKU-DAM XVIII,tnix.kesatuan_dam_xviii,tnix.cku,2
+tnix.posisi_dam_im_inf,Infanteri DAM IM,INF-DAM IM,tnix.kesatuan_dam_im,tnix.inf,2
+tnix.posisi_dam_im_kav,Kavaleri DAM IM,KAV-DAM IM,tnix.kesatuan_dam_im,tnix.kav,2
+tnix.posisi_dam_im_arm,Artileri Medan DAM IM,ARM-DAM IM,tnix.kesatuan_dam_im,tnix.arm,2
+tnix.posisi_dam_im_arh,Artileri Pertahanan Udara DAM IM,ARH-DAM IM,tnix.kesatuan_dam_im,tnix.arh,2
+tnix.posisi_dam_im_czi,Zeni DAM IM,CZI-DAM IM,tnix.kesatuan_dam_im,tnix.czi,2
+tnix.posisi_dam_im_chb,Perhubungan DAM IM,CHB-DAM IM,tnix.kesatuan_dam_im,tnix.chb,2
+tnix.posisi_dam_im_cpl,Peralatan DAM IM,CPL-DAM IM,tnix.kesatuan_dam_im,tnix.cpl,2
+tnix.posisi_dam_im_cba,Perbekalan & Angkutan DAM IM,CBA-DAM IM,tnix.kesatuan_dam_im,tnix.cba,2
+tnix.posisi_dam_im_ckm,Kesehatan Militer DAM IM,CKM-DAM IM,tnix.kesatuan_dam_im,tnix.ckm,2
+tnix.posisi_dam_im_cpm,Polisi Militer DAM IM,CPM-DAM IM,tnix.kesatuan_dam_im,tnix.cpm,2
+tnix.posisi_dam_im_caj,Ajudan Jenderal DAM IM,CAJ-DAM IM,tnix.kesatuan_dam_im,tnix.caj,2
+tnix.posisi_dam_im_ctp,Topografi DAM IM,CTP-DAM IM,tnix.kesatuan_dam_im,tnix.ctp,2
+tnix.posisi_dam_im_chk,Hukum DAM IM,CHK-DAM IM,tnix.kesatuan_dam_im,tnix.chk,2
+tnix.posisi_dam_im_cku,Keuangan DAM IM,CKU-DAM IM,tnix.kesatuan_dam_im,tnix.cku,2
+tnix.posisi_dam_i_inf,Infanteri DAM I,INF-DAM I,tnix.kesatuan_dam_i,tnix.inf,2
+tnix.posisi_dam_i_kav,Kavaleri DAM I,KAV-DAM I,tnix.kesatuan_dam_i,tnix.kav,2
+tnix.posisi_dam_i_arm,Artileri Medan DAM I,ARM-DAM I,tnix.kesatuan_dam_i,tnix.arm,2
+tnix.posisi_dam_i_arh,Artileri Pertahanan Udara DAM I,ARH-DAM I,tnix.kesatuan_dam_i,tnix.arh,2
+tnix.posisi_dam_i_czi,Zeni DAM I,CZI-DAM I,tnix.kesatuan_dam_i,tnix.czi,2
+tnix.posisi_dam_i_chb,Perhubungan DAM I,CHB-DAM I,tnix.kesatuan_dam_i,tnix.chb,2
+tnix.posisi_dam_i_cpl,Peralatan DAM I,CPL-DAM I,tnix.kesatuan_dam_i,tnix.cpl,2
+tnix.posisi_dam_i_cba,Perbekalan & Angkutan DAM I,CBA-DAM I,tnix.kesatuan_dam_i,tnix.cba,2
+tnix.posisi_dam_i_ckm,Kesehatan Militer DAM I,CKM-DAM I,tnix.kesatuan_dam_i,tnix.ckm,2
+tnix.posisi_dam_i_cpm,Polisi Militer DAM I,CPM-DAM I,tnix.kesatuan_dam_i,tnix.cpm,2
+tnix.posisi_dam_i_caj,Ajudan Jenderal DAM I,CAJ-DAM I,tnix.kesatuan_dam_i,tnix.caj,2
+tnix.posisi_dam_i_ctp,Topografi DAM I,CTP-DAM I,tnix.kesatuan_dam_i,tnix.ctp,2
+tnix.posisi_dam_i_chk,Hukum DAM I,CHK-DAM I,tnix.kesatuan_dam_i,tnix.chk,2
+tnix.posisi_dam_i_cku,Keuangan DAM I,CKU-DAM I,tnix.kesatuan_dam_i,tnix.cku,2
+tnix.posisi_dam_ii_inf,Infanteri DAM II,INF-DAM II,tnix.kesatuan_dam_ii,tnix.inf,2
+tnix.posisi_dam_ii_kav,Kavaleri DAM II,KAV-DAM II,tnix.kesatuan_dam_ii,tnix.kav,2
+tnix.posisi_dam_ii_arm,Artileri Medan DAM II,ARM-DAM II,tnix.kesatuan_dam_ii,tnix.arm,2
+tnix.posisi_dam_ii_arh,Artileri Pertahanan Udara DAM II,ARH-DAM II,tnix.kesatuan_dam_ii,tnix.arh,2
+tnix.posisi_dam_ii_czi,Zeni DAM II,CZI-DAM II,tnix.kesatuan_dam_ii,tnix.czi,2
+tnix.posisi_dam_ii_chb,Perhubungan DAM II,CHB-DAM II,tnix.kesatuan_dam_ii,tnix.chb,2
+tnix.posisi_dam_ii_cpl,Peralatan DAM II,CPL-DAM II,tnix.kesatuan_dam_ii,tnix.cpl,2
+tnix.posisi_dam_ii_cba,Perbekalan & Angkutan DAM II,CBA-DAM II,tnix.kesatuan_dam_ii,tnix.cba,2
+tnix.posisi_dam_ii_ckm,Kesehatan Militer DAM II,CKM-DAM II,tnix.kesatuan_dam_ii,tnix.ckm,2
+tnix.posisi_dam_ii_cpm,Polisi Militer DAM II,CPM-DAM II,tnix.kesatuan_dam_ii,tnix.cpm,2
+tnix.posisi_dam_ii_caj,Ajudan Jenderal DAM II,CAJ-DAM II,tnix.kesatuan_dam_ii,tnix.caj,2
+tnix.posisi_dam_ii_ctp,Topografi DAM II,CTP-DAM II,tnix.kesatuan_dam_ii,tnix.ctp,2
+tnix.posisi_dam_ii_chk,Hukum DAM II,CHK-DAM II,tnix.kesatuan_dam_ii,tnix.chk,2
+tnix.posisi_dam_ii_cku,Keuangan DAM II,CKU-DAM II,tnix.kesatuan_dam_ii,tnix.cku,2
+tnix.posisi_dam_vi_inf,Infanteri DAM VI,INF-DAM VI,tnix.kesatuan_dam_vi,tnix.inf,2
+tnix.posisi_dam_vi_kav,Kavaleri DAM VI,KAV-DAM VI,tnix.kesatuan_dam_vi,tnix.kav,2
+tnix.posisi_dam_vi_arm,Artileri Medan DAM VI,ARM-DAM VI,tnix.kesatuan_dam_vi,tnix.arm,2
+tnix.posisi_dam_vi_arh,Artileri Pertahanan Udara DAM VI,ARH-DAM VI,tnix.kesatuan_dam_vi,tnix.arh,2
+tnix.posisi_dam_vi_czi,Zeni DAM VI,CZI-DAM VI,tnix.kesatuan_dam_vi,tnix.czi,2
+tnix.posisi_dam_vi_chb,Perhubungan DAM VI,CHB-DAM VI,tnix.kesatuan_dam_vi,tnix.chb,2
+tnix.posisi_dam_vi_cpl,Peralatan DAM VI,CPL-DAM VI,tnix.kesatuan_dam_vi,tnix.cpl,2
+tnix.posisi_dam_vi_cba,Perbekalan & Angkutan DAM VI,CBA-DAM VI,tnix.kesatuan_dam_vi,tnix.cba,2
+tnix.posisi_dam_vi_ckm,Kesehatan Militer DAM VI,CKM-DAM VI,tnix.kesatuan_dam_vi,tnix.ckm,2
+tnix.posisi_dam_vi_cpm,Polisi Militer DAM VI,CPM-DAM VI,tnix.kesatuan_dam_vi,tnix.cpm,2
+tnix.posisi_dam_vi_caj,Ajudan Jenderal DAM VI,CAJ-DAM VI,tnix.kesatuan_dam_vi,tnix.caj,2
+tnix.posisi_dam_vi_ctp,Topografi DAM VI,CTP-DAM VI,tnix.kesatuan_dam_vi,tnix.ctp,2
+tnix.posisi_dam_vi_chk,Hukum DAM VI,CHK-DAM VI,tnix.kesatuan_dam_vi,tnix.chk,2
+tnix.posisi_dam_vi_cku,Keuangan DAM VI,CKU-DAM VI,tnix.kesatuan_dam_vi,tnix.cku,2
+tnix.posisi_dam_vii_inf,Infanteri DAM VII,INF-DAM VII,tnix.kesatuan_dam_vii,tnix.inf,2
+tnix.posisi_dam_vii_kav,Kavaleri DAM VII,KAV-DAM VII,tnix.kesatuan_dam_vii,tnix.kav,2
+tnix.posisi_dam_vii_arm,Artileri Medan DAM VII,ARM-DAM VII,tnix.kesatuan_dam_vii,tnix.arm,2
+tnix.posisi_dam_vii_arh,Artileri Pertahanan Udara DAM VII,ARH-DAM VII,tnix.kesatuan_dam_vii,tnix.arh,2
+tnix.posisi_dam_vii_czi,Zeni DAM VII,CZI-DAM VII,tnix.kesatuan_dam_vii,tnix.czi,2
+tnix.posisi_dam_vii_chb,Perhubungan DAM VII,CHB-DAM VII,tnix.kesatuan_dam_vii,tnix.chb,2
+tnix.posisi_dam_vii_cpl,Peralatan DAM VII,CPL-DAM VII,tnix.kesatuan_dam_vii,tnix.cpl,2
+tnix.posisi_dam_vii_cba,Perbekalan & Angkutan DAM VII,CBA-DAM VII,tnix.kesatuan_dam_vii,tnix.cba,2
+tnix.posisi_dam_vii_ckm,Kesehatan Militer DAM VII,CKM-DAM VII,tnix.kesatuan_dam_vii,tnix.ckm,2
+tnix.posisi_dam_vii_cpm,Polisi Militer DAM VII,CPM-DAM VII,tnix.kesatuan_dam_vii,tnix.cpm,2
+tnix.posisi_dam_vii_caj,Ajudan Jenderal DAM VII,CAJ-DAM VII,tnix.kesatuan_dam_vii,tnix.caj,2
+tnix.posisi_dam_vii_ctp,Topografi DAM VII,CTP-DAM VII,tnix.kesatuan_dam_vii,tnix.ctp,2
+tnix.posisi_dam_vii_chk,Hukum DAM VII,CHK-DAM VII,tnix.kesatuan_dam_vii,tnix.chk,2
+tnix.posisi_dam_vii_cku,Keuangan DAM VII,CKU-DAM VII,tnix.kesatuan_dam_vii,tnix.cku,2
+tnix.posisi_dam_ix_inf,Infanteri DAM IX,INF-DAM IX,tnix.kesatuan_dam_ix,tnix.inf,2
+tnix.posisi_dam_ix_kav,Kavaleri DAM IX,KAV-DAM IX,tnix.kesatuan_dam_ix,tnix.kav,2
+tnix.posisi_dam_ix_arm,Artileri Medan DAM IX,ARM-DAM IX,tnix.kesatuan_dam_ix,tnix.arm,2
+tnix.posisi_dam_ix_arh,Artileri Pertahanan Udara DAM IX,ARH-DAM IX,tnix.kesatuan_dam_ix,tnix.arh,2
+tnix.posisi_dam_ix_czi,Zeni DAM IX,CZI-DAM IX,tnix.kesatuan_dam_ix,tnix.czi,2
+tnix.posisi_dam_ix_chb,Perhubungan DAM IX,CHB-DAM IX,tnix.kesatuan_dam_ix,tnix.chb,2
+tnix.posisi_dam_ix_cpl,Peralatan DAM IX,CPL-DAM IX,tnix.kesatuan_dam_ix,tnix.cpl,2
+tnix.posisi_dam_ix_cba,Perbekalan & Angkutan DAM IX,CBA-DAM IX,tnix.kesatuan_dam_ix,tnix.cba,2
+tnix.posisi_dam_ix_ckm,Kesehatan Militer DAM IX,CKM-DAM IX,tnix.kesatuan_dam_ix,tnix.ckm,2
+tnix.posisi_dam_ix_cpm,Polisi Militer DAM IX,CPM-DAM IX,tnix.kesatuan_dam_ix,tnix.cpm,2
+tnix.posisi_dam_ix_caj,Ajudan Jenderal DAM IX,CAJ-DAM IX,tnix.kesatuan_dam_ix,tnix.caj,2
+tnix.posisi_dam_ix_ctp,Topografi DAM IX,CTP-DAM IX,tnix.kesatuan_dam_ix,tnix.ctp,2
+tnix.posisi_dam_ix_chk,Hukum DAM IX,CHK-DAM IX,tnix.kesatuan_dam_ix,tnix.chk,2
+tnix.posisi_dam_ix_cku,Keuangan DAM IX,CKU-DAM IX,tnix.kesatuan_dam_ix,tnix.cku,2
+tnix.posisi_dam_xii_inf,Infanteri DAM XII,INF-DAM XII,tnix.kesatuan_dam_xii,tnix.inf,2
+tnix.posisi_dam_xii_kav,Kavaleri DAM XII,KAV-DAM XII,tnix.kesatuan_dam_xii,tnix.kav,2
+tnix.posisi_dam_xii_arm,Artileri Medan DAM XII,ARM-DAM XII,tnix.kesatuan_dam_xii,tnix.arm,2
+tnix.posisi_dam_xii_arh,Artileri Pertahanan Udara DAM XII,ARH-DAM XII,tnix.kesatuan_dam_xii,tnix.arh,2
+tnix.posisi_dam_xii_czi,Zeni DAM XII,CZI-DAM XII,tnix.kesatuan_dam_xii,tnix.czi,2
+tnix.posisi_dam_xii_chb,Perhubungan DAM XII,CHB-DAM XII,tnix.kesatuan_dam_xii,tnix.chb,2
+tnix.posisi_dam_xii_cpl,Peralatan DAM XII,CPL-DAM XII,tnix.kesatuan_dam_xii,tnix.cpl,2
+tnix.posisi_dam_xii_cba,Perbekalan & Angkutan DAM XII,CBA-DAM XII,tnix.kesatuan_dam_xii,tnix.cba,2
+tnix.posisi_dam_xii_ckm,Kesehatan Militer DAM XII,CKM-DAM XII,tnix.kesatuan_dam_xii,tnix.ckm,2
+tnix.posisi_dam_xii_cpm,Polisi Militer DAM XII,CPM-DAM XII,tnix.kesatuan_dam_xii,tnix.cpm,2
+tnix.posisi_dam_xii_caj,Ajudan Jenderal DAM XII,CAJ-DAM XII,tnix.kesatuan_dam_xii,tnix.caj,2
+tnix.posisi_dam_xii_ctp,Topografi DAM XII,CTP-DAM XII,tnix.kesatuan_dam_xii,tnix.ctp,2
+tnix.posisi_dam_xii_chk,Hukum DAM XII,CHK-DAM XII,tnix.kesatuan_dam_xii,tnix.chk,2
+tnix.posisi_dam_xii_cku,Keuangan DAM XII,CKU-DAM XII,tnix.kesatuan_dam_xii,tnix.cku,2
+tnix.posisi_dam_iii_inf,Infanteri DAM III,INF-DAM III,tnix.kesatuan_dam_iii,tnix.inf,2
+tnix.posisi_dam_iii_kav,Kavaleri DAM III,KAV-DAM III,tnix.kesatuan_dam_iii,tnix.kav,2
+tnix.posisi_dam_iii_arm,Artileri Medan DAM III,ARM-DAM III,tnix.kesatuan_dam_iii,tnix.arm,2
+tnix.posisi_dam_iii_arh,Artileri Pertahanan Udara DAM III,ARH-DAM III,tnix.kesatuan_dam_iii,tnix.arh,2
+tnix.posisi_dam_iii_czi,Zeni DAM III,CZI-DAM III,tnix.kesatuan_dam_iii,tnix.czi,2
+tnix.posisi_dam_iii_chb,Perhubungan DAM III,CHB-DAM III,tnix.kesatuan_dam_iii,tnix.chb,2
+tnix.posisi_dam_iii_cpl,Peralatan DAM III,CPL-DAM III,tnix.kesatuan_dam_iii,tnix.cpl,2
+tnix.posisi_dam_iii_cba,Perbekalan & Angkutan DAM III,CBA-DAM III,tnix.kesatuan_dam_iii,tnix.cba,2
+tnix.posisi_dam_iii_ckm,Kesehatan Militer DAM III,CKM-DAM III,tnix.kesatuan_dam_iii,tnix.ckm,2
+tnix.posisi_dam_iii_cpm,Polisi Militer DAM III,CPM-DAM III,tnix.kesatuan_dam_iii,tnix.cpm,2
+tnix.posisi_dam_iii_caj,Ajudan Jenderal DAM III,CAJ-DAM III,tnix.kesatuan_dam_iii,tnix.caj,2
+tnix.posisi_dam_iii_ctp,Topografi DAM III,CTP-DAM III,tnix.kesatuan_dam_iii,tnix.ctp,2
+tnix.posisi_dam_iii_chk,Hukum DAM III,CHK-DAM III,tnix.kesatuan_dam_iii,tnix.chk,2
+tnix.posisi_dam_iii_cku,Keuangan DAM III,CKU-DAM III,tnix.kesatuan_dam_iii,tnix.cku,2
+tnix.posisi_dam_iv_inf,Infanteri DAM IV,INF-DAM IV,tnix.kesatuan_dam_iv,tnix.inf,2
+tnix.posisi_dam_iv_kav,Kavaleri DAM IV,KAV-DAM IV,tnix.kesatuan_dam_iv,tnix.kav,2
+tnix.posisi_dam_iv_arm,Artileri Medan DAM IV,ARM-DAM IV,tnix.kesatuan_dam_iv,tnix.arm,2
+tnix.posisi_dam_iv_arh,Artileri Pertahanan Udara DAM IV,ARH-DAM IV,tnix.kesatuan_dam_iv,tnix.arh,2
+tnix.posisi_dam_iv_czi,Zeni DAM IV,CZI-DAM IV,tnix.kesatuan_dam_iv,tnix.czi,2
+tnix.posisi_dam_iv_chb,Perhubungan DAM IV,CHB-DAM IV,tnix.kesatuan_dam_iv,tnix.chb,2
+tnix.posisi_dam_iv_cpl,Peralatan DAM IV,CPL-DAM IV,tnix.kesatuan_dam_iv,tnix.cpl,2
+tnix.posisi_dam_iv_cba,Perbekalan & Angkutan DAM IV,CBA-DAM IV,tnix.kesatuan_dam_iv,tnix.cba,2
+tnix.posisi_dam_iv_ckm,Kesehatan Militer DAM IV,CKM-DAM IV,tnix.kesatuan_dam_iv,tnix.ckm,2
+tnix.posisi_dam_iv_cpm,Polisi Militer DAM IV,CPM-DAM IV,tnix.kesatuan_dam_iv,tnix.cpm,2
+tnix.posisi_dam_iv_caj,Ajudan Jenderal DAM IV,CAJ-DAM IV,tnix.kesatuan_dam_iv,tnix.caj,2
+tnix.posisi_dam_iv_ctp,Topografi DAM IV,CTP-DAM IV,tnix.kesatuan_dam_iv,tnix.ctp,2
+tnix.posisi_dam_iv_chk,Hukum DAM IV,CHK-DAM IV,tnix.kesatuan_dam_iv,tnix.chk,2
+tnix.posisi_dam_iv_cku,Keuangan DAM IV,CKU-DAM IV,tnix.kesatuan_dam_iv,tnix.cku,2
+tnix.posisi_dam_v_inf,Infanteri DAM V,INF-DAM V,tnix.kesatuan_dam_v,tnix.inf,2
+tnix.posisi_dam_v_kav,Kavaleri DAM V,KAV-DAM V,tnix.kesatuan_dam_v,tnix.kav,2
+tnix.posisi_dam_v_arm,Artileri Medan DAM V,ARM-DAM V,tnix.kesatuan_dam_v,tnix.arm,2
+tnix.posisi_dam_v_arh,Artileri Pertahanan Udara DAM V,ARH-DAM V,tnix.kesatuan_dam_v,tnix.arh,2
+tnix.posisi_dam_v_czi,Zeni DAM V,CZI-DAM V,tnix.kesatuan_dam_v,tnix.czi,2
+tnix.posisi_dam_v_chb,Perhubungan DAM V,CHB-DAM V,tnix.kesatuan_dam_v,tnix.chb,2
+tnix.posisi_dam_v_cpl,Peralatan DAM V,CPL-DAM V,tnix.kesatuan_dam_v,tnix.cpl,2
+tnix.posisi_dam_v_cba,Perbekalan & Angkutan DAM V,CBA-DAM V,tnix.kesatuan_dam_v,tnix.cba,2
+tnix.posisi_dam_v_ckm,Kesehatan Militer DAM V,CKM-DAM V,tnix.kesatuan_dam_v,tnix.ckm,2
+tnix.posisi_dam_v_cpm,Polisi Militer DAM V,CPM-DAM V,tnix.kesatuan_dam_v,tnix.cpm,2
+tnix.posisi_dam_v_caj,Ajudan Jenderal DAM V,CAJ-DAM V,tnix.kesatuan_dam_v,tnix.caj,2
+tnix.posisi_dam_v_ctp,Topografi DAM V,CTP-DAM V,tnix.kesatuan_dam_v,tnix.ctp,2
+tnix.posisi_dam_v_chk,Hukum DAM V,CHK-DAM V,tnix.kesatuan_dam_v,tnix.chk,2
+tnix.posisi_dam_v_cku,Keuangan DAM V,CKU-DAM V,tnix.kesatuan_dam_v,tnix.cku,2
+tnix.posisi_dam_jaya_inf,Infanteri DAM JAYA,INF-DAM JAYA,tnix.kesatuan_dam_jaya,tnix.inf,2
+tnix.posisi_dam_jaya_kav,Kavaleri DAM JAYA,KAV-DAM JAYA,tnix.kesatuan_dam_jaya,tnix.kav,2
+tnix.posisi_dam_jaya_arm,Artileri Medan DAM JAYA,ARM-DAM JAYA,tnix.kesatuan_dam_jaya,tnix.arm,2
+tnix.posisi_dam_jaya_arh,Artileri Pertahanan Udara DAM JAYA,ARH-DAM JAYA,tnix.kesatuan_dam_jaya,tnix.arh,2
+tnix.posisi_dam_jaya_czi,Zeni DAM JAYA,CZI-DAM JAYA,tnix.kesatuan_dam_jaya,tnix.czi,2
+tnix.posisi_dam_jaya_chb,Perhubungan DAM JAYA,CHB-DAM JAYA,tnix.kesatuan_dam_jaya,tnix.chb,2
+tnix.posisi_dam_jaya_cpl,Peralatan DAM JAYA,CPL-DAM JAYA,tnix.kesatuan_dam_jaya,tnix.cpl,2
+tnix.posisi_dam_jaya_cba,Perbekalan & Angkutan DAM JAYA,CBA-DAM JAYA,tnix.kesatuan_dam_jaya,tnix.cba,2
+tnix.posisi_dam_jaya_ckm,Kesehatan Militer DAM JAYA,CKM-DAM JAYA,tnix.kesatuan_dam_jaya,tnix.ckm,2
+tnix.posisi_dam_jaya_cpm,Polisi Militer DAM JAYA,CPM-DAM JAYA,tnix.kesatuan_dam_jaya,tnix.cpm,2
+tnix.posisi_dam_jaya_caj,Ajudan Jenderal DAM JAYA,CAJ-DAM JAYA,tnix.kesatuan_dam_jaya,tnix.caj,2
+tnix.posisi_dam_jaya_ctp,Topografi DAM JAYA,CTP-DAM JAYA,tnix.kesatuan_dam_jaya,tnix.ctp,2
+tnix.posisi_dam_jaya_chk,Hukum DAM JAYA,CHK-DAM JAYA,tnix.kesatuan_dam_jaya,tnix.chk,2
+tnix.posisi_dam_jaya_cku,Keuangan DAM JAYA,CKU-DAM JAYA,tnix.kesatuan_dam_jaya,tnix.cku,2
+tnix.posisi_disbintalad,DISBINTALAD,DISBINTALAD,tnix.kesatuan_disbintalad,,2
+tnix.posisi_disinfolahtad,DISINFOLAHTAD,DISINFOLAHTAD,tnix.kesatuan_disinfolahtad,,2
+tnix.posisi_disjarahad,DISJARAHAD,DISJARAHAD,tnix.kesatuan_disjarahad,,2
+tnix.posisi_disjasad,DISJASAD,DISJASAD,tnix.kesatuan_disjasad,,2
+tnix.posisi_dislaikad,DISLAIKAD,DISLAIKAD,tnix.kesatuan_dislaikad,,2
+tnix.posisi_dislitbangad,DISLITBANGAD,DISLITBANGAD,tnix.kesatuan_dislitbangad,,2
+tnix.posisi_dispenad,DISPENAD,DISPENAD,tnix.kesatuan_dispenad,,2
+tnix.posisi_dispsiad,DISPSIAD,DISPSIAD,tnix.kesatuan_dispsiad,,2
+tnix.posisi_ditajenad,DITAJENAD,DITAJENAD,tnix.kesatuan_ditajenad,,2
+tnix.posisi_ditbekangad,DITBEKANGAD,DITBEKANGAD,tnix.kesatuan_ditbekangad,,2
+tnix.posisi_dithubad,DITHUBAD,DITHUBAD,tnix.kesatuan_dithubad,,2
+tnix.posisi_ditkuad,DITKUAD,DITKUAD,tnix.kesatuan_ditkuad,,2
+tnix.posisi_ditkumad,DITKUMAD,DITKUMAD,tnix.kesatuan_ditkumad,,2
+tnix.posisi_ditpalad,DITPALAD,DITPALAD,tnix.kesatuan_ditpalad,,2
+tnix.posisi_dittopad,DITTOPAD,DITTOPAD,tnix.kesatuan_dittopad,,2
+tnix.posisi_ditziad,DITZIAD,DITZIAD,tnix.kesatuan_ditziad,,2
+tnix.posisi_kopassus,KOPASSUS,KOPASSUS,tnix.kesatuan_kopassus,,5
+tnix.posisi_kostrad,KOSTRAD,KOSTRAD,tnix.kesatuan_kostrad,,5
+tnix.posisi_makodiklat,MAKODIKLAT,MAKODIKLAT,tnix.kesatuan_makodiklat,,2
+tnix.posisi_pusintelad,PUSINTELAD,PUSINTELAD,tnix.kesatuan_pusintelad,,2
+tnix.posisi_puskesad,PUSKESAD,PUSKESAD,tnix.kesatuan_puskesad,,2
+tnix.posisi_puskodal,PUSKODAL,PUSKODAL,tnix.kesatuan_puskodal,,2
+tnix.posisi_puspenerbad,PUSPENERBAD,PUSPENERBAD,tnix.kesatuan_puspenerbad,,2
+tnix.posisi_puspomad,PUSPOMAD,PUSPOMAD,tnix.kesatuan_puspomad,,2
+tnix.posisi_pussenarhanud,PUSSENARHANUD,PUSSENARHANUD,tnix.kesatuan_pussenarhanud,,2
+tnix.posisi_pussenarmed,PUSSENARMED,PUSSENARMED,tnix.kesatuan_pussenarmed,tnix.arm,2
+tnix.posisi_pussenif,PUSSENIF,PUSSENIF,tnix.kesatuan_pussenif,,2
+tnix.posisi_pussenkav,PUSSENKAV,PUSSENKAV,tnix.kesatuan_pussenkav,,2
+tnix.posisi_pusterad,PUSTERAD,PUSTERAD,tnix.kesatuan_pusterad,,2
+tnix.posisi_secapaad,SECAPAAD,SECAPAAD,tnix.kesatuan_secapaad,,2
+tnix.posisi_seskoad,SESKOAD,SESKOAD,tnix.kesatuan_seskoad,,2
+tnix.posisi_setumad,SETUMAD,SETUMAD,tnix.kesatuan_setumad,,2
+tnix.posisi_kemhan,KEMHAN,KEMHAN,tnix.kesatuan_kemhan,,2
+tnix.posisi_lemhannas,LEMHANNAS,LEMHANNAS,tnix.kesatuan_lemhannas,,2
+tnix.posisi_mabes,MABES,MABES,tnix.kesatuan_mabes,,2
+tnix.posisi_mabesad,MABES AD,MABESAD,tnix.kesatuan_mabesad,,2
+tnix.posisi_dilmil,Pengadilan Militer,DILMIL,tnix.kesatuan_dilmil,tnix.chk,2
+tnix.posisi_akmil,AKMIL,AKMIL,tnix.kesatuan_akmil,,2

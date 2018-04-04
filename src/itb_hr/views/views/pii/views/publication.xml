@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="publication_list_view" model="ir.ui.view">
+		<field name="name">publication_list</field>
+		<field name="model">pii.publication</field>
+		<field name="arch" type="xml">
+			<tree string="Karya Tulis di Bidang Keinsinyuran yang Dipublikasikan">
+				<field name="name" />
+                <field name="partner_id" />
+                <field name="date" />
+                <field name="publisher" />
+				<field name="note" />
+			</tree>
+		</field>
+	</record>
+	<record id="publication_form_view" model="ir.ui.view" >
+		<field name="name">publication_form</field>
+		<field name="model">pii.publication</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+                    <div class="oe_title">
+                        <h1><field name="partner_id" placeholder="Anggota"/></h1>
+                    </div>
+					<group>						
+						<field name="name" />
+						<field name="date" />
+                        <field name="publisher" />
+						<field name="note" />
+                    </group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+    <record id="publication_search_view" model="ir.ui.view">
+		<field name="name">publication_search</field>
+		<field name="model">pii.publication</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name" string='Karya Tulis' filter_domain="['|',('name','ilike',self),('note','ilike',self)]"/>
+                <field name="publisher" string='Media Publikasi'/>
+				<group expand="0" string="Group By">
+					<filter name="date" string="Tahun" context="{'group_by': 'date:year'}"/>
+				</group>
+			</search>
+		</field>
+	</record>
+	<record id="publication_graph_view" model="ir.ui.view">
+		<field name="name">publication_graph</field>
+		<field name="model">pii.publication</field>
+		<field name="arch" type="xml">
+			<graph type="bar" stacked="True">
+				<field name="date" interval="year"/>
+                <field name="publisher" />
+			</graph>
+		</field>
+	</record>
+	<record id="publication_pivot_view" model="ir.ui.view">
+		<field name="name">publication_pivot</field>
+		<field name="model">pii.publication</field>
+		<field name="arch" type="xml">
+			<pivot>
+				<field name="date" type="col" interval="year" />
+				<field name="publisher" />
+			</pivot>
+		</field>
+	</record>
+</odoo>

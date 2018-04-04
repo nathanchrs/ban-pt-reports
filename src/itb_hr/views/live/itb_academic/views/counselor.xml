@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="counselor_search_view" model="ir.ui.view">
+			<field name="name">counselor_search</field>
+			<field name="model">itb.academic_counselor</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="partner_id" string='Name' filter_domain="[('partner_id.name','ilike',self)]" />
+					<field name="employee_id" string='Employee' filter_domain="[('employee_id.name','ilike',self)]"/>
+					<filter name="semester" string="This Semester" domain="[(1,'=',1)]"/>
+					<group expand="0" string="Group By">
+						<filter name="semester_id" string="Semester" context="{'group_by': 'semester_id'}"/>
+						<filter name="employee_id" string="Employee" context="{'group_by': 'employee_id'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="counselor_list_view">
+			<field name="name">counselor_list</field>
+			<field name="model">itb.academic_counselor</field>
+			<field name="arch" type="xml">
+				<tree string="counselor List">
+					<field name="partner_id" />
+					<field name="employee_id" />
+					<field name="semester_id" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="counselor_form_view">
+			<field name="name">counselor_form</field>
+			<field name="model">itb.academic_counselor</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="partner_id" /></h1>
+						<group>
+							<group>
+								<field name="employee_id" />
+							</group>
+							<group>
+								<field name="semester_id" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

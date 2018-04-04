@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="assignment_search_view" model="ir.ui.view">
+			<field name="name">assignment_search</field>
+			<field name="model">itb.hr_assignment</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="research_group_id" string='research group' filter_domain="['|',('employee_id.name','ilike',self),('department_id','ilike',self),('research_group_id','ilike',self)]"/>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="assignment_list_view">
+			<field name="name">assignment_list</field>
+			<field name="model">itb.hr_assignment</field>
+			<field name="arch" type="xml">
+				<tree string="Assignment List">
+					<field name="employee_id" />
+					<field name="job_id" />
+					<field name="department_id" />
+					<field name="reference" />
+					<field name="start" />
+					<field name="finish" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="assignment_form_view">
+			<field name="name">assignment_form</field>
+			<field name="model">itb.hr_assignment</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="employee_id" /></h1>
+						<group>
+							<group string="Position">
+								<field name="job_id" string="Job Title" />
+								<field name="department_id" string="Department" />
+								<field name="office" />
+								<field name="reference" />
+								<field name="signed_by" />
+							</group>
+							<group string="Period">
+								<field name="decision" />
+								<field name="start" />
+								<field name="finish" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

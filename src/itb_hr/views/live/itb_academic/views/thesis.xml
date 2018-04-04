@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="thesis_search_view" model="ir.ui.view">
+			<field name="name">thesis_search</field>
+			<field name="model">itb.academic_thesis</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" string='Name' filter_domain="['|',('name','ilike',self),('note','ilike',self)]"/>
+					<field name="author_ids" string='Author' filter_domain="[('author_ids.partner_id.name','ilike',self)]"/>
+					<field name="supervisor_ids" string='Supervisor' filter_domain="[('supervisor_ids.partner_id.name','ilike',self)]"/>
+					<filter name="on_going" string="On Going" domain="[('state','=','go')]"/>
+					<filter name="confirm" string="To Assign" domain="[('state','=','confirm')]"/>
+					<filter name="done" string="Done" domain="[('state','=','done')]"/>
+					<separator />
+					<filter name="no_meetup" string="No Meetup" domain="[('meetup_ids','=',False)]"/>
+					<filter name="defended" string="Defended" domain="[('defence_ids','!=',False)]"/>
+					<group expand="1" string="Group By">
+						<filter name="state" string="State" context="{'group_by': 'state'}"/>
+						<filter name="category" string="Category" context="{'group_by': 'category'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="thesis_list_view">
+			<field name="name">thesis_list</field>
+			<field name="model">itb.academic_thesis</field>
+			<field name="arch" type="xml">
+				<tree string="Thesis List">
+					<field name="name" />
+					<field name="authors" />
+					<field name="supervisors" />
+					<field name="progress" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="thesis_form_view">
+			<field name="name">thesis_form</field>
+			<field name="model">itb.academic_thesis</field>
+			<field name="arch" type="xml">
+				<form>
+					<header>
+						<button name="update_default" type="object" string="Default"/>
+						<field name="state" widget="statusbar" />
+					</header>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="start" />
+								<field name="finish" />
+								<field name="graduation" />
+								<field name="graduation_semester" />
+								<field name="active" />
+							</group>
+							<group>
+								<field name="authors" />
+								<field name="supervisors" />
+								<field name="structure_id" />
+								<field name="category" />
+								<field name="progress" />
+								<field name="grade" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Note">
+								<field name="note" />
+							</page>
+							<page string="Author">
+								<field name="author_ids" />
+							</page>
+							<page string="Supervisor">
+								<field name="req_supervisor_ids" />
+								<field name="supervisor_ids" />
+							</page>
+							<page string="Progress">
+								<field name="progress_ids" />
+							</page>
+							<page string="Meetup">
+								<field name="meetup_ids" />
+							</page>
+							<page string="Defence">
+								<field name="defence_ids" />
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="thesis_pivot_view" model="ir.ui.view">
+			<field name="name">thesis_pivot</field>
+			<field name="model">itb.academic_thesis</field>
+			<field name="arch" type="xml">
+				<pivot>
+					<field name="start" interval="year" type="col" />
+                    <field name="grade" type="col" />
+					<field name="structure_id" type="row" />
+					<field name="progress" type="measure" />
+				</pivot>
+			</field>
+		</record>
+</odoo>

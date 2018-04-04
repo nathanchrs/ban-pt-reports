@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <template id="page_coba">
+            <t t-set="title">Academy</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <t t-foreach="hr" t-as="hrs">
+                        <p><t t-esc="hr.id"/> <t t-esc="hr.name"/></p>
+                    </t>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

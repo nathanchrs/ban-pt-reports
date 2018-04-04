@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<!--act_window id="itb_plan.set_confirm_act" name="Set Confirm All" src_model="itb.plan_request" res_model="itb.plan_send_itb" view_mode="form" target="new" multi="True" context="{'parent_id': active_ids}"/-->
+		<record model="ir.ui.view" id="request_list_view">
+            <field name="name">request_list</field>
+            <field name="model">itb.plan_request</field>
+            <field name="arch" type="xml">
+                <tree string="Payment Request List">
+					<field name="name" string="Name" />
+                    <field name="unit_id" string="Plan" />
+					<field name="pay_to" string="Paid To"/>
+					<field name="reference" string="Reference"/>
+					<field name="day" string="Date"/>
+					<field name="due" string="Due Date"/>
+					<field name="price_id" string="Item"/>
+					<field name="source" string="Source"/>
+					<field name="total" />
+					<field name="cash_id" string="Cash Advance"/>
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="request_form_view">
+			<field name="name">request_form</field>
+            <field name="model">itb.plan_request</field>
+            <field name="arch" type="xml">
+				<form>
+					<header>
+						<button name="action_payment_req_confirmed" type="object" string="Confirm" states="draft" />
+						<button name="action_payment_req_paid" type="object" string="Set to Paid" states="validate" /> 
+						<button name="action_payment_req_abort" type="object" string="Abort" states="confirm" />
+						<button name="action_payment_req_validate" type="object" string="Validated" states="confirm" />
+						<button name="set_confirm_request" type="object" string="Set Confirm All Request" class="oe_highlight"/>
+						<button name="set_all_draft" type="object" string="Set draft All Request" class="oe_highlight"/>
+						<button name="set_paid_request" type="object" string="Set paid All Request" class="oe_highlight"/>
+						<!--button class="oe_highlight" name="set_confirm_request" string="Set Confirm All Request" type="object" states="draft"/-->
+						<field name="state" widget="statusbar" />
+					</header>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="pay_to" string="Paid To"/>
+								<field name="total" />
+								<field name="due" string="Due date"/>
+								<field name="day" string="Invoice date"/>
+								<field name="cash_id" string="Cash Advance"/>
+							</group>
+							<group>
+								<field name="unit_id" string="Alocated to"/>
+								<field name="price_id" string="Price Id"/>
+								<field name="source" string="Source"/>
+								<field name="reference" />
+								<button class="oe_highlight" name="generate_taken" type="object" string="Find Recomended taken and Alocation" states="draft" context="{'default_active_id': active_id}" />
+							</group>
+						</group>
+						<notebook>
+						<page string="ITB">
+							<field name="request_line_ids">
+								<tree editable="bottom">
+									<field name="spending_actual_id" string="Name" />
+									<field name="initiative" string="Initiative" readonly="1" />
+									<field name="unit_id" string="Unit"/>
+									<field name="month" string="Month"/>
+									<field name="available" string="Available"/>
+									<field name="total" string="Total"/>
+								</tree>
+							</field>
+						</page>
+						<page string="STEI">
+							<field name="request_alocation_ids">
+								<tree editable="bottom">
+									<field name="spending_id" string="Name" />
+									<field name="initiative_alo" string="Initiative" readonly="1" />
+									<field name="unit_id"  string="Unit"/>
+									<field name="month" string="Month"/>
+									<field name="available_alo"  string="Available"/>
+									<field name="total_alo" string="Total"/>
+								</tree>
+							</field>
+						</page>
+						<page string="Tax">
+							<field name="tax_line_ids">
+								<tree editable="bottom">
+									<field name="tax_id" string="Name" />
+									<field name="tax_percent" string="% Tax" readonly="1" />
+									<field name="note"  string="Note"/>
+									<field name="amount" string="Total Tax"/>
+								</tree>
+							</field>
+						</page>
+						<page string="Note">
+							<field name="note" />
+						</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_report_request_pivot" model="ir.ui.view">
+            <field name="name">request_pivot</field>
+            <field name="model">itb.plan_request</field>
+            <field name="arch" type="xml">
+                <pivot string="request">
+                    <field name="day" interval="month" type="col" />
+                    <field name="unit_id" type="row"/>
+					<field name="total" type="measure" />
+				</pivot>
+            </field>
+        </record>
+		<record id="plan_wizard_taken_form_view" model="ir.ui.view">
+			<field name="name">plan_wizard_taken_form</field>
+			<field name="model">itb.plan_wizard_taken</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Recomend Taken for Request">
+					<group>
+						<field name="opr" string="Delete Existing"/>
+						<field name="sumber" string="Option"/>
+					</group>
+					<group>
+						<group>
+							<button class="oe_highlight" name="isi_all" type="object" string="Get recomend Taken" />
+						</group>
+					</group>
+					<group>
+						<field name="wiz_find_child_ids">
+							<tree editable="bottom">
+								<field name="sp_act_id" string="Name" />
+								<field name="initiative" string="Initiative" />
+								<field name="unit_id" string="Unit"/>
+								<field name="program_id" string="Program"/>
+								<field name="activity_id" string="Activity"/>
+								<field name="subactivity_id" string="Subactivity"/>
+								<field name="month" string="Month"/>
+								<field name="available" string="Available"/>
+								<field name="total" string="Total"/>
+							</tree>
+						</field>
+					</group>
+					<footer>
+						<button class="oe_highlight" type="object" name="oke" string="Yes" />
+						<button class="oe_highlight" type="object" name="no" string="Exit" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<record id="plan_send_reimburse_form_view" model="ir.ui.view">
+			<field name="name">plan_send_reimburse_form</field>
+			<field name="model">itb.plan_send_reimburse</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Set Request to Reimburse">
+					<group>
+						<field name="existing" string="Use Existing"/>
+						<field name="reimburse_id" string="Reimburse" attrs="{'readonly': [('existing','=', False)]}" />
+					</group>
+					<footer>
+						<button class="oe_highlight" type="object" name="yes" string="Proses" />
+						<button class="oe_highlight" type="object" name="no" string="Exit" />
+					</footer>
+				</form>
+			</field>
+		</record>
+</odoo>

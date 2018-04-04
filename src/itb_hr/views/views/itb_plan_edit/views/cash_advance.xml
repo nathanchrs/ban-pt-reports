@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="cash_advance_search_view">
+			<field name="name">cash_advance_search</field>
+			<field name="model">itb.plan_cash_advance</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" string="All" filter_domain="['|',('unit_id','ilike',self),('name','ilike',self),('pay_to','ilike',self)]"/>
+					<filter name="name" string="Name" domain="[('name','ilike','self')]" />
+					<filter name="unit_id" string="Unit" domain="[('unit_id','ilike','self')]" />
+					<filter name="pay_to" string="Pay To" domain="[('pay_to','ilike','self')]" />
+					<filter name="state_open" string="Status Open" domain="[('state','ilike','open')]" />
+					<filter name="state_close" string="Status Close" domain="[('state','ilike','close')]" />
+					<group expand="0" string="Group By">
+						<filter string="Unit" domain="[]" context="{'group_by':'unit_id'}" />
+						<filter string="Pay To" domain="[]" context="{'group_by':'pay_to'}" />
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="status" domain="[]" context="{'group_by':'state'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="cash_advance_list_view">
+            <field name="name">cash_advance_list</field>
+            <field name="model">itb.plan_cash_advance</field>
+            <field name="arch" type="xml">
+			<!--field name="domain_force">[('create_uid', '=', user.id)]</field-->
+                <tree string="cash advance List">
+					<field name="name" string="Name" />
+                    <field name="unit_id" string="Unit" />
+					<field name="pay_to" string="Paid To"/>
+					<field name="date_pay" string="Date"/>
+					<field name="amount" string="amount"/>
+					<field name="used" string="used"/>
+					<field name="note" string="note"/>
+					<field name="state" string="Status"/>
+				</tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="cash_advance_form_view">
+			<field name="name">cash_advance_form</field>
+            <field name="model">itb.plan_cash_advance</field>
+            <field name="arch" type="xml">
+				<form>
+					<header>
+						<button name="action_payment_req_close" type="object" string="Close" states="open" />
+						<button name="action_payment_req_abort" type="object" string="Abort" states="close" />
+						<field name="state" widget="statusbar" />
+					</header>
+					<sheet>
+						<group>
+							<group>
+								<field name="name" string="Name" />
+								<field name="unit_id" string="Unit" />
+								<field name="pay_to" string="Paid To"/>
+							</group>
+							<group>
+								<field name="date_pay" string="Date"/>
+								<field name="amount" string="amount"/>
+								<field name="used" string="used"/>
+							</group>
+						</group>
+						<notebook>
+						<page string="Request">
+							<field name="request_ids" context="{'cash_id': active_id}">
+								<tree>
+									<field name="name" string="Name" />
+									<field name="day" string="Date" />
+									<field name="unit_id" string="Unit"/>
+									<field name="pay_to" string="Pay To"/>
+									<field name="price_id" string="Price"/>
+									<field name="total" string="Total"/>
+								</tree>
+							</field>
+						</page>
+						<page string="DKO">
+							<field name="dko_ids" context="{'cash_id': active_id}">
+								<tree>
+									<field name="name" string="Name" />
+									<field name="day" string="day" />
+									<field name="unit_id"  string="Unit"/>
+									<field name="pay_to" string="Pay To"/>
+									<field name="price_id"  string="Price"/>
+									<field name="total" string="Total"/>
+								</tree>
+							</field>
+						</page>
+						<page string="Note">
+							<field name="note" />
+						</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="cash_advance_pivot_view" model="ir.ui.view">
+            <field name="name">cash_advance_pivot</field>
+            <field name="model">itb.plan_cash_advance</field>
+            <field name="arch" type="xml">
+                <pivot string="cash advance">
+                    <field name="date_pay" interval="month" type="col" />
+                    <field name="unit_id" type="row"/>
+					<field name="amount" type="measure" />
+				</pivot>
+            </field>
+        </record>
+	</data>
+</odoo>

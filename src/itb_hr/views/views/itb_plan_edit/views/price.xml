@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="price_list_view">
+            <field name="name">price_list</field>
+            <field name="model">itb.plan_price</field>
+            <field name="arch" type="xml">
+                <tree string="Price List">
+                    <field name="name" />
+					<field name="code" />
+					<field name="type" />
+					<field name="note" />
+					<field name="standard" />
+					<field name="amount" widget="monetary" />
+                </tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="price_form_view">
+			<field name="name">plan_price_form</field>
+            <field name="model">itb.plan_price</field>
+            <field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="code" />
+								<field name="type" />
+							</group>
+							<group>
+								<field name="standard" />
+								<field name="amount" />
+							</group>
+						</group>
+						<group>
+							<field name="note" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

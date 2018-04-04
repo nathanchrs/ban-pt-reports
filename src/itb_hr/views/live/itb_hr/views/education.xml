@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="education_search_view" model="ir.ui.view">
+			<field name="name">education_search</field>
+			<field name="model">itb.hr_education</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="employee_id" string='Employee Name'/>
+					<field name="school" string='School Name'/>
+					<field name="major" string="School Major"/>
+					<field name="research_group_id" string='Research group' filter_domain="['|',('employee_id.name','ilike',self),('research_group_id','ilike',self)]"/>
+					<filter name="active" string="Active" domain="['&amp;', ('start', '&lt;=', fields.Datetime.now()), ('finish', '&gt;=', fields.Datetime.now())]"/>
+					<filter name="undergraduate" string="Undergraduate" domain="[('degree','ilike','Undergraduate')]"/>
+					<filter name="graduate" string="Graduate" domain="[('degree','ilike','Graduate')]"/>
+					<filter name="doctor" string="Doctor" domain="[('degree','ilike','Doctor')]"/>
+					<separator/>
+					<filter name="national" string="National" domain="[('company_scope','like','National')]"/>
+					<filter name="global" string="International" domain="[('company_scope','ilike','International')]"/>
+					<group expand="0" string="Group By">
+						<filter name="degree" string="Degree" context="{'group_by': 'degree'}"/>
+						<filter name="start_year" string="Start Year" context="{'group_by': 'start:year'}"/>
+						<filter name="finish_year" string="Finish Year" context="{'group_by': 'finish:year'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record id="education_graph_view" model="ir.ui.view">
+			<field name="name">education_graph</field>
+			<field name="model">itb.hr_education</field>
+			<field name="arch" type="xml">
+				<graph type="bar" stacked="True">
+					<field name="finish" interval="year" />
+					<field name="degree" />
+					<field name="country_id" />
+				</graph>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="education_list_view">
+			<field name="name">education_list</field>
+			<field name="model">itb.hr_education</field>
+			<field name="arch" type="xml">
+				<tree string="Education List">
+					<field name="employee_id" />
+					<field name="school" />
+					<field name="major" />
+					<field name="degree" />
+					<field name="country_id" />
+					<field name="start" />
+					<field name="finish" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="education_form_view">
+			<field name="name">education_form</field>
+			<field name="model">itb.hr_education</field>
+			<field name="arch" type="xml">
+				<form>
+					<header>
+						<field name="state" widget="statusbar"/>
+						<button name="action_state_valid" type="object" string="Validate" groups="base.gr_ibos_hr_manager,base.gr_ibos_hr_officer" attrs="{'invisible':[('state','=','valid')]}" class="oe_highlight"/>
+						<button name="action_state_draft" type="object" string="Reset to draft" groups="base.gr_ibos_hr_manager,base.gr_ibos_hr_officer" attrs="{'invisible':[('state','=','draft')]}" class="oe_highlight"/>
+					</header>
+					<sheet>
+						<h1><field name="employee_id" /></h1>
+						<group>
+							<group string="School">
+								<field name="school" string="Name" />
+								<field name="major" />
+								<field name="degree" />
+								<field name="country_id" />
+								<field name="thesis" />
+								<field name="city" />
+								<field name="certificate_signer" />
+							</group>
+							<group string="Period">
+								<field name="start" />
+								<field name="finish" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

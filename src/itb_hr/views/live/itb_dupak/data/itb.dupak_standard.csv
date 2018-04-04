@@ -1,0 +1,106 @@
+id,active,category,code,note,score,unit,version,name
+itb_dupak_standard_I_A_1,TRUE,education,I.A.1,"Surat tugas belajar, ijasah SK penyetaraaan Ijazah (dari LN) yang diilegalisir asli",200,sertifikat,0,Mendapat gelar Doktor (S3)
+itb_dupak_standard_I_A_2,TRUE,education,I.A.2,"Surat tugas belajar, ijasah SK penyetaraaan Ijazah (dari LN) yang diilegalisir asli",150,sertifikat,0,Magister (S2)
+itb_dupak_standard_I_B,TRUE,training,I.B,Surat tugas dan sertifikat,2,sertifikat,0,Diklat Prajabatan golongan III
+itb_dupak_standard_II_A,TRUE,teaching,II.A,"a. Asisten Ahli :		
+    1) 10 sks pertama		0,5
+    2) 2 sks berikutnya		0,25
+b. Lektor ke atas :		
+    1) 10 sks pertama		1
+    2) 2 sks berikutnya		0.5",1,sks,0,"Melaksanakan perkuliahan/tutorial dan membimbing, menguji serta menyelenggarakan pendidikan di lab., praktik keguruan, bengkel/studio/kebun percobaan/ teknologi pengajaran dan praktik lapangan (maksimal 12 sks per semester)"
+itb_dupak_standard_II_B,TRUE,duty,II.B,,1,semester,0,Membimbing seminar mahasiswa
+itb_dupak_standard_II_C,TRUE,duty,II.C,,2,semester,0,"Membimbing Kuliah Kerja Nyata, Praktik Kerja Nyata, Praktik Kerja Lapangan"
+itb_dupak_standard_II_D_1_a,TRUE,supervisory,II.D.1.a,,8,lulusan,0,Pembimbing Utama Disertasi
+itb_dupak_standard_II_D_1_b,TRUE,supervisory,II.D.1.b,,3,lulusan,0,Pembimbing Utama Thesis
+itb_dupak_standard_II_D_1_c,TRUE,supervisory,II.D.1.c,,1,lulusan,0,Pembimbing Utama Skripsi
+itb_dupak_standard_II_D_2_a,TRUE,supervisory,II.D.2.a,,6,lulusan,0,Pembimbing Pendamping Disertasi
+itb_dupak_standard_II_D_2_c,TRUE,supervisory,II.D.2.c,,0.5,lulusan,0,Pembimbing Pendamping Skripsi
+itb_dupak_standard_II_E_1,TRUE,defence,II.E.1,,1,lulusan,0,Ketua Penguji
+itb_dupak_standard_II_E_2,TRUE,defence,II.E.2,,0.5,lulusan,0,Anggota Penguji
+itb_dupak_standard_II_F,TRUE,counselor,II.F,,2,,0,Membina kegiatan mahasiswa di bidang Akademik dan kemahasiswaan
+itb_dupak_standard_II_G,TRUE,publication,II.G,,2,mata kuliah,0,Mengembangkan program kuliah
+itb_dupak_standard_II_H_1,TRUE,publication,II.H.1,,20,buku,0,Mengembangkan buku ajar
+itb_dupak_standard_II_H_2,TRUE,publication,II.H.2,,5,karya,0,"Mengembangkan Diktat, modul, petunjuk praktikum, model, alat bantu, audio visual, naskah tutorial"
+itb_dupak_standard_II_I,TRUE,publication,II.I,,5,karya,0,Menyampaikan orasi ilmiah 
+itb_dupak_standard_II_J_1,TRUE,assignment,II.J.1,,6,semester,0,Menjabat Rektor
+itb_dupak_standard_II_J_2,TRUE,assignment,II.J.2,,5,semester,0,Menjabat Pembantu Rektor/Dekan/Direktur PPs
+itb_dupak_standard_II_J_3,TRUE,assignment,II.J.3,,4,semester,0,Menjabat Ketua Sekolah Tinggi/Pembantu Dekan/ Asisten Dir. Program Pasca Sarjana/ Dir. Politeknik
+itb_dupak_standard_II_J_4,TRUE,assignment,II.J.4,,4,semester,0,Menjabat Pembantu Ketua Sekolah Tinggi/Pembantu Direktur Politeknik
+itb_dupak_standard_II_J_5,TRUE,assignment,II.J.5,,4,semester,0,Menjabat Direktur Akademi
+itb_dupak_standard_II_J_6,TRUE,assignment,II.J.6,,3,semester,0,Menjabat Pembantu Dir. Akademi/Ketua Jurusan/ Bagian pada Univ/Inst/Sekolah Tinggi
+itb_dupak_standard_II_J_8,TRUE,assignment,II.J.8,,3,semester,0,Menjabat Sekretaris Jurusan pada Politeknik/Akademi/ Sekretaris Jurusan/Bagian pada Univ/Inst/ST.
+itb_dupak_standard_II_K_1,TRUE,duty,II.K.1,,2,semester,0,Pembimbing pencakokan dosen yang lebih rendah jabatannya
+itb_dupak_standard_II_K_2,TRUE,duty,II.K.2,,1,semester,0,Pembimbing reguler  dosen yang lebih rendah jabatannya
+itb_dupak_standard_II_L_1,TRUE,duty,II.L.1,,5,semester,0,Detasering akademik dosen
+itb_dupak_standard_II_L_2,TRUE,duty,II.L.2,,4,semester,0,Pencangkokan akademik dosen
+itb_dupak_standard_II_M_1,TRUE,training,II.M.1,,15,sertifikat,0,pengembangan diri > 960 jam
+itb_dupak_standard_II_M_2,TRUE,training,II.M.2,,9,sertifikat,0,pengembangan diri 641-960 jam
+itb_dupak_standard_II_M_3,TRUE,training,II.M.3,,6,sertifikat,0,pengembangan diri 481-640 jam
+itb_dupak_standard_II_M_4,TRUE,training,II.M.4,,3,sertifikat,0,pengembangan diri 161-480 jam
+itb_dupak_standard_II_M_5,TRUE,training,II.M.5,,2,sertifikat,0,pengembangan diri 81-160 jam
+itb_dupak_standard_II_M_6,TRUE,training,II.M.6,,1,sertifikat,0,pengembangan diri 31-80 jam
+itb_dupak_standard_II_M_7,TRUE,training,II.M.7,,0.5,sertifikat,0,pengembangan diri 10-30 jam
+itb_dupak_standard_III_A_1_a_1,TRUE,publication,III.A.1.a.1,,20,karya,0,Monograf
+itb_dupak_standard_III_A_1_a_2,TRUE,publication,III.A.1.a.2,,40,karya,0,Buku Referensi
+itb_dupak_standard_III_A_1_b_1,TRUE,publication,III.A.1.b.1,,40,karya,0,Jurnal Internasional
+itb_dupak_standard_III_A_1_b_2,TRUE,publication,III.A.1.b.2,,25,karya,0,Jurnal Nasional Terakreditasi
+itb_dupak_standard_III_A_1_b_3,TRUE,publication,III.A.1.b.3,,10,karya,0,Jurnal Nasional tidak Terakreditasi
+itb_dupak_standard_III_A_1_c_1_a,TRUE,publication,III.A.1.c.1.a,,15,karya,0,Prosiding Internasional
+itb_dupak_standard_III_A_1_c_1_b,TRUE,publication,III.A.1.c.1.b,,10,karya,0,Prosiding Nasional
+itb_dupak_standard_III_A_1_c_2_a,TRUE,publication,III.A.1.c.2.a,,10,karya,0,Poster Internasional
+itb_dupak_standard_III_A_1_c_2_b,TRUE,publication,III.A.1.c.2.b,,5,karya,0,Poster Nasional
+itb_dupak_standard_III_A_2,TRUE,publication,III.A.2,,2,karya,0,Hasil penelitian atau hasil pemikiran yang tidak dipublikasikan (tersimpan diperpustakaan perguruan tinggi)
+itb_dupak_standard_III_B,TRUE,publication,III.B,,15,karya,0,Menerjemahkan/menyadur buku ilmiah (diterbitkan & diedarkan secara nasional)
+itb_dupak_standard_III_C,TRUE,publication,III.C,,10,karya,0,Mengedit/menyunting karya ilmiah (diterbitkan & diedarkan secara nasional)
+itb_dupak_standard_III_D_1,TRUE,publication,III.D.1,,60,karya,0,paten internasional
+itb_dupak_standard_III_D_2,TRUE,publication,III.D.2,,40,karya,0,paten nasional
+itb_dupak_standard_III_E_1,TRUE,publication,III.E.1,,20,karya,0,"Membuat rancangan dan karya teknologi, rancangan dan karya seni monumental/seni pertunjukan/karya sastra Internasional"
+itb_dupak_standard_III_E_2,TRUE,publication,III.E.2,,15,karya,0,"Membuat rancangan dan karya teknologi, rancangan dan karya seni monumental/seni pertunjukan/karya sastra nasional"
+itb_dupak_standard_III_E_3,TRUE,publication,III.E.3,,10,karya,0,"Membuat rancangan dan karya teknologi, rancangan dan karya seni monumental/seni pertunjukan/karya sastra lokal"
+itb_dupak_standard_IV_A,TRUE,work,IV.A,,5.5,semester,0,Menduduki jabatan pimpinan pada lembaga pemerintahan/pejabat Negara yang harus dibebaskan dari jabatan organiknya
+itb_dupak_standard_IV_B,TRUE,duty,IV.B,,3,program,0,Melaksanakan pengembangan hasil pendidikan dan penelitian yang dapat dimanfaatkan oleh masyarakat
+itb_dupak_standard_IV_C_1_a_1,TRUE,duty,IV.C.1.a.1,,4,program,0,pelatihan terjadwal 1 semester atau lebih tingkat internasional
+itb_dupak_standard_IV_C_1_a_2,TRUE,duty,IV.C.1.a.2,,3,program,0,pelatihan terjadwal 1 semester atau lebih tingkat nasional
+itb_dupak_standard_IV_C_1_a_3,TRUE,duty,IV.C.1.a.3,,3,program,0,pelatihan terjadwal 1 semester atau lebih tingkat lokal
+itb_dupak_standard_IV_C_1_b_1,TRUE,duty,IV.C.1.b.1,,3,program,0,pelatihan terjadwal kurang 1 semester atau di atas 1 bulan internasional
+itb_dupak_standard_IV_C_1_b_2,TRUE,duty,IV.C.1.b.2,,2,program,0,pelatihan terjadwal kurang 1 semester atau di atas 1 bulan nasional
+itb_dupak_standard_IV_C_1_b_3,TRUE,duty,IV.C.1.b.3,,1,program,0,pelatihan terjadwal kurang 1 semester atau di atas 1 bulan lokal
+itb_dupak_standard_IV_C_2,TRUE,duty,IV.C.2,,1,program,0,pelatihan insidental
+itb_dupak_standard_IV_D_1,TRUE,project,IV.D.1,,1.5,program,0,Memberi pelayanan kepada masyarakat atau kegiatan lain yang menunjang pelaksanaan tugas umum pemerintahan dan pembangunan berdasarkan keahlian
+itb_dupak_standard_IV_D_2,TRUE,project,IV.D.2,,1,program,0,Memberi pelayanan kepada masyarakat atau kegiatan lain yang menunjang pelaksanaan tugas umum pemerintahan dan pembangunan berdasarkan penugasan PT
+itb_dupak_standard_IV_D_3,TRUE,project,IV.D.3,,0.5,program,0,Memberi pelayanan kepada masyarakat atau kegiatan lain yang menunjang pelaksanaan tugas umum pemerintahan dan pembangunan berdasarkan fungsi jabatan
+itb_dupak_standard_IV_E,TRUE,publication,IV.E,,3,karya,0,Membuat/menulis karya pengabdian pada masyarakat yang tidak dipublikasikan
+itb_dupak_standard_V_A_1,TRUE,duty,V.A.1,,3,tahun,0,Sebagai Ketua/Wakil Ketua dalam suatu Panitia/Badan pada Perguruan Tinggi
+itb_dupak_standard_V_A_2,TRUE,duty,V.A.2,,2,tahun,0,Sebagai anggota dalam suatu Panitia/Badan pada Perguruan Tinggi
+itb_dupak_standard_V_B_1_a,TRUE,duty,V.B.1.a,,3,kepanitiaan,0,Ketua/Wakil Ketua Panitian pada lembaga pemerintah pusat
+itb_dupak_standard_V_B_1_b,TRUE,duty,V.B.1.b,,2,kepanitiaan,0,Anggota Panitia pada lembaga pemerintah pusat
+itb_dupak_standard_V_B_2_a,TRUE,duty,V.B.2.a,,2,kepanitiaan,0,Ketua/Wakil Ketua Panitia pada lembaga pemerintah Daerah
+itb_dupak_standard_V_B_2_b,TRUE,duty,V.B.2.b,,1,kepanitiaan,0,Anggota Panitia pada lembaga pemerintah Daerah
+itb_dupak_standard_V_C_1_a,TRUE,membership,V.C.1.a,,2,periode jabatan,0,Pengurus organisasi profesi dosen tingkat internasional
+itb_dupak_standard_V_C_1_b,TRUE,membership,V.C.1.b,,1,periode jabatan,0,Anggota atas permintaan organisasi profesi dosen tingkat internasional
+itb_dupak_standard_V_C_1_c,TRUE,membership,V.C.1.c,,1,periode jabatan,0,Anggota organisasi profesi dosen tingkat internasional
+itb_dupak_standard_V_C_2_a,TRUE,membership,V.C.2.a,,1.5,periode jabatan,0,Pengurus organisasi profesi dosen tingkat nasional
+itb_dupak_standard_V_C_2_b,TRUE,membership,V.C.2.b,,1,periode jabatan,0,Anggota atas permintaan organisasi profesi dosen tingkat nasional
+itb_dupak_standard_V_C_2_c,TRUE,membership,V.C.2.c,,0.5,periode jabatan,0,Anggota organisasi profesi dosen tingkat nasional
+itb_dupak_standard_V_D,TRUE,duty,V.D,,1,kepanitiaan,0,Mewakili Perguruan Tinggi/Lembaga Pemerintah duduk dalam panitia antar lembaga
+itb_dupak_standard_V_E_1,TRUE,duty,V.E.1,,3,kegiatan,0,Menjadi ketua delegasi nasional ke pertemuan internasional
+itb_dupak_standard_V_E_2,TRUE,duty,V.E.2,,2,kegiatan,0,Menjadi anggota delegasi nasional ke pertemuan internasional
+itb_dupak_standard_V_F_1_a,TRUE,duty,V.F.1.a,,3,kegiatan,0,ketua pertemuan ilmiah tingkat internasional/nasional/regional
+itb_dupak_standard_V_F_1_b,TRUE,duty,V.F.1.b,,2,kegiatan,0,anggota pertemuan ilmiah tingkat internasional/nasional/regional
+itb_dupak_standard_V_F_2_a,TRUE,duty,V.F.2.a,,2,kegiatan,0,ketua pertemuan ilmiah tingkat PT sendiri
+itb_dupak_standard_V_F_2_b,TRUE,duty,V.F.2.b,,1,kegiatan,0,anggota pertemuan ilmiah tingkat PT sendiri
+itb_dupak_standard_V_G_1_a,TRUE,award,V.G.1.a,,3,tanda jasa,0,satyalancana karya satya 30 tahun
+itb_dupak_standard_V_G_1_b,TRUE,award,V.G.1.b,,2,tanda jasa,0,satyalancana karya satya 20 tahun
+itb_dupak_standard_V_G_1_c,TRUE,award,V.G.1.c,,1,tanda jasa,0,satyalancana karya satya 10 tahun
+itb_dupak_standard_V_G_2_a,TRUE,award,V.G.2.a,,5,tanda jasa,0,penghargaan lainnya tingkat internasional
+itb_dupak_standard_V_G_2_b,TRUE,award,V.G.2.b,,3,tanda jasa,0,penghargaan lainnya tingkat nasional
+itb_dupak_standard_V_G_2_c,TRUE,award,V.G.2.c,,1,tanda jasa,0,penghargaan lainnya tingkat provinsi
+itb_dupak_standard_V_H_1,TRUE,publication,V.H.1,,5,buku,0,buku SLTA
+itb_dupak_standard_V_H_2,TRUE,publication,V.H.2,,5,buku,0,buku SLTP
+itb_dupak_standard_V_H_3,TRUE,publication,V.H.3,,5,buku,0,buku SD
+itb_dupak_standard_V_I_1,TRUE,award,V.I.1,,5,tanda jasa,0,prestasi olahraga/humaniora tingkat internasional
+itb_dupak_standard_V_I_2,TRUE,award,V.I.2,,3,tanda jasa,0,prestasi olahraga/humaniora tingkat nasional
+itb_dupak_standard_V_I_3,TRUE,award,V.I.3,,1,tanda jasa,0,prestasi olahraga/humaniora tingkat daerah
+itb_dupak_standard_V_J,TRUE,duty,V.J,,0.5,semester,0,Menjadi anggota tim penilai jabatan Akademik Dosen
+itb_dupak_standard_II_D_2_b,TRUE,supervisory,II.D.2.b,,2,lulusan,0,Pembimbing Pendamping Thesis
+itb_dupak_standard_III_A_1_d,TRUE,publication,III.A.1.d,,2,artikel,0,Dalam koran/majalah populer/umum

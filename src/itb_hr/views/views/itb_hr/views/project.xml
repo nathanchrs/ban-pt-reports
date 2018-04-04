@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="project_search_view" model="ir.ui.view">
+			<field name="name">project_search</field>
+			<field name="model">itb.hr_project</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" filter_domain="['|',('name','ilike',self),('reference','ilike',self)]"/>
+					<field name="team_ids" string='Team' filter_domain="['|',('team_ids.employee_id.name','ilike',self),('research_group_id.name','ilike',self)]"/>
+					<field name="partner_id" string='Client' filter_domain="[('partner_id.name','ilike',self)]"/>
+					<field name="team_ids" string='Research group' filter_domain="[('team_ids.research_group','ilike',self)]"/>
+					<filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+					<filter name="validate" string="Official" domain="[('state','=','valid')]"/>
+                    <separator/>
+					<filter name="running" string="Running" domain="[('finish','&gt;=',current_date)]"/>
+					<group expand="0" string="Group By">
+						<filter name="year" string="Year" context="{'group_by': 'start:year'}"/>
+						<filter name="month" string="Month" context="{'group_by': 'start:month'}"/>
+						<filter name="tipe" string="Type" context="{'group_by': 'tipe'}"/>
+						<filter name="research_group_id" string="Research Group" context="{'group_by': 'research_group_id'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record id="project_graph_view" model="ir.ui.view">
+			<field name="name">project_graph</field>
+			<field name="model">itb.hr_project</field>
+			<field name="arch" type="xml">
+				<graph type="bar" stacked="True">
+					<field name="start" interval="year" type="row" />
+					<field name="tipe" type="col" />
+					<field name="nilai" type="measure" />
+				</graph>
+			</field>
+		</record>
+		<record id="project_pivot_view" model="ir.ui.view">
+			<field name="name">project_pivot</field>
+			<field name="model">itb.hr_project</field>
+			<field name="arch" type="xml">
+				<pivot>
+					<field name="start" interval="year" type="row" />
+					<field name="tipe" type="col" />
+					<field name="nilai" type="measure" />
+				</pivot>
+			</field>
+		</record>		
+		<record model="ir.ui.view" id="project_list_view">
+			<field name="name">project_list</field>
+			<field name="model">itb.hr_project</field>
+			<field name="arch" type="xml">
+				<tree string="Project List">
+					<field name="name" />
+					<field name="tipe" />
+					<field name="no_kontrak" />
+					<field name="start" />
+					<field name="finish" />
+					<field name="nilai" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="project_form_view">
+			<field name="name">project_form</field>
+			<field name="model">itb.hr_project</field>
+			<field name="arch" type="xml">
+				<form>
+					<header>
+						<field name="state" widget="statusbar"/>
+						<button name="action_state_valid" type="object" string="Validate" groups="base.gr_ibos_hr_manager,base.gr_ibos_hr_officer" attrs="{'invisible':[('state','=','valid')]}" class="oe_highlight"/>
+						<button name="action_state_draft" type="object" string="Reset to draft" groups="base.gr_ibos_hr_manager,base.gr_ibos_hr_officer" attrs="{'invisible':[('state','=','draft')]}" class="oe_highlight"/>
+					</header>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="tipe" />
+								<field name="reference" />
+								<field name="no_kontrak" />
+								<field name="partner_id" />
+								<field name="research_group_id" />
+								<field name="mitra" />
+								<field name="nilai" />
+							</group>
+							<group>
+								<field name="tahun" />
+								<field name="start" />
+								<field name="finish" />
+								<field name="tgl_kontrak" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Team">
+								<field name="team_ids" context="{'project_id':active_id}">
+									<tree string="Teams" editable="bottom">
+										<field name="employee_id" />
+										<field name="role" />
+									</tree>
+								</field>
+							</page>
+							<page string="Other Info">
+								<group>
+									<field name="sumber" />
+									<field name="deskripsi" />
+									<field name="deskripsi_sispran" />
+									<field name="program" />
+									<field name="jenis" />
+									<field name="kk" />
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

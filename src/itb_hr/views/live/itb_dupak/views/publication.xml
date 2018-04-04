@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record model="ir.ui.view" id="publication_form_inherited_dupak_view">
+		<field name="name">publication_dupak_form</field>
+		<field name="model">itb.hr_publication</field>
+        <field name="inherit_id" ref="itb_hr.publication_form_view" />
+		<field name="arch" type="xml">
+			<field name="media_id" position="after">
+				<field name="standard_id" />				
+			</field>
+        </field>
+	</record>
+    <record model="ir.ui.view" id="publication_list_inherited_dupak_view">
+		<field name="name">publication_dupak_list</field>
+		<field name="model">itb.hr_publication</field>
+        <field name="inherit_id" ref="itb_hr.publication_list_view" />
+		<field name="arch" type="xml">
+			<field name="media_id" position="after">
+				<field name="standard_id" />				
+			</field>
+        </field>
+	</record>
+</odoo>

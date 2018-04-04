@@ -1,0 +1,54 @@
+id,kategori,nama,lokasi,sequence,suku_ids/id,khusus_diktuk,khusus_kecabangan_ids/id
+tnix.kesatuan_kostrad,,KOSTRAD,,1,,,
+tnix.kesatuan_kopassus,,KOPASSUS,,2,,,"tnix.inf,tnix.czi,tnix.cpn,tnix.chb,tnix.cpl,tnix.cba,tnix.ckm,tnix.cpm,tnix.caj,tnix.ctp,tnix.chk,tnix.cku"
+tnix.kesatuan_dam_xiii,Pool A,DAM XIII,"Sulut, Gorontalo, Sulteng",3,"tnix.suku_25,tnix.suku_28,tnix.suku_30",,
+tnix.kesatuan_dam_xvi,Pool A,DAM XVI,"Maluku, Maluku Utara",4,"tnix.suku_31,tnix.suku_32",,
+tnix.kesatuan_dam_xvii,Pool A,DAM XVII,Papua,5,tnix.suku_33,,
+tnix.kesatuan_dam_xviii,Pool A,DAM XVIII,Papua Barat,6,tnix.suku_34,,
+tnix.kesatuan_dam_im,Pool A,DAM IM,Aceh,7,tnix.suku_10,,
+tnix.kesatuan_dam_i,Pool B,DAM I,"Sumut, Sumbar, Riau, Kep. Riau",8,"tnix.suku_3,tnix.suku_4,tnix.suku_5,tnix.suku_9",,
+tnix.kesatuan_dam_ii,Pool B,DAM II,"Sumsel, Jambi, Bengkulu, Kep. Bangka Belitung, Lampung",9,"tnix.suku_6,tnix.suku_7,tnix.suku_8,tnix.suku_11,tnix.suku_12",,
+tnix.kesatuan_dam_vi,Pool B,DAM VI,"Kaltim, Kalut, Kalsel",10,"tnix.suku_20,tnix.suku_21,tnix.suku_22",,
+tnix.kesatuan_dam_vii,Pool B,DAM VII,"Sulbar, Sulsel, Sulteng",11,"tnix.suku_23,tnix.suku_24,tnix.suku_29",,
+tnix.kesatuan_dam_ix,Pool B,DAM IX,"Bali, NTB, NTT",12,"tnix.suku_17,tnix.suku_18,tnix.suku_19",,
+tnix.kesatuan_dam_xii,Pool B,DAM XII,"Kalbar, Kalteng",13,"tnix.suku_26,tnix.suku_27",,
+tnix.kesatuan_dam_iii,Pool C,DAM III,"Jabar, Banten, tanpa Bekasi & Tangerang",14,"tnix.suku_1,tnix.suku_13",,
+tnix.kesatuan_dam_iv,Pool C,DAM IV,"Jateng, DI Yogyakarta",15,"tnix.suku_2,tnix.suku_14",,
+tnix.kesatuan_dam_v,Pool C,DAM V,Jatim,16,"tnix.suku_2,tnix.suku_16",,
+tnix.kesatuan_dam_jaya,Pool C,DAM JAYA,"DKI Jakarta, Bekasi, Tangerang",17,"tnix.suku_1,tnix.suku_15",,
+tnix.kesatuan_akmil,Balakpus,AKMIL,Magelang,22,,"SEPA, SECAPA",
+tnix.kesatuan_seskoad,Balakpus,SESKOAD,Bandung,23,,,
+tnix.kesatuan_secapaad,Balakpus,SECAPAAD,Bandung,24,,SECAPA,
+tnix.kesatuan_puspomad,Balakpus,PUSPOMAD,Jakarta,25,,,tnix.cpm
+tnix.kesatuan_pusterad,Balakpus,PUSTERAD,Jakarta,26,,SECAPA,
+tnix.kesatuan_pusintelad,Balakpus,PUSINTELAD,Jakarta,27,,SECAPA,
+tnix.kesatuan_puspenerbad,Pool Khusus,PUSPENERBAD,Jakarta,18,,,tnix.cpn
+tnix.kesatuan_ditziad,Pool Khusus,DITZIAD,Jakarta,19,,,tnix.czi
+tnix.kesatuan_dithubad,Pool Khusus,DITHUBAD,Jakarta,20,,,tnix.chb
+tnix.kesatuan_ditpalad,Balakpus,DITPALAD,Jakarta,28,,,tnix.cpl
+tnix.kesatuan_ditbekangad,Pool Khusus,DITBEKANGAD,Jakarta,21,,,tnix.cba
+tnix.kesatuan_puskesad,Balakpus,PUSKESAD,Jakarta,29,,,tnix.ckm
+tnix.kesatuan_ditajenad,Balakpus,DITAJENAD,Bandung,30,,,tnix.caj
+tnix.kesatuan_dittopad,Balakpus,DITTOPAD,Jakarta,31,,,tnix.ctp
+tnix.kesatuan_ditkuad,Balakpus,DITKUAD,Jakarta,32,,,tnix.cku
+tnix.kesatuan_ditkumad,Balakpus,DITKUMAD,Jakarta,33,,,tnix.chk
+tnix.kesatuan_dispenad,Balakpus,DISPENAD,Jakarta,34,,"SEPA, SECAPA",
+tnix.kesatuan_disbintalad,Balakpus,DISBINTALAD,Jakarta,35,,"SEPA,SECAPA",
+tnix.kesatuan_dispsiad,Balakpus,DISPSIAD,Bandung,36,,"SEPA, SECAPA",
+tnix.kesatuan_dislitbangad,Balakpus,DISLITBANGAD,Jakarta,37,,"SEPA, SECAPA",
+tnix.kesatuan_disinfolahtad,Balakpus,DISINFOLAHTAD,Jakarta,38,,"SEPA, SECAPA",
+tnix.kesatuan_dislaikad,Balakpus,DISLAIKAD,Jakarta,39,,"SEPA, SECAPA",
+tnix.kesatuan_disjasad,Balakpus,DISJASAD,Bandung,40,,"SEPA, SECAPA",
+tnix.kesatuan_disjarahad,Balakpus,DISJARAHAD,Jakarta,41,,"SEPA, SECAPA",
+tnix.kesatuan_setumad,Balakpus,SETUMAD,Jakarta,42,,"SEPA, SECAPA",
+tnix.kesatuan_puskodal,Balakpus,PUSKODAL,Jakarta,43,,"SEPA, SECAPA",
+tnix.kesatuan_makodiklat,Balakpus,MAKODIKLAT,Bandung,44,,"SEPA, SECAPA",
+tnix.kesatuan_pussenif,Balakpus,PUSSENIF,Bandung,45,,"SEPA, SECAPA",tnix.inf
+tnix.kesatuan_pussenkav,Balakpus,PUSSENKAV,Bandung,46,,"SEPA, SECAPA",tnix.kav
+tnix.kesatuan_pussenarmed,Balakpus,PUSSENARMED,Bandung,47,,"SEPA, SECAPA",tnix.arm
+tnix.kesatuan_pussenarhanud,Balakpus,PUSSENARHANUD,Bandung,48,,"SEPA, SECAPA",tnix.arh
+tnix.kesatuan_mabes,Balakpus,MABES TNI,Jakarta,49,,SECAPA,
+tnix.kesatuan_mabesad,Balakpus,MABES AD,Jakarta,50,,"SEPA, SECAPA",
+tnix.kesatuan_kemhan,Balakpus,KEMHAN,Jakarta,51,,SECAPA,
+tnix.kesatuan_lemhannas,Balakpus,LEMHANNAS,Jakarta,52,,SECAPA,
+tnix.kesatuan_dilmil,Balakpus,DILMIL,Jakarta,53,,SECAPA,tnix.chk

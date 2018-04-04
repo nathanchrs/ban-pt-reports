@@ -1,0 +1,27 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_itb_plan_manager,itb.plan Budget Manager,itb_plan.model_itb_plan,group_itb_plan_manager,1,1,0,0
+access_itb_plan_line_manager,itb.plan_line Budget Manager,itb_plan.model_itb_plan_line,group_itb_plan_manager,1,1,0,0
+access_itb_plan_program_manager,itb.plan_program Budget Manager,itb_plan.model_itb_plan_program,group_itb_plan_manager,1,0,0,0
+access_itb_plan_activity_manager,itb.plan_activity Budget Manager,itb_plan.model_itb_plan_activity,group_itb_plan_manager,1,0,0,0
+access_itb_plan_subactivity_manager,itb.plan_subactivity Budget Manager,itb_plan.model_itb_plan_subactivity,group_itb_plan_manager,1,0,0,0
+access_itb_plan_spending_manager,itb.plan_spending Budget Manager,itb_plan.model_itb_plan_spending,group_itb_plan_manager,1,1,0,0
+access_itb_plan_price_manager,itb.plan_price Budget Manager,itb_plan.model_itb_plan_price,group_itb_plan_manager,1,0,0,0
+access_itb_plan_unit_manager,itb.plan_unit Budget Manager,itb_plan.model_itb_plan_unit,group_itb_plan_manager,1,0,0,0
+access_itb_plan_spending_actual_manager,itb.plan_spending_actual Budget Manager,itb_plan.model_itb_plan_spending_actual,group_itb_plan_manager,1,1,0,0
+access_itb_plan_spending_implementation_manager,itb.plan_spending_implementation Budget Manager,itb_plan.model_itb_plan_implementation,group_itb_plan_manager,1,0,0,0
+access_itb_plan_owner,itb.plan Budget Owner,itb_plan.model_itb_plan,group_itb_plan_owner,1,1,1,1
+access_itb_plan_line_owner,itb.plan_line (initiative) Budget Owner,itb_plan.model_itb_plan_line,group_itb_plan_owner,1,1,1,1
+access_itb_plan_program_owner,itb.plan_program Budget Owner,itb_plan.model_itb_plan_program,group_itb_plan_owner,1,0,0,0
+access_itb_plan_activity_owner,itb.plan_activity Budget Owner,itb_plan.model_itb_plan_activity,group_itb_plan_owner,1,0,0,0
+access_itb_plan_subactivity_owner,itb.plan_subactivity Budget Owner,itb_plan.model_itb_plan_subactivity,group_itb_plan_owner,1,0,0,0
+access_itb_plan_spending_owner,itb.plan_spending Budget Owner,itb_plan.model_itb_plan_spending,group_itb_plan_owner,1,1,1,1
+access_itb_plan_price_owner,itb.plan_price Budget Owner,itb_plan.model_itb_plan_price,group_itb_plan_owner,1,1,1,0
+access_itb_plan_unit_owner,itb.plan_unit Budget Owner,itb_plan.model_itb_plan_unit,group_itb_plan_owner,1,0,0,0
+access_itb_plan_target_owner,itb.plan_target Budget Owner,itb_plan.model_itb_plan_target,group_itb_plan_owner,1,1,1,1
+access_itb_plan_indicator_owner,itb.plan_indicator Budget Owner,itb_plan.model_itb_plan_indicator,group_itb_plan_owner,1,1,1,0
+access_itb_plan_evaluation_line_owner,itb.plan_evaluation_line Budget Owner,itb_plan.model_itb_plan_evaluation_line,group_itb_plan_owner,1,1,1,1
+access_itb_plan_evaluation_owner,itb.plan_evaluation Budget Owner,itb_plan.model_itb_plan_evaluation,group_itb_plan_owner,1,1,1,1
+access_itb_plan_spending_actual_owner,itb.plan_spending_actual Budget Owner,itb_plan.model_itb_plan_spending_actual,group_itb_plan_owner,1,1,1,1
+access_itb_plan_implementation_owner,itb.plan_spending_implementation Budget Manager,itb_plan.model_itb_plan_implementation,group_itb_plan_owner,1,1,1,1
+access_itb_plan_confirmation_owner,itb.plan_spending_confirmation Budget Owner,itb_plan.model_itb_plan_confirmation,group_itb_plan_owner,1,1,1,1
+access_itb_plan_confirmation_line_owner,itb.plan_spending_confirmation_line Budget Owner,itb_plan.model_itb_plan_confirmation_line,group_itb_plan_owner,1,1,1,1

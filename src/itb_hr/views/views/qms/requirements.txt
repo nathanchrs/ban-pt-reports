@@ -1,0 +1,61 @@
+Audit
+- button Confirm validate Auditee is exist, date can't backward, auditors,auditee is set
+- button Run visible if today >= audit date and state=confirm 
+- button Close visible if All finding is closed 
+
+
+
+
+
+
+
+
+
+SUPPLIER
+
+MATERIAL
+nama supplier == DONE
+alamat supplier, email, contact person == DONE
+nama produsen == DONE
+alamat produsen == DONE
+nama material yang disupply == DONE
+pengunaan material pada produk == DONE
+kategori penggunaan material [major/minor/moderate] ; [critical(Y/N)] == DONE
+sertifikat halal - nama pemberi saja + masa berlaku sertifikat halal == DONE
+nilai audit [A/B/C] + skor == form audit == DONE
+finding [close out + komen supplier] == DONE
+Audit special (non scheduled) == DONE
+external komplain dan tanggal komplain (user, bukan customer) + CAPA dari supplier atas komplain == DONE
+Evaluasi Supplier, standard form == DONE
+approval regulatory ke AHI koordinator ke MUI oleh regulatory == standard form
+Report : Laporan Hasil Audit
+Algoritma penjadwalan Audit rutin oleh: kategori material + nilai audit + critical + annual jumlah komplain
+
+
+MAKLOON
+identitas, sertifikasi == DONE
+produksi[no_po + tgl + sku + batch + expire +] ==DONE
+Audit (sama dg supplier material) == DONE
+Hasil Analisa per produksi, form hasil analisa == DONE
+Hasil analisa per periodik
+
+
+IMPORTIR
+identitas, sertifikasi == DONE
+Audit (sama dg supplier material) == DONE
+no, PO/BL/, tgl_receipt, ETA/ATA beacukai, suhu dibuka == DONE
+Hasil Analisa, attachment saja == DONE
+
+
+LMS 
+list reagent
+tanggal kedatangan
+nama supplier, contact
+expire date
+penggunaan per analisa
+harga
+list glassware
+list equipments
+list alat yang di kalibrasi, tanggal kalibrasi, hasil kalibrasi, tanggal kalibrasi selanjutnya, kalibrasi external
+Hasil analisa material, parameter analisa, spesifikasi
+hasil analisa produk, parameter analisa dan spesifikasi

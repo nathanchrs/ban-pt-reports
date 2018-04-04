@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="semester_list_view">
+			<field name="name">semester_list</field>
+			<field name="model">itb.academic_semester</field>
+			<field name="arch" type="xml">
+				<tree string="semester List" editable="bottom">
+					<field name="name" />
+					<field name="type" />
+					<field name="year" />
+					<field name="start" />
+					<field name="finish" />
+				</tree>
+			</field>
+		</record>
+</odoo>

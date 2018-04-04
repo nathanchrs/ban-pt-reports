@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <act_window id="itb_academic.academic_civitas_participant_action" name="Participant" res_model="res.partner" view_mode="tree,form" />
+        <act_window id="itb_academic.academic_civitas_instructor_action" name="Instructor" res_model="itb.academic_instructor" view_mode="tree,form" />
+        <act_window id="itb_academic.academic_civitas_group_action" name="Group" res_model="itb.academic_group" view_mode="tree,form" />
+        <act_window id="itb_academic.academic_civitas_counselor_action" name="Counselor" res_model="itb.academic_counselor" view_mode="tree,form" />
+        <act_window id="itb_academic.academic_lecture_course_action" name="Course" res_model="itb.academic_course" view_mode="tree,form,graph" />
+        <act_window id="itb_academic.academic_lecture_attendance_action" name="Attendance" res_model="itb.academic_attendance" view_mode="tree,form,graph" />
+        <act_window id="itb_academic.academic_lecture_grade_action" name="Grade" res_model="itb.academic_participant" view_mode="tree,graph" />
+        <act_window id="itb_academic.academic_lecture_performance_action" name="Performance" res_model="itb.academic_performance" view_mode="tree,form" />
+        <act_window id="itb_academic.academic_thesis_thesis_action" name="Thesis" res_model="itb.academic_thesis" view_mode="tree,form,graph" />
+        <act_window id="itb_academic.academic_thesis_defence_action" name="Defence" res_model="itb.academic_defence" view_mode="tree,form,calendar" />
+        <act_window id="itb_academic.academic_thesis_structure_action" name="Structure" res_model="itb.academic_structure" view_id="thesis_structure_list_view" view_type="tree" domain="[('parent_id','=',False)]" />
+        <act_window id="itb_academic.academic_thesis_graduation_action" name="Graduation" res_model="itb.academic_graduation" view_mode="tree,form" />
+        <act_window id="itb_academic.academic_curriculum_action" name="Curriculum" res_model="itb.academic_curriculum" view_mode="tree,form" />
+        <act_window id="itb_academic.academic_curriculum_offering_action" name="Offering" res_model="itb.academic_offering" view_mode="tree,form" />
+        <act_window id="itb_academic.academic_curriculum_line_action" name="Curriculum Line" res_model="itb.academic_curriculum_line" view_mode="tree,form" />
+        <act_window id="itb_academic.academic_curriculum_catalog_action" name="Catalog" res_model="itb.academic_catalog" view_mode="tree,form,graph" />
+        <act_window id="itb_academic.academic_curriculum_program_action" name="Program" res_model="itb.academic_program" view_mode="tree,form" />
+        <act_window id="itb_academic.academic_curriculum_outcome_action" name="Outcome" res_model="itb.academic_outcome" view_mode="tree,form,graph" />
+        <act_window id="itb_academic.academic_curriculum_rubric_action" name="Rubric" res_model="itb.academic_rubric" view_mode="tree,form" />
+        <act_window id="itb_academic.academic_curriculum_semester_action" name="Semester" res_model="itb.academic_semester" view_mode="tree" />
+ 
+
+        <menuitem id="itb_academic.academic_menu" name="Academic" web_icon="itb_academic,static/description/icon.png" />
+
+        <menuitem id="itb_academic.academic_civitas_menu" name="Civitas" parent="itb_academic.academic_menu" sequence="10" />
+        <menuitem id="itb_academic.academic_civitas_participant_menu" name="Participant" action="itb_academic.academic_civitas_participant_action" parent="itb_academic.academic_civitas_menu" sequence="11" />
+        <menuitem id="itb_academic.academic_civitas_instructor_menu" name="Instructor" action="itb_academic.academic_civitas_instructor_action" parent="itb_academic.academic_civitas_menu" sequence="12" />
+        <menuitem id="itb_academic.academic_civitas_group_menu" action="itb_academic.academic_civitas_group_action" name="Group" parent="itb_academic.academic_civitas_menu" sequence="13" />
+        <menuitem id="itb_academic.academic_civitas_counselor_menu" action="itb_academic.academic_civitas_counselor_action" name="Counselor" parent="itb_academic.academic_civitas_menu" sequence="14" />
+
+        <menuitem id="itb_academic.academic_lecture_menu" name="Teaching" parent="itb_academic.academic_menu" sequence="20" />
+		<menuitem id="itb_academic.academic_lecture_course_menu" action="itb_academic.academic_lecture_course_action" name="Course" parent="itb_academic.academic_lecture_menu" sequence="21" />
+		<menuitem id="itb_academic.academic_lecture_attendance_menu" action="itb_academic.academic_lecture_attendance_action" name="Attendance" parent="itb_academic.academic_lecture_menu" sequence="22" />
+        <menuitem id="itb_academic.academic_lecture_grade_menu" action="itb_academic.academic_lecture_grade_action" name="Grade" parent="itb_academic.academic_lecture_menu" sequence="23" />
+        <menuitem id="itb_academic.academic_lecture_performance_menu" action="itb_academic.academic_lecture_performance_action" name="Performance" parent="itb_academic.academic_lecture_menu" sequence="25" />
+
+        <menuitem id="itb_academic.academic_thesis_menu" name="Thesis" parent="itb_academic.academic_menu" sequence="30" />
+        <menuitem id="itb_academic.academic_thesis_thesis_menu" action="itb_academic.academic_thesis_thesis_action" name="Thesis" parent="itb_academic.academic_thesis_menu" sequence="31" />
+        <menuitem id="itb_academic.academic_thesis_defence_menu" action="itb_academic.academic_thesis_defence_action" name="Defence" parent="itb_academic.academic_thesis_menu" sequence="32" />
+        <menuitem id="itb_academic.academic_thesis_structure_menu" action="itb_academic.academic_thesis_structure_action" name="Structure" parent="itb_academic.academic_thesis_menu" sequence="33" />
+        <menuitem id="itb_academic.academic_thesis_graduation_menu" action="itb_academic.academic_thesis_graduation_action" name="Graduation" parent="itb_academic.academic_thesis_menu" sequence="34" />
+       
+        <menuitem id="itb_academic.academic_curriculum_menu" name="Curriculum" parent="itb_academic.academic_menu" sequence="50" />
+		<menuitem id="itb_academic.academic_curriculum_offering_menu" action="itb_academic.academic_curriculum_offering_action" name="Offering" parent="itb_academic.academic_curriculum_menu" sequence="50" />
+        <menuitem id="itb_academic.academic_curriculum_curriculum_menu" action="itb_academic.academic_curriculum_action" name="Curriculum" parent="itb_academic.academic_curriculum_menu" sequence="50" />
+        <menuitem id="itb_academic.academic_curriculum_catalog_menu" action="itb_academic.academic_curriculum_catalog_action" name="Catalog" parent="itb_academic.academic_curriculum_menu" sequence="51" />
+		<menuitem id="itb_academic.academic_curriculum_rubric_menu" action="itb_academic.academic_curriculum_rubric_action" name="Rubric" parent="itb_academic.academic_curriculum_menu" sequence="52" />
+        <menuitem id="itb_academic.academic_curriculum_outcome_menu" action="itb_academic.academic_curriculum_outcome_action" name="Outcome" parent="itb_academic.academic_curriculum_menu" sequence="53" />
+		<menuitem id="itb_academic.academic_curriculum_program_menu" action="itb_academic.academic_curriculum_program_action" name="Program" parent="itb_academic.academic_curriculum_menu" sequence="54" />
+        <menuitem id="itb_academic.academic_curriculum_semester_menu" action="itb_academic.academic_curriculum_semester_action" name="Semester" parent="itb_academic.academic_curriculum_menu" sequence="55" />
+</odoo>

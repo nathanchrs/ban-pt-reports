@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="view_form_itb_hr_employee_inherited">
+			<field name="name">ITB HR Employee extension</field>
+			<field name="model">hr.employee</field>
+			<field name="inherit_id" ref="hr.view_employee_form" />
+			<field name="arch" type="xml">
+				<field name="bank_account_id" position="after">
+					<field name="tendik" string="Tenaga Kependidikan" />
+					<field name="last_edu" string="Last Education" />
+					<field name="prodi" string="Program Studi" />
+					<field name="last_pangkat" string="Pangkat Terakhir" />
+					<field name="last_jabatan" string="Jabatan Terakhir" />
+				</field>
+				<field name="work_phone" position="after">
+					<field name="pre_title" />
+					<field name="post_title" />	
+				</field>
+				<field name="coach_id" position="after">
+					<field name="research_group_id" />				
+				</field>
+				<field name="gender" position="before">
+					<field name="employment_type" />
+					<field name="is_faculty" />
+					<field name="is_student" />
+					<field name="is_self" />
+				</field>
+				<field name="birthday" position="after">
+					<field name="birthplace" string="Place" />			
+				</field>
+				<xpath expr="//group[4]" position="after"> 
+					<group>
+						<group string="ITB Identity">
+							<field name="nip_old" string="NIP old" />
+							<field name="nip_new" string="NIP new" />
+							<field name="nidn" string="NIDN" />
+							<field name="nik" string="NIK" />
+							<field name="employee_card" />
+							<field name="finger_id" />
+						</group>
+						<group string="PNS Status">
+							<field name="pns_start" />
+							<field name="cpns_start" />
+						</group>
+					</group>
+					<group>
+						<field name="family_ids">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="relation" />
+								<field name="sex" />
+								<field name="age" />
+							</tree>
+						</field>
+					</group>
+				</xpath> 
+				<xpath expr="//page[2]" position="after"> 
+					<page string="Professional Information">
+						<!--header-->
+							<!--button name="update_jabatan" type="object" string="Update Jabatan"/-->		
+							<!--button name="update_pangkat" type="object" string="Update Pangkat"/-->		
+							<!--button name="update_pendidikan" type="object" string="Update Pendidikan"/-->		
+						<!--/header-->
+						<h3>Educations</h3>
+						<field name="education_ids">
+							<tree editable="bottom">
+								<field name="school" />
+								<field name="major" />
+								<field name="degree" />
+								<field name="country_id" />
+								<field name="start" />
+								<field name="finish" />
+							</tree>
+						</field>
+						<h3>Works</h3>
+						<field name="work_ids">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="company" />
+								<field name="company_scope" />
+								<field name="country_id" />
+								<field name="start" />
+								<field name="finish" />
+							</tree>
+						</field>
+						<h3>Duties</h3>
+						<field name="duty_ids">
+							<tree editable="bottom">
+								<field name="duty" />
+								<field name="reference" />
+								<field name="start" />
+								<field name="finish" />
+							</tree>
+						</field>
+						<h3>Assignments</h3>
+						<field name="assignment_ids">
+							<tree editable="bottom">
+								<field name="job_id" />
+								<field name="department_id" />
+								<field name="reference" />
+								<field name="start" />
+								<field name="finish" />
+							</tree>
+						</field>
+						<h3>Employment</h3>
+						<field name="employment_ids">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="reference" />
+								<field name="signed_by" />
+								<field name="decision" />
+								<field name="start" />
+							</tree>
+						</field>
+						<h3>Projects</h3>
+						<field name="project_ids">
+							<tree editable="bottom">
+								<field name="project_id" string="Name" />
+								<field name="role" />
+								<field name="year" />
+								<field name="client" />
+								<field name="amount" />
+							</tree>
+						</field>
+						<h3>Trainings</h3>
+						<field name="training_ids">
+							<tree editable="bottom">
+								<field name="name" />
+								<!--field name="role_ids" widget="many2many_tags" options="{'no_create': True}" /-->
+								<field name="country_id" />
+								<field name="start" />
+								<field name="finish" />
+							</tree>
+						</field>
+						<h3>Awards</h3>
+						<field name="award_ids">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="endorser" />
+								<field name="level" />
+								<field name="start" />
+								<field name="reference" />
+							</tree>
+						</field>
+						<h3>Memberships</h3>
+						<field name="membership_ids">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="role" />
+								<field name="level" />
+								<field name="start" />
+								<field name="finish" />
+							</tree>
+						</field>
+						<h3>Pangkat</h3>
+						<field name="pangkat_ids">
+							<tree editable="bottom">
+								<field name="pangkat" />
+								<field name="reference" />
+								<field name="decision" />
+								<field name="start" />
+								<field name="finish" />
+							</tree>
+						</field>
+						<h3>Jabatan</h3>
+						<field name="jabatan_ids">
+							<tree editable="bottom">
+								<field name="jabatan" />
+								<field name="reference" />
+								<field name="credit" />
+								<field name="decision" />
+								<field name="start" />
+								<field name="finish" />
+							</tree>
+						</field>
+						<h3>Publications</h3>
+						<field name="publication_ids">
+							<tree editable="bottom">
+								<field name="publication_id" string="Name" />
+								<field name="publisher" />
+								<field name="media" />
+								<field name="role" />
+								<field name="day" />
+								<field name="score" />
+							</tree>
+						</field>
+					</page>
+				</xpath>
+			</field>
+		</record>
+
+		<record id="view_report_tendik_pivot" model="ir.ui.view">
+            <field name="name">itb.hr_report_tendik.pivot</field>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <pivot string="DUK">
+                    <field name="last_edu" type="row"/>
+                    <field name="prodi" type="col"/>
+                </pivot>
+            </field>
+        </record>
+</odoo>

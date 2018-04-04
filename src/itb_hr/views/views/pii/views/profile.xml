@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="view_form_pii_res_partner_inherited">
+			<field name="name">Anggota PII</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+			<field name="arch" type="xml">
+				<field name="website" position="after">
+					<field name="company_address" string="Company Address" />
+					<field name="religion" string="Religion" />
+					<field name="marital_status" string="Marital Status" />
+				</field>
+				<xpath expr="//page[2]" position="before"> 
+					<page string="Keprofesian">
+						<h3>Pendidikan</h3>
+						<field name="education_ids" context="{'partner_id':active_id}">
+							<tree editable="bottom">
+								<field name="major" />
+								<field name="degree" />
+								<field name="country_id" />
+								<field name="finish" />
+								<field name="ipk" />
+							</tree>
+						</field>
+						<h3>Keanggotaan</h3>
+						<field name="membership_ids" context="{'partner_id':active_id}">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="role" />
+								<field name="start" />
+								<field name="finish" />
+							</tree>
+						</field>
+						<h3>Penghargaan</h3>
+						<field name="award_ids" context="{'partner_id':active_id}">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="endorser" />
+								<field name="date" />
+							</tree>
+						</field>
+						<h3>Pelatihan</h3>
+						<field name="training_ids" context="{'partner_id':active_id}">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="date" />
+								<field name="provider" />
+								<field name="credit" />
+							</tree>
+						</field>
+						<h3>Pekerjaan</h3>
+						<field name="work_ids" context="{'partner_id':active_id}">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="company" />
+								<field name="start" />
+								<field name="finish" />
+							</tree>
+						</field>
+						<h3>Pengajaran</h3>
+						<field name="teaching_ids" context="{'partner_id':active_id}">
+							<tree editable="bottom">
+								<field name="university" />
+								<field name="date" />
+								<field name="courses" />
+								<field name="credit" />
+							</tree>
+						</field>
+						<h3>Pengabdian</h3>
+						<field name="service_ids" context="{'partner_id':active_id}">
+							<tree editable="bottom">
+								<field name="organization" />
+								<field name="date" />
+								<field name="name" />
+								<field name="note" />
+							</tree>
+						</field>
+						<h3>Karya</h3>
+						<field name="creation_ids" context="{'partner_id':active_id}">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="partner_id" />
+								<field name="year" />
+								<field name="publisher" />
+								<field name="note" />
+							</tree>
+						</field>
+						<h3>Bahasa</h3>
+						<field name="language_ids" context="{'partner_id':active_id}">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="reading" />
+								<field name="writing" />
+								<field name="speaking" />
+								<field name="listening" />
+							</tree>
+						</field>
+						<h3>Makalah</h3>
+						<field name="proceeding_ids" context="{'partner_id':active_id}">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="date" />
+								<field name="conference" />
+								<field name="organizer" />
+								<field name="note" />
+							</tree>
+						</field>						
+						<h3>Karya Ilmiah</h3>
+						<field name="publication_ids" context="{'partner_id':active_id}">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="date" />
+								<field name="publisher" />
+								<field name="note" />
+							</tree>
+						</field>
+						<h3>Penelitian</h3>
+						<field name="research_ids" context="{'partner_id':active_id}">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="date" />
+								<field name="campus" />
+								<field name="note" />
+							</tree>
+						</field>
+						<h3>Seminar</h3>
+						<field name="seminar_ids" context="{'partner_id':active_id}">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="date" />
+								<field name="organizer" />
+								<field name="note" />
+							</tree>
+						</field>
+					</page>
+				</xpath>
+			</field>
+		</record>
+</odoo>

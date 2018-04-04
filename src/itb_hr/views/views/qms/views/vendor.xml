@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record model="ir.ui.view" id="vms_res_partner_form_inherited">
+		<field name="name">res.partner form extension</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="base.view_partner_form" />
+		<field name="arch" type="xml">
+			<field name="category_id" position="after">
+				<field name="role" />
+				<field name="vendor" attrs="{'invisible':[('role','!=','vendor')]}" />
+				<field name="auditor" attrs="{'invisible':[('role','!=','employee')]}" />
+				<field name="product_ids" widget="many2many_tags" attrs="{'invisible':[('role','!=','vendor')]}" />
+			</field>
+			<xpath expr="//page[3]" position="attributes">
+				<attribute name="invisible">1</attribute>                
+			</xpath>
+			<xpath expr="//page[1]" position="after"> 
+				<page string="Certificates">
+					<field name="certification_ids" context="{'partner_id':active_id}">
+						<tree editable="bottom">
+							<field name="organization" />
+							<field name="reference" />
+							<field name="lppom_reference" />
+							<field name="lppom_date" />
+							<field name="start" />
+							<field name="finish" />
+						</tree>
+					</field>
+				</page>
+			</xpath>
+			<xpath expr="//page[2]" position="attributes">
+				<attribute name="attrs">{'invisible': [('role','!=','vendor')]}</attribute>               
+			</xpath>
+		</field>
+	</record>
+</odoo>

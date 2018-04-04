@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="academic_program_search_view" model="ir.ui.view">
+			<field name="name">program_search</field>
+			<field name="model">itb.academic_program</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="name_en" string="Name (English)" />
+					<field name="outcome_ids" string='Related Outcome' filter_domain="[('outcome_ids.outcome_id.name','ilike',self)]"/>
+					<group expand="0" string="Group By">
+						<filter name="degree" string="Degree" context="{'group_by': 'degree'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="academic_program_list_view">
+			<field name="name">program_list</field>
+			<field name="model">itb.academic_program</field>
+			<field name="arch" type="xml">
+				<tree string="Program List">
+					<field name="name" />
+					<field name="name_en" />
+					<field name="prefix" />
+					<field name="degree" />
+					<field name="outcome_ids" widget="many2many_tags" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="academic_program_form_view">
+			<field name="name">program_form</field>
+			<field name="model">itb.academic_program</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="name_en" />
+								<field name="prefix" />
+                                <field name="degree" />
+							</group>
+							<group>
+								<field name="outcome_ids" widget="many2many_tags" />
+                                <field name="active" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Curriculum">
+								<field name="curriculum_ids" />
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

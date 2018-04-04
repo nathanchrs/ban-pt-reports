@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="report_kandidat_cv"
+        string="CV Kandidat"
+        model="tnix.kandidat"
+        report_type="qweb-html"
+        groups="base.group_erp_manager"
+        name="tnix.report_kandidat_cv_template"
+    />
+
+    <template id="report_kandidat_cv_template">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img t-if="o.foto" t-att-src="'data:image/png;base64,%s' % o.foto" style="max-height: 96px;" />
+                            </div>
+                            <div class="col-xs-10">
+                                <h1><span t-field="o.nama"/></h1>
+                                <span t-field="o.nrp"/>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row">
+                            <div class="col-xs-3"><h2>Profil</h2></div>
+                            <div class="col-xs-9">
+                                <div class="row">
+                                    <ul class="col-xs-12">
+                                        <li><strong>Jenis Kelamin</strong> - <span t-field="o.kelamin"/></li>
+                                        <li><strong>Suku</strong> - <span t-field="o.suku_id.nama"/></li>
+                                        <li><strong>Tempat Tinggal</strong> - <span t-field="o.propinsi_tinggal.nama"/> </li>
+                                        <li><strong>Tempat Lahir</strong> - <span t-field="o.propinsi_lahir.nama"/> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-xs-3"><h2>Kualifikasi</h2></div>
+                            <div class="col-xs-9">
+                                <div class="row">
+                                    <ul class="col-xs-6">
+                                        <li><strong>Diktuk</strong> - <span t-field="o.diktuk"/></li>
+                                        <li><strong>Ranking</strong> - <span t-field="o.ranking"/></li>
+                                        <li><strong>Dikum</strong> - <span t-field="o.dikum"/></li>
+                                        <li><strong>Bidang Kesarjanaan</strong> - <span t-field="o.bidang"/></li>
+                                    </ul>
+                                    <ul class="col-xs-6">
+                                        <li><strong>Kecabangan</strong> - <span t-field="o.kecabangan_id.nama"/> </li>
+                                        <li><strong>Panda</strong> - <span t-field="o.panda.nama"/></li>
+                                        <li><strong>Pangkat</strong> - <span t-field="o.pangkat"/></li>
+                                        <li><strong>Minat</strong> - <span t-field="o.minat.nama"/></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-xs-3"><h2>Putusan</h2></div>
+                            <div class="col-xs-9">
+                                <div class="row">
+                                    <ul class="col-xs-12">
+                                        <li><strong>Rekomendasi 1</strong> - <span t-field="o.rekomendasi1.nama"/></li>
+                                        <li><strong>Rekomendasi 2</strong> - <span t-field="o.rekomendasi2.nama"/></li>
+                                        <li><strong>Tanggal Sidang</strong> - <span t-field="o.tanggal_sidang"/></li>
+                                        <li><strong>Penempatan</strong> - <span t-field="o.penempatan.nama"/> </li>
+                                        <li><strong>Tanggal Keputusan</strong> - <span t-field="o.tanggal_keputusan"/></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>	
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="partner_list_view">
+            <field name="name">partner_list</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree string="Partner List View">
+					<field name="name" string="name" />
+					<field name="display_name" string="Display Name" />
+				</tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="partner_form_view">
+			<field name="name">partner_form</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<field name="display_name" string="Display Name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="target_list_view">
+            <field name="name">target_list</field>
+            <field name="model">itb.plan_target</field>
+            <field name="arch" type="xml">
+                <tree string="Target List" create="false">
+					<field name="indicator_id" string="Indicator" />
+					<field name="plan_id" string="Plan" />
+					<field name="plan_line_id" string="Initiative" />
+					<field name="standard" />
+					<field name="plan" string="Target" />
+					<field name="actual"/>
+					<field name="percent_performance" string="%" />
+                </tree>
+            </field>
+        </record>
+</odoo>

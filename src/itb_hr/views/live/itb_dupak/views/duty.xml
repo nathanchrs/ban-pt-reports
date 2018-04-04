@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record model="ir.ui.view" id="duty_form_inherited_dupak_view">
+		<field name="name">duty_dupak_form</field>
+		<field name="model">itb.hr_duty</field>
+        <field name="inherit_id" ref="itb_hr.duty_form_view" />
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='employee_ids']/tree/field[@name='employee_id']" position="after">
+				<field name="standard_id" />				
+			</xpath>
+        </field>
+	</record>
+    <record model="ir.ui.view" id="duty_list_inherited_dupak_view">
+		<field name="name">duty_dupak_list</field>
+		<field name="model">hr.employee</field>
+        <field name="inherit_id" ref="itb_hr.view_form_itb_hr_employee_inherited" />
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='duty_ids']/tree" position="inside">
+				<field name="standard_id" />				
+			</xpath>
+        </field>
+	</record>
+</odoo>

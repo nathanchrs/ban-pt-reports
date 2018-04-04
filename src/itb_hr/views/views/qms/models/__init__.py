@@ -1,0 +1,12 @@
+import res_partner
+import product
+import capa
+import audit
+import claim
+import evaluation
+import makloon
+import inbound
+import assesment
+import coa
+import production
+import committee

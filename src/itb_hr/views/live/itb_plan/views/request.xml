@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="request_list_view">
+            <field name="name">request_list</field>
+            <field name="model">itb.plan_request</field>
+            <field name="arch" type="xml">
+                <tree string="Payment Request List">
+                    <field name="unit_id" string="Plan" />
+					<field name="pay_to" string="Paid To"/>
+					<field name="day" string="Date"/>
+					<field name="due" string="Due Date"/>
+					<field name="total" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="request_form_view">
+			<field name="name">request_form</field>
+            <field name="model">itb.plan_request</field>
+            <field name="arch" type="xml">
+				<form>
+					<header>
+						<button name="action_payment_req_confirmed" type="object" string="Confirm" states="draft" />
+						<button name="action_payment_req_paid" type="object" string="Set to Paid" states="validate" /> 
+						<button name="action_payment_req_abort" type="object" string="Abort" states="confirm" />
+						<button name="action_payment_req_validate" type="object" string="Validated" states="confirm" />
+						<field name="state" widget="statusbar" />
+					</header>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="pay_to" string="Paid To"/>
+								<field name="total" />
+								<field name="due" string="Due date"/>
+								<field name="day" string="Invoice date"/>
+								<field name="reference" />
+								<!--<field name="unit_id" string="Allocation" />-->
+							</group>
+							<group>
+								
+								<field name="unit_id" string="Alocated to"/>
+								<field name="price_id" string="Price Id"/>
+								<!--<field name="is_advance" string="Advance Cash"/>-->
+							</group>
+						</group>
+						<notebook>
+						<page string="Source">
+							<!--h4>Budget Source</h4-->
+							<!--field name="request_line_ids" context="{'plan_id':plan_id,'type':type}"-->
+							<field name="request_line_ids">
+								<tree editable="bottom">
+									<!--field name="spending_actual_id" string="Name" domain="[('plan_id','=',plan_id)]" /-->
+									<field name="spending_actual_id" string="Name" />
+									<field name="initiative" string="Initiative" readonly="1" />
+									<field name="unit_id" string="Unit"/>
+									<!--field name="month" string="Month"/-->
+									<field name="available" string="Available"/>
+									<field name="total" string="Total"/>
+								</tree>
+							</field>
+						</page>
+						<page string="Alocation">
+							<!--h4>Budget Internal</h4-->
+							<!--field name="request_line_ids" context="{'plan_id':plan_id,'type':type}"-->
+							<field name="request_alocation_ids">
+								<tree editable="bottom">
+									<!--field name="spending_actual_id" string="Name" domain="[('plan_id','=',plan_id)]" /-->
+									<!--field name="spending_id" string="Name" domain="[('spending_actual_id.plan_line_id.unit_id','=',request_alocation_ids.unit_id)]" /-->
+									<field name="spending_id" string="Name" />
+									<field name="initiative_alo" string="Initiative" readonly="1" />
+									<field name="unit_id"  string="Unit"/>
+									<!--field name="month" string="Month"/-->
+									<field name="available_alo"  string="Available"/>
+									<field name="total_alo" string="Total"/>
+								</tree>
+							</field>
+						</page>
+						<page string="Note">
+						<!--h4>Additional Information</h4-->
+							<field name="note" />
+						</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="faculty_ind">
+            <title>Academy</title>
+            <t t-foreach="teachers" t-as="teacher">
+                <p><t t-esc="teacher.id"/> <t t-esc="teacher.name"/></p>
+            </t>
+        </template>
+    </data>
+</odoo>

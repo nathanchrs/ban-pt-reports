@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="course_search_view" model="ir.ui.view">
+			<field name="name">course_search</field>
+			<field name="model">itb.academic_course</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="program_id" string='Program' filter_domain="[('catalog_id.program_id.name','ilike',self)]" />
+					<field name="instructor_ids" string='Instructor' filter_domain="[('instructor_ids.partner_id.name','ilike',self)]"/>
+                    <field name="participant_ids" string='Participant' filter_domain="[('participant_ids.partner_id.name','ilike',self)]"/>
+					<field name="lecture_ids" string='Location' filter_domain="[('lecture_ids.location','ilike',self)]"/>
+					<filter name="semester" string="This Semester" domain="[(1,'=',1)]"/>
+                    <filter name="today" string="today" domain="[(1,'=',1)]"/>
+                    <filter name="week" string="This Week" domain="[(1,'=',1)]"/>
+					<separator />
+					<filter name="guest" string="Guest Lecture" domain="[(1,'=',1)]"/>					
+					<group expand="0" string="Group By">
+						<filter name="program_id" string="Program" context="{'group_by': 'program_id'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="course_list_view">
+			<field name="name">course_list</field>
+			<field name="model">itb.academic_course</field>
+			<field name="arch" type="xml">
+				<tree string="Course List">
+					<field name="name" />
+					<field name="program_id" />
+					<field name="semester_id" />
+					<field name="instructor_ids" widget="many2many_tags" />
+					<field name="participant_amount" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="course_form_view">
+			<field name="name">course_form</field>
+			<field name="model">itb.academic_course</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="catalog_id" />
+								<field name="program_id" />
+							</group>
+							<group>
+								<field name="semester_id" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Instructor">
+								<field name="instructor_ids" />
+							</page>
+							<page string="Participant">
+								<field name="participant_ids" />
+							</page>
+							<page string="Group">
+								<field name="group_ids" />
+							</page>
+							<page string="Lecture">
+								<field name="lecture_ids" />
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

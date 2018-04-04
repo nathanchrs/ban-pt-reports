@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="performance_search_view" model="ir.ui.view">
+			<field name="name">performance_search</field>
+			<field name="model">itb.academic_performance</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="course_id" string='Course' filter_domain="[('course_id.name','ilike',self)]" />
+					<field name="employee_id" string='Employee' filter_domain="[('employee_id.name','ilike',self)]"/>
+					<filter name="semester" string="This Semester" domain="[(1,'=',1)]"/>
+					<group expand="0" string="Group By">
+						<filter name="course_id" string="Course" context="{'group_by': 'course_id'}"/>
+						<filter name="employee_id" string="Employee" context="{'group_by': 'employee_id'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="performance_list_view">
+			<field name="name">performance_list</field>
+			<field name="model">itb.academic_performance</field>
+			<field name="arch" type="xml">
+				<tree string="performance List">
+					<field name="employee_id" />
+					<field name="course_id" />
+					<field name="respondents" />
+                    <field name="participants" />
+                    <field name="q1" />
+                    <field name="q2" />
+                    <field name="q3" />
+                    <field name="q4" />
+                    <field name="q5" />
+                    <field name="q6" />
+                    <field name="q7" />
+                    <field name="q8" />
+                    <field name="q9" />
+                    <field name="q10" />
+                    <field name="q11" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="performance_form_view">
+			<field name="name">performance_form</field>
+			<field name="model">itb.academic_performance</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="employee_id" /></h1>
+						<group>
+							<group>
+								<field name="course_id" />
+                                <field name="group" />
+							</group>
+							<group>
+								<field name="respondents" />
+                                <field name="participants" />
+							</group>
+						</group>
+                        <group>
+							<group>
+								<field name="q1" />
+                                <field name="q2" />
+                                <field name="q3" />
+                                <field name="q4" />
+                                <field name="q5" />
+                                <field name="q6" />
+							</group>
+							<group>
+								<field name="q7" />
+                                <field name="q8" />
+                                <field name="q9" />
+                                <field name="q10" />
+                                <field name="q11" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

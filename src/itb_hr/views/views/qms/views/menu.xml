@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<act_window id="qms.vendor_action" name="Vendor" res_model="res.partner" view_mode="tree,form,kanban" />
+		<act_window id="qms.product_action" name="Product" res_model="product.product" view_mode="tree,form,kanban" />
+		<act_window id="qms.audit_action" name="Audit" res_model="qms.audit" view_mode="tree,form" />
+		<act_window id="qms.claim_action" name="Claim" res_model="qms.claim" view_mode="tree,form" />
+		<act_window id="qms.evaluation_action" name="Evaluation" res_model="qms.evaluation" view_mode="tree,form" />
+		<act_window id="qms.makloon_action" name="Makloon" res_model="qms.makloon" view_mode="tree,form,graph,pivot,calendar" />
+		<act_window id="qms.production_action" name="Production" res_model="qms.production" view_mode="tree,form,graph,pivot,calendar" />
+		<act_window id="qms.inbound_action" name="Inbound" res_model="qms.inbound" view_mode="tree,form,graph,pivot,calendar" />
+		<act_window id="qms.capa_action" name="CAPA" res_model="qms.capa" view_mode="tree,form" />
+		<act_window id="qms.assesment_action" name="Assesment" res_model="qms.assesment" view_mode="tree,form" />
+		<act_window id="qms.committee_action" name="Committee" res_model="qms.committee" view_mode="tree,form" />
+		<act_window id="qms.coa_action" name="CoA" res_model="qms.coa" view_mode="tree,graph,pivot" />
+		<act_window id="qms.parameter_action" name="Parameter" res_model="qms.parameter" view_mode="tree,form" />
+		<act_window id="qms.product_category_action" name="Product Category" res_model="product.category" view_mode="tree,form" />
+		<act_window id="qms.product_material_action" name="Product Material" res_model="qms.materials" view_mode="tree,form" />
+		<act_window id="qms.product_variant_action" name="Product Variant" res_model="qms.variant" view_mode="tree,form" />
+
+		<menuitem id="qms.qms_app" name="QMS" web_icon="qms,static/description/icon.png" />
+						
+		<menuitem id="qms.operation_menu" name="Operation" parent="qms.qms_app" sequence="20" />
+		<menuitem id="qms.production_menu" action="qms.production_action" name="Production" parent="qms.operation_menu" sequence="21" />
+		<menuitem id="qms.makloon_menu" action="qms.makloon_action" name="Makloon" parent="qms.operation_menu" sequence="22" />
+		<menuitem id="qms.inbound_menu" action="qms.inbound_action" name="Inbound" parent="qms.operation_menu" sequence="23" />
+		<menuitem id="qms.coa_menu" action="qms.coa_action" name="CoA" parent="qms.operation_menu" sequence="24" />
+
+		<menuitem id="qms.assurance_menu" name="Assurance" parent="qms.qms_app" sequence="30" />
+		<menuitem id="qms.capa_menu" action="qms.capa_action" name="CAPA" parent="qms.assurance_menu" sequence="31" />
+		<menuitem id="qms.claim_menu" action="qms.claim_action" name="Claim" parent="qms.assurance_menu" sequence="32" />
+		<menuitem id="qms.assesment_menu" action="qms.assesment_action" name="Assesment" parent="qms.assurance_menu" sequence="33" />
+		<menuitem id="qms.committee_menu" action="qms.committee_action" name="Committee" parent="qms.assurance_menu" sequence="34" />
+		<menuitem id="qms.audit_menu" action="qms.audit_action" name="Audit" parent="qms.assurance_menu" sequence="35" />	
+
+		<menuitem id="qms.supply_menu"  name="Supply" parent="qms.qms_app" sequence="40" />
+		<menuitem id="qms.vendor_menu"  action="qms.vendor_action" name="Vendor" parent="qms.supply_menu" sequence="41" />
+		<menuitem id="qms.product_material_menu" action="qms.product_material_action" name="Material" parent="qms.supply_menu" sequence="42" />
+		<menuitem id="qms.evaluation_menu" action="qms.evaluation_action" name="Evaluation" parent="qms.supply_menu" sequence="43" />
+
+		<menuitem id="qms.configuration_menu" name="Configuration" parent="qms.qms_app" sequence="70" />
+		<menuitem id="qms.product_menu" action="qms.product_action" name="Product" parent="qms.configuration_menu" sequence="71" />
+		<menuitem id="qms.employee_menu"  action="qms.vendor_action" name="Employee" parent="qms.configuration_menu" sequence="72" />
+		<menuitem id="qms.parameter_menu" action="qms.parameter_action" name="Parameter" parent="qms.configuration_menu" sequence="73" />
+		<menuitem id="qms.product_category_menu" action="qms.product_category_action" name="Product Category" parent="qms.configuration_menu" sequence="74" />
+		<menuitem id="qms.product_variant_menu" action="qms.product_variant_action" name="Product Variant" parent="qms.configuration_menu" sequence="75" />
+</odoo>

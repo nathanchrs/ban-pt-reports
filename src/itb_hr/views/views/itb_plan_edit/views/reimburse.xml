@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="reimburse_search_view">
+			<field name="name">reimburse_search</field>
+			<field name="model">itb.plan_reimburse</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="date_reimburse" string="All" filter_domain="['|',('date_reimburse','ilike',self)]"/>
+					<filter name="date_reimburse" string="date_reimburse" domain="[('date_reimburse','ilike','self')]" />
+					<group expand="0" string="Group By">
+						<filter string="date_reimburse" domain="[]" context="{'group_by':'date_reimburse'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="reimburse_list_view">
+            <field name="name">reimburse_list</field>
+            <field name="model">itb.plan_reimburse</field>
+            <field name="arch" type="xml">
+                <tree string="reimburse List">
+					<field name="date_reimburse" string="Date_reimburse" />
+                    <field name="note" string="Note" />
+				</tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="reimburse_form_view">
+			<field name="name">reimburse_form</field>
+            <field name="model">itb.plan_reimburse</field>
+            <field name="arch" type="xml">
+				<form>
+					<header>
+						<button name="action_payment_req_confirmed" type="object" string="Confirm" states="draft" />
+						<button name="action_payment_req_paid" type="object" string="Set to Paid" states="validate" /> 
+						<!--button name="action_payment_req_abort" type="object" string="Abort" states="confirm" /-->
+						<button name="action_payment_req_validate" type="object" string="Validated" states="confirm" />
+						<button name="action_payment_req_reconcile" type="object" string="Reconciled" states="paid" />
+						<field name="state" widget="statusbar" />
+					</header>
+					<sheet>
+						<!--h1><field name="plan_request_id" /></h1-->
+						<group>
+							<group>
+								<field name="date_reimburse" string="date reimburse"/>
+								<field name="note" string="note"/>
+							</group>
+						</group>
+						<group>
+							<field name="plan_request_ids">
+								<tree>
+									<field name="name" string="Name" />
+									<field name="unit_id" string="Plan" />
+									<field name="pay_to" string="Paid To"/>
+									<field name="reference" string="Reference"/>
+									<field name="day" string="Date"/>
+									<field name="due" string="Due Date"/>
+									<field name="price_id" string="Item"/>
+									<field name="source" string="Source"/>
+									<field name="total" />
+									<field name="state" />
+								</tree>
+							</field>
+						\</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

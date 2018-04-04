@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<act_window id="itb_hr.hr_assignment_action" name="Assignment" res_model="itb.hr_assignment" view_mode="tree,form" />
+		<act_window id="itb_hr.hr_project_action" name="Project" res_model="itb.hr_project" view_mode="tree,form,graph,pivot" />
+		<act_window id="itb_hr.hr_employment_action" name="Employment" res_model="itb.hr_employment" view_mode="tree,form,graph" />
+		<act_window id="itb_hr.hr_publication_action" name="Publication" res_model="itb.hr_publication" view_mode="tree,form,graph,pivot"/>
+		<act_window id="itb_hr.hr_duty_action" name="Duty" res_model="itb.hr_duty" view_mode="tree,form,graph,pivot"/>
+		<act_window id="itb_hr.hr_education_action" name="Education" res_model="itb.hr_education" view_mode="tree,form" />
+		<act_window id="itb_hr.hr_work_action" name="Work" res_model="itb.hr_work" view_mode="tree,form" />
+		<act_window id="itb_hr.hr_award_action" name="Award" res_model="itb.hr_award" view_mode="tree,form" />
+		<act_window id="itb_hr.hr_training_action" name="Training" res_model="itb.hr_training" view_mode="tree,form" />
+		<act_window id="itb_hr.hr_membership_action" name="Membership" res_model="itb.hr_membership" view_mode="tree,form" />
+		<act_window id="itb_hr.hr_family_action" name="Family" res_model="itb.hr_family" view_mode="tree,form" />
+		<act_window id="itb_hr.hr_pangkat_action" name="Pangkat" res_model="itb.hr_pangkat" view_mode="tree,form" />
+		<act_window id="itb_hr.hr_jabatan_action" name="Jabatan" res_model="itb.hr_jabatan" view_mode="tree,form" />
+		<!--act_window id="itb_hr.hr_training_role_action" name="Training Role" res_model="itb.hr_training_role" view_mode="tree,form" /-->
+		<act_window id="itb_hr.hr_project_type_action" name="HR Project Type" res_model="itb.hr_project_type" view_mode="tree,form" />
+		<act_window id="itb_hr.hr_publication_media_action" name="Publisher Media" res_model="itb.hr_publication_media" view_mode="tree,form" />
+		<act_window id="itb_hr.hr_pangkat_type_action" name="Pangkat Type" res_model="itb.hr_pangkat_type" view_mode="tree,form" />
+		<act_window id="itb_hr.hr_jabatan_type_action" name="Jabatan Type" res_model="itb.hr_jabatan_type" view_mode="tree,form" />
+		<act_window id="itb_hr.hr_research_group_action" name="Research Group" res_model="itb.hr_research_group" view_mode="tree,form" />
+		<act_window id="itb_hr.hr_job_action" name="Job Title" res_model="hr.job" view_mode="tree,form" />
+		<act_window id="itb_hr_report_membership_action" name="Membership" res_model="itb.hr_report_membership" view_mode="tree,pivot" target="current" />
+		<act_window id="itb_hr_report_duk_action" name="DUK" res_model="hr.employee" view_mode="pivot" target="current" />
+
+		<menuitem id="itb_hr.hr_profile_menu"  name="Profile" sequence="40" parent="hr.menu_hr_root"/>
+		<menuitem id="itb_hr.hr_duty_menu" action="itb_hr.hr_duty_action" name="Duty" sequence="11" parent="itb_hr.hr_profile_menu"/>
+		<menuitem id="itb_hr.hr_project_menu" action="itb_hr.hr_project_action" name="Project" sequence="13" parent="itb_hr.hr_profile_menu"/>
+		<menuitem id="itb_hr.hr_publication_menu" action="itb_hr.hr_publication_action" name="Publication" sequence="14" parent="itb_hr.hr_profile_menu"/>
+		<menuitem id="itb_hr.hr_assignment_menu" action="itb_hr.hr_assignment_action" name="Assignment" sequence="15" parent="itb_hr.hr_profile_menu"/>
+		<menuitem id="itb_hr.hr_training_menu" action="itb_hr.hr_training_action" name="Training" sequence="16" parent="itb_hr.hr_profile_menu"/>
+		<menuitem id="itb_hr.hr_award_menu" action="itb_hr.hr_award_action" name="Award" sequence="17" parent="itb_hr.hr_profile_menu"/>
+		<menuitem id="itb_hr.hr_membership_menu" action="itb_hr.hr_membership_action" name="Membership" sequence="18" parent="itb_hr.hr_profile_menu"/>
+		<menuitem id="itb_hr.hr_employment_menu" action="itb_hr.hr_employment_action" name="Employment" sequence="19" parent="itb_hr.hr_profile_menu"/>
+		<menuitem id="itb_hr.hr_education_menu" action="itb_hr.hr_education_action" name="Education" sequence="20" parent="itb_hr.hr_profile_menu"/>
+		<menuitem id="itb_hr.hr_work_menu" action="itb_hr.hr_work_action" name="Work" sequence="21" parent="itb_hr.hr_profile_menu"/>
+		<menuitem id="itb_hr.hr_family_menu" action="itb_hr.hr_family_action" name="Family" sequence="22" parent="itb_hr.hr_profile_menu"/>
+		
+		<menuitem id="itb_hr.hr_pns_menu" name="PNS" sequence="50" parent="hr.menu_hr_root"/>
+		<menuitem id="itb_hr.hr_pangkat_menu" action="itb_hr.hr_pangkat_action" name="Pangkat" sequence="51" parent="itb_hr.hr_pns_menu"/>
+		<menuitem id="itb_hr.hr_jabatan_menu" action="itb_hr.hr_jabatan_action" name="Jabatan" sequence="52" parent="itb_hr.hr_pns_menu"/>
+
+		<menuitem id="itb_hr.hr_report_menu" name="Report" sequence="60" parent="hr.menu_hr_root"/>
+		<menuitem id="itb_hr.hr_membership_report_menu" action="itb_hr_report_membership_action" name="Membership" sequence="61" parent="itb_hr.hr_report_menu"/>
+		<menuitem id="itb_hr.hr_duk_report_menu" action="itb_hr_report_duk_action" name="Duk" sequence="62" parent="itb_hr.hr_report_menu"/>
+
+		<menuitem id="itb_hr.hr_job_menu" action="itb_hr.hr_job_action" name="Job Type" sequence="100" parent="hr.menu_human_resources_configuration"/>
+        <!--menuitem id="itb_hr.hr_training_role_menu" action="itb_hr.hr_training_role_action" name="Training Tags" sequence="105" parent="hr.menu_human_resources_configuration"/-->
+		<menuitem id="itb_hr.hr_project_type_menu" action="itb_hr.hr_project_type_action" name="Project Type" sequence="106" parent="hr.menu_human_resources_configuration" />
+		<menuitem id="itb_hr.hr_publication_media_menu" action="itb_hr.hr_publication_media_action" name="Publisher Type" sequence="107" parent="hr.menu_human_resources_configuration" />
+		<menuitem id="itb_hr.hr_pangkat_type_menu" action="itb_hr.hr_pangkat_type_action" name="Pangkat Type" sequence="108" parent="hr.menu_human_resources_configuration" />
+		<menuitem id="itb_hr.hr_jabatan_type_menu" action="itb_hr.hr_jabatan_type_action" name="Jabatan Type" sequence="109" parent="hr.menu_human_resources_configuration" />
+		<menuitem id="itb_hr.hr_research_group_menu" action="itb_hr.hr_research_group_action" name="Research Group" sequence="110" parent="hr.menu_human_resources_configuration" />
+</odoo>

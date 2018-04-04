@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="jabatan_search_view" model="ir.ui.view">
+			<field name="name">jabatan_search</field>
+			<field name="model">itb.hr_jabatan</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="jabatan" string='Jabatan'/>
+					<field name="research_group_id" string='Research group' filter_domain="['|',('employee_id.name','ilike',self),('research_group_id','ilike',self)]"/>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="jabatan_list_view">
+			<field name="name">jabatan_list</field>
+			<field name="model">itb.hr_jabatan</field>
+			<field name="arch" type="xml">
+				<tree string="Jabatan List">
+					<field name="employee_id" />
+					<field name="jabatan" />
+					<field name="credit" />
+					<field name="reference" />
+					<field name="start" />
+					<field name="finish" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="jabatan_form_view">
+			<field name="name">jabatan_form</field>
+			<field name="model">itb.hr_jabatan</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="employee_id" /></h1>
+						<group>
+							<group string="Jabatan">
+								<field name="jabatan" />
+								<field name="jabatan_id" />
+								<field name="credit" />
+								<field name="major" />
+							</group>
+							<group string="Period">
+								<field name="decision" />
+								<field name="reference" />
+								<field name="signed_by" />
+								<field name="start" />
+								<field name="finish" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

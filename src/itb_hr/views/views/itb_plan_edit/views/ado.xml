@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="ado_list_view">
+            <field name="name">ado_list</field>
+            <field name="model">itb.plan_ado</field>
+            <field name="arch" type="xml">
+                <tree string="Ado List View">
+					<field name="code" />
+					<field name="subactivity_id" string="Sub Activity" />
+					<field name="year" />
+				</tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="ado_form_view">
+			<field name="name">plan_ado_form</field>
+            <field name="model">itb.plan_ado</field>
+            <field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="code" /></h1>
+						<group>
+							<field name="subactivity_id" string="Sub Activity" />
+							<field name="year" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="award_search_view" model="ir.ui.view">
+			<field name="name">award_search</field>
+			<field name="model">itb.hr_award</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="employee_id" string='Employee Name'/>
+					<field name="name" string='Award Name'/>
+					<field name="endorser" string='Endorser'/>
+					<field name="research_group_id" string='research group' filter_domain="['|',('employee_id.name','ilike',self),('research_group_id','ilike',self)]"/>
+					<separator/>
+					<filter name="national" string="National" domain="[('level','like','National')]"/>
+					<filter name="global" string="Global" domain="[('level','ilike','Global')]"/>
+					<group expand="0" string="Group By">
+						<filter name="level" string="Level" context="{'group_by': 'level'}"/>
+						<filter name="start_year" string="Start Year" context="{'group_by': 'start:year'}"/>
+						<filter name="finish_year" string="Finish Year" context="{'group_by': 'finish:year'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record id="award_graph_view" model="ir.ui.view">
+			<field name="name">award_graph</field>
+			<field name="model">itb.hr_award</field>
+			<field name="arch" type="xml">
+				<graph type="bar" stacked="True">
+					<field name="start" interval="year" />
+					<field name="level" />
+				</graph>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="award_list_view">
+			<field name="name">award_list</field>
+			<field name="model">itb.hr_award</field>
+			<field name="arch" type="xml">
+				<tree string="Award List">
+					<field name="employee_id" />
+					<field name="name" />
+					<field name="endorser" />
+					<field name="level" />
+					<field name="reference" />
+					<field name="start" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="award_form_view">
+			<field name="name">award_form</field>
+			<field name="model">itb.hr_award</field>
+			<field name="arch" type="xml">
+				<form>
+					<header>
+						<field name="state" widget="statusbar"/>
+						<button name="action_state_valid" type="object" string="Validate" groups="base.gr_ibos_hr_manager,base.gr_ibos_hr_officer" attrs="{'invisible':[('state','=','valid')]}" class="oe_highlight"/>
+						<button name="action_state_draft" type="object" string="Reset to draft" groups="base.gr_ibos_hr_manager,base.gr_ibos_hr_officer" attrs="{'invisible':[('state','=','draft')]}" class="oe_highlight"/>
+					</header>
+					<sheet>
+						<h1><field name="employee_id" /></h1>
+						<group>
+							<group string="Award">
+								<field name="name" />
+								<field name="endorser" />
+								<field name="level" />
+								<field name="major" />
+								<field name="reference" />
+							</group>
+							<group string="Period">
+								<field name="start" />
+								<field name="finish" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

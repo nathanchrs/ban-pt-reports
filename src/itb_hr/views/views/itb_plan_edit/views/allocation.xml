@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="allocation_list_view">
+            <field name="name">allocation_list</field>
+            <field name="model">itb.plan_allocation</field>
+            <field name="arch" type="xml">
+                <tree string="Allocation List View">
+					<field name="spending_id" />
+                    <field name="spending_id_int" />
+					<field name="budget" />
+					<field name="date_created" />
+					<field name="date_request" />
+					<field name="note" />
+				</tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="allocation_form_view">
+			<field name="name">plan_allocation_form</field>
+            <field name="model">itb.plan_allocation</field>
+            <field name="arch" type="xml">
+				<form>
+					<sheet>
+						<!--h1><field name="ado" /></h1-->
+						<group>
+							<field name="spending_id" />
+							<field name="spending_id_int" />
+							<field name="budget" />
+							<field name="date_created" />
+							<field name="date_request" />
+							<field name="note" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

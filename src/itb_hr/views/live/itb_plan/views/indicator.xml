@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="indicator_list_view">
+            <field name="name">indicator_list</field>
+            <field name="model">itb.plan_indicator</field>
+            <field name="arch" type="xml">
+                <tree string="Indicator List">
+                    <field name="name" />
+					<field name="code" />
+					<field name="standard" />
+					<field name="is_reinforce" />
+                </tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="indicator_form_view">
+			<field name="name">plan_indicator_form</field>
+            <field name="model">itb.plan_indicator</field>
+            <field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="code" />
+								<field name="is_reinforce" />
+							</group>
+							<group>
+								<field name="activity_id" />
+								<field name="standard" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

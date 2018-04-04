@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<act_window id="tnix.kandidat_action" name="Kandidat" res_model="tnix.kandidat" view_mode="tree,form" context="{'search_default_usulan':True}" />
+	<act_window id="tnix.kandidat_action_graph" name="Grafik Kandidat" res_model="tnix.kandidat" view_mode="graph" context="{'search_default_usulan':True}" />
+    <act_window id="tnix.kandidat_action_pivot" name="Pivot Kandidat" res_model="tnix.kandidat" view_mode="pivot" context="{'search_default_usulan':True}" />
+	<act_window id="tnix.posisi_action" name="Posisi" res_model="tnix.posisi" view_mode="tree,form" />
+    <act_window id="tnix.kesatuan_action" name="Kesatuan" res_model="tnix.kesatuan" view_mode="tree,form" />
+    <act_window id="tnix.kecabangan_action" name="Kecabangan" res_model="tnix.kecabangan" view_mode="tree,form" />
+    <act_window id="tnix.propinsi_action" name="Propinsi" res_model="tnix.propinsi" view_mode="tree,form" />
+    <act_window id="tnix.suku_action" name="Suku" res_model="tnix.suku" view_mode="tree,form" />
+    <act_window id="tnix.kesarjanaan_action" name="Kesarjanaan" res_model="tnix.kesarjanaan" view_mode="tree,form" />
+    <act_window id="tnix.gelombang_action" name="Gelombang" res_model="tnix.gelombang" view_mode="tree,form" />
+    <act_window id="tnix.bincab_action" name="Saran BINCAB" res_model="tnix.bincab" view_mode="tree" />
+    <act_window id="tnix.kopassus_action" name="Penarikan Kopassus" res_model="tnix.kopassus" view_mode="tree" />
+    <act_window id="tnix.kostrad_action" name="Penarikan Kostrad" res_model="tnix.kostrad" view_mode="tree" />
+    <act_window id="tnix.sidang_action" name="Layar Sidang" res_model="tnix.kandidat" view_mode="tree" view_id="layar_sidang_list_view" />
+		
+	<menuitem id="tnix.kandidat_menu" action="tnix.kandidat_action" name="Kandidat" sequence="1" />
+    <menuitem id="tnix.alat_menu" name="Alat Bantu" sequence="2" />
+    <menuitem id="tnix.analisis_menu" name="Analisis" sequence="3" />
+    <menuitem id="tnix.pengaturan_menu" name="Pengaturan" sequence="3" />
+
+    <menuitem id="tnix.bincab_menu"  name="Saran BINCAB" action="tnix.bincab_action" parent="tnix.alat_menu" sequence="11" />
+    <menuitem id="tnix.kopassus_menu"  name="Penarikan Kopassus" action="tnix.kopassus_action" parent="tnix.alat_menu" sequence="12" />
+    <menuitem id="tnix.kostrad_menu"  name="Penarikan Kostrad" action="tnix.kostrad_action" parent="tnix.alat_menu" sequence="13" />    
+    <menuitem id="tnix.sidang_menu"  name="Layar Sidang" action="tnix.sidang_action" parent="tnix.alat_menu" sequence="14" />    
+    <menuitem id="tnix.kandidat_graph_menu"  name="Grafik Kandidat" action="tnix.kandidat_action_graph" parent="tnix.alat_menu" sequence="15" />    
+    <menuitem id="tnix.kandidat_pivot_menu"  name="Rekapitulasi Kandidat" action="tnix.kandidat_action_pivot" parent="tnix.alat_menu" sequence="16" />    
+
+    <menuitem id="tnix.gelombang_menu"  name="Gelombang" action="tnix.gelombang_action" parent="tnix.pengaturan_menu" sequence="20" />        
+    <menuitem id="tnix.posisi_menu"  name="Posisi" action="tnix.posisi_action" parent="tnix.pengaturan_menu" sequence="21" />
+    <menuitem id="tnix.kesatuan_menu"  name="Kesatuan" action="tnix.kesatuan_action" parent="tnix.pengaturan_menu" sequence="22" />
+    <menuitem id="tnix.kecabangan_menu"  name="Kecabangan" action="tnix.kecabangan_action" parent="tnix.pengaturan_menu" sequence="23" />
+    <menuitem id="tnix.propinsi_menu"  name="Propinsi" action="tnix.propinsi_action" parent="tnix.pengaturan_menu" sequence="24" />
+    <menuitem id="tnix.suku_menu"  name="Suku" action="tnix.suku_action" parent="tnix.pengaturan_menu" sequence="25" />
+    <menuitem id="tnix.kesarjanaan_menu"  name="Kesarjanaan" action="tnix.kesarjanaan_action" parent="tnix.pengaturan_menu" sequence="26" />
+</odoo>

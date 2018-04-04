@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="publication_author_graph_view" model="ir.ui.view">
+			<field name="name">publication_author_graph</field>
+			<field name="model">itb.hr_publication_author</field>
+			<field name="arch" type="xml">
+				<graph type="bar" stacked="True">
+					<field name="employee_id" />
+					<field name="day" type="col" interval="year" />
+                    <field name="media" type="col" />
+				</graph>
+			</field>
+		</record>
+		<record id="publication_author_pivot_view" model="ir.ui.view">
+			<field name="name">publication_author_pivot</field>
+			<field name="model">itb.hr_publication_author</field>
+			<field name="arch" type="xml">
+				<pivot string="my_pivot">
+					<field name="employee_id" />
+					<field name="day" type="col" interval="year" />
+                    <field name="media" type="col" />
+				</pivot>
+			</field>
+		</record>		
+		<record model="ir.ui.view" id="publication_author_list_view">
+			<field name="name">publication_author_list</field>
+			<field name="model">itb.hr_publication_author</field>
+			<field name="arch" type="xml">
+				<tree string="Publication author List">
+					<field name="day" />
+					<field name="publisher" />
+					<field name="media" />
+					<field name="score" />
+					<field name="role" />
+                    <field name="employee_id" />
+					<field name="publication_id" />
+					<field name="research_group" />
+				</tree>
+			</field>
+		</record>
+</odoo>

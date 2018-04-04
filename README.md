@@ -10,9 +10,8 @@ Note: Docker commands might need root privileges/sudo. If this happens, you prob
 
 1. Clone this repository.
 2. Navigate to the project directory.
-3. Download the [STEI iBOS modules](https://drive.google.com/file/d/1hDzI-os3yfAAKPkcoV-XaeT6E-z75IlW/view?usp=sharing), extract and place the `itb_academic` and `itb_hr` directories in the `src` directory.
-4. Run `docker-compose up` to start the application and its supporting services (PostgreSQL). Docker will download images if necessary. Wait until all tests are done.
-5. Access Odoo on port 8069. Login with `admin` as the username and password.
+3. Run `docker-compose up` to start the application and its supporting services (PostgreSQL). Docker will download images if necessary. Wait until all tests are done.
+4. Access Odoo on port 8069. Login with `admin` as the username and password.
 
 - To stop the containers, run `docker-compose stop`.
 - To start the application again, simply run `docker-compose up` or `docker-compose up -d` to run in the background (if you don't need to recreate containers, you can also use `docker-compose start`).

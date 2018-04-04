@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="committee_list_view" model="ir.ui.view">
+		<field name="name">committee_list</field>
+		<field name="model">qms.committee</field>
+		<field name="arch" type="xml">
+			<tree string="Committee List">
+				<field name="name" />
+				<field name="date" />
+				<field name="products" />
+                <field name="participants" />
+				<field name="state" />
+			</tree>
+		</field>
+	</record>
+	<record id="committee_form_view" model="ir.ui.view" >
+		<field name="name">committee_form</field>
+		<field name="model">qms.committee</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>
+					<field name="state" widget="statusbar" clickable="True" />
+				</header>
+				<sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Issue"/></h1>
+                    </div>
+					<group>
+						<field name="date" />
+						<field name="participant_ids" widget="many2many_tags" />						
+						<field name="production_ids" />						
+						<field name="capa_ids" context="{'committee_id':active_id}">
+							<tree>
+								<field name="name" />
+								<field name="action" />
+								<field name="action_date" />
+								<field name="action_by" domain="[('role','=','employee')]" />
+								<field name="state" />
+								<field name="verified_by" attrs="{'invisible':[('state','=','close')]}" />
+							</tree>
+						</field>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+</odoo>

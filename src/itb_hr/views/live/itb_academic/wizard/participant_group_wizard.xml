@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <act_window id="itb_academic.academic_participant_group_wizard" name="Set Groups" src_model="itb.academic_participant" res_model="itb.academic_participant_group_wizard" 
+            view_mode="form" target="new" multi="True"/>
+        <act_window id="itb_academic.academic_participant_action" name="Participant" res_model="itb.academic_participant" view_mode="tree,form" />
+        
+        <record model="ir.ui.view" id="participant_group_wizard">
+            <field name="name">Set Participant Group</field>
+            <field name="model">itb.academic_participant_group_wizard</field>
+            <field name="arch" type="xml">
+                <form string="Set to Groups">
+                    <group>
+                        <field name="group_ids"/>
+                    </group>
+					<footer>
+                        <button name="subscribe" type="object"
+                                string="Subscribe" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <menuitem id="itb_academic.participant_wizard_menu" parent="itb_academic.academic_lecture_menu" action="itb_academic.academic_participant_action" sequence="28"/>
+	</odoo>

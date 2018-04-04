@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="participant_list_view">
+			<field name="name">participant_list</field>
+			<field name="model">itb.academic_participant</field>
+			<field name="arch" type="xml">
+				<tree string="Participant List">
+					<field name="partner_id" />
+					<field name="group_ids" widget="many2many_tags" />
+					<field name="grade" />
+				</tree>
+			</field>
+		</record>
+</odoo>

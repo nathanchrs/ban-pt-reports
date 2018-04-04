@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="view_tree_itb_res_partner_inherited">
+			<field name="name">Civitas ITB Partner extension tree</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_tree" />
+			<field name="arch" type="xml">
+				<field name="display_name" position="after">
+					<field name="student_id" />
+				</field>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="view_form_itb_res_partner_inherited">
+			<field name="name">Civitas ITB Partner extension form</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+			<field name="arch" type="xml">
+				<field name="website" position="after">
+					<field name="is_participant" />
+					<field name="is_instructor" />
+                    <field name="student_id" />
+					<field name="ip" />
+					<field name="ipk" />
+					<field name="toefl" />
+					<field name="graduate_date" />
+					<field name="graduation_date" />
+					<field name="graduation_title" />
+					<field name="name_certificate" />
+					<field name="no_certificate" />	
+					<field name="no_sk" />
+					<field name="no_seri" />
+				</field>
+				<field name="title" position="after">
+					<field name="sex" />
+					<field name="family_address" />
+					<field name="emergency_address" />
+					<field name="home_address" />
+					<field name="family_phone" />
+					<field name="emergency_phone" />
+					<field name="birthplace" />
+					<field name="fullname" />
+					<field name="father" />
+					<field name="mother" />
+				</field>
+            </field>
+        </record>
+</odoo>

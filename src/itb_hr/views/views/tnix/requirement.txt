@@ -1,0 +1,23 @@
+- algoritma penempatan secapa --> DONE
+1. MINAT1 -->  MINAT2 --> satuan terdekat minat1 + satuan terdekat minat2 
+2. ToD (Tour of Area)
+a. KOSTRAD/KOPASSUS --> Pool C
+b. Pool A --> Pool C. Pool b
+c. Pool B --> Pool A, Pool C
+d. Pool C --> Pool A, Pool b
+e. lainnya --> Pool A, Pool b
+3. RETURN --> kotama asal --> kotama terdekat
+
+- kuota berkurang karena rekomendasi 1 --> DONE
+- perbanyak grafik --> DONE
+- desain loreng --> DONE
+- tod jadi toa (tour of area) -- DONE
+- penerbad kasus khusus -- DONE
+- Excel pak Nitra -- DONE
+- minat2 untuk semua diktuk -- DONE
+- field diktum diganti ranking sarcab format ranking "x of y"
+- laporan dan dokumentasi
+- loading data contoh terbaru -- DONE
+- kolom saran aplikasi dihilangkan di file MS Excel -- DONE
+- balancing sesuai proporsi kuota -- CANCEL
+- alokasi kuota per gelombang -- CANCEL

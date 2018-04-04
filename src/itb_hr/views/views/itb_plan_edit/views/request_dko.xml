@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!--act_window id="itb_plan.plan_dko_wizard_act" name="Created Request For DKO" src_model="itb.plan_dko" res_model="itb.plan_dko_wizard" view_mode="form" target="new" multi="True" context="{'parent_id': active_ids}"/>
+		<act_window id="itb_plan.send_dko_statement_act" name="Send DKO for Bank Statement" src_model="itb.plan_dko" res_model="itb.plan_send_dko_statement" view_mode="form" target="new" multi="True" context="{'parent_id': active_ids}"/-->
+		<record model="ir.ui.view" id="dko_search_view">
+			<field name="name">dko_search</field>
+			<field name="model">itb.plan_dko</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" string="All" filter_domain="['|',('unit_id','ilike',self),('reference','ilike',self),('name','ilike',self),('price_id','ilike',self),('source','ilike',self)]"/>
+					<filter name="name" string="Name" domain="[('name','ilike','self')]" />
+					<filter name="unit_id" string="Unit" domain="[('unit_id','ilike','self')]" />
+					<filter name="price_id" string="Price" domain="[('price_id','ilike','self')]" />
+					<filter name="source" string="Source" domain="[('name','ilike','self')]" />
+					<filter name="request_id" string="Not in Request" domain="[('request_id','=',False)]" />
+					<filter name="total" string="No Allocated" domain="[('t_taken','>',0)]" />
+
+					<!--filter name="request_id" string="in Request" domain="[('request_id','=',True)]" /-->
+					<group expand="0" string="Group By">
+						<filter string="Unit" domain="[]" context="{'group_by':'unit_id'}" />
+						<filter string="Price" domain="[]" context="{'group_by':'price_id'}" />
+						<filter string="Source" domain="[]" context="{'group_by':'source'}" />
+						<filter string="Pay To" domain="[]" context="{'group_by':'pay_to'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="dko_list_view">
+            <field name="name">dko_list</field>
+            <field name="model">itb.plan_dko</field>
+            <field name="arch" type="xml">
+			<!--field name="domain_force">[('create_uid', '=', user.id)]</field-->
+                <tree string="DKO List">
+					<field name="name" string="Name" />
+                    <field name="unit_id" string="Plan" />
+					<field name="pay_to" string="Paid To"/>
+					<field name="reference" string="Reference"/>
+					<field name="day" string="Date"/>
+					<field name="due" string="Due Date"/>
+					<field name="price_id" string="Item"/>
+					<field name="source" string="Source"/>
+					<field name="cash_id" string="Cash Advance"/>
+					<field name="faktur" string="Receipt"/>
+					<field name="statement_id_dko" string="Bank"/>
+					<field name="rekening" string="Available Saldo"/>
+					<field name="total" />
+                    <field name="state" />
+				</tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="dko_form_view">
+			<field name="name">dko_form</field>
+            <field name="model">itb.plan_dko</field>
+            <field name="arch" type="xml">
+				<form>
+					<header>
+						<button name="action_payment_req_confirmed" type="object" string="Confirm" states="draft" />
+						<button name="action_payment_req_abort" type="object" string="Abort" states="confirm" />
+						<!--button name="action_payment_req_validate" type="object" string="Validated" states="confirm" /-->
+						<!--button class="oe_highlight" name="set_dko_lines" type="object" string="set taken and Alocation" states="draft" context="{'parent_id': id}" /-->
+						<button name="set_confirmed_dko" type="object" string="Set Confirm All dko" class="oe_highlight"/>
+						<button name="set_validate_dko" type="object" string="Set validate All dko" class="oe_highlight"/>
+						<field name="state" widget="statusbar" />
+					</header>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="pay_to" string="Paid To"/>
+								<field name="total" />
+								<field name="due" string="Due date"/>
+								<field name="day" string="Invoice date"/>
+								<field name="reference" />
+							</group>
+							<group>
+								<field name="unit_id" string="Alocated to"/>
+								<field name="price_id" string="Price Id"/>
+								<field name="source" string="Source"/>
+								<field name="cash_id" string="Cash Advance"/>
+								<field name="faktur" string="Receipt"/>
+								<field name="statement_id_dko" string="Bank"/>
+								<field name="rekening" string="Bank Account"/>
+							</group>
+						</group>
+						<notebook>
+						<page string="ITB">
+							<button class="oe_highlight" name="mismatch_price" type="object" string="Mismatch Price" context="{'parent_id': id}" />
+							<field name="dkotaken_ids">
+								<tree editable="bottom">
+									<field name="actual_id" string="Name" />
+									<field name="initiative" string="Initiative" />
+									<field name="unit_id" string="Unit"/>
+									<field name="month" string="Month"/>
+									<field name="avai_taken" string="Available"/>
+									<field name="tot_taken" string="Total"/>
+								</tree>
+							</field>
+						</page>
+						<page string="STEI">
+							<button class="oe_highlight" name="split_price" type="object" string="Split Price" />
+							<field name="dkoalo_ids">
+								<tree editable="bottom">
+									<field name="dko_spen_id" string="Name" />
+									<field name="initiative" string="Initiative" />
+									<field name="unit_id"  string="Unit"/>
+									<field name="month" string="Month"/>
+									<field name="available"  string="Available"/>
+									<field name="total_alo" string="Total"/>
+								</tree>
+							</field>
+						</page>
+						<page string="Tax">
+							<field name="tax_ids">
+								<tree editable="bottom">
+									<field name="tax_id" string="Name" />
+									<field name="tax_percent" string="% Tax" readonly="1" />
+									<field name="note"  string="Note"/>
+									<field name="amount" string="Total Tax"/>
+								</tree>
+							</field>
+						</page>
+						<page string="Note">
+							<field name="note" />
+						</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="dko_pivot_view" model="ir.ui.view">
+            <field name="name">dko_pivot</field>
+            <field name="model">itb.plan_dko</field>
+            <field name="arch" type="xml">
+                <pivot string="dko">
+                    <field name="day" interval="month" type="col" />
+                    <field name="unit_id" type="row"/>
+					<field name="total" type="measure" />
+				</pivot>
+            </field>
+        </record>
+		<record id="plan_send_dko_statement_form_view" model="ir.ui.view">
+			<field name="name">plan_send_dko_statement_form</field>
+			<field name="model">itb.plan_send_dko_statement</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Send Dko For Bank Statement">
+					<group>
+						<field name="statement_id" string="Bank"/>
+					</group>
+					<footer>
+						<button class="oe_highlight" type="object" name="yes" string="Proses" />
+						<button class="oe_highlight" type="object" name="no" string="Exit" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<record id="plan_wizard_dko_form_view" model="ir.ui.view">
+			<field name="name">plan_wizard_dko_form</field>
+			<field name="model">itb.plan_dko_wizard</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Send DKO to Request">
+					<!--group>
+						<h1><field name="sumber" string="Option"/></h1>
+					</group-->
+					<group>
+						<group>
+							<!--field name="total" string="Total" />
+							<field name="unit_id" string="Unit" />
+							<field name="price_id" string="Price" />
+							<field name="source" string="Source" />
+							<field name="available_simulated" string="Total Taken" /-->
+							<button class="oe_highlight" name="isi_all" type="object" string="Get Simulated" />
+						</group>
+					</group>
+					<group>
+							<field name="dko_wiz_child_ids">
+								<tree editable="bottom">
+									<field name="sp_act_id" string="Name" />
+									<field name="initiative" string="Initiative" />
+									<field name="unit_id" string="Unit"/>
+									<field name="program_id" string="Program"/>
+									<field name="activity_id" string="Activity"/>
+									<field name="subactivity_id" string="Subactivity"/>
+									<field name="month" string="Month"/>
+									<field name="available" string="Available"/>
+									<field name="total" string="Total"/>
+								</tree>
+							</field>
+					</group>
+					<footer>
+						<button class="oe_highlight" type="object" name="oke" string="Yes" />
+						<button class="oe_highlight" type="object" name="no" string="Exit" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<record id="plan_wizard_dko_split_form_view" model="ir.ui.view">
+			<field name="name">plan_wizard_dko_split_form</field>
+			<field name="model">itb.plan_dko_wizard_split</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Split Price STEI">
+					<group>
+						<field name="dko_price_wiz_child_ids">
+							<tree editable="bottom">
+								<field name="unit_id" string="Unit" />
+							</tree>
+						</field>
+					</group>
+					<footer>
+						<button class="oe_highlight" type="object" name="yes" string="Yes" />
+						<button class="oe_highlight" type="object" name="no" string="Exit" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<record id="plan_wizard_dko_mismatch_form_view" model="ir.ui.view">
+			<field name="name">plan_wizard_dko_mismatch_form</field>
+			<field name="model">itb.plan_dko_wizard_mismatch</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Mismatch Price STEI">
+					<group>
+						<field name="dko_missmatch_wiz_ids">
+							<tree editable="bottom">
+								<field name="spending_actual_id" string="Name" />
+								<field name="initiative" string="Initiative" />
+								<field name="unit_id" string="Unit"/>
+								<field name="price_id" string="Price"/>
+								<field name="program_id" string="Program"/>
+								<field name="activity_id" string="Activity"/>
+								<field name="subactivity_id" string="Subactivity"/>
+								<field name="month" string="Month"/>
+								<field name="available" string="Available"/>
+								<field name="total" string="Total"/>
+							</tree>
+						</field>
+					</group>
+					<footer>
+						<button class="oe_highlight" type="object" name="yes" string="Yes" />
+						<button class="oe_highlight" type="object" name="no" string="Exit" />
+					</footer>
+				</form>
+			</field>
+		</record>
+	</data>
+</odoo>
