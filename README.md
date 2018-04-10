@@ -62,7 +62,7 @@ Restart the Docker containers if they are running (`Ctrl+c` any running Docker C
 ### Linting
 
 Prerequisite: [pylint](https://docs.pylint.org/en/1.8/user_guide/installation.html).
-To lint, run `pylint src/banpt_report_generator`.
+To lint, run `./lint.sh`.
 If there are any errors or warning, fix the source code before committing.
 
 ### Tests
