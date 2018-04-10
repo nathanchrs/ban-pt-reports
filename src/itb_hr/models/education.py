@@ -18,7 +18,7 @@ class Education(models.Model):
 	certificate_signer = fields.Char()
 	state = fields.Selection([('draft','Draft'),('valid','Validated')], 'Status', default='draft', required=True, readonly=True, copy=False)
 	employee_id =  fields.Many2one('hr.employee', string='Name', default=_set_current_employee)
-	country_id =  fields.Many2one('res.country', string='Country', default='Indonesia')
+	country_id =  fields.Many2one('res.country', string='Country')
 	research_group_id = fields.Many2one('itb.hr_research_group', related='employee_id.research_group_id', string="Research Group", readonly=True, store=True)
 	
 	@api.multi
