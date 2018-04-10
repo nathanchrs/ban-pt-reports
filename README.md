@@ -2,6 +2,12 @@
 
 An Odoo 10 add-on module which generates BAN-PT accreditation reports for STEI ITB from existing data on Odoo.
 
+## Catatan untuk Penilaian IF3250 PPL
+
+- Repositori di [Gitlab IF](http://gitlab.informatika.org/IF3250-I-1/banpt_report_generator) merupakan hasil pemindahan repositori secara manual (*add remote*) dari repositori di [Github](https://github.com/nathanchrs/ban-pt-reports).
+- *Pull request* di Github tidak dapat di-*import*, karena fitur *import from Github* pada Gitlab IF *error* jika digunakan. Agar mudah dicari, semua *pull request* tetap dilakukan di Github.
+- Direktori `src/itb_academic` dan `src/itb_hr` mengandung kode yang diberikan oleh `product owner`, sehingga seharusnya tidak diperhitungkan dalam pengukuran jumlah baris kode. Kedua direktori tersebut di-*commit* sementara untuk mempermudah *automated testing* dan konfigurasi CI.
+
 ## Running using Docker in development
 
 Prerequisites: [Docker Engine](https://docs.docker.com/engine/installation/) and [Docker Compose](https://docs.docker.com/compose/install/) must be installed; Internet access for pulling dependencies and Docker images (note: proxy might cause problems).
