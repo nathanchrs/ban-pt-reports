@@ -116,6 +116,12 @@
                                     <a href="#tab_record_3a_551" aria-controls="tab_record_3a_551" role="tab" data-toggle="tab">3A-5.5.1 Dosen Pembimbing Tugas Akhir dan Jumlah Mahasiswa</a>
                                 </li>
                                 <li role="presentation">
+                                    <a href="#tab_record_3a_6211" aria-controls="tab_record_3a_6211" role="tab" data-toggle="tab">3A-6.2.1.1 Jenis Dana Perolehan dan Alokasi Dana</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_6212" aria-controls="tab_record_3a_6212" role="tab" data-toggle="tab">3A-6.2.1.2 Penggunaan Dana Perolehan dan Alokasi Dana</a>
+                                </li>
+                                <li role="presentation">
                                     <a href="#tab_record_3a_622" aria-controls="tab_record_3a_622" role="tab" data-toggle="tab">3A-6.2.2 Dana Untuk Kegiatan Penelitian</a>
                                 </li>
                                 <li role="presentation">
@@ -227,6 +233,14 @@
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_551">
                                 <h3 class="banpt_notebook_page_title">3A-5.5.1 Dosen Pembimbing Tugas Akhir dan Jumlah Mahasiswa</h3>
                                 <field name="record_3a_551" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_6211">
+                                <h3 class="banpt_notebook_page_title">3A-6.2.1.1 Jenis Dana Perolehan dan Alokasi Dana</h3>
+                                <field name="record_3a_6211" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_6212">
+                                <h3 class="banpt_notebook_page_title">3A-6.2.1.2 Penggunaan Dana Perolehan dan Alokasi Dana</h3>
+                                <field name="record_3a_6212" />
                             </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_622">
                                 <h3 class="banpt_notebook_page_title">3A-6.2.2 Dana Untuk Kegiatan Penelitian</h3>
