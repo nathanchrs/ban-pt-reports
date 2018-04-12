@@ -2,10 +2,10 @@
 
 from odoo import models, fields, api
 
-class Record_3A_331(models.Model):
-    _name = 'banpt_report_generator.record_3a_331'
+class Record_3A_643(models.Model):
+    _name = 'banpt_report_generator.record_3a_643'
     _rec_name = 'jenis_kemampuan'
-    _title = '3A-3.3.1 Evaluasi Kinerja Lulusan'
+    _title = '3A-6.4.3 Not Found'
 
     jenis_kemampuan = fields.Text(string='Jenis Kemampuan')
     tanggapan_sangat_baik = fields.Float(string='Tanggapan Sangat Baik')

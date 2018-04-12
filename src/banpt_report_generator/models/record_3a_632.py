@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 class Record_3A_632(models.Model):
     _name = 'banpt_report_generator.record_3a_632'
-    _rec_name = 'not found'
+    _rec_name = 'jenis_kemampuan'
     _title = '3A-6.3.2 Not Found'
 
     jenis_kemampuan = fields.Text(string='Jenis Kemampuan')

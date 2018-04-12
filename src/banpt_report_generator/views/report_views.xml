@@ -61,6 +61,24 @@
                                 <li role="presentation">
                                     <a href="#tab_record_3a_331" aria-controls="tab_record_3a_331" role="tab" data-toggle="tab">3A-3.3.1 Evaluasi Kinerja Lulusan</a>
                                 </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_632" aria-controls="tab_record_3a_632" role="tab" data-toggle="tab">3A-6.3.2 Not Found</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_633" aria-controls="tab_record_3a_633" role="tab" data-toggle="tab">3A-6.3.3 Not Found</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_6411" aria-controls="tab_record_3a_6411" role="tab" data-toggle="tab">3A-6.4.1.1 Pustaka</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_6412" aria-controls="tab_record_3a_6412" role="tab" data-toggle="tab">3A-6.4.1.2 Pustaka</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_643" aria-controls="tab_record_3a_643" role="tab" data-toggle="tab">3A-6.4.3 Not Found</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_652" aria-controls="tab_record_3a_652" role="tab" data-toggle="tab">3A-6.5.2 Aksesibilitas Tiap Jenis Data</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="tab-content">
@@ -92,6 +110,30 @@
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_331">
                                 <h3 class="banpt_notebook_page_title">3A-3.3.1 Evaluasi Kinerja Lulusan</h3>
                                 <field name="record_3a_331" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_632">
+                                <h3 class="banpt_notebook_page_title">3A-6.3.2 Not Found</h3>
+                                <field name="record_3a_632" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_633">
+                                <h3 class="banpt_notebook_page_title">3A-6.3.3 Not Found</h3>
+                                <field name="record_3a_633" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_6411">
+                                <h3 class="banpt_notebook_page_title">3A-6.4.1.1 Pustaka</h3>
+                                <field name="record_3a_6411" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_6412">
+                                <h3 class="banpt_notebook_page_title">3A-6.4.1.2 Pustaka</h3>
+                                <field name="record_3a_6412" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_643">
+                                <h3 class="banpt_notebook_page_title">3A-6.4.3 Not Found</h3>
+                                <field name="record_3a_643" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_652">
+                                <h3 class="banpt_notebook_page_title">3A-6.5.2 Aksesibilitas Tiap Jenis Data</h3>
+                                <field name="record_3a_652" />
                             </div>
                         </div>
                     </div>

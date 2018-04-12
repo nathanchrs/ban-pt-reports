@@ -12,7 +12,7 @@ class Record_3A_652(models.Model):
     pengolahan_data_manual = fields.Text(string='Pengolahan Data Secara Manual')
     pengolahan_data_komputer_tanpa_jaringan = fields.Text(string='Dengan Komputer Tanpa Jaringan')
     pengolahan_data_komputer_dengan_lan = fields.Text(string='Dengan Komputer jaringan Lokal (LAN)')
-    pengolahan_data_komputer_jaringan_luas = fields.Text(string='Dengan Komputer jaringan Luas (WAN(')
+    pengolahan_data_komputer_jaringan_luas = fields.Text(string='Dengan Komputer jaringan Luas (WAN)')
     
     # The report this record belongs to
     report = fields.Many2one(comodel_name='banpt_report_generator.report')
