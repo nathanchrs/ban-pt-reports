@@ -10,7 +10,7 @@ class Record_3A_6411(models.Model):
     jenis_pustaka = fields.Text(string='Jenis Pustaka')
     jumlah_judul = fields.Integer(string='Jumlah Judul')
     jumlah_copy = fields.Integer(string='Jumlah Copy')
-    
+
     # The report this record belongs to
     report = fields.Many2one(comodel_name='banpt_report_generator.report')
     report_refresh_date = fields.Datetime(related='report.refresh_date')
