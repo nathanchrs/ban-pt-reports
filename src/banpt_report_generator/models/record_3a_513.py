@@ -19,4 +19,54 @@ class Record_3A_513(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    pass
+    for report in reports:
+        #Clear record_3a_513 tabel
+        report.record_3a_513.unlink()
+
+        #add record_3a_513 according to program_id
+        courses = reports.env['itb.academic_course'].search([['program_id', '=', report.prodi.id]])
+        for course in courses:
+            optional_courses = reports.env['itb.academic_curriculum'].search([['catalog_id', '=', course.catalog_id], ['category', '=', 'opsional']])
+            for optional in optional_courses:
+                catalog = reports.env['itb.academic_catalog'].search([['id', '=', optional.catalog_id]])
+                semester = reports.env['itb.academic_semester'].search([['id', '=', course.semester_id]])
+                program = reports.env['itb.academic_program'].search([['id', '=', course.program_id]])
+                new_record_3a_513 = {
+                    'smt': semester[0].name if semester else '',
+                    'kode_mk': catalog[0].code if catalog else '',
+                    'nama_mk': course.name,
+                    'bobot_sks': catalog[0].credit if catalog else 0,
+                    'bobot_tugas': '', # TODO add bobot tugas in itb.academic_catalog
+                    'unit_penyelenggara': program[0].name if program else '',
+                }
+                report.write({'dosen': [(0, 0, new_record_3a_513)]})
+
+            optional_courses = reports.env['itb.academic_curriculum'].search([['catalog_id', '=', course.catalog_id], ['category', '=', 'opsional-luar']])
+            for optional in optional_courses:
+                catalog = reports.env['itb.academic_catalog'].search([['id', '=', optional.catalog_id]])
+                semester = reports.env['itb.academic_semester'].search([['id', '=', course.semester_id]])
+                program = reports.env['itb.academic_program'].search([['id', '=', course.program_id]])
+                new_record_3a_513 = {
+                    'smt': semester[0].name if semester else '',
+                    'kode_mk': catalog[0].code if catalog else '',
+                    'nama_mk': course.name,
+                    'bobot_sks': catalog[0].credit if catalog else 0,
+                    'bobot_tugas': '', # TODO add bobot tugas in itb.academic_catalog
+                    'unit_penyelenggara': program[0].name if program else '',
+                }
+                report.write({'dosen': [(0, 0, new_record_3a_513)]})
+
+            optional_courses = reports.env['itb.academic_curriculum'].search([['catalog_id', '=', course.catalog_id], ['category', '=', 'opsional-external']])
+            for optional in optional_courses:
+                catalog = reports.env['itb.academic_catalog'].search([['id', '=', optional.catalog_id]])
+                semester = reports.env['itb.academic_semester'].search([['id', '=', course.semester_id]])
+                program = reports.env['itb.academic_program'].search([['id', '=', course.program_id]])
+                new_record_3a_513 = {
+                    'smt': semester[0].name if semester else '',
+                    'kode_mk': catalog[0].code if catalog else '',
+                    'nama_mk': course.name,
+                    'bobot_sks': catalog[0].credit if catalog else 0,
+                    'bobot_tugas': '', # TODO add bobot tugas in itb.academic_catalog
+                    'unit_penyelenggara': program[0].name if program else '',
+                }
+                report.write({'dosen': [(0, 0, new_record_3a_513)]})
