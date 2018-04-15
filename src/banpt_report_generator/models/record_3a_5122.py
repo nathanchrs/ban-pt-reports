@@ -24,4 +24,28 @@ class Record_3A_5122(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    pass
+    for report in reports:
+        #Clear record_3a_5122 table
+        report.record_3a_5122.unlink()
+
+        #add record_3a_5122 according to program_id
+        courses = reports.env['itb.academic_course'].search([['program_id', '=', report.prodi.id]])
+        for course in courses:
+            curriculums = reports.env['itb.academic_curriculum'].search([['catalog_id', '=', course.catalog_id]], order='semester')
+            for curriculum in curriculums:
+                catalog = reports.env['itb.academic_catalog'].search([['id', '=', curriculum.catalog_id]])
+                program = reports.env['itb.academic_program'].search([['id', '=', course.program_id]])
+                new_record_3a_5122 = {
+                    'smt': curriculum.semester,
+                    'kode_mk': catalog[0].code if catalog else '',
+                    'nama_mk': course.name,
+                    'bobot_sks': catalog[0].credit if catalog else 0,
+                    'sks_mk_dalam_kurikulum_inti': '', # TODO
+                    'sks_mk_dalam_kurikulum_institusional': '', # TODO
+                    'bobot_tugas': '', # TODO
+                    'kelengkapan_deskripsi': 'v' if catalog[0].note else '',
+                    'kelengkapan_silabus': 'v' if catalog[0].syllabus else '',
+                    'kelengkapan_sap': '', # TODO
+                    'unit_penyelenggara': program[0].name if program else '',
+                }
+                report.write({'dosen': [(0, 0, new_record_3a_5122)]})
