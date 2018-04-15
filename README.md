@@ -103,3 +103,9 @@ Note: to use the pgAdmin instance for backup or restore, add `/usr/bin` as the P
 ### Identitas
 - Add missing fields to `itb_academic_program`
 - Add table recording akreditasi BAN-PT results for each prodi
+
+### Record 3a_5122
+- Add `sks_mk_dalam_kurikulum_inti` field in `itb.academic_catalog` model
+- Add `sks_mk_dalam_kurikulum_institusional` field in `itb.academic_catalog` model
+- Add `bobot_tugas` field in `itb.academic_catalog` model
+- Add `kelengkapan_sap` field in `itb.academic_catalog` model
