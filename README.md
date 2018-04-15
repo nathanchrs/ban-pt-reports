@@ -110,5 +110,5 @@ Note: to use the pgAdmin instance for backup or restore, add `/usr/bin` as the P
 - Add `bobot_tugas` field in `itb.academic_catalog` model
 - Add `kelengkapan_sap` field in `itb.academic_catalog` model
 
-### Record 3a_5122
+### Record 3a_513
 - Add `bobot_tugas` field in `itb.academic_catalog` model
