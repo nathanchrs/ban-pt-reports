@@ -38,7 +38,7 @@ def refresh(reports):
             education_s2 = reports.env['itb.hr_education'].search([['employee_id', '=', instructor.id], ['degree', '=', 'graduate']])
             education_s3 = reports.env['itb.hr_education'].search([['employee_id', '=', instructor.id], ['degree', '=', 'doctoral']])
             certificate = reports.env['itb.hr_education'].search([['employee_id', '=', instructor.id], ['certificate_signer', '!=', '']])
-            new_record_3a_431 = {
+            new_record_3a_432 = {
                 'nama': instructor.name_related,
                 'nidn': instructor.nidn or '',
                 'tanggal_lahir': instructor.birthday,
@@ -55,4 +55,4 @@ def refresh(reports):
                 'gelar_s3': '',  # TODO: add gelar field in itb.hr_education
             }
 
-            report.write({'record_3a_431': [(0, 0, new_record_3a_431)]})
+            report.write({'record_3a_432': [(0, 0, new_record_3a_432)]})
