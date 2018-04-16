@@ -40,5 +40,9 @@ from . import record_3a_712
 from . import record_3a_713
 from . import record_3a_714
 from . import record_3a_721
+from . import record_3a_731
+from . import record_3a_732
+from . import record_3b_312
+from . import record_3b_321
 from . import record_3b_711
 from . import record_3b_721
