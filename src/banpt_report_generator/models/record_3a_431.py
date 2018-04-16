@@ -31,8 +31,7 @@ def refresh(reports):
         # Clear Record_3A_431 table
         report.record_3a_431.unlink()
 
-        # Add dosen tetap according to prodi
-        # Add dosen according to prodi
+        # Add dosen tetap sesuai PS according to prodi
         instructors = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]])
         for instructor in instructors:
             education_s1 = reports.env['itb.hr_education'].search([['employee_id', '=', instructor.id], ['degree', '=', 'undergraduate']])
