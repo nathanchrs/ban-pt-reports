@@ -145,6 +145,12 @@
                                 <li role="presentation">
                                     <a href="#tab_record_3a_721" aria-controls="tab_record_3a_721" role="tab" data-toggle="tab">3A-7.2.1 Kegiatan Pelayanan/Pengabdian Pada Masyarakat (PKM)</a>
                                 </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_711" aria-controls="tab_record_3b_711" role="tab" data-toggle="tab">3B-7.1.1 Penelitian</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_721" aria-controls="tab_record_3b_721" role="tab" data-toggle="tab">3B-7.2.1 Kegiatan Pelayanan/Pengabdian kepada Masyarakat</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="tab-content">
@@ -288,6 +294,14 @@
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_721">
                                 <h3 class="banpt_notebook_page_title">3A-7.2.1 Kegiatan Pelayanan/Pengabdian Pada Masyarakat (PKM)</h3>
                                 <field name="record_3a_721" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_711">
+                                <h3 class="banpt_notebook_page_title">3B-7.1.1 Penelitian</h3>
+                                <field name="record_3b_711" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_721">
+                                <h3 class="banpt_notebook_page_title">3B-7.2.1 Kegiatan Pelayanan/Pengabdian kepada Masyarakat</h3>
+                                <field name="record_3b_721" />
                             </div>
                         </div>
                     </div>
