@@ -10,7 +10,7 @@ class Record_3A_432(models.Model):
     nama = fields.Char(string='Nama Dosen Tetap', required=True)
     nidn = fields.Char(string='NIDN', required=True)
     tanggal_lahir = fields.Date(string='Tanggal lahir')
-    jabatan = fields.Selection([('lektor', 'Lektor'), ('lektor_kepala', 'Lektor Kepala'), ('asisten_ahli', 'Asisten Ahli'), ('guru_besar', 'Guru Besar')], string='Jabatan Akademik')
+    jabatan = fields.Char(string='Jabatan')
     sertifikasi = fields.Selection([('ya', 'Ya'), ('tidak', 'Tidak')], string='Sertifikasi (Ya/Tidak)')
     asal_pt_s1 = fields.Char(string='Asal PT S1')
     bidang_keahlian_s1 = fields.Char(string='Bidang keahlian S1')
