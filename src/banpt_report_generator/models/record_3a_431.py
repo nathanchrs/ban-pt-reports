@@ -32,7 +32,7 @@ def refresh(reports):
         report.record_3a_431.unlink()
 
         # Add dosen tetap sesuai PS according to prodi
-        instructors = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]])
+        instructors = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]]) # TODO; add WHERE statement with sesuai prodi
         for instructor in instructors:
             education_s1 = reports.env['itb.hr_education'].search([['employee_id', '=', instructor.id], ['degree', '=', 'undergraduate']])
             education_s2 = reports.env['itb.hr_education'].search([['employee_id', '=', instructor.id], ['degree', '=', 'graduate']])
@@ -43,7 +43,7 @@ def refresh(reports):
                 'nidn': instructor.nidn or '',
                 'tanggal_lahir': instructor.birthday,
                 'jabatan': instructor.last_jabatan,
-                'sertifikasi' : 'Ya' if certificate else 'Tidak',
+                'sertifikasi' : 'ya' if certificate else 'tidak', # TODO: still assumption
                 'gelar_s1': '', # TODO: add gelar field in itb.hr_education
                 'asal_pt_s1': education_s1[0].school if education_s1 else '',
                 'bidang_keahlian_s1': education_s1[0].major if education_s1 else '',
