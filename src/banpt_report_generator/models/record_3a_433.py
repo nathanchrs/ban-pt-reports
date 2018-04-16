@@ -26,4 +26,4 @@ def refresh(reports):
         # Clear Record_3A_433 table
         report.record_3a_433.unlink()
 
-        # Add dosen activity
+        # Add aktivitas dosen tetap
