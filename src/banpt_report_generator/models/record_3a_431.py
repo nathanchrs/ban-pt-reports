@@ -27,4 +27,33 @@ class Record_3A_431(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    pass
+    for report in reports:
+        # Clear Record_3A_431 table
+        report.record_3a_431.unlink()
+
+        # Add dosen tetap according to prodi
+        # Add dosen according to prodi
+        instructors = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]])
+        for instructor in instructors:
+            education_s1 = reports.env['itb.hr_education'].search([['employee_id', '=', instructor.id], ['degree', '=', 'undergraduate']])
+            education_s2 = reports.env['itb.hr_education'].search([['employee_id', '=', instructor.id], ['degree', '=', 'graduate']])
+            education_s3 = reports.env['itb.hr_education'].search([['employee_id', '=', instructor.id], ['degree', '=', 'doctoral']])
+            certificate = reports.env['itb.hr_education'].search([['employee_id', '=', instructor.id], ['certificate_signer', '!=', '']])
+            new_record_3a_431 = {
+                'nama': instructor.name_related,
+                'nidn': instructor.nidn or '',
+                'tanggal_lahir': instructor.birthday,
+                'jabatan': instructor.last_jabatan,
+                'sertifikasi' : 'Ya' if certificate else 'Tidak',
+                'gelar_s1': '', # TODO: add gelar field in itb.hr_education
+                'asal_pt_s1': education_s1[0].school if education_s1 else '',
+                'bidang_keahlian_s1': education_s1[0].major if education_s1 else '',
+                'gelar_s2': '',  # TODO: add gelar field in itb.hr_education
+                'asal_pt_s2': education_s2[0].school if education_s2 else '',
+                'bidang_keahlian_s2': education_s2[0].major if education_s2 else '',
+                'gelar_s3': '',  # TODO: add gelar field in itb.hr_education
+                'asal_pt_s3': education_s3[0].school if education_s3 else '',
+                'bidang_keahlian_s3': education_s3[0].major if education_s3 else '',
+            }
+
+            report.write({'record_3a_431': [(0, 0, new_record_3a_431)]})
