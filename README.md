@@ -92,14 +92,16 @@ Note: to use the pgAdmin instance for backup or restore, add `/usr/bin` as the P
 1. Ensure the PostgreSQL container is running (`docker-compose up`).
 2. In pgAdmin, expand server -> odoo -> Databases -> banpt -> Schemas -> public -> Tables (If server empty, create new server).
 2. Add column in certain table (type: varchar).
-    hr_employee.nik
-    itb_hr_assignment standard_id
-    itb_hr_award.standard_id
-    itb_hr_duty_employee.standard_id
-    itb_hr_duty_employee.research_group_id
-    itb_hr_project.standard_id
-    itb_hr_publication.standard_id
-    itb_hr_training.standard_id
+    | Tables                | Column            |
+    | ----------------------|:-----------------:|
+    | hr_employee           | nik               |
+    | itb_hr_assignment     | standard_id       |
+    | itb_hr_award          | standard_id       |
+    | itb_hr_duty_employee  | standard_id       |
+    | itb_hr_duty_employee  | research_group_id |
+    | itb_hr_project        | standard_id       |
+    | itb_hr_publication    | standard_id       |
+    | itb_hr_training       | standard_id       |
 3. Download the file in https://drive.google.com/drive/u/1/folders/1SViDQyP-gfCJYOsdDJ7Pc9jWtREzFCYq (ibos2.sql)
 4. Get the name of the PostgreSQL Docker container using `docker ps` (should be like `banptreports_postgres_1`).
 5. Create the database if it does not exist yet: `docker exec -i <POSTGRESQL_CONTAINER_NAME> createdb -U odoo <DESTINATION_DB>`.
