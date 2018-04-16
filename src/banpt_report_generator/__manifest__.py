@@ -54,6 +54,9 @@
         'views/record_3a_622_views.xml',
         'views/record_3a_623_views.xml',
         'views/record_3a_631_views.xml',
+        'views/record_3b_6111_views.xml',
+        'views/record_3b_6112_views.xml',
+        'views/record_3b_6113_views.xml',
 
         # This line must be last (after all other view files)
         'views/banpt_report_generator.xml'
