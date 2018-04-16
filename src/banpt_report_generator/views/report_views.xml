@@ -130,6 +130,18 @@
                                 <li role="presentation">
                                     <a href="#tab_record_3a_631" aria-controls="tab_record_3a_631" role="tab" data-toggle="tab">3A-6.3.1 Data Ruang Kerja Dosen Tetap</a>
                                 </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_411" aria-controls="tab_record_3b_411" role="tab" data-toggle="tab">3B-4.1.1 Dosen Tetap yang Bidang Keahliannya Sesuai Bidang PS</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_412" aria-controls="tab_record_3b_412" role="tab" data-toggle="tab">3B-4.1.2 Penggantian dan Pengembangan Dosen Tetap</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_632" aria-controls="tab_record_3b_632" role="tab" data-toggle="tab">3B-6.3.2 Prasarana Tambahan dan Investasi</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_642" aria-controls="tab_record_3b_642" role="tab" data-toggle="tab">3B-6.4.2 Aksesibilitas Data</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="tab-content">
@@ -253,6 +265,22 @@
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_631">
                                 <h3 class="banpt_notebook_page_title">3A-6.3.1 Data Ruang Kerja Dosen Tetap</h3>
                                 <field name="record_3a_631" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_411">
+                                <h3 class="banpt_notebook_page_title">3B-4.1.1 Dosen Tetap yang Bidang Keahliannya Sesuai Bidang PS</h3>
+                                <field name="record_3b_411" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_412">
+                                <h3 class="banpt_notebook_page_title">3B-4.1.2 Penggantian dan Pengembangan Dosen Tetap</h3>
+                                <field name="record_3b_412" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_632">
+                                <h3 class="banpt_notebook_page_title">3B-6.3.2 Prasarana Tambahan dan Investasi</h3>
+                                <field name="record_3b_632" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_642">
+                                <h3 class="banpt_notebook_page_title">3B-6.4.2 Aksesibilitas Data</h3>
+                                <field name="record_3b_642" />
                             </div>
                         </div>
                     </div>

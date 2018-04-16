@@ -35,3 +35,7 @@ from . import record_3a_6212
 from . import record_3a_622
 from . import record_3a_623
 from . import record_3a_631
+from . import record_3b_411
+from . import record_3b_412
+from . import record_3b_632
+from . import record_3b_642
