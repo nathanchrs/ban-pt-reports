@@ -40,6 +40,9 @@ from . import record_3a_731
 from . import record_3a_732
 from . import record_3b_312
 from . import record_3b_321
+from . import record_3b_411
+from . import record_3b_412
+from . import record_3b_642
 from . import record_3b_711
 from . import record_3b_721
 
@@ -93,6 +96,9 @@ class Report(models.Model):
     record_3a_732 = fields.One2many(comodel_name='banpt_report_generator.record_3a_732', inverse_name='report')
     record_3b_312 = fields.One2many(comodel_name='banpt_report_generator.record_3b_312', inverse_name='report')
     record_3b_321 = fields.One2many(comodel_name='banpt_report_generator.record_3b_321', inverse_name='report')
+    record_3b_411 = fields.One2many(comodel_name='banpt_report_generator.record_3b_411', inverse_name='report')
+    record_3b_412 = fields.One2many(comodel_name='banpt_report_generator.record_3b_412', inverse_name='report')
+    record_3b_642 = fields.One2many(comodel_name='banpt_report_generator.record_3b_642', inverse_name='report')
     record_3b_711 = fields.One2many(comodel_name='banpt_report_generator.record_3b_711', inverse_name='report')
     record_3b_721 = fields.One2many(comodel_name='banpt_report_generator.record_3b_721', inverse_name='report')
 
@@ -145,11 +151,14 @@ class Report(models.Model):
         record_3a_712.refresh(self)
         record_3a_713.refresh(self)
         record_3a_714.refresh(self)
-        record_3a_721.refresh(self)
+        record_3a_721.refresh(self) 
         record_3a_731.refresh(self)
         record_3a_732.refresh(self)
         record_3b_312.refresh(self)
         record_3b_321.refresh(self)
+        record_3b_411.refresh(self)
+        record_3b_412.refresh(self)
+        record_3b_642.refresh(self)
         record_3b_711.refresh(self)
         record_3b_721.refresh(self)
 

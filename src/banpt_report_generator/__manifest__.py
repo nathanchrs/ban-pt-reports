@@ -63,6 +63,9 @@
         'views/record_3a_732_views.xml',
         'views/record_3b_312_views.xml',
         'views/record_3b_321_views.xml',
+        'views/record_3b_411_views.xml',
+        'views/record_3b_412_views.xml',
+        'views/record_3b_642_views.xml',
         'views/record_3b_711_views.xml',
         'views/record_3b_721_views.xml',
 
