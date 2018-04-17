@@ -31,14 +31,14 @@ def refresh(reports):
         #add record_3a_5122 according to program_id
         courses = reports.env['itb.academic_course'].search([['program_id', '=', report.prodi.id]])
         for course in courses:
-            curriculums = reports.env['itb.academic_curriculum'].search([['catalog_id', '=', course.catalog_id]], order='semester')
+            curriculums = reports.env['itb.academic_curriculum_line'].search([['catalog_id', '=', course.catalog_id.id], ['year', '=', report.year]], order='semester')
             for curriculum in curriculums:
-                catalog = reports.env['itb.academic_catalog'].search([['id', '=', curriculum.catalog_id]])
-                program = reports.env['itb.academic_program'].search([['id', '=', course.program_id]])
+                catalog = reports.env['itb.academic_catalog'].search([['id', '=', curriculum.catalog_id.id]])
+                program = reports.env['itb.academic_program'].search([['id', '=', course.program_id.id]])
                 new_record_3a_5122 = {
-                    'smt': curriculum.semester,
+                    'smt': '0',
                     'kode_mk': catalog[0].code if catalog else '',
-                    'nama_mk': course.name,
+                    'nama_mk': catalog[0].name if catalog else '',
                     'bobot_sks': catalog[0].credit if catalog else 0,
                     'sks_mk_dalam_kurikulum_inti': '', # TODO
                     'sks_mk_dalam_kurikulum_institusional': '', # TODO
