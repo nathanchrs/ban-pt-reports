@@ -5,7 +5,7 @@ from odoo import models, fields, api
 class Record_3A_454(models.Model):
     _name = 'banpt_report_generator.record_3a_454'
     _rec_name = 'nama'
-    _title = '3A-4.5.4 Pencapai Prestasi/Reputasi Dosen'
+    _title = '3A-4.5.4 Pencapaian Prestasi/Reputasi Dosen'
 
     nama = fields.Char(string='Nama', required=True)
     prestasi_yang_dicapai = fields.Text(string='Prestasi yang Dicapai')
