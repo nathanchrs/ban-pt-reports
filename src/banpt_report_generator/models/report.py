@@ -90,6 +90,12 @@ class Report(models.Model):
     record_3a_622 = fields.One2many(comodel_name='banpt_report_generator.record_3a_622', inverse_name='report')
     record_3a_623 = fields.One2many(comodel_name='banpt_report_generator.record_3a_623', inverse_name='report')
     record_3a_631 = fields.One2many(comodel_name='banpt_report_generator.record_3a_631', inverse_name='report')
+    record_3a_632 = fields.One2many(comodel_name='banpt_report_generator.record_3a_632', inverse_name='report')
+    record_3a_633 = fields.One2many(comodel_name='banpt_report_generator.record_3a_633', inverse_name='report')
+    record_3a_6411 = fields.One2many(comodel_name='banpt_report_generator.record_3a_6411', inverse_name='report')
+    record_3a_6412 = fields.One2many(comodel_name='banpt_report_generator.record_3a_6412', inverse_name='report')
+    record_3a_643 = fields.One2many(comodel_name='banpt_report_generator.record_3a_643', inverse_name='report')
+    record_3a_652 = fields.One2many(comodel_name='banpt_report_generator.record_3a_652', inverse_name='report')
     record_3b_6111 = fields.One2many(comodel_name='banpt_report_generator.record_3b_6111', inverse_name='report')
     record_3b_6112 = fields.One2many(comodel_name='banpt_report_generator.record_3b_6112', inverse_name='report')
     record_3b_6113 = fields.One2many(comodel_name='banpt_report_generator.record_3b_6113', inverse_name='report')
@@ -114,15 +120,15 @@ class Report(models.Model):
         values['state'] = 'pending_review'
         return super(Report, self).write(values)
 
-    @api.multi
+    @api.one
     def approve(self):
+
         "Set state to 'approved'; bypass edit object check."
         super(Report, self).write({'state': 'approved'})
 
-    @api.multi
+    @api.one
     def refresh(self):
         "Load or refresh report data from iBOS, then update the refresh_date."
-
         dosen.refresh(self)
         identitas.refresh(self)
         pengisi.refresh(self)
