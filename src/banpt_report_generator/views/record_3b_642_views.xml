@@ -10,10 +10,10 @@
                     <field name="write_date" invisible="1" />
                     <field name="report_refresh_date" invisible="1" />
                     <field name="jenis_data" />
-                    <field name="manual" />
-                    <field name="komputer_tanpa_jaringan" />
-                    <field name="komputer_jaringan_lokal" />
-                    <field name="komputer_jaringan_luas" />
+                    <field name="pengolahan_data_manual" />
+                    <field name="pengolahan_data_komputer_tanpa_jaringan" />
+                    <field name="pengolahan_data_komputer_dengan_lan" />
+                    <field name="pengolahan_data_komputer_jaringan_luas" />
                 </tree>
             </field>
         </record>
@@ -26,10 +26,10 @@
                 <form string="3B-6.4.2 Aksesibilitas Data">
                     <group>
                         <field name="jenis_data" />
-                        <field name="manual" />
-                        <field name="komputer_tanpa_jaringan" />
-                        <field name="komputer_jaringan_lokal" />
-                        <field name="komputer_jaringan_luas" />
+                        <field name="pengolahan_data_manual" />
+                        <field name="pengolahan_data_komputer_tanpa_jaringan" />
+                        <field name="pengolahan_data_komputer_dengan_lan" />
+                        <field name="pengolahan_data_komputer_jaringan_luas" />
                     </group>
                 </form>
             </field>

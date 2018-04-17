@@ -92,7 +92,7 @@
                                     <a href="#tab_record_3a_453" aria-controls="tab_record_3a_453" role="tab" data-toggle="tab">3A-4.5.3 Kegiatan Dosen Tetap</a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#tab_record_3a_454" aria-controls="tab_record_3a_454" role="tab" data-toggle="tab">3A-4.5.4 Pencapai Prestasi/Reputasi Dosen</a>
+                                    <a href="#tab_record_3a_454" aria-controls="tab_record_3a_454" role="tab" data-toggle="tab">3A-4.5.4 Pencapaian Prestasi/Reputasi Dosen</a>
                                 </li>
                                 <li role="presentation">
                                     <a href="#tab_record_3a_455" aria-controls="tab_record_3a_455" role="tab" data-toggle="tab">3A-4.5.5 Keikutsertaan Dosen Tetap Dalam Organisasi Keilmuan/Profesi</a>
@@ -180,6 +180,9 @@
                                 </li>
                                 <li role="presentation">
                                     <a href="#tab_record_3b_412" aria-controls="tab_record_3b_412" role="tab" data-toggle="tab">3B-4.1.2 Penggantian dan Pengembangan Dosen Tetap</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_42" aria-controls="tab_record_3b_42" role="tab" data-toggle="tab">3B-4.2 Tenaga Kependidikan</a>
                                 </li>
                                 <li role="presentation">
                                     <a href="#tab_record_3b_6111" aria-controls="tab_record_3b_6111" role="tab" data-toggle="tab">3B-6.1.1.1 Jumlah Dana Yang Diterima Fakultas</a>
@@ -272,7 +275,7 @@
                                 <field name="record_3a_453" />
                             </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_454">
-                                <h3 class="banpt_notebook_page_title">3A-4.5.4 Pencapai Prestasi/Reputasi Dosen</h3>
+                                <h3 class="banpt_notebook_page_title">3A-4.5.4 Pencapaian Prestasi/Reputasi Dosen</h3>
                                 <field name="record_3a_454" />
                             </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_455">
@@ -390,6 +393,10 @@
                             <div role="tabpanel" class="tab-pane" id="tab_record_3b_412">
                                 <h3 class="banpt_notebook_page_title">3B-4.1.2 Penggantian dan Pengembangan Dosen Tetap</h3>
                                 <field name="record_3b_412" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_42">
+                                <h3 class="banpt_notebook_page_title">3B-4.2 Tenaga Kependidikan</h3>
+                                <field name="record_3b_42" />
                             </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3b_6111">
                                 <h3 class="banpt_notebook_page_title">3B-6.1.1.1 Jumlah Dana Yang Diterima Fakultas</h3>
