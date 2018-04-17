@@ -48,4 +48,4 @@ def refresh(reports):
                     'kelengkapan_sap': '', # TODO
                     'unit_penyelenggara': program[0].name if program else '',
                 }
-                report.write({'dosen': [(0, 0, new_record_3a_5122)]})
+                report.write({'record_3a_5122': [(0, 0, new_record_3a_5122)]})
