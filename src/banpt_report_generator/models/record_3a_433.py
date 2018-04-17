@@ -44,13 +44,13 @@ def refresh(reports):
 
             new_record_3a_433 = {
                 'nama_dosen': instructor.name_related,
-                'sks_ps_sendiri': course_even.catalog_id.id,
-                'sks_ps_lain_pt_sendiri': course_odd.catalog_id.id,
-                'sks_pt_lain': sks_ps_sendiri_even,
-                'sks_penelitian': sks_ps_sendiri_odd,
-                'sks_pengmas': semester_even.id,
+                'sks_ps_sendiri': sks_ps_sendiri_even,
+                'sks_ps_lain_pt_sendiri': sks_ps_sendiri_odd,
+                'sks_pt_lain': sks_ps_sendiri_even, # TODO: need more information
+                'sks_penelitian': sks_ps_sendiri_odd, # TODO: need more information
+                'sks_pengmas': semester_even.id, # TODO: need more information
                 'sks_mgmt_pt_sendiri': semester_odd.id,
-                'sks_mgmt_pt_lain': 0,
+                'sks_mgmt_pt_lain': 0, # TODO: need more information
                 'sks_total': 0,
             }
 
