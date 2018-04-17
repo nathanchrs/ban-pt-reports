@@ -26,14 +26,14 @@ def refresh(reports):
         # Add aktivitas mengajar dosen tetap
         semester_even = reports.env['itb.academic_semester'].search([['year', '=', report.year], ['type', '=', 'even']])
         semester_odd = reports.env['itb.academic_semester'].search([['year', '=', report.year - 1], ['type', '=', 'odd']])
-        instructors = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]]) # TODO: add WHERE statement with sesuai prodi
-        for instructor in instructors:
-            course_evens = reports.env['itb.academic_course'].search([['semester_id', '=', semester_even.id], ['program_id', '=', 11]]) # TODO: change to instructor_id
-            course_odds = reports.env['itb.academic_course'].search([['semester_id', '=', semester_odd.id], ['program_id', '=', 11]]) # TODO: change to instructor_id
-            for course_even in course_evens:
-                catalog_even = reports.env['itb.academic_catalog'].search([['id', '=', course_even.catalog_id.id]])
+        dosen_employees = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]]) # TODO: add WHERE statement with sesuai prodi
+        for dosen in dosen_employees:
+            instructors_even = reports.env['itb.academic_instructor'].search([['employee_id', '=', dosen.id], ['semester', '=', semester_even.name]])
+            instructors_odd = reports.env['itb.academic_instructor'].search([['employee_id', '=', dosen.id], ['semester', '=', semester_odd.name]])
+            for instructor_even in instructors_even:
+                catalog_even = reports.env['itb.academic_catalog'].search([['id', '=', instructor_even.course_id.catalog_id.id]])
                 new_record_3a_434 = {
-                    'nama_dosen': instructor.name_related,
+                    'nama_dosen': dosen.name_related,
                     'kode_matkul': catalog_even.code,
                     'nama_matkul': catalog_even.name,
                     'jumlah_sks_matkul': catalog_even.credit,
@@ -42,10 +42,10 @@ def refresh(reports):
                 }
 
                 report.write({'record_3a_434': [(0, 0, new_record_3a_434)]})
-            for course_odd in course_odds:
-                catalog_odd = reports.env['itb.academic_catalog'].search([['id', '=', course_odd.catalog_id.id]])
+            for instructor_odd in instructors_odd:
+                catalog_odd = reports.env['itb.academic_catalog'].search([['id', '=', instructor_odd.course_id.catalog_id.id]])
                 new_record_3a_434 = {
-                    'nama_dosen': instructor.name_related,
+                    'nama_dosen': dosen.name_related,
                     'kode_matkul': catalog_odd.code,
                     'nama_matkul': catalog_odd.name,
                     'jumlah_sks_matkul': catalog_odd.credit,
