@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <record model="ir.ui.view" id="view_record_3a_454_tree">
-            <field name="name">3A-4.5.4 Pencapai Prestasi/Reputasi Dosen</field>
+            <field name="name">3A-4.5.4 Pencapaian Prestasi/Reputasi Dosen</field>
             <field name="model">banpt_report_generator.record_3a_454</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
@@ -20,11 +20,11 @@
         </record>
 
         <record model="ir.ui.view" id="view_record_3a_454_form">
-            <field name="name">3A-4.5.4 Pencapai Prestasi/Reputasi Dosen</field>
+            <field name="name">3A-4.5.4 Pencapaian Prestasi/Reputasi Dosen</field>
             <field name="model">banpt_report_generator.record_3a_454</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="3A-4.5.4 Pencapai Prestasi/Reputasi Dosen">
+                <form string="3A-4.5.4 Pencapaian Prestasi/Reputasi Dosen">
                     <group>
                         <field name="nama" />
                         <field name="prestasi_yang_dicapai" />
@@ -38,7 +38,7 @@
         </record>
 
          <record model="ir.actions.act_window" id="view_record_3a_454_action">
-            <field name="name">3A-4.5.4 Pencapai Prestasi/Reputasi Dosen</field>
+            <field name="name">3A-4.5.4 Pencapaian Prestasi/Reputasi Dosen</field>
             <field name="res_model">banpt_report_generator.record_3a_454</field>
             <field name="view_mode">tree,form</field>
             <field name="view_type">form</field>

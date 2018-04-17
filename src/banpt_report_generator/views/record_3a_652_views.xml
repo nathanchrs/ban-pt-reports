@@ -9,7 +9,6 @@
                 <tree editable="bottom" decoration-info="write_date > report_refresh_date">
                     <field name="write_date" invisible="1" />
                     <field name="report_refresh_date" invisible="1" />
-                    <field name="no" />
                     <field name="jenis_data" />
                     <field name="pengolahan_data_manual" />
                     <field name="pengolahan_data_komputer_tanpa_jaringan" />
@@ -26,7 +25,6 @@
             <field name="arch" type="xml">
                 <form string="3A-6.5.2 Aksesibilitas Tiap Jenis Data">
                     <group>
-                        <field name="no" />
                         <field name="jenis_data" />
                         <field name="pengolahan_data_manual" />
                         <field name="pengolahan_data_komputer_tanpa_jaringan" />
