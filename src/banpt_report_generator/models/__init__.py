@@ -52,6 +52,7 @@ from . import record_3b_312
 from . import record_3b_321
 from . import record_3b_411
 from . import record_3b_412
+from . import record_3b_42
 from . import record_3b_6111
 from . import record_3b_6112
 from . import record_3b_6113

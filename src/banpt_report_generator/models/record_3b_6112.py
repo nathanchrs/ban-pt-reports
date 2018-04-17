@@ -7,7 +7,7 @@ class Record_3B_6112(models.Model):
     _rec_name = 'jenis_penggunaan'
     _title = '3B-6.1.1.2 Penggunaan Dana'
 
-    jenis_penggunaan = fields.Text(string='Jenis Dana', required=True)
+    jenis_penggunaan = fields.Text(string='Jenis Penggunaan', required=True)
     jumlah_dana_ts_2 = fields.Integer(string='Jumlah Dana TS-2 (juta rupiah)')
     jumlah_dana_ts_1 = fields.Integer(string='Jumlah Dana TS-1 (juta rupiah)')
     jumlah_dana_ts = fields.Integer(string='Jumlah Dana TS (juta rupiah)')

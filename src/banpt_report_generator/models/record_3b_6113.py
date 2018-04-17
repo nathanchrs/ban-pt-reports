@@ -7,7 +7,7 @@ class Record_3B_6113(models.Model):
     _rec_name = 'nama_prodi'
     _title = '3B-6.1.1.3 Penggunaan Dana Untuk Tridarma'
 
-    nama_prodi = fields.Text(string='Jenis Dana', required=True)
+    nama_prodi = fields.Text(string='Nama Prodi', required=True)
     jumlah_dana_ts_2 = fields.Integer(string='Jumlah Dana TS-2 (juta rupiah)')
     jumlah_dana_ts_1 = fields.Integer(string='Jumlah Dana TS-1 (juta rupiah)')
     jumlah_dana_ts = fields.Integer(string='Jumlah Dana TS (juta rupiah)')
