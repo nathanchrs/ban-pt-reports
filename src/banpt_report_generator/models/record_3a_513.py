@@ -39,7 +39,7 @@ def refresh(reports):
                     'bobot_tugas': '', # TODO add bobot tugas in itb.academic_catalog
                     'unit_penyelenggara': program[0].name if program else '',
                 }
-                report.write({'dosen': [(0, 0, new_record_3a_513)]})
+                report.write({'record_3a_513': [(0, 0, new_record_3a_513)]})
 
             optional_courses = reports.env['itb.academic_curriculum'].search([['catalog_id', '=', course.catalog_id], ['category', '=', 'opsional-luar']])
             for optional in optional_courses:
@@ -54,7 +54,7 @@ def refresh(reports):
                     'bobot_tugas': '', # TODO add bobot tugas in itb.academic_catalog
                     'unit_penyelenggara': program[0].name if program else '',
                 }
-                report.write({'dosen': [(0, 0, new_record_3a_513)]})
+                report.write({'record_3a_513': [(0, 0, new_record_3a_513)]})
 
             optional_courses = reports.env['itb.academic_curriculum'].search([['catalog_id', '=', course.catalog_id], ['category', '=', 'opsional-external']])
             for optional in optional_courses:
@@ -69,4 +69,4 @@ def refresh(reports):
                     'bobot_tugas': '', # TODO add bobot tugas in itb.academic_catalog
                     'unit_penyelenggara': program[0].name if program else '',
                 }
-                report.write({'dosen': [(0, 0, new_record_3a_513)]})
+                report.write({'record_3a_513': [(0, 0, new_record_3a_513)]})
