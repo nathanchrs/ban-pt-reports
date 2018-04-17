@@ -19,6 +19,6 @@ class Record_3A_711(models.Model):
 def refresh(reports):
     for report in reports:
         # Clear Record_3A_711 table
-        report.report_3a_711.unlink()
+        report.record_3a_711.unlink()
 
-        # Add penelitian dosen tetap table
+        # Add penelitian dosen tetap

@@ -2,7 +2,7 @@
 
 from odoo import models, fields, api
 
-class record_3b_642(models.Model):
+class Record_3B_642(models.Model):
 	_name = 'banpt_report_generator.record_3b_642'
 	_rec_name = 'jenis_data'
 	_title = '3B-6.4.2 Aksesibilitas Data'
