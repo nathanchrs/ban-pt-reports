@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="implementation_list_view">
+            <field name="name">implementation_list</field>
+            <field name="model">itb.plan_implementation</field>
+            <field name="arch" type="xml">
+                <tree string="Budget Implementation List">
+                    <!--field name="plan_id" string="Plan" /-->
+					<field name="reference" />
+					<field name="quarter" />
+					<field name="state" />
+                </tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="implementation_form_view">
+			<field name="name">implementation_form</field>
+            <field name="model">itb.plan_implementation</field>
+            <field name="arch" type="xml">
+				<form>
+					<header>
+						<button name="action_state_confirmed" type="object" string="Confirm" states="draft" />
+						<button name="action_state_validated" type="object" string="Validate" states="confirm" />
+						<button name="action_state_abort" type="object" string="Abort" states="confirm" />
+						<!--button name="action_state_fra" type="object" string="FRA" states="validate" /-->
+						<field name="state" widget="statusbar" />
+						<button class="oe_highlight" name="generate_spending" string="Find budget to Implement" states="draft" type="object" context="{'default_active_id': active_id}" />
+					</header>
+					<sheet>
+						<!--h1><field name="plan_id" /></h1-->
+						<group>
+							<group>
+								<field name="quarter" widget="selection" />
+							</group>
+							<group>
+								<field name="reference" />
+							</group>
+						</group>
+						<!--field name="spending_actual_ids" context="{'plan_id': plan_id}"-->
+						<field name="spending_actual_ids" >
+							<tree editable="bottom">
+								<!--field name="spending_id" string="Name" domain="[('plan_id','=',plan_id)]" /-->
+								<field name="spending_id" string="Name" />
+								<field name="plan_line_id" string="Initiative" />
+								<field name="type" />
+								<field name="source" widget="selection" />
+								<field name="month" />
+								<field name="price_id" string="Price" />
+								<!--field name="volume" readonly="1" /-->
+								<field name="total" string="Amount" />
+							</tree>
+						</field>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="plan_wizard_implementasi_form_view" model="ir.ui.view">
+			<field name="name">plan_wizard_implementasi_form</field>
+			<field name="model">itb.plan_wizard_implementasi</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Confirm wizard implementation">
+					<field name="year" string="Year"/>
+					<group>
+						<field name="quartal1" string="Q1"/>
+					</group>
+					<group>
+						<field name="quartal2" string="Q2"/>
+					</group>
+					<group>
+						<field name="quartal3" string="Q3"/>
+					</group>
+					<group>
+						<field name="quartal4" string="Q4"/>
+					</group>
+					<!--group>
+						<field name="note" string="Note"/>
+					</group-->
+					<footer>
+						<button class="oe_highlight" type="object" name="yes" string="Yes" />
+						<button class="oe_highlight" type="object" name="no" string="No" />
+					</footer>
+					<!--/field-->
+				</form>
+			</field>
+		</record>
+</odoo>

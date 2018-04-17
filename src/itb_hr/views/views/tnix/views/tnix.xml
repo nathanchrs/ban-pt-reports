@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="kandidat_search_view" model="ir.ui.view">
+		<field name="name">kandidat_search</field>
+		<field name="model">tnix.kandidat</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="nama"/>
+				<field name="kecabangan_id"/>
+				<field name="minat"/>
+				<field name="rekomendasi1" string="Rekomendasi" filter_domain="['|',('rekomendasi1.nama','ilike',self),('rekomendasi2.nama','ilike',self)]"/>
+				<field name="penempatan" filter_domain="[('penempatan.nama','ilike',self)]"/>
+				<filter name="pria" string="Pria" domain="[('kelamin','=','L')]"/>
+				<filter name="wanita" string="Wanita" domain="[('kelamin','=','P')]"/>
+				<separator/>
+				<filter name="secapa" string="SECAPA" domain="[('diktuk','=','SECAPA')]"/>
+				<filter name="akmil" string="AKMIL" domain="[('diktuk','=','AKMIL')]"/>
+				<filter name="sepa" string="SEPA" domain="[('diktuk','=','SEPA')]"/>
+				<separator/>
+				<filter name="kopassus" string="Lulus KOPASSUS" domain="[('kopassus','=',True)]"/>
+				<filter name="kostrad" string="Lulus KOSTRAD" domain="[('kostrad','=',True)]"/>
+				<separator/>
+				<filter name="rekomendasi" groups="base.group_erp_manager" string="Ada Rekomendasi" domain="['|',('rekomendasi1','!=',False),('rekomendasi2','!=',False)]"/>
+				<filter name="atensi" groups="base.group_erp_manager" string="Ada Catatan" domain="[('catatan','!=',False)]"/>
+				<separator/>
+				<filter name="usulan" string="Usulan" domain="[('status','=','usulan')]"/>
+				<filter name="resmi" string="Resmi" domain="[('status','=','resmi')]"/>				
+				<group expand="0" string="Group By">
+					<filter name="kecabangan" string="Kecabangan" context="{'group_by': 'kecabangan_id'}"/>
+					<filter name="diktuk" string="Diktuk" context="{'group_by': 'diktuk'}"/>
+					<filter name="panda" string="Panda" context="{'group_by': 'panda'}"/>
+					<filter name="minat" string="Minat" context="{'group_by': 'minat'}"/>
+					<filter name="status" string="Status" context="{'group_by': 'status'}"/>
+					<filter name="penempatan" string="Kesatuan Penempatan" context="{'group_by': 'penempatan_kesatuan'}"/>
+					<filter name="rekomendasi1" groups="base.group_erp_manager" string="Kesatuan Rekomendasi 1" context="{'group_by': 'rekomendasi1_kesatuan'}"/>
+					<filter name="rekomendasi_spersad" groups="base.group_erp_manager" string="Kesatuan Rekomendasi SPERSAD" context="{'group_by': 'rekomendasi_spersad_kesatuan'}"/>
+				</group>
+			</search>
+		</field>
+	</record>
+	<record id="kandidat_graph_view" model="ir.ui.view">
+		<field name="name">kandidat_graph</field>
+		<field name="model">tnix.kandidat</field>
+		<field name="arch" type="xml">
+			<graph type="bar" stacked="True">
+				<field name="kecabangan_id" type="row" />
+				<field name="diktuk" type="col" />
+			</graph>
+		</field>
+	</record>
+	<record id="kandidat_pivot_view" model="ir.ui.view">
+		<field name="name">kandidat_pivot</field>
+		<field name="model">tnix.kandidat</field>
+		<field name="arch" type="xml">
+			<pivot>
+				<field name="rekomendasi1" type="row" />
+				<field name="diktuk" type="col" />
+			</pivot>
+		</field>
+	</record>
+	<record id="kandidat_list_view" model="ir.ui.view">
+		<field name="name">kandidat_list</field>
+		<field name="model">tnix.kandidat</field>
+		<field name="arch" type="xml">
+			<tree string="Daftar Kandidat">
+				<field name="nama" />
+				<field name="nrp" />
+				<field name="kecabangan_id" />
+				<field name="diktuk" />
+				<field name="panda" />
+				<field name="minat" />
+				<field name="minat2" />
+				<field name="rekomendasi1" groups="base.group_erp_manager"/>
+				<field name="rekomendasi2" groups="base.group_erp_manager"/>
+				<field name="rekomendasi_bincab" />
+				<field name="rekomendasi_spersad" groups="base.group_erp_manager"/>
+				<field name="penempatan" />
+				<field name="status" />
+			</tree>
+		</field>
+	</record>
+	<record id="layar_sidang_list_view" model="ir.ui.view">
+		<field name="name">layar_sidang_list</field>
+		<field name="model">tnix.kandidat</field>
+		<field name="arch" type="xml">
+			<tree string="Daftar Kandidat" editable="top">
+				<field name="nama" readonly="True"/>
+				<field name="nrp" readonly="True"/>
+				<field name="rekomendasi1" readonly="True"/>
+				<field name="rekomendasi2" readonly="True"/>
+				<field name="rekomendasi_bincab" readonly="True"/>
+				<field name="rekomendasi_spersad" readonly="True"/>
+				<field name="rekomendasi_bincab_detil" readonly="True"/>
+				<field name="rekomendasi_spersad_detil" readonly="True"/>
+				<field name="tipe" />
+				<field name="penempatan" />
+				<field name="penempatan_detil" />
+			</tree>
+		</field>
+	</record>
+	<record id="kandidat_form_view" model="ir.ui.view" >
+		<field name="name">kandidat_form</field>
+		<field name="model">tnix.kandidat</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>
+                    <button type="object" groups="base.group_erp_manager" name="set_draft" string="Jadikan Usulan"  attrs="{'invisible':[('status','=','usulan')]}" />
+					<field name="status" widget="statusbar" />
+				</header>
+				<sheet>
+					<field name="foto" widget='image' class="oe_avatar" />
+                    <div class="oe_title">
+                        <label for="nama" class="oe_edit_only"/>
+                        <h1><field name="nama" placeholder="Nama Kandidat"/></h1>
+                    </div>
+					<group>
+						<group string="Pribadi">
+							<field name="nrp" />
+							<field name="kelamin" />
+							<field name="tanggal_lahir" />
+							<field name="propinsi_lahir" options="{'no_quick_create':True,'no_create_edit':True}"/>
+							<field name="propinsi_tinggal" options="{'no_quick_create':True,'no_create_edit':True}"/>
+							<field name="suku_id" options="{'no_quick_create':True,'no_create_edit':True}"/>
+						</group>
+						<group string="Pendidikan">
+							<field name="diktuk"/>
+							<field name="bidang"/>
+							<field name="sarjana_id" options="{'no_quick_create':True,'no_create_edit':True}"/>
+							<field name="ranking"/>
+							<field name="ranking_sarcab"/>
+						</group>
+					</group>
+					<group>
+						<group string="Keprofesian">
+							<field name="kecabangan_id" options="{'no_quick_create':True,'no_create_edit':True}"/>
+							<field name="panda" options="{'no_quick_create':True,'no_create_edit':True}"/>
+							<field name="pangkat" />
+							<field name="kopassus" />
+							<field name="kostrad" />
+							<field name="secapa" attrs="{'invisible':[('diktuk','!=','SECAPA')]}"/>
+							<field name="gelombang_id" options="{'no_quick_create':True,'no_create_edit':True}"/>
+							<field name="minat_detil" />
+							<field name="minat" options="{'no_quick_create':True,'no_create_edit':True}"/>
+							<field name="minat2_detil" />
+							<field name="minat2" options="{'no_quick_create':True,'no_create_edit':True}"/>
+							<field name="rekomendasi_bincab_detil" />
+							<field name="rekomendasi_bincab" options="{'no_quick_create':True,'no_create_edit':True}"/>
+						</group>
+						<group string="Keputusan" groups="base.group_erp_manager">
+							<field name="rekomendasi_spersad_detil" />
+							<field name="rekomendasi_spersad" options="{'no_quick_create':True,'no_create_edit':True}"/>
+							<field name="rekomendasi1" />
+							<field name="rekomendasi2" />
+							<field name="tanggal_sidang" />
+							<field name="tanggal_keputusan" attrs="{'readonly':[('status','=','resmi')]}"/>
+							<field name="penempatan_detil" attrs="{'readonly':[('status','=','resmi')]}"/>
+							<field name="penempatan" attrs="{'readonly':[('status','=','resmi')]}" options="{'no_quick_create':True,'no_create_edit':True}" />
+							<field name="catatan" />
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="posisi_search_view" model="ir.ui.view">
+		<field name="name">posisi_search</field>
+		<field name="model">tnix.posisi</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="nama" string="Nama/kode" filter_domain="['|',('nama','ilike',self),('kode','ilike',self)]"/>
+				<field name="kesatuan_id" filter_domain="[('kesatuan_id.nama','ilike',self)]"/>
+				<filter name="bukaan" string="Bukaan" domain="[('bukaan','=',True)]"/>
+				<filter name="lowong" string="Lowong" domain="[('lowong','>',0)]"/>
+				<group expand="0" string="Group By">
+					<filter name="kesatuan" string="kesatuan" context="{'group_by': 'kesatuan_id'}"/>
+				</group>
+			</search>
+		</field>
+	</record>
+	<record id="posisi_graph_view" model="ir.ui.view">
+		<field name="name">posisi_graph</field>
+		<field name="model">tnix.posisi</field>
+		<field name="arch" type="xml">
+			<graph type="bar" stacked="True">
+				<field name="kesatuan_id" type="row" />
+				<field name="kecabangan_id" type="col" />
+				<field name="terisi" type="measure" />
+			</graph>
+		</field>
+	</record>
+	<record id="posisi_pivot_view" model="ir.ui.view">
+		<field name="name">posisi_pivot</field>
+		<field name="model">tnix.posisi</field>
+		<field name="arch" type="xml">
+			<pivot>
+				<field name="kesatuan_id" type="row" />
+				<field name="kecabangan_id" type="row" />
+				<field name="kuota" type="measure" />
+				<field name="terisi" type="measure" />
+				<field name="lowong" type="measure" />
+			</pivot>
+		</field>
+	</record>
+	<record id="posisi_list_view" model="ir.ui.view">
+		<field name="name">posisi_list</field>
+		<field name="model">tnix.posisi</field>
+		<field name="arch" type="xml">
+			<tree string="Daftar Posisi">
+				<field name="nama" />
+				<field name="kode" />
+				<field name="kesatuan_id" />
+				<field name="bukaan" />
+			</tree>
+		</field>
+	</record>
+	<record id="posisi_form_view" model="ir.ui.view" >
+		<field name="name">posisi_form</field>
+		<field name="model">tnix.posisi</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<h1><field name="nama" /></h1>
+					<group>
+						<group>
+							<field name="kesatuan_id" />
+							<field name="kecabangan_id" />
+						</group>
+						<group>
+							<field name="kode" />
+							<field name="bukaan" />
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="kesatuan_list_view" model="ir.ui.view">
+		<field name="name">kesatuan_list</field>
+		<field name="model">tnix.kesatuan</field>
+		<field name="arch" type="xml">
+			<tree string="Daftar Kesatuan">
+				<field name="nama" />
+				<field name="kategori" />
+				<field name="suku_ids" />
+				<field name="sequence" />
+			</tree>
+		</field>
+	</record>
+	<record id="kesatuan_form_view" model="ir.ui.view" >
+		<field name="name">kesatuan_form</field>
+		<field name="model">tnix.kesatuan</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<h1><field name="nama" /></h1>
+					<group>
+						<group>
+							<field name="kategori" />
+							<field name="sequence" />
+						</group>
+						<group>
+							<field name="lokasi" />
+							<field name="suku_ids" widget="many2many_tags" />
+						</group>
+					</group>
+					<notebook>
+						<page string="Posisi">
+							<field name="posisi_ids" />
+						</page>
+						<page string="Wilayah">
+							<field name="propinsi_ids" context="{'kesatuan_id':active_id}"/>
+						</page>
+						<page string="Terdekat">
+							<field name="terdekat_ids" context="{'kesatuan_id':active_id}">
+								<tree editable="bottom">
+									<field name="kesatuan_dekat" />
+									<field name="sequence" widget="handle" />
+								</tree>
+							</field>
+						</page>
+						<page string="Kandidat">
+							<group>
+								<field name="khusus_diktuk"/>
+								<field name="khusus_kecabangan_ids" widget="many2many_tags"/>
+								<field name="utama_kesarjanaan_ids" widget="many2many_tags"/>
+							</group>
+						</page>
+					</notebook>
+				</sheet>
+			</form>
+		</field>
+	</record>
+</odoo>

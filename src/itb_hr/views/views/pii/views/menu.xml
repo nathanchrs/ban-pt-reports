@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<act_window id="pii.language_action" name="Bahasa" res_model="pii.language" view_mode="tree,form,graph,pivot" />
+		<act_window id="pii.creation_action" name="Karya" res_model="pii.creation" view_mode="tree,form,graph,pivot" />
+		<act_window id="pii.proceeding_action" name="Makalah" res_model="pii.proceeding" view_mode="tree,form,graph,pivot" />
+		<act_window id="pii.publication_action" name="Karya Ilmiah" res_model="pii.publication" view_mode="tree,form,graph,pivot" />
+		<act_window id="pii.research_action" name="Penelitian" res_model="pii.research" view_mode="tree,form,graph,pivot" />
+		<act_window id="pii.seminar_action" name="Seminar/Lokakarya" res_model="pii.seminar" view_mode="tree,form,graph,pivot" />
+		<act_window id="pii.profile_action" name="Anggota" res_model="res.partner" view_mode="tree,form,graph" />
+		<act_window id="pii.education_action" name="Pendidikan" res_model="pii.education" view_mode="tree,form,graph" />
+		<act_window id="pii.membership_action" name="Keanggotaan" res_model="pii.membership" view_mode="tree,form,graph" />
+		<act_window id="pii.award_action" name="Penghargaan" res_model="pii.award" view_mode="tree,form,graph" />
+		<act_window id="pii.training_action" name="Pelatihan" res_model="pii.training" view_mode="tree,form,graph" />
+		<act_window id="pii.work_action" name="Pekerjaan" res_model="pii.work" view_mode="tree,form,graph" />
+		<act_window id="pii.teaching_action" name="Pengajaran" res_model="pii.teaching" view_mode="tree,form,graph" />
+		<act_window id="pii.service_action" name="Pengabdian" res_model="pii.service" view_mode="tree,form,graph" />
+
+		<menuitem id="pii.pii_app" name="PII" web_icon="pii,static/description/icon.png" />
+		
+		<menuitem id="pii.pii_menu" name="Profil" parent="pii.pii_app" sequence="20" />
+		<menuitem id="pii.profile_menu"  action="pii.profile_action" name="Anggota" parent="pii.pii_app" sequence="10" />
+
+		<menuitem id="pii.education_menu"  action="pii.education_action" name="Pendidikan" parent="pii.pii_menu" sequence="21" />
+		<menuitem id="pii.membership_menu"  action="pii.membership_action" name="Keanggotaan" parent="pii.pii_menu" sequence="22" />
+		<menuitem id="pii.award_menu"  action="pii.award_action" name="Penghargaan" parent="pii.pii_menu" sequence="23" />
+		<menuitem id="pii.training_menu"  action="pii.training_action" name="Pelatihan" parent="pii.pii_menu" sequence="24" />
+		<menuitem id="pii.work_menu"  action="pii.work_action" name="Pekerjaan" parent="pii.pii_menu" sequence="25" />
+		<menuitem id="pii.teaching_menu"  action="pii.teaching_action" name="Pengajaran" parent="pii.pii_menu" sequence="26" />
+		<menuitem id="pii.service_menu"  action="pii.service_action" name="Pengabdian" parent="pii.pii_menu" sequence="27" />
+		<menuitem id="pii.language_menu"  action="pii.language_action" name="Bahasa" parent="pii.pii_menu" sequence="60" />
+		<menuitem id="pii.creation_menu"  action="pii.creation_action" name="Karya" parent="pii.pii_menu" sequence="70" />
+		<menuitem id="pii.proceeding_menu"  action="pii.proceeding_action" name="Makalah" parent="pii.pii_menu" sequence="80" />
+		<menuitem id="pii.publication_menu"  action="pii.publication_action" name="Karya Ilmiah" parent="pii.pii_menu" sequence="90" />
+		<menuitem id="pii.research_menu"  action="pii.research_action" name="Penelitian" parent="pii.pii_menu" sequence="100" />
+		<menuitem id="pii.seminar_menu"  action="pii.seminar_action" name="Seminar/Lokakarya" parent="pii.pii_menu" sequence="110" />
+</odoo>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="defence_search_view" model="ir.ui.view">
+			<field name="name">defence_search</field>
+			<field name="model">itb.academic_defence</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="thesis_id" string='Name' filter_domain="[('thesis_id.name','ilike',self)]"/>
+					<field name="tester_ids" string='Tester' filter_domain="[('tester_ids.partner_id.name','ilike',self)]"/>
+					<field name="location" string='Location' />
+					<filter name="today" string="Today" domain="[(1,'=',1)]"/>
+					<filter name="week" string="This Week" domain="[(1,'=',1)]"/>
+					<group expand="1" string="Group By">
+						<filter name="start" string="Day" context="{'group_by': 'start:month'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="defence_list_view">
+			<field name="name">defence_list</field>
+			<field name="model">itb.academic_defence</field>
+			<field name="arch" type="xml">
+				<tree string="Defence List">
+					<field name="thesis_id" />
+					<field name="tester_ids" widget="one2many_tags" />
+					<field name="start" />
+					<field name="finish" />
+					<field name="location" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="defence_form_view">
+			<field name="name">defence_form</field>
+			<field name="model">itb.academic_defence</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="thesis_id" /></h1>
+						<group>
+							<group>
+								<field name="start" />
+								<field name="finish" />
+								<field name="location" />
+							</group>
+							<group>
+								<field name="tester_ids" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="defence_calendar_view" model="ir.ui.view">
+			<field name="model">itb.academic_defence</field>
+			<field name="arch" type="xml">
+				<calendar date_start="start" date_stop="finish" color="location">
+					<field name="thesis_id" />
+					<field name="location" />
+				</calendar>
+			</field>
+		</record>
+</odoo>

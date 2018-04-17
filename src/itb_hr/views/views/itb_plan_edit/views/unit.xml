@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="unit_list_view">
+            <field name="name">unit_list</field>
+            <field name="model">itb.plan_unit</field>
+            <field name="arch" type="xml">
+                <tree string="Unit List">
+                    <field name="name" />
+					<field name="user_id" string="Responsible" />
+                </tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="unit_form_view">
+			<field name="name">plan_unit_form</field>
+            <field name="model">itb.plan_unit</field>
+            <field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<field name="user_id" string="Responsible" />
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

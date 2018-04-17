@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="coa_list_view" model="ir.ui.view">
+		<field name="name">coa_list</field>
+		<field name="model">qms.coa</field>
+		<field name="arch" type="xml">
+			<tree string="coa List">
+				<field name="source" />
+                <field name="partner_id" />
+				<field name="product_id" />
+                <field name="reference" />
+                <field name="date" />
+				<field name="parameter_id" />
+				<field name="result" />
+				<field name="comply" />
+			</tree>
+		</field>
+	</record>
+	<record id="coa_form_view" model="ir.ui.view" >
+		<field name="name">coa_form</field>
+		<field name="model">qms.coa</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+                    <div class="oe_title">
+                        <h1><field name="parameter_id" placeholder="Parameter"/></h1>
+                    </div>
+					<group>
+						<group>
+							<field name="result" />
+						</group>
+						<group>
+                            <field name="comply" />
+						</group>
+                    </group>
+                    <group>
+						<group>
+							<field name="source" />
+                            <field name="production_id" attrs="{'invisible':[('source','!=','production')]}"/>
+							<field name="makloon_id" attrs="{'invisible':[('source','!=','makloon')]}" />
+                            <field name="partner_id" attrs="{'invisible':[('source','!=','makloon')]}"/>
+						</group>
+						<group>
+                            <field name="product_id" />
+                            <field name="date" />
+                            <field name="reference" />
+						</group>
+                    </group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="coa_search_view" model="ir.ui.view">
+		<field name="name">coa_search</field>
+		<field name="model">qms.coa</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="reference" string='Reference' />
+				<field name="partner_id" string='Vendor' />
+				<field name="product_id" string='Product' filter_domain="[('product_id.name','ilike',self)]"/>
+				<filter name="Non-Comply" string="Non-Comply" domain="[('comply','=',False)]"/>
+				<filter name="month" string="This Month" domain="[('date','&lt;',(context_today()+relativedelta(months=1)).strftime('%Y-%m-01')), ('date','&gt;=',time.strftime('%Y-%m-01'))]"/>
+				<group expand="0" string="Group By">
+					<filter name="source" string="Source" context="{'group_by': 'source'}"/>
+					<filter name="product" string="Product" context="{'group_by': 'product_id'}"/>
+					<filter name="vendor" string="Vendor" context="{'group_by': 'partner_id'}"/>
+					<filter name="parameter" string="Parameter" context="{'group_by': 'parameter_id'}"/>
+					<filter name="month" string="Month" context="{'group_by': 'date:month'}"/>
+				</group>
+			</search>
+		</field>
+	</record>
+	<record id="coa_graph_view" model="ir.ui.view">
+		<field name="name">coa_graph</field>
+		<field name="model">qms.coa</field>
+		<field name="arch" type="xml">
+			<graph type="bar" stacked="False">
+				<field name="date" interval="month" type="row" />
+				<field name="parameter_id" type="col" />
+				<field name="result" type="measure" />
+			</graph>
+		</field>
+	</record>
+	<record id="coa_pivot_view" model="ir.ui.view">
+		<field name="name">coa_pivot</field>
+		<field name="model">qms.coa</field>
+		<field name="arch" type="xml">
+			<pivot>
+				<field name="date" type="col" interval="month" />
+				<field name="parameter_id" type="col" />
+				<field name="partner_id" type="row" />
+				<field name="product_id" type="row" />
+				<field name="result" type="measure" />
+			</pivot>
+		</field>
+	</record>		
+</odoo>

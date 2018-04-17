@@ -1,0 +1,17 @@
+id,kesatuan_id/id,kesatuan_dekat/id,sequence
+tnix.terdekat_1,tnix.kesatuan_dam_i,tnix.kesatuan_dam_im,0
+tnix.terdekat_2,tnix.kesatuan_dam_ii,tnix.kesatuan_dam_i,0
+tnix.terdekat_3,tnix.kesatuan_dam_iii,tnix.kesatuan_dam_jaya,0
+tnix.terdekat_4,tnix.kesatuan_dam_im,tnix.kesatuan_dam_i,0
+tnix.terdekat_5,tnix.kesatuan_dam_iv,tnix.kesatuan_dam_v,0
+tnix.terdekat_6,tnix.kesatuan_dam_iv,tnix.kesatuan_akmil,1
+tnix.terdekat_7,tnix.kesatuan_dam_ix,tnix.kesatuan_dam_xvi,0
+tnix.terdekat_8,tnix.kesatuan_dam_jaya,tnix.kesatuan_dam_iii,0
+tnix.terdekat_9,tnix.kesatuan_dam_v,tnix.kesatuan_dam_iv,0
+tnix.terdekat_10,tnix.kesatuan_dam_vi,tnix.kesatuan_dam_xii,0
+tnix.terdekat_11,tnix.kesatuan_dam_vii,tnix.kesatuan_dam_xiii,0
+tnix.terdekat_12,tnix.kesatuan_dam_xii,tnix.kesatuan_dam_vi,0
+tnix.terdekat_13,tnix.kesatuan_dam_xiii,tnix.kesatuan_dam_vii,0
+tnix.terdekat_14,tnix.kesatuan_dam_xvi,tnix.kesatuan_dam_ix,0
+tnix.terdekat_15,tnix.kesatuan_dam_xvii,tnix.kesatuan_dam_xviii,0
+tnix.terdekat_16,tnix.kesatuan_dam_xviii,tnix.kesatuan_dam_xvii,0

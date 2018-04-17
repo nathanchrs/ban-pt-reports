@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <report
+            id="action_report_abet"
+            string="ABET CV"
+            model="hr.employee"
+            report_type="qweb-html"
+            name="itb_hr.report_abet"
+        />
+
+        <template id="report_abet">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <h2><span t-field="o.pre_title"/> <span t-field="o.name"/>, <span t-field="o.post_title"/></h2>
+                            <br/>
+                            <div class="row">
+                                <div class="col-xs-1">
+                                   <img t-if="o.image_medium" t-att-src="'data:image/png;base64,%s' % o.image_medium" style="max-height: 96px;" />
+                                </div>
+                                <div class="col-xs-11">
+                                    <table>
+                                        <tr>
+                                            <td><strong>NIP</strong></td>
+                                            <td>: <span t-field="o.nip_new"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Tempat, Tanggal lahir</strong></td>
+                                            <td>: <span t-field="o.birthplace"/>,<span t-field="o.birthday"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Pangkat</strong></td>
+                                            <td>: <span t-field="o.last_pangkat"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Jabatan</strong></td>
+                                            <td>: <span t-field="o.last_jabatan"/></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                             <br/>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                   <h4>Pendidikan</h4>
+                                   <table class="table table-bordered">
+                                        <tr>
+                                            <th>Gelar</th>
+                                            <th>Lulusan</th>
+                                            <th>Jurusan</th>
+                                            <th>Tanggal lulus</th>
+                                        </tr>
+                                        <t t-foreach="o.education_ids.sorted(key=lambda b: b.finish, reverse=True)" t-as="edu">
+                                            <tr>
+                                                <td><span t-field="edu.degree"/></td>
+                                                <td><span t-field="edu.school"/> - <span t-field="edu.country_id.name"/></td>
+                                                <td><span t-field="edu.major"/></td>
+                                                <td><span t-field="edu.finish"/></td>
+                                            </tr>
+                                        </t>
+                                   </table>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                   <h4>Pengalaman kerja di luar ITB</h4>
+                                   <table class="table table-bordered">
+                                        <tr>
+                                            <th>Posisi terakhir</th>
+                                            <th>Perusahaan</th>
+                                            <th>Bidang usaha</th>
+                                            <th>Negara</th>
+                                            <th>Mulai bekerja</th>
+                                            <th>Akhir bekerja</th>
+                                        </tr>
+                                        <t t-foreach="o.work_ids.sorted(key=lambda b: b.start, reverse=True)" t-as="wrk">
+                                            <tr>
+                                                <td><span t-field="wrk.name"/></td>
+                                                <td><span t-field="wrk.company"/></td>
+                                                <td><span t-field="wrk.company_scope"/></td>
+                                                <td><span t-field="wrk.country_id.name"/></td>
+                                                <td><span t-field="wrk.start"/></td>
+                                                <td><span t-field="wrk.finish"/></td>
+                                            </tr>
+                                        </t>
+                                   </table>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                   <h4>Penugasan</h4>
+                                   <table class="table table-bordered">
+                                        <tr>
+                                            <th>Job Title</th>
+                                            <th>Departemen</th>
+                                            <th>Kantor</th>
+                                            <th>Referensi</th>
+                                            <th>Mulai penugasan</th>
+                                            <th>Akhir penugasan</th>
+                                        </tr>
+                                        <t t-foreach="o.assignment_ids.sorted(key=lambda b: b.start, reverse=True)" t-as="asg">
+                                            <tr>
+                                                <td><span t-field="asg.job_id.name"/></td>
+                                                <td><span t-field="asg.department_id.name"/></td>
+                                                <td><span t-field="asg.office"/></td>
+                                                <td><span t-field="asg.reference"/></td>
+                                                <td><span t-field="asg.start"/></td>
+                                                <td><span t-field="asg.finish"/></td>
+                                            </tr>
+                                        </t>
+                                   </table>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                   <h4>Riwayat Kepegawaian</h4>
+                                   <table class="table table-bordered">
+                                        <tr>
+                                            <th>Tipe</th>
+                                            <th>Referensi</th>
+                                            <th>Ditugaskan oleh</th>
+                                            <th>Perintah</th>
+                                            <th>Mulai pekerjaan</th>
+                                        </tr>
+                                        <t t-foreach="o.employment_ids.sorted(key=lambda b: b.start, reverse=True)" t-as="emp">
+                                            <tr>
+                                                <td><span t-field="emp.name"/></td>
+                                                <td><span t-field="emp.reference"/></td>
+                                                <td><span t-field="emp.signed_by"/></td>
+                                                <td><span t-field="emp.decision"/></td>
+                                                <td><span t-field="emp.start"/></td>
+                                            </tr>
+                                        </t>
+                                   </table>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                   <h4>Proyek</h4>
+                                   <table class="table table-bordered">
+                                        <tr>
+                                            <th>Nama Proyek</th>
+                                            <th>Peranan</th>
+                                            <th>Tahun</th>
+                                            <th>Pemberi project</th>
+                                        </tr>
+                                        <t t-foreach="o.project_ids.sorted(key=lambda b: b.year, reverse=True)" t-as="prj">
+                                            <tr>
+                                                <td><span t-field="prj.project_id.name"/></td>
+                                                <td><span t-field="prj.role"/></td>
+                                                <td><span t-field="prj.year"/></td>
+                                                <td><span t-field="prj.client"/></td>
+                                            </tr>
+                                        </t>
+                                   </table>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                   <h4>Penghargaan</h4>
+                                   <table class="table table-bordered">
+                                        <tr>
+                                            <th>Nama penghargaan</th>
+                                            <th>Diberikan oleh</th>
+                                            <th>Tingkat</th>
+                                            <th>Tanggal menerima penghargaan</th>
+                                            <th>Referensi</th>
+                                        </tr>
+                                        <t t-foreach="o.award_ids.sorted(key=lambda b: b.start, reverse=True)" t-as="awd">
+                                            <tr>
+                                                <td><span t-field="awd.name"/></td>
+                                                <td><span t-field="awd.endorser"/></td>
+                                                <td><span t-field="awd.level"/></td>
+                                                <td><span t-field="awd.start"/></td>
+                                                <td><span t-field="awd.reference"/></td>
+                                            </tr>
+                                        </t>
+                                   </table>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                   <h4>Pelatihan</h4>
+                                   <table class="table table-bordered">
+                                        <tr>
+                                            <th>Nama pelatihan</th>
+                                            <th>Peranan</th>
+                                            <th>Negara</th>
+                                            <th>Mulai pelatihan</th>
+                                            <th>Akhir pelatihan</th>
+                                        </tr>
+                                        <t t-foreach="o.training_ids.sorted(key=lambda b: b.start, reverse=True)" t-as="trn">
+                                            <tr>
+                                                <td><span t-field="trn.name"/></td>
+                                                <td><span t-field="trn.role_ids" t-field-options='{"widget": "many2many_tags"}'/></td>
+                                                <td><span t-field="trn.country_id.name"/></td>
+                                                <td><span t-field="trn.start"/></td>
+                                                <td><span t-field="trn.finish"/></td>
+                                            </tr>
+                                        </t>
+                                   </table>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                   <h4>Keanggotaan</h4>
+                                   <table class="table table-bordered">
+                                        <tr>
+                                            <th>Nama keanggotaan</th>
+                                            <th>Peranan</th>
+                                            <th>Tingkat</th>
+                                            <th>Mulai keanggotaan</th>
+                                            <th>Akhir keanggotaan</th>
+                                        </tr>
+                                        <t t-foreach="o.membership_ids.sorted(key=lambda b: b.start, reverse=True)" t-as="mbr">
+                                            <tr>
+                                                <td><span t-field="mbr.name"/></td>
+                                                <td><span t-field="mbr.role"/></td>
+                                                <td><span t-field="mbr.level"/></td>
+                                                <td><span t-field="mbr.start"/></td>
+                                                <td><span t-field="mbr.finish"/></td>
+                                            </tr>
+                                        </t>
+                                   </table>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                   <h4>Pangkat</h4>
+                                   <table class="table table-bordered">
+                                        <tr>
+                                            <th>Pangkat</th>
+                                            <th>Referensi</th>
+                                            <th>Keputusan</th>
+                                            <th>Awal penganggatan</th>
+                                            <th>Akhir penganggatan</th>
+                                        </tr>
+                                        <t t-foreach="o.pangkat_ids.sorted(key=lambda b: b.start, reverse=True)" t-as="pkt">
+                                            <tr>
+                                                <td><span t-field="pkt.pangkat"/></td>
+                                                <td><span t-field="pkt.reference"/></td>
+                                                <td><span t-field="pkt.decision"/></td>
+                                                <td><span t-field="pkt.start"/></td>
+                                                <td><span t-field="pkt.finish"/></td>
+                                            </tr>
+                                        </t>
+                                   </table>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                   <h4>Jabatan</h4>
+                                   <table class="table table-bordered">
+                                        <tr>
+                                            <th>Jabatan</th>
+                                            <th>Referensi</th>
+                                            <th>SKS</th>
+                                            <th>Keputusan</th>
+                                            <th>Mulai menjabat</th>
+                                            <th>Akhir menjabat</th>
+                                        </tr>
+                                        <t t-foreach="o.jabatan_ids.sorted(key=lambda b: b.start, reverse=True)" t-as="jbt">
+                                            <tr>
+                                                <td><span t-field="jbt.jabatan"/></td>
+                                                <td><span t-field="jbt.reference"/></td>
+                                                <td><span t-field="jbt.credit"/></td>
+                                                <td><span t-field="jbt.decision"/></td>
+                                                <td><span t-field="jbt.start"/></td>
+                                                <td><span t-field="jbt.finish"/></td>
+                                            </tr>
+                                        </t>
+                                   </table>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                   <h4>Publikasi</h4>
+                                   <table class="table table-bordered">
+                                        <tr>
+                                            <th>Nama publikasi</th>
+                                            <th>Penerbit</th>
+                                            <th>Pengarang</th>
+                                            <th>Tipe</th>
+                                            <th>Peranan</th>
+                                            <th>Tanggal terbit</th>
+                                        </tr>
+                                        <t t-foreach="o.publication_ids.sorted(key=lambda b: b.day, reverse=True)" t-as="pub">
+                                            <tr>
+                                                <td><span t-field="pub.publication_id.name"/></td>
+                                                <td><span t-field="pub.publisher"/></td>
+                                                <td><span t-field="pub.publication_id.authors"/></td>
+                                                <td><span t-field="pub.media"/></td>
+                                                <td><span t-field="pub.role"/></td>
+                                                <td><span t-field="pub.day"/></td>
+                                            </tr>
+                                        </t>
+                                   </table>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                   <h4>Pengajaran</h4>
+                                   <table class="table table-bordered">
+                                        <tr>
+                                            <th>Nama</th>
+                                            <th>Semester</th>
+                                            <th>SKS</th>
+                                            <th>Peranan</th>
+                                        </tr>
+                                        <t t-foreach="o.instructor_ids" t-as="teach">
+                                            <tr>
+                                                <td><span t-field="teach.course_id.name"/></td>
+                                                <td><span t-field="teach.semester"/></td>
+                                                <td><span t-field="teach.credit"/></td>
+                                                <td><span t-field="teach.role"/></td>
+                                            </tr>
+                                        </t>
+                                   </table>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">   
+                                <div class="col-xs-12">
+                                   <h4>Supervisor</h4>
+                                   <table class="table table-bordered">
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Start</th>
+                                            <th>Finish</th>
+                                            <th>Seq</th>
+                                        </tr>
+                                        <t t-foreach="o.supervisor_ids.sorted(key=lambda b: b.start, reverse=True)" t-as="spv">
+                                            <tr>
+                                                <td><span t-field="spv.thesis_id.name"/></td>
+                                                <td><span t-field="spv.start"/></td>
+                                                <td><span t-field="spv.finish"/></td>
+                                                <td><span t-field="spv.sequence"/></td>
+                                            </tr>
+                                        </t>
+                                   </table>
+                                </div>
+                            </div>
+                            <br/>
+                            <!-->
+                            <div class="row">   
+                                <div class="col-xs-12">
+                                   <h4>Counselor</h4>
+                                   <table class="table table-bordered">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Student ID</th>
+                                            <th>Semester</th>
+                                        </tr>
+                                        <t t-foreach="o.counselor_ids" t-as="csl">
+                                            <tr>
+                                                <td><span t-field="csl.partner_id.name"/></td>
+                                                <td><span t-field="csl.student_id"/></td>
+                                                <td><span t-field="csl.semester"/></td>
+                                            </tr>
+                                        </t>
+                                   </table>
+                                </div>
+                            </div>
+                            -->
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+</odoo>

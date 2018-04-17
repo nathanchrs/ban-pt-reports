@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="plan_request_alocation_list_view">
+            <field name="name">plan_request_alocation_list</field>
+            <field name="model">itb.plan_request_alocation</field>
+            <field name="arch" type="xml">
+                <tree string="plan request alocation">
+                    <field name="spending_id" string="Name" />
+					<field name="initiative_alo" string="Initiative" readonly="1" />
+					<field name="unit_id"  string="Unit"/>
+					<field name="month" string="Month"/>
+					<field name="available_alo"  string="Available"/>
+					<field name="total_alo" string="Total"/>
+                </tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="plan_request_alocation_form_view">
+			<field name="name">plan_request_alocation_form</field>
+            <field name="model">itb.plan_request_alocation</field>
+            <field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="spending_id" string="Name" /></h1>
+						<group>
+							<field name="initiative_alo" string="Initiative" readonly="1" />
+							<field name="unit_id"  string="Unit"/>
+							<field name="month" string="Month"/>
+							<field name="available_alo"  string="Available"/>
+							<field name="total_alo" string="Total"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<act_window id="itb_plan.plan_action" name="Plan" res_model="itb.plan" view_mode="tree,form,graph,pivot" />
+		<act_window id="itb_plan.plan_line_action" name="Initiative" res_model="itb.plan_line" view_mode="tree" />
+		<act_window id="itb_plan.plan_spending_action" name="Budget Original" res_model="itb.plan_spending" view_mode="tree,form,graph,pivot" />
+		<act_window id="itb_plan.plan_allocation_action" name="Allocation Budget" res_model="itb.plan_allocation" view_mode="tree,form" />
+
+		<act_window id="itb_plan.plan_int_action" name="Plan Internal" res_model="itb.plan_int" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_initiative_int_action" name="Initiative Internal" res_model="itb.plan_line_int" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_spending_int_action" name="Budget Original Internal" res_model="itb.plan_spending_int" view_mode="tree,form,pivot,graph" />
+
+		<act_window id="itb_plan.plan_spending_actual_action" name="Budget Actual" res_model="itb.plan_spending_actual" view_mode="tree,form,pivot,graph" />
+		<act_window id="itb_plan.plan_implementation_action" name="Budget Implementation" res_model="itb.plan_implementation" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_request_action" name="Payment Request" res_model="itb.plan_request" view_mode="tree,form,pivot" />
+		
+		<act_window id="itb_plan.plan_target_action" name="Performance Target" res_model="itb.plan_target" view_mode="tree" />
+		<act_window id="itb_plan.plan_evaluation_action" name="Performance Evaluation" res_model="itb.plan_evaluation" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_cash_advance_action" name="Cash Advance" res_model="itb.plan_cash_advance" view_mode="tree,form,pivot,graph" />
+		
+		<act_window id="itb_plan.plan_unit_action" name="Unit" res_model="itb.plan_unit" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_program_action" name="Program" res_model="itb.plan_program" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_activity_action" name="Activity" res_model="itb.plan_activity" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_subactivity_action" name="Sub Activity" res_model="itb.plan_subactivity" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_price_action" name="Price" res_model="itb.plan_price" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_indicator_action" name="Indicator" res_model="itb.plan_indicator" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_ado_action" name="Ado" res_model="itb.plan_ado" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_pagu_action" name="Pagu" res_model="itb.plan_pagu" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_tax_action" name="Tax" res_model="itb.plan_tax" view_mode="tree,form" />
+		<!--act_window id="itb_plan.plan_bank_action" name="Bank" res_model="itb.plan_bank" view_mode="tree,form" /-->
+		
+		<act_window id="itb_plan.plan_request_dko_action" name="DKO" res_model="itb.plan_dko" context="{'search_default_request_id':True}" view_mode="tree,form,pivot,graph" />
+		<act_window id="itb_plan.plan_reimburse_action" name="Reimburse" res_model="itb.plan_reimburse" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_bank_statement_action" name="Bank Statement" res_model="itb.plan_bank_statement" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_tax_history_action" name="Tax History" res_model="itb.plan_request_tax" view_mode="tree,form" />
+		
+		<act_window id="itb_plan.plan_request_dko_lines_action" name="Dko Taken" res_model="itb.plan_dko_taken" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_request_dko_int_action" name="Dko Alocation" res_model="itb.plan_dko_allocation" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_request_lines_action" name="Request Taken" res_model="itb.plan_request_line" view_mode="tree,form" />
+		<act_window id="itb_plan.plan_request_allocation_action" name="Request Alocation" res_model="itb.plan_request_alocation" view_mode="tree,form" />
+		<act_window id="itb_plan.res_partner_action" name="Res Partner" res_model="res.partner" view_mode="tree,form" />
+		
+		<menuitem id="itb_plan.plan_menu" name="Plan" web_icon="itb_plan/static/description/icon.png" />
+		
+		<menuitem id="itb_plan.itb_menu" name="ITB" parent="itb_plan.plan_menu" sequence="20" />
+		<menuitem id="itb_plan.plan_plan_menu" name="Plan" action="itb_plan.plan_action" parent="itb_plan.itb_menu" sequence="21" />
+		<menuitem id="itb_plan.plan_initiative_menu" action="itb_plan.plan_line_action" name="Initiative" parent="itb_plan.itb_menu" sequence="22" />
+		<menuitem id="itb_plan.plan_budget_original_menu" action="itb_plan.plan_spending_action" name="Budget" parent="itb_plan.itb_menu" sequence="23" />
+		<menuitem id="itb_plan.plan_allocation_menu" action="itb_plan.plan_allocation_action" name="Mix Budget" parent="itb_plan.itb_menu" sequence="24" />
+
+		<menuitem id="itb_plan.STEI_menu" name="STEI" parent="itb_plan.plan_menu" sequence="10" />
+		<menuitem id="itb_plan.plan_plan_int_menu" name="Plan" action="itb_plan.plan_int_action" parent="itb_plan.STEI_menu" sequence="11" />
+		<menuitem id="itb_plan.plan_initiative_int_menu" action="itb_plan.plan_initiative_int_action" name="Initiative" parent="itb_plan.STEI_menu" sequence="12" />
+		<menuitem id="itb_plan.plan_budget_original_int_menu" action="itb_plan.plan_spending_int_action" name="Budget" parent="itb_plan.STEI_menu" sequence="13" />
+
+		<menuitem id="itb_plan.plan_Actual_menu" name="Actual" parent="itb_plan.plan_menu" sequence="30" />
+		<menuitem id="itb_plan.plan_budget_actual_menu" action="itb_plan.plan_spending_actual_action" name="Budget" parent="itb_plan.plan_Actual_menu" sequence="31" />
+		<menuitem id="itb_plan.plan_implementation_menu" action="itb_plan.plan_implementation_action" name="Implementation" parent="itb_plan.plan_Actual_menu" sequence="32" />
+		<menuitem id="itb_plan.plan_request_menu" action="itb_plan.plan_request_action" name="Request" parent="itb_plan.plan_Actual_menu" sequence="33" />
+		<menuitem id="itb_plan.plan_tax_history_menu" action="itb_plan.plan_tax_history_action" name="Tax History" parent="itb_plan.plan_Actual_menu" sequence="34" />
+
+		<menuitem id="itb_plan.plan_dko_menu" name="DKO" parent="itb_plan.plan_menu" sequence="40" />
+		<menuitem id="itb_plan.plan_request_dko_menu" action="itb_plan.plan_request_dko_action" name="DKO" parent="itb_plan.plan_dko_menu" sequence="41" />
+		<menuitem id="itb_plan.plan_reimburse_menu" action="itb_plan.plan_reimburse_action" name="Reimburse" parent="itb_plan.plan_dko_menu" sequence="42" />
+		<menuitem id="itb_plan.plan_bank_statement_menu" action="itb_plan.plan_bank_statement_action" name="Bank Statement" parent="itb_plan.plan_dko_menu" sequence="43" />
+		
+		<menuitem id="itb_plan.plan_request_dko_lines_menu" action="itb_plan.plan_request_dko_lines_action" name="Dko Taken" parent="itb_plan.plan_dko_menu" sequence="45" />
+		<menuitem id="itb_plan.plan_request_dko_int_menu" action="itb_plan.plan_request_dko_int_action" name="Dko Allocation" parent="itb_plan.plan_dko_menu" sequence="46" />
+		<menuitem id="itb_plan.plan_request_lines_menu" action="itb_plan.plan_request_lines_action" name="Request Taken" parent="itb_plan.plan_dko_menu" sequence="47" />
+		<menuitem id="itb_plan.plan_request_allocation_menu" action="itb_plan.plan_request_allocation_action" name="Request Allocation" parent="itb_plan.plan_dko_menu" sequence="48" />
+
+		<menuitem id="itb_plan.plan_Performance_menu" name="Performance" parent="itb_plan.plan_menu" sequence="70" />
+		<menuitem id="itb_plan.plan_target_menu" action="itb_plan.plan_target_action" name="Target" parent="itb_plan.plan_Performance_menu" sequence="71" />
+		<menuitem id="itb_plan.plan_evaluation_menu" action="itb_plan.plan_evaluation_action" name="Evaluation" parent="itb_plan.plan_Performance_menu" sequence="72" />
+		<menuitem id="itb_plan.plan_cash_advance_menu" action="itb_plan.plan_cash_advance_action" name="Cash Advance" parent="itb_plan.plan_Actual_menu" sequence="35" />
+		
+		<menuitem id="itb_plan.plan_configuration_menu" name="Configuration" parent="itb_plan.plan_menu" sequence="80" />
+		<menuitem id="itb_plan.plan_unit_menu" action="itb_plan.plan_unit_action" name="Unit" parent="itb_plan.plan_configuration_menu" sequence="81" />
+		<menuitem id="itb_plan.plan_program_menu" action="itb_plan.plan_program_action" name="Program" parent="itb_plan.plan_configuration_menu" sequence="82" />
+		<menuitem id="itb_plan.plan_activity_ref_menu" action="itb_plan.plan_activity_action" name="Activity Ref" parent="itb_plan.plan_configuration_menu" sequence="83" />
+		<menuitem id="itb_plan.plan_subactivity_menu" action="itb_plan.plan_subactivity_action" name="Sub Activity" parent="itb_plan.plan_configuration_menu" sequence="84" />
+		<menuitem id="itb_plan.plan_price_menu" action="itb_plan.plan_price_action" name="Price" parent="itb_plan.plan_configuration_menu" sequence="85" />
+		<menuitem id="itb_plan.plan_indicator_menu" action="itb_plan.plan_indicator_action" name="Indicator" parent="itb_plan.plan_configuration_menu" sequence="86" />
+		<menuitem id="itb_plan.plan_ado_menu" action="itb_plan.plan_ado_action" name="Ado" parent="itb_plan.plan_configuration_menu" sequence="87" />
+		<menuitem id="itb_plan.plan_pagu_menu" action="itb_plan.plan_pagu_action" name="Pagu" parent="itb_plan.plan_configuration_menu" sequence="88" />
+		<menuitem id="itb_plan.plan_tax_menu" action="itb_plan.plan_tax_action" name="Tax" parent="itb_plan.plan_configuration_menu" sequence="89" />
+		<!--menuitem id="itb_plan.plan_bank_menu" action="itb_plan.plan_bank_action" name="Bank" parent="itb_plan.plan_configuration_menu" sequence="90" /-->
+		<menuitem id="itb_plan.res_partner_menu" action="itb_plan.res_partner_action" name="Res Partner" parent="itb_plan.plan_configuration_menu" sequence="90" />
+</odoo>

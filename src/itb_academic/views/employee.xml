@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="view_form_itb_hr_employee_inherited">
+			<field name="name">ITB HR Employee extension</field>
+			<field name="model">hr.employee</field>
+			<field name="inherit_id" ref="hr.view_employee_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//page[2]" position="after"> 
+					<page string="Academic Information">
+						<h3>Teaching</h3>
+						<field name="instructor_ids">
+							<tree>
+								<field name="course_id" string="Name" />
+								<field name="semester" />
+								<field name="credit" />
+								<field name="role" />
+							</tree>
+						</field>
+                        <h3>Performance</h3>
+						<field name="performance_ids">
+							<tree>
+								<field name="course_id" string="Course" />
+								<field name="respondents" />
+								<field name="participants" />
+								<field name="q1" />
+                                <field name="q2" />
+                                <field name="q3" />
+                                <field name="q4" />
+                                <field name="q5" />
+                                <field name="q6" />
+                                <field name="q7" />
+                                <field name="q8" />
+                                <field name="q9" />
+                                <field name="q10" />
+                                <field name="q11" />
+							</tree>
+						</field>
+						<h3>Supervisory</h3>
+						<field name="supervisor_ids">
+							<tree>
+								<field name="thesis_id" string="Name" />
+								<field name="start" />
+								<field name="finish" />
+								<!--<field name="sequence" />-->
+							</tree>
+						</field>
+						<h3>Counselor</h3>
+						<field name="counselor_ids">
+							<tree>
+								<field name="partner_id" string="Name" />
+								<field name="student_id" />
+								<field name="semester" />
+							</tree>
+						</field>
+					</page>
+				</xpath>
+			</field>
+		</record>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record model="ir.ui.view" id="view_report_membership_tree">
+			<field name="name">itb.hr_report_membership.tree</field>
+			<field name="model">itb.hr_report_membership</field>
+			<field name="arch" type="xml">
+				<tree string="Membership Report">
+                    <field name="name" />
+					<field name="organization" />
+					<field name="year" />
+				</tree>
+			</field>
+		</record>
+
+        <record id="view_report_membership_pivot" model="ir.ui.view">
+            <field name="name">itb.hr_report_membership.pivot</field>
+            <field name="model">itb.hr_report_membership</field>
+            <field name="arch" type="xml">
+                <pivot string="Membership Report">
+                    <field name="name"/>
+                    <field name="organization" type="row" interval="year" />
+                    <field name="year" type="col" interval="organization" />
+                </pivot>
+            </field>
+        </record>
+
+        <record id="view_report_membership_graph" model="ir.ui.view">
+            <field name="name">itb.hr_report_membership.graph</field>
+            <field name="model">itb.hr_report_membership</field>
+            <field name="arch" type="xml">
+                <graph string="Membership Report">
+                    <field name="name"/>
+                    <field name="organization"/>
+                    <field name="year"/>
+                </graph>
+            </field>
+        </record>
+</odoo>

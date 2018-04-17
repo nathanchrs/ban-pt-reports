@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="spending_search_view">
+			<field name="name">spending_search</field>
+			<field name="model">itb.plan_spending</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" string="Spending" />
+					<field name="plan_id" string="Plan" />
+					<filter name="Q1" string="Q1" domain="[('month','in',['Jan','Feb','Mar'])]" />
+					<filter name="Q2" string="Q2" domain="[('month','in',['Apr','May','Jun'])]" />
+					<filter name="Q3" string="Q3" domain="[('month','in',['Jul','Aug','Sep'])]" />
+					<filter name="Q4" string="Q4" domain="[('month','in',['Oct','Nov','Dec'])]" />
+					<separator />
+					<filter name="barang" string="Barang" domain="[('type','=','barang')]" />
+					<filter name="jasa" string="Jasa" domain="[('type','=','jasa')]" />
+					<filter name="modal" string="Modal" domain="[('type','=','modal')]" />
+					<filter name="pegawai" string="Pegawai" domain="[('type','=','pegawai')]" />
+					<group string="Group By">
+						<filter name="plan" string="Plan" context="{'group_by':'plan_id'}" />
+						<filter name="initiative" string="Initiative" context="{'group_by':'plan_line_id'}" />
+						<filter name="type" string="Type" context="{'group_by':'type'}" />
+						<filter name="month" string="Month" context="{'group_by':'day:month'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="spending_graph_view">
+			<field name="name">spending_graph</field>
+			<field name="model">itb.plan_spending</field>
+			<field name="arch" type="xml">
+				<graph type="bar">
+					<field name="day" interval="month" type="row" />
+					<field name="type" type="row" />
+					<field name="available" type="measure" />
+				</graph>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="spending_list_view">
+            <field name="name">spending_list</field>
+            <field name="model">itb.plan_spending</field>
+            <field name="arch" type="xml">
+                <tree string="Spending List" >
+					<field name="name" />
+					<field name="plan_id" string="Plan" />
+					<field name="plan_line_id" string="Initiative" />
+					<field name="type" />
+					<field name="month" />
+					<field name="total" string="Amount" />
+					<field name="used" string="Used" />
+					<field name="available" string="Available" />
+					<field name="paid" string="Paid" />
+					<field name="percent_budget" string="% Used" />
+                </tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="spending_form_view">
+            <field name="name">spending_form</field>
+            <field name="model">itb.plan_spending</field>
+            <field name="arch" type="xml">
+                <form>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="plan_id" string="Plan" />
+								<field name="plan_line_id" string="Initiative" />
+								<field name="type" />
+								<field name="source"  />
+								<field name="month" />
+								<field name="price_id" string="Price" />
+								<field name="volume" />
+							</group>
+							<group>
+								<field name="total" string="Amount" />
+								<field name="used" string="Used" />
+								<field name="available" string="Available" />
+								<field name="paid" string="Paid" />
+								<field name="percent_budget" string="%" />
+							</group>
+                		</group>
+						<group>
+							<!--h3>Allocation Budget</h3-->
+							<field name="allocation_ids">
+								<tree editable="bottom">
+									<field name="spending_id_int" string="Id Internal" />
+									<field name="budget" />
+									<field name="date_created" string="Created" />
+									<field name="date_request" string="Request" />
+									<field name="note" string="Note" />
+								</tree>
+							</field>	
+						</group>
+					</sheet>
+				</form>
+            </field>
+		</record>
+		<record id="view_report_spending_pivot" model="ir.ui.view">
+            <field name="name">spending_pivot</field>
+            <field name="model">itb.plan_spending</field>
+            <field name="arch" type="xml">
+                <pivot string="spending">
+                    <field name="day" interval="month" type="col" />
+                    <field name="unit_id" type="row"/>
+					<field name="total" type="measure" />
+					<field name="used" type="measure" />
+					<field name="available" type="measure" />
+                </pivot>
+            </field>
+        </record>
+</odoo>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="inbound_list_view" model="ir.ui.view">
+		<field name="name">inbound_list</field>
+		<field name="model">qms.inbound</field>
+		<field name="arch" type="xml">
+			<tree string="Inbound List">
+				<field name="name" />
+                <field name="partner_id" />
+                <field name="sku" />
+				<field name="receipt" />
+				<field name="eta" />
+				<field name="ata" />
+                <field name="quantity" />
+				<field name="reject" />
+				<field name="release" />
+				<field name="expire" />
+				<field name="state" />
+			</tree>
+		</field>
+	</record>
+	<record id="inbound_form_view" model="ir.ui.view" >
+		<field name="name">inbound_form</field>
+		<field name="model">qms.inbound</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>
+					<field name="state" widget="statusbar" clickable="True" />
+				</header>
+				<sheet>
+                    <div class="oe_title">
+                        <h1><field name="partner_id" placeholder="Vendor"/></h1>
+                    </div>
+					<group>
+						<group>
+							<field name="name" />
+							<field name="product_id" />
+							<field name="sku" />
+                            <field name="eta" />
+                            <field name="ata" />
+							<field name="receipt" />
+							<field name="expire" />
+						</group>
+						<group>
+							<field name="quantity" />
+							<field name="reject" />
+							<field name="release" />
+							<field name="temperature" />
+						</group>
+                    </group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="inbound_search_view" model="ir.ui.view">
+		<field name="name">inbound_search</field>
+		<field name="model">qms.inbound</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name" string='PO/BL Ref' />
+				<field name="partner_id" string='Vendor' />
+				<field name="product_id" string='Product' filter_domain="['|',('product_id.name','ilike',self),('sku.name','ilike',self)]"/>
+				<filter name="late" string="Late" domain="[('latency','!=',0)]"/>
+				<filter name="reject" string="Rejected" domain="[('reject','!=',0)]"/>
+				<separator/>
+				<filter name="eta_month" string="ETA This Month" domain="[('eta','&lt;',(context_today()+relativedelta(months=1)).strftime('%Y-%m-01')), ('eta','&gt;=',time.strftime('%Y-%m-01'))]"/>
+				<filter name="expire" string="Expired" domain="[('expire','&lt;=',current_date)]"/>
+				<group expand="0" string="Group By">
+					<filter name="partner" string="Vendor" context="{'group_by': 'partner_id'}"/>
+					<filter name="product" string="Product" context="{'group_by': 'product_id'}"/>
+					<filter name="sku" string="SKU" context="{'group_by': 'sku'}"/>
+					<filter name="eta" string="ETA" context="{'group_by': 'eta:month'}"/>
+					<filter name="ata" string="ATA" context="{'group_by': 'ata:month'}"/>
+				</group>
+			</search>
+		</field>
+	</record>
+	<record id="inbound_graph_view" model="ir.ui.view">
+		<field name="name">inbound_graph</field>
+		<field name="model">qms.inbound</field>
+		<field name="arch" type="xml">
+			<graph type="bar" stacked="True">
+				<field name="eta" interval="month" type="row" />
+				<field name="sku" type="col" />
+			</graph>
+		</field>
+	</record>
+	<record id="inbound_pivot_view" model="ir.ui.view">
+		<field name="name">inbound_pivot</field>
+		<field name="model">qms.inbound</field>
+		<field name="arch" type="xml">
+			<pivot>
+				<field name="eta" type="col" interval="month" />
+				<field name="partner_id" type="row" />
+				<field name="product_id" type="row" />
+				<field name="sku" type="row" />
+			</pivot>
+		</field>
+	</record>		
+	<record id="inbound_calendar_view" model="ir.ui.view">
+        <field name="name">inbound_calendar</field>
+        <field name="model">qms.inbound</field>
+        <field name="arch" type="xml">
+            <calendar string="inbound Calendar" date_start="eta" color="partner_id">
+                <field name="name"/>
+				<field name="sku"/>
+            </calendar>
+        </field>
+    </record>
+</odoo>

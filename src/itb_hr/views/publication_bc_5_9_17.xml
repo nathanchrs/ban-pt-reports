@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="publication_search_view" model="ir.ui.view">
+			<field name="name">publication_search</field>
+			<field name="model">itb.hr_publication</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" string='Title'/>
+					<field name="publisher"/>
+					<field name="author_ids" string='Author and Research Group' filter_domain="['|',('author_ids.employee_id.name','ilike',self),('author_ids.research_group','ilike',self)]"/>
+					<filter name="to_review" string="To Review" domain="[('review_ids.employee_id.user_id','=',uid)]"/>
+					<filter name="proceeding" string="Proceeding" domain="[('media_id.name','ilike','Proceeding')]"/>
+					<filter name="journal" string="Journal" domain="[('media_id.name','ilike','Journal')]"/>
+					<separator/>
+					<filter name="national" string="National" domain="[('media_id.name','like','National')]"/>
+					<filter name="international" string="International" domain="[('media_id.name','ilike','International')]"/>
+					<group expand="0" string="Group By">
+						<filter name="media" string="Type" context="{'group_by': 'media_id'}"/>
+						<filter name="area" string="Area" context="{'group_by': 'area'}"/>
+						<filter name="year" string="Year" context="{'group_by': 'day:year'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record id="publication_graph_view" model="ir.ui.view">
+			<field name="name">publication_graph</field>
+			<field name="model">itb.hr_publication</field>
+			<field name="arch" type="xml">
+				<graph type="bar" stacked="True">
+					<field name="day" interval="year" />
+					<field name="media_id" />
+				</graph>
+			</field>
+		</record>
+		<record id="publication_pivot_view" model="ir.ui.view">
+			<field name="name">publication_pivot</field>
+			<field name="model">itb.hr_publication</field>
+			<field name="arch" type="xml">
+				<pivot>
+					<field name="day" type="col" interval="year" />
+					<field name="area" />
+				</pivot>
+			</field>
+		</record>		
+		<record model="ir.ui.view" id="publication_list_view">
+			<field name="name">publication_list</field>
+			<field name="model">itb.hr_publication</field>
+			<field name="arch" type="xml">
+				<tree string="Publication List">
+					<field name="name" />
+					<field name="publisher" />
+					<field name="media_id" />
+					<field name="authors" />
+					<field name="day" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="publication_form_view">
+			<field name="name">publication_form</field>
+			<field name="model">itb.hr_publication</field>
+			<field name="arch" type="xml">
+				<form>
+					<header>
+						<button name="submit_draft" class="oe_highlight oe_read_only" string="Submit" type="workflow" states="draft"></button>
+						<button name="assign_reviewer" class="oe_highlight oe_read_only" string="Assign Reviewer" type="workflow" states="confirm"></button>
+						<button name="submit_review" class="oe_highlight oe_read_only" string="Submit Review" type="workflow" states="review" confirm="Are you sure you want to do this?"></button>
+						<!--button name="update_area" type="object" string="Update Area" states="gone"/-->
+						<!--button name="update_authors_count" type="object" string="Update Authors Count"/-->
+						<field name="state" widget="statusbar" />
+					</header>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<field name="publisher" />
+							<field name="scopus" />
+						</group>
+						<group>
+							<group>	
+								<field name="media_id" />
+								<!--<field name="category_id" />-->
+							</group>
+							<group>
+								<field name="day" />
+								<field name="authors" />
+								<field name="authors_count" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Authors">
+								<field name="author_ids" context="{'publication_id':active_id}">
+									<tree string="Authors" editable="bottom">
+										<field name="employee_id" />
+										<field name="research_group" readonly="1" />
+										<field name="role" />
+										<field name="score" />
+									</tree>
+								</field>
+							</page>
+							<page string="Reviews">
+								<field name="review_ids">
+									<tree string="Reviews" editable="bottom">
+										<field name="employee_id"/>
+										<field name="score" />
+										<field name="note" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

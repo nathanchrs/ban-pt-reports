@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="plan_request_line_list_view">
+            <field name="name">plan_request_line_list</field>
+            <field name="model">itb.plan_request_line</field>
+            <field name="arch" type="xml">
+                <tree string="request line List">
+					<field name="spending_actual_id" string="Name" />
+					<field name="initiative" string="Initiative" readonly="1" />
+					<field name="unit_id" string="Unit"/>
+					<field name="month" string="Month"/>
+					<field name="available" string="Available"/>
+					<field name="total" string="Total"/>
+				</tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="plan_request_line_form_view">
+            <field name="name">plan_request_line_form</field>
+            <field name="model">itb.plan_request_line</field>
+            <field name="arch" type="xml">
+                <form>
+					<sheet>
+						<group>
+							<group>
+								<field name="spending_actual_id" string="Name" />
+								<field name="initiative" string="Initiative" readonly="1" />
+								<field name="unit_id" string="Unit"/>
+								<field name="month" string="Month"/>
+								<field name="available" string="Available"/>
+								<field name="total" string="Total"/>
+							</group>
+                		</group>
+					</sheet>
+				</form>
+            </field>
+        </record>
+	</data>
+</odoo>

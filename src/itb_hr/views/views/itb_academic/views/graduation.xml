@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="graduation_search_view" model="ir.ui.view">
+			<field name="name">graduation_search</field>
+			<field name="model">itb.academic_graduation</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" string='Name' />
+					<field name="author_ids" string='Graduate' filter_domain="[('author_ids.partner_id.name','ilike',self)]"/>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="graduation_list_view">
+			<field name="name">graduation_list</field>
+			<field name="model">itb.academic_graduation</field>
+			<field name="arch" type="xml">
+				<tree string="Graduation List">
+					<field name="name" />
+					<field name="amount" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="graduation_form_view">
+			<field name="name">graduation_form</field>
+			<field name="model">itb.academic_graduation</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<field name="author_ids" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

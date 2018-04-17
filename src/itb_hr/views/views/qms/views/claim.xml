@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="claim_list_view" model="ir.ui.view">
+		<field name="name">claim_list</field>
+		<field name="model">qms.claim</field>
+		<field name="arch" type="xml">
+			<tree string="Claim List">
+				<field name="name" />
+                <field name="type" />
+                <field name="actor" />
+				<field name="date" />
+				<field name="occurance" />
+				<field name="location" />
+				<field name="state" />
+			</tree>
+		</field>
+	</record>
+	<record id="claim_form_view" model="ir.ui.view" >
+		<field name="name">claim_form</field>
+		<field name="model">qms.claim</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>
+					<field name="state" widget="statusbar" clickable="True" />
+				</header>
+				<sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Problem overview"/></h1>
+                    </div>
+					<group>
+						<group>
+							<field name="type" />
+                            <field name="site_id" />
+							<field name="internal_to" widget="many2many_tags" attrs="{'invisible':[('type','=','external')]}"/>
+							<field name="external_to" attrs="{'invisible':[('type','=','internal')]}"/>
+                            <field name="external_pic" attrs="{'invisible':[('type','=','internal')]}"/>
+							<field name="internal_pic" attrs="{'invisible':[('type','=','external')]}"/>
+                            <field name="reference" />	
+						</group>
+						<group>
+							<field name="date" />
+							<field name="occurance" />
+							<field name="location" />
+                            <field name="urgency" />
+                            <field name="effect_ids" widget="many2many_tags" />
+						</group>
+                    </group>
+                    <group>
+                        <field name="request" />
+                    </group>
+					<group>
+                        <field name="capa_ids" context="{'claim_id':active_id,'internal_pic':internal_pic,'external_pic':external_pic}">
+                            <tree>
+                                <field name="name" />
+                                <field name="action" />
+                                <field name="action_date" />
+                                <field name="action_by" domain="['|',('id','=',external_pic),('id','=',internal_pic)]" />
+                                <field name="state" />
+                                <field name="verified_by" attrs="{'invisible':[('state','=','close')]}" />
+                            </tree>
+					        </field>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+</odoo>

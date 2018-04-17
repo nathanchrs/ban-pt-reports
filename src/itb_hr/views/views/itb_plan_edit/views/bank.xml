@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="bank_search_view">
+			<field name="name">bank_search</field>
+			<field name="model">itb.plan_bank</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" string="Bank" />
+					<!--filter name="PPH 21" string="pph21" domain="[('name','=','pph21')]" />
+					<filter name="PPH 22" string="pph22" domain="[('name','=','pph22')]" />
+					<filter name="PPH 23" string="pph23" domain="[('name','=','pph23')]" /-->
+					<filter name="bni" string="BNI" domain="[('name','islike','bni')]" />
+					<group string="Group By">
+						<filter name="name" string="Name" context="{'group_by':'name'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<!--record model="ir.ui.view" id="tax_graph_view">
+			<field name="name">tax_graph</field>
+			<field name="model">itb.plan_tax</field>
+			<field name="arch" type="xml">
+				<graph type="pivot">
+					<field name="plan_id" type="row" />
+					<field name="plan_line_id" type="row" />
+					<field name="type" type="col" />
+					<field name="day" interval="month" type="col" />
+					<field name="total" type="measure" />
+					<field name="used" type="measure" />
+					<field name="available" type="measure" />
+					<field name="paid" type="measure" />
+				</graph>
+			</field>
+		</record-->
+		<record model="ir.ui.view" id="bank_list_view">
+            <field name="name">bank_list</field>
+            <field name="model">itb.plan_bank</field>
+            <field name="arch" type="xml">
+                <tree string="Bank List">
+					<field name="name" string="Bank" />
+					<field name="no_rek" string="Rekening" />
+					<field name="note" string="Note" />
+				</tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="bank_form_view">
+            <field name="name">bank_form</field>
+            <field name="model">itb.plan_bank</field>
+            <field name="arch" type="xml">
+                <form>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="no_rek" string="Rekening" />
+								<field name="note" string="Note" />
+							</group>
+                		</group>
+					</sheet>
+				</form>
+            </field>
+        </record>
+		<!--record id="view_report_spending_actual_dko_pivot" model="ir.ui.view">
+            <field name="name">spending_actual_dko_pivot</field>
+            <field name="model">itb.plan_spending_actual_dko</field>
+            <field name="arch" type="xml">
+                <pivot string="spending Actual Dko">
+                    <field name="day" interval="month" type="col" />
+                    <field name="unit_id" type="row"/>
+					<field name="total" type="measure" />
+					<field name="used" type="measure" />
+					<field name="available" type="measure" />
+				</pivot>
+            </field>
+        </record-->
+	</data>
+</odoo>

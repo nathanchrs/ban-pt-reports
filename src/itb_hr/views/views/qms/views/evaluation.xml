@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="evaluation_list_view" model="ir.ui.view">
+		<field name="name">evaluation_list</field>
+		<field name="model">qms.evaluation</field>
+		<field name="arch" type="xml">
+			<tree string="Evaluation List">
+				<field name="partner_id" />
+                <field name="year" />
+                <field name="safety" />
+				<field name="quality" />
+				<field name="delivery" />
+				<field name="price" />
+				<field name="quantity" />
+                <field name="document" />
+                <field name="response" />
+                <field name="score" />
+                <field name="grade" />
+                <field name="keep" />
+			</tree>
+		</field>
+	</record>
+	<record id="evaluation_form_view" model="ir.ui.view" >
+		<field name="name">evaluation_form</field>
+		<field name="model">qms.evaluation</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+                    <div class="oe_title">
+                        <h1><field name="partner_id" placeholder="Vendor"/></h1>
+                    </div>
+					<group>
+						<group>
+							<field name="safety" />
+							<field name="quality" />
+							<field name="delivery" />
+                            <field name="price" />
+                            <field name="quantity" />
+                            <field name="document" />
+                            <field name="response" />
+						</group>
+						<group>
+                            <field name="year" />
+                            <field name="score" />
+							<field name="grade" />
+							<field name="keep" />
+						</group>
+                    </group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+</odoo>

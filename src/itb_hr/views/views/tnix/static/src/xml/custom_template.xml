@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="ListView.buttons">
+        <t t-jquery="button.o_list_button_add" t-operation="after">
+            <button t-if="widget.model == 'tnix.kandidat'" class="btn btn-sm btn-allocate" groups="base.group_erp_manager">Rekomendasikan</button>
+            <!--<button t-if="widget.model == 'tnix.kandidat'" class="btn btn-sm btn-empty">Kosongkan</button>-->
+        </t>
+    </t>
+</templates>

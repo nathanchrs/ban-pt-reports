@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record model="ir.ui.view" id="project_form_inherited_dupak_view">
+		<field name="name">project_dupak_form</field>
+		<field name="model">itb.hr_project</field>
+        <field name="inherit_id" ref="itb_hr.project_form_view" />
+		<field name="arch" type="xml">
+			<field name="finish" position="after">
+				<field name="standard_id" />				
+			</field>
+        </field>
+	</record>
+    <record model="ir.ui.view" id="project_list_inherited_dupak_view">
+		<field name="name">project_dupak_list</field>
+		<field name="model">itb.hr_project</field>
+        <field name="inherit_id" ref="itb_hr.project_list_view" />
+		<field name="arch" type="xml">
+			<field name="finish" position="after">
+				<field name="standard_id" />				
+			</field>
+        </field>
+	</record>
+</odoo>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="bank_statement_search_view">
+			<field name="name">bank_statement_search</field>
+			<field name="model">itb.plan_bank_statement</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="bank" string="Bank" />
+					<filter name="BNI" string="BNI" domain="[('bank','=','BNI')]" />
+					<filter name="BCA" string="BCA" domain="[('bank','=','BCA')]" />
+					<filter name="BRI" string="BRI" domain="[('bank','=','BRI')]" />
+					<!--filter name="PPH" string="pph" domain="[('tax_id','islike','pph')]" /-->
+					<group string="Group By">
+						<filter name="bank" string="Bank" context="{'group_by':'bank'}" />
+						<!--filter name="month" string="Month" context="{'group_by':'date_in:month'}" /-->
+					</group>
+				</search>
+			</field>
+		</record>
+		<!--record model="ir.ui.view" id="tax_graph_view">
+			<field name="name">tax_graph</field>
+			<field name="model">itb.plan_tax</field>
+			<field name="arch" type="xml">
+				<graph type="pivot">
+					<field name="plan_id" type="row" />
+					<field name="plan_line_id" type="row" />
+					<field name="type" type="col" />
+					<field name="day" interval="month" type="col" />
+					<field name="total" type="measure" />
+					<field name="used" type="measure" />
+					<field name="available" type="measure" />
+					<field name="paid" type="measure" />
+				</graph>
+			</field>
+		</record-->
+		<record model="ir.ui.view" id="bank_statement_list_view">
+            <field name="name">bank_statement_list</field>
+            <field name="model">itb.plan_bank_statement</field>
+            <field name="arch" type="xml">
+                <tree string="Bank statement List">
+					<field name="bank" string="Bank" />
+					<field name="date_in" string="Date" />
+					<field name="reference" string="Reference" />
+					<!--field name="amount"  string="Amount"/>
+					<field name="used" string="Used"/-->
+					<field name="available" string="Available"/>
+				</tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="bank_statement_form_view">
+            <field name="name">bank_statement_form</field>
+            <field name="model">itb.plan_bank_statement</field>
+            <field name="arch" type="xml">
+                <form>
+					<sheet>
+						<h1><field name="bank" string="Bank" /></h1>
+						<group>
+							<group>
+								<field name="date_in" string="Date" />
+								<field name="reference" string="Reference" />
+								<!--field name="amount"  string="Amount"/>
+								<field name="used" string="Used"/-->
+								<field name="available" string="Available"/>
+							</group>
+                		</group>
+						<notebook>
+							<page string="Reimburse">
+								<field name="reimburse_ids">
+									<tree editable="top">
+										<field name="type" string="Type" />
+										<field name="reimburse_id" string="Reimburse" attrs="{'readonly':[('type', '==', 'saldoawal')]}" />
+										<field name="amount" string="Amount"/>
+										<field name="note" string="Note"/>
+									</tree>
+								</field>
+							</page>
+							<page string="DKO">
+								<!--field name="request_dko_ids" context="{'state_req':'validate'}"-->
+								<field name="request_dko_ids" context="{'statement_id_dko': active_id}">>
+									<tree editable="top">
+										<field name="name" string="Name" />
+										<field name="pay_to" string="pay_to"/>
+										<field name="price_id" string="Price"/>
+										<field name="unit_id" string="Unit"/>
+										<field name="source" string="Source"/>
+										<field name="state_req" string="State Request"/>
+										<field name="total" string="Total"/>
+									</tree>
+								</field>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+		<!--record id="view_report_spending_actual_dko_pivot" model="ir.ui.view">
+            <field name="name">spending_actual_dko_pivot</field>
+            <field name="model">itb.plan_spending_actual_dko</field>
+            <field name="arch" type="xml">
+                <pivot string="spending Actual Dko">
+                    <field name="day" interval="month" type="col" />
+                    <field name="unit_id" type="row"/>
+					<field name="total" type="measure" />
+					<field name="used" type="measure" />
+					<field name="available" type="measure" />
+				</pivot>
+            </field>
+        </record-->
+	</data>
+</odoo>

@@ -1,0 +1,16 @@
+id,kode,nama
+inf,INF,Infanteri
+kav,KAV,Kavaleri
+arm,ARM,Artileri Medan
+arh,ARH,Artileri Pertahanan Udara
+czi,CZI,Zeni
+cpn,CPN,Penerbad
+chb,CHB,Perhubungan
+cpl,CPL,Peralatan
+cba,CBA,Perbekalan & Angkutan
+ckm,CKM,Kesehatan Militer
+cpm,CPM,Polisi Militer
+caj,CAJ,Ajudan Jenderal
+ctp,CTP,Topografi
+chk,CHK,Hukum
+cku,CKU,Keuangan

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="vms_product_form_inherited">
+		<field name="name">product form extension</field>
+		<field name="model">product.product</field>
+		<field name="inherit_id" ref="product.product_normal_form_view" />
+		<field name="arch" type="xml">
+			<field name="lst_price" position="before">
+				<field name="site_id" attrs="{'invisible':[('sale_ok','=',False)]}" /> 
+				<field name="vendor_ids" widget="many2many_tags" attrs="{'invisible':[('purchase_ok','=',False)]}" />
+				<field name="manufacturer_id" attrs="{'invisible':[('purchase_ok','=',False)]}" />
+			</field>
+			<field name="type" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</field>
+			<xpath expr="//div[@name='button_box']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</xpath>
+			<xpath expr="//page[1]" position="after"> 
+				<page string="Materials and SKU">
+					<h3>Materials</h3>
+					<field name="material_ids" context="{'product_id':active_id}">
+						<tree editable="bottom">
+							<field name="material_id" />
+							<field name="partner_id" />
+							<field name="quantity" />
+							<field name="critical" />
+						</tree>
+					</field>
+					<h3>SKU</h3>
+					<field name="variant_ids" context="{'product_id':active_id}">
+						<tree editable="bottom">
+							<field name="name" />
+							<field name="conversion" />
+							<field name="life" />
+						</tree>
+					</field>
+				</page>
+			</xpath>
+			<xpath expr="//page[2]" position="attributes">
+				<attribute name="attrs">{'invisible': [('sale_ok','=',False)]}</attribute>                
+			</xpath>
+			<xpath expr="//page[3]" position="attributes">
+				<attribute name="invisible">1</attribute>                
+			</xpath>
+			<xpath expr="//page[4]" position="attributes">
+				<attribute name="invisible">1</attribute>                
+			</xpath>
+		</field>
+</record>
+</odoo>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="pii_award_search_view" model="ir.ui.view">
+			<field name="name">pii_award_search</field>
+			<field name="model">pii.award</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="partner_id" string='Anggota'/>
+					<field name="name" string='Penghargaan'/>
+					<field name="endorser" string='Lembaga'/>
+					<group expand="0" string="Group By">
+						<filter name="year" string="Year" context="{'group_by': 'date:year'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record id="pii_award_graph_view" model="ir.ui.view">
+			<field name="name">pii_award_graph</field>
+			<field name="model">pii.award</field>
+			<field name="arch" type="xml">
+				<graph type="bar" stacked="True">
+					<field name="date" interval="year" />
+				</graph>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="pii_award_list_view">
+			<field name="name">pii_award_list</field>
+			<field name="model">pii.award</field>
+			<field name="arch" type="xml">
+				<tree string="Award List">
+					<field name="partner_id" />
+					<field name="name" />
+					<field name="endorser" />
+					<field name="date" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="pii_award_form_view">
+			<field name="name">pii_award_form</field>
+			<field name="model">pii.award</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="partner_id" placeholder="Anggota" /></h1>
+						<group>
+							<group>
+								<field name="name" />
+								<field name="endorser" />
+								<field name="date" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

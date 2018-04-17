@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+   <t t-extend="ListView.buttons">
+       <t t-jquery="button.o_list_button_add" t-operation="after">
+           <button t-if="widget.model == 'itb.plan_int'" class="oe_highlight btn-generateplan">Generate Plan ITB</button>
+           <button t-if="widget.model == 'itb.plan_dko'" class="oe_highlight btn-sendrequest">Send DKO to Request</button>
+       </t>
+   </t>
+</templates>

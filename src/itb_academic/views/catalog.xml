@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <record id="catalog_search_view" model="ir.ui.view">
+			<field name="name">catalog_search</field>
+			<field name="model">itb.academic_catalog</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" filter_domain="['|','|',('name','ilike',self),('code','ilike',self),('note','ilike',self)]" />
+					<field name="year" string='Curriculum Year' />
+                    <field name="research_id" string='Research Group' />
+					<field name="catalog_outcome_ids" string='Related Outcome' filter_domain="[('catalog_outcome_ids.outcome_id.name','ilike',self)]"/>
+					<group expand="0" string="Group By">
+						<filter name="research_id" string="Research Grouop" context="{'group_by': 'research_id'}"/>
+						<filter name="year" string="Year" context="{'group_by': 'year'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record id="catalog_graph_view" model="ir.ui.view">
+			<field name="name">catalog_graph</field>
+			<field name="model">itb.academic_catalog</field>
+			<field name="arch" type="xml">
+				<graph type="bar">
+					<field name="year" />
+				</graph>
+			</field>
+		</record>		
+		<record model="ir.ui.view" id="catalog_list_view">
+			<field name="name">catalog_list</field>
+			<field name="model">itb.academic_catalog</field>
+			<field name="arch" type="xml">
+				<tree string="Catalog List">
+					<field name="name" />
+					<field name="code" />
+					<field name="credit" />
+					<field name="year" />
+                    <field name="closing" />
+					<field name="grading" />
+					<field name="catalog_outcome_ids" widget="one2many_tags" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="catalog_form_view">
+			<field name="name">catalog_form</field>
+			<field name="model">itb.academic_catalog</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="name_en" />
+								<field name="fullname" />
+								<field name="fullname_en" />
+								<field name="closing" />
+								<field name="grading" />
+							</group>
+							<group>
+                                <field name="year" />
+								<field name="code" />
+								<field name="credit" />
+								<field name="research_id" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Note">
+								<field name="note" />
+								<field name="note_en" />
+							</page>
+							<page string="Syllabus">
+								<field name="syllabus" />
+								<field name="syllabus_en" />
+							</page>
+							<page>
+								<field name="output" />
+							</page>
+							<page string="Outcomes">
+								<field name="catalog_outcome_ids" />
+							</page>
+                            <page string="Topics">
+                                <field name="topic_ids" />
+                            </page>
+							<page string="Evaluations">
+                                <field name="evaluation_ids" />
+                            </page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

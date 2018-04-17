@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record model="ir.ui.view" id="award_form_inherited_dupak_view">
+		<field name="name">award_dupak_form</field>
+		<field name="model">itb.hr_award</field>
+        <field name="inherit_id" ref="itb_hr.award_form_view" />
+		<field name="arch" type="xml">
+			<field name="finish" position="after">
+				<field name="standard_id" />				
+			</field>
+        </field>
+	</record>
+    <record model="ir.ui.view" id="award_list_inherited_dupak_view">
+		<field name="name">award_dupak_list</field>
+		<field name="model">itb.hr_award</field>
+        <field name="inherit_id" ref="itb_hr.award_list_view" />
+		<field name="arch" type="xml">
+			<field name="finish" position="after">
+				<field name="standard_id" />				
+			</field>
+        </field>
+	</record>
+</odoo>

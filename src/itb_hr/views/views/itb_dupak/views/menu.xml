@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <act_window id="itb_dupak.dupak_action" name="DUPAK" res_model="itb.dupak" view_mode="tree,form" />
+        <!--act_window id="itb_dupak.dupak_review_action" name="Review" res_model="itb.dupak_review" view_mode="tree,form" /-->
+        <act_window id="itb_dupak.dupak_standard_action" name="Standard" res_model="itb.dupak_standard" view_mode="tree,form" />
+ 
+
+        <menuitem id="itb_dupak.dupak_menu" name="DUPAK" web_icon="itb_dupak,static/description/icon.png" />
+
+        <menuitem id="itb_dupak.kenaikan_menu" name="Kenaikan" parent="itb_hr.hr_pns_menu" sequence="60" />
+        <menuitem id="itb_dupak.dupak_menu" name="DUPAK" action="itb_dupak.dupak_action" parent="itb_dupak.kenaikan_menu" sequence="61" />
+        <!--menuitem id="itb_dupak.dupak_review_menu" name="Review" action="itb_dupak.dupak_review_action" parent="itb_dupak.kenaikan_menu" sequence="62" groups="__export__.res_groups_92,__export__.res_groups_91" /-->
+        <menuitem id="itb_dupak.dupak_standard_menu" name="Standard" action="itb_dupak.dupak_standard_action" parent="itb_dupak.kenaikan_menu" sequence="63" groups="base.gr_ibos_hr_manager,base.gr_ibos_hr_officer" />
+        <!--menuitem id="itb_dupak.dupak_review_menu" name="Review" action="itb_dupak.dupak_review_action" parent="itb_dupak.kenaikan_menu" sequence="62" /-->
+        <!--menuitem id="itb_dupak.dupak_standard_menu" name="Standard" action="itb_dupak.dupak_standard_action" parent="itb_dupak.kenaikan_menu" sequence="63" /-->
+</odoo>

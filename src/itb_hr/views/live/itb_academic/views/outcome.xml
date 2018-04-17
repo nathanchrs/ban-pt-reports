@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="outcome_search_view" model="ir.ui.view">
+			<field name="name">outcome_search</field>
+			<field name="model">itb.academic_outcome</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" filter_domain="['|','|',('name','ilike',self),('code','ilike',self),('note','ilike',self)]" />
+					<field name="program_ids" string='Related Program' filter_domain="[('program_ids.name','ilike',self)]"/>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="outcome_list_view">
+			<field name="name">outcome_list</field>
+			<field name="model">itb.academic_outcome</field>
+			<field name="arch" type="xml">
+				<tree string="Outcome List">
+					<field name="name" />
+					<field name="code" />
+					<field name="program_ids" widget="many2many_tags" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="outcome_form_view">
+			<field name="name">outcome_form</field>
+			<field name="model">itb.academic_outcome</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="code" />
+                                <field name="active" />
+							</group>
+							<group>
+								<field name="program_ids" widget="many2many_tags" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Note">
+								<field name="note" />
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

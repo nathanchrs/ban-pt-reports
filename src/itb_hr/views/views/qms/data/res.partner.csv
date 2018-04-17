@@ -1,0 +1,137 @@
+name,id,country_id/id,company_type,is_company,role
+Susanti Megah (Plant Surabaya),qms_vendor_1,base.id,Company,TRUE,Vendor
+Susanti Megah (Plant Balaraja),qms_vendor_2,base.id,Company,TRUE,Vendor
+Unichemcandi Indonesia (Plant Gresik),qms_vendor_3,base.id,Company,TRUE,Vendor
+Cheetham Garam Indonesia,qms_vendor_4,base.id,Company,TRUE,Vendor
+Sumatraco Langgeng Makmur,qms_vendor_5,base.id,Company,TRUE,Vendor
+Jawamanis Rafinasi,qms_vendor_6,base.id,Company,TRUE,Vendor
+Permata Dunia Sukses Utama,qms_vendor_7,base.id,Company,TRUE,Vendor
+Sugar Labinta,qms_vendor_8,base.id,Company,TRUE,Vendor
+Makassar Tene,qms_vendor_9,base.id,Company,TRUE,Vendor
+Sentra Usahatama Jaya,qms_vendor_10,base.id,Company,TRUE,Vendor
+Dharmapala Usaha Sukses,qms_vendor_11,base.id,Company,TRUE,Vendor
+Pabrik Gula Pakis Baru Untuk Laju Perdana Indah,qms_vendor_12,base.id,Company,TRUE,Vendor
+Kerry Ingredients Indonesia,qms_vendor_13,base.id,Company,TRUE,Vendor
+"Linyi Tiancheng Foodstuff Co., Ltd.",qms_vendor_14,base.cn,Company,TRUE,Vendor
+Cita Rasa Nusantara Jaya,qms_vendor_15,base.id,Company,TRUE,Vendor
+Laiwu Manhing Vegetables Fruits Co.,qms_vendor_16,base.cn,Company,TRUE,Vendor
+"Sensient Natural Ingredients (Qingdao) Co., Ltd.",qms_vendor_17,base.cn,Company,TRUE,Vendor
+Global International Foods,qms_vendor_18,base.cn,Company,TRUE,Vendor
+Ki Antaka Rasa,qms_vendor_19,base.id,Company,TRUE,Vendor
+Jinyoung,qms_vendor_20,base.id,Company,TRUE,Vendor
+"Shandong Xingda Foodstuffs Group Co., Ltd.",qms_vendor_21,base.cn,Company,TRUE,Vendor
+Trijaya Sukses Makmur,qms_vendor_22,base.id,Company,TRUE,Vendor
+Indramukti Segara,qms_vendor_23,base.id,Company,TRUE,Vendor
+Sensient Natural Ingredients Llc,qms_vendor_24,base.cn,Company,TRUE,Vendor
+Olam Spices And Vegetables Ingredients,qms_vendor_25,base.us,Company,TRUE,Vendor
+Sumber Rejeki Bawang,qms_vendor_26,base.id,Company,TRUE,Vendor
+Trimegah Makmur Sejahtera,qms_vendor_27,base.id,Company,TRUE,Vendor
+Supa Surya Niaga,qms_vendor_28,base.id,Company,TRUE,Vendor
+Sari Bumbu Indonesia,qms_vendor_29,base.id,Company,TRUE,Vendor
+Ajinomoto Indonesia,qms_vendor_30,base.id,Company,TRUE,Vendor
+Indesso Culinaroma Internasional,qms_vendor_31,base.id,Company,TRUE,Vendor
+Argafood,qms_vendor_32,base.id,Company,TRUE,Vendor
+Tiap Rpa,qms_vendor_33,base.id,Company,TRUE,Vendor
+Ajinomoto (Malaysia) Berhad,qms_vendor_34,base.my,Company,TRUE,Vendor
+K +  S Kali Gmbh,qms_vendor_35,base.de,Company,TRUE,Vendor
+Purac Biochem Bv,qms_vendor_36,base.de,Company,TRUE,Vendor
+"Jizhou City Huayang Chemical Co., Ltd.",qms_vendor_37,base.cn,Company,TRUE,Vendor
+Dsm Nutritional Products Ltd,qms_vendor_38,base.cn,Company,TRUE,Vendor
+Basf Se,qms_vendor_39,base.sg,Company,TRUE,Vendor
+Tate & Lyle,qms_vendor_40,base.sg,Company,TRUE,Vendor
+Associated British Budi,qms_vendor_41,base.id,Company,TRUE,Vendor
+Budi Lumbung Ciptatani,qms_vendor_42,base.id,Company,TRUE,Vendor
+"Budi Starch & Sweetener, Tbk",qms_vendor_43,base.id,Company,TRUE,Vendor
+Sima Inter Product Company Limited (Factory Nakornratchashima),qms_vendor_44,base.jp,Company,TRUE,Vendor
+"Roi Et Flour Co., Ltd",qms_vendor_45,base.th,Company,TRUE,Vendor
+Quang Nam Food And Service Joint Stock Company (Quanafosevco),qms_vendor_46,base.vn,Company,TRUE,Vendor
+"Yuzana Co., Ltd",qms_vendor_47,base.cn,Company,TRUE,Vendor
+Umas Jaya Agrotama,qms_vendor_48,base.id,Company,TRUE,Vendor
+Eastern Pearl Flour Mills,qms_vendor_49,base.id,Company,TRUE,Vendor
+Sriboga Flour Mill,qms_vendor_50,base.id,Company,TRUE,Vendor
+Cerestar Flour Mills,qms_vendor_51,base.id,Company,TRUE,Vendor
+Harvestar Flour Mills,qms_vendor_52,base.id,Company,TRUE,Vendor
+Pt. Mane Indonesia,qms_vendor_53,base.id,Company,TRUE,Vendor
+Kalsec Inc,qms_vendor_54,base.sg,Company,TRUE,Vendor
+Sensient Colors Llc,qms_vendor_55,base.sg,Company,TRUE,Vendor
+Nusa Sejahtera,qms_vendor_56,base.id,Company,TRUE,Vendor
+Olam Agro India Private Limited,qms_vendor_57,base.id,Company,TRUE,Vendor
+Kerry Ingredients (M) Sdn. Bhd.,qms_vendor_58,base.my,Company,TRUE,Vendor
+Kimia Farma Plant Semarang,qms_vendor_59,base.id,Company,TRUE,Vendor
+"Xiamen Yangjiang Foods Co., Ltd",qms_vendor_60,base.cn,Company,TRUE,Vendor
+Inkenas Agung,qms_vendor_61,base.id,Company,TRUE,Vendor
+Indesso Aroma Untuk Firmenich Indonesia,qms_vendor_62,base.id,Company,TRUE,Vendor
+Givaudan Indonesia,qms_vendor_63,base.id,Company,TRUE,Vendor
+Essence Indonesia / Iff,qms_vendor_64,base.id,Company,TRUE,Vendor
+Givaudan Singapore Pte. Ltd.,qms_vendor_65,base.sg,Company,TRUE,Vendor
+Symrise Asia Pacific Pte. Ltd.,qms_vendor_66,base.sg,Company,TRUE,Vendor
+Rama Chemicals Untuk Firmenich Indonesia,qms_vendor_67,base.id,Company,TRUE,Vendor
+Indesso Culinaroma Internasional Untuk Firmenich Indonesia,qms_vendor_68,base.id,Company,TRUE,Vendor
+Mane Indonesia,qms_vendor_69,base.id,Company,TRUE,Vendor
+Ajinex International,qms_vendor_70,base.id,Company,TRUE,Vendor
+"Ajinomoto Co., (Thailand) Ltd.",qms_vendor_71,base.th,Company,TRUE,Vendor
+Sethness Products Company,qms_vendor_72,base.sg,Company,TRUE,Vendor
+"Aipu Food Industry Co., Ltd",qms_vendor_73,base.sg,Company,TRUE,Vendor
+Sensient Colors Europe Gmbh,qms_vendor_74,base.de,Company,TRUE,Vendor
+"Sethness Roquette Foods Ingredients (Lianyungang) Co., Ltd",qms_vendor_75,base.cn,Company,TRUE,Vendor
+"Asahi Glass Co., Ltd.",qms_vendor_76,base.sg,Company,TRUE,Vendor
+Solvay Chimica Italia S.P.A.,qms_vendor_77,base.it,Company,TRUE,Vendor
+Solvay Peroxythai Limited,qms_vendor_78,base.sg,Company,TRUE,Vendor
+"Ttca Co., Ltd",qms_vendor_79,base.sg,Company,TRUE,Vendor
+Purac,qms_vendor_80,base.sg,Company,TRUE,Vendor
+"Daicel Nanning Food Ingredients Co., Ltd.",qms_vendor_81,base.sg,Company,TRUE,Vendor
+"Jinneng Science & Technology Co., Ltd",qms_vendor_82,base.sg,Company,TRUE,Vendor
+Deosen Biochemical (Ordos) Ltd.,qms_vendor_83,base.sg,Company,TRUE,Vendor
+Kmc,qms_vendor_84,base.dk,Company,TRUE,Vendor
+Jk Sucralose Inc,qms_vendor_85,base.sg,Company,TRUE,Vendor
+Indo Acidatama,qms_vendor_86,base.id,Company,TRUE,Vendor
+Kerry Ingredients Sdn. Bhd.,qms_vendor_87,base.my,Company,TRUE,Vendor
+Susanti Megah,qms_vendor_88,base.id,Company,TRUE,Vendor
+Unichemcandi Indonesia,qms_vendor_89,base.id,Company,TRUE,Vendor
+Matra Unikatama,qms_vendor_90,base.id,Company,TRUE,Vendor
+Bogasari Flour Mills,qms_vendor_91,base.id,Company,TRUE,Vendor
+Yalucy,qms_vendor_92,base.id,Company,TRUE,Vendor
+Laju Perdana Indah,qms_vendor_93,base.id,Company,TRUE,Vendor
+Damai Sukses Makmur,qms_vendor_94,base.cn,Company,TRUE,Vendor
+Ming Foods International Trading Limited,qms_vendor_95,base.cn,Company,TRUE,Vendor
+Grand Multi Chemicals,qms_vendor_96,base.cn,Company,TRUE,Vendor
+Islandsun Indonesia,qms_vendor_97,base.id,Company,TRUE,Vendor
+Cv Restu Abadi,qms_vendor_98,base.id,Company,TRUE,Vendor
+Wonokoyo Jaya Corpindo,qms_vendor_99,base.id,Company,TRUE,Vendor
+Phalosari Unggul Jaya,qms_vendor_100,base.id,Company,TRUE,Vendor
+Reza Perkasa,qms_vendor_101,base.id,Company,TRUE,Vendor
+Ciomas Adisatwa,qms_vendor_102,base.id,Company,TRUE,Vendor
+Halim Sarana Cahaya Semesta,qms_vendor_103,base.de,Company,TRUE,Vendor
+Primaditha Jaya Mandiri,qms_vendor_104,base.nl,Company,TRUE,Vendor
+United Chemical Inter Aneka,qms_vendor_105,base.cn,Company,TRUE,Vendor
+Menjangan Sakti,qms_vendor_106,base.ch,Company,TRUE,Vendor
+Global Chemindo Dan Distributor Lainnya,qms_vendor_107,base.de,Company,TRUE,Vendor
+Tritunggal Artha Makmur,qms_vendor_108,base.us,Company,TRUE,Vendor
+Sungai Budi Group,qms_vendor_109,base.id,Company,TRUE,Vendor
+Sungai Budi,qms_vendor_110,base.id,Company,TRUE,Vendor
+Ajinomoto Sales Indonesia,qms_vendor_111,base.my,Company,TRUE,Vendor
+Sungai Budi Dan Semua Distributor Import/Domestik,qms_vendor_112,base.th,Company,TRUE,Vendor
+Ajinomoto (Singapore) Pte. Ltd.,qms_vendor_113,base.th,Company,TRUE,Vendor
+Hastagraha Bumi Perkasa,qms_vendor_114,base.id,Company,TRUE,Vendor
+Lautan Luas,qms_vendor_115,base.id,Company,TRUE,Vendor
+Kabulinco Jaya,qms_vendor_116,base.id,Company,TRUE,Vendor
+Connell Bersaudara Chemindo,qms_vendor_117,base.us,Company,TRUE,Vendor
+Sensient Technologies Indonesia,qms_vendor_118,base.us,Company,TRUE,Vendor
+Sevio Lica Pratama,qms_vendor_119,base.id,Company,TRUE,Vendor
+Toyota Tsusho Foods Corporation,qms_vendor_120,base.cn,Company,TRUE,Vendor
+Firmenich Indonesia,qms_vendor_121,base.id,Company,TRUE,Vendor
+Symrise Indonesia,qms_vendor_122,base.sg,Company,TRUE,Vendor
+United Chemicals Inter Aneka,qms_vendor_123,base.us,Company,TRUE,Vendor
+Brenntag,qms_vendor_124,base.it,Company,TRUE,Vendor
+Global Chemindo Megatrading,qms_vendor_125,base.cn,Company,TRUE,Vendor
+Tirta Buana Kemindo,qms_vendor_126,base.cn,Company,TRUE,Vendor
+Brataco,qms_vendor_127,base.th,Company,TRUE,Vendor
+Primadhita Jaya Mandiri,qms_vendor_128,base.th,Company,TRUE,Vendor
+Halim Sakti Pratama,qms_vendor_129,base.cn,Company,TRUE,Vendor
+Intraparr Nusantara,qms_vendor_130,base.cn,Company,TRUE,Vendor
+Chemco Prima Mandiri,qms_vendor_131,base.cn,Company,TRUE,Vendor
+Wwrc Indonesia,qms_vendor_132,base.cn,Company,TRUE,Vendor
+Sinergi Multi Lestarindo,qms_vendor_133,base.cn,Company,TRUE,Vendor
+Bangja Inti Ingridien,qms_vendor_134,base.cn,Company,TRUE,Vendor
+Indokemika Jayatama,qms_vendor_135,base.id,Company,TRUE,Vendor
+Ingredients Partner Indonesia,qms_vendor_136,base.my,Company,TRUE,Vendor

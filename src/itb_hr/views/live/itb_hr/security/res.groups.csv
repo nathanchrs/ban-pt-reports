@@ -1,0 +1,4 @@
+id,name,category_id/id
+base.gr_ibos_hr_employee,ibos.hr.employee,base.module_category_employees
+base.gr_ibos_hr_manager,ibos.hr.manager,base.module_category_employees
+base.gr_ibos_hr_officer,ibos.hr.officer,base.module_category_employees

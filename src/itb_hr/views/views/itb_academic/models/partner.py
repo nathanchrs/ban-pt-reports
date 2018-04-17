@@ -1,0 +1,33 @@
+from odoo import models, fields, api, exceptions
+
+class res_partner(models.Model):
+    _inherit = 'res.partner'
+    
+    is_instructor = fields.Boolean(string="Instructor")
+    is_participant = fields.Boolean(string="Participant")
+    student_id = fields.Char(index=True, string="Student ID")
+    student_id1 = fields.Char(index=True)
+    student_id2 = fields.Char(index=True)
+    student_id3 = fields.Char(index=True)
+    student_id4 = fields.Char(index=True)
+    sex = fields.Selection([('M','Male'),('F','Female')],string='Sex',default='M',index=True)
+    family_address = fields.Char()
+    emergency_address = fields.Char()
+    home_address = fields.Char()
+    fullname = fields.Char(index=True)
+    birthdate = fields.Date(index=True)
+    birthplace = fields.Char()
+    family_phone = fields.Char()
+    emergency_phone = fields.Char()
+    ip = fields.Char()
+    ipk = fields.Char(index=True)
+    toefl = fields.Char()
+    father = fields.Char()
+    mother = fields.Char()
+    graduate_date = fields.Date(index=True)
+    graduation_date = fields.Date(index=True)
+    graduation_title = fields.Char()
+    name_certificate = fields.Char()
+    no_sk = fields.Char()
+    no_certificate = fields.Char(index=True)
+    no_seri = fields.Char()

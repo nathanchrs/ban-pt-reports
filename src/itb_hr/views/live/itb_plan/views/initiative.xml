@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="initiative_list_view">
+            <field name="name">initiative_list</field>
+            <field name="model">itb.plan_line</field>
+            <field name="arch" type="xml">
+                <!--tree string="Initiative List" create="false"-->
+				<tree string="Initiative List">
+					<field name="unit_id" string="Unit" />
+					<field name="name" />
+					<field name="plan_id" string="Plan" />
+					<field name="program_id" string="Program" />
+					<field name="activity_id" string="Activity" />
+					<field name="subactivity_id" string="Sub Activity" />
+					<field name="budget" string="Budget" />
+					<field name="percent_budget" string="% Budget" />
+					<field name="percent_performance" string="% Performance" />
+                </tree>
+            </field>
+        </record>
+</odoo>

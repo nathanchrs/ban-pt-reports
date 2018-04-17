@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="pii_membership_search_view" model="ir.ui.view">
+			<field name="name">pii_membership_search</field>
+			<field name="model">pii.membership</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="partner_id" string='Anggota'/>
+					<field name="name" string='Organisasi'/>
+					<filter name="active" string="Aktif" domain="[('finish', '&gt;=', fields.Datetime.now())]"/>
+					<group expand="0" string="Group By">
+						<filter name="start" string="Mulai" context="{'group_by': 'start:year'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record id="pii_membership_graph_view" model="ir.ui.view">
+			<field name="name">pii_membership_graph</field>
+			<field name="model">pii.membership</field>
+			<field name="arch" type="xml">
+				<graph type="pivot">
+					<field name="start" interval="year" type="col" />
+					<field name="role" type="row" />
+				</graph>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="pii_membership_list_view">
+			<field name="name">pii_membership_list</field>
+			<field name="model">pii.membership</field>
+			<field name="arch" type="xml">
+				<tree string="Membership List">
+					<field name="partner_id" />
+					<field name="name" />
+					<field name="role" />
+					<field name="start" />
+					<field name="finish" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="pii_membership_form_view">
+			<field name="name">pii_membership_form</field>
+			<field name="model">pii.membership</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="partner_id" placeholder="Anggota" /></h1>
+						<group>
+							<group>
+								<field name="name" />
+								<field name="role" />
+							</group>
+							<group>
+								<field name="start" />
+								<field name="finish" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

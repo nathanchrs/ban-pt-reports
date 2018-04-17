@@ -9,7 +9,7 @@
                 <tree editable="bottom" decoration-info="write_date > report_refresh_date">
                     <field name="write_date" invisible="1" />
                     <field name="report_refresh_date" invisible="1" />
-                    <field name="nama" />
+                    <field name="pengisi" />
                     <field name="nidn" />
                     <field name="jabatan" />
                     <field name="tanggal_pengisian" />
@@ -24,7 +24,7 @@
             <field name="arch" type="xml">
                 <form string="Pengisi">
                     <group>
-                        <field name="nama" />
+                        <field name="pengisi" />
                         <field name="nidn" />
                         <field name="jabatan" />
                         <field name="tanggal_pengisian" />

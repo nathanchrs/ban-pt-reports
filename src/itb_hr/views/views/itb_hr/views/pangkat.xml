@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="pangkat_search_view" model="ir.ui.view">
+			<field name="name">pangkat_search</field>
+			<field name="model">itb.hr_pangkat</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="pangkat" string='Pangkat'/>
+					<field name="research_group_id" string='Research group' filter_domain="['|',('employee_id.name','ilike',self),('research_group_id','ilike',self)]"/>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="pangkat_list_view">
+			<field name="name">pangkat_list</field>
+			<field name="model">itb.hr_pangkat</field>
+			<field name="arch" type="xml">
+				<tree string="Pangkat List">
+					<field name="employee_id" />
+					<field name="pangkat" />
+					<field name="reference" />
+					<field name="decision" />
+					<field name="start" />
+					<field name="finish" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="pangkat_form_view">
+			<field name="name">pangkat_form</field>
+			<field name="model">itb.hr_pangkat</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="employee_id" /></h1>
+						<group>
+							<group string="Pangkat">
+								<field name="pangkat" />
+								<field name="pangkat_id" />
+								<field name="reference" />
+								<field name="signed_by" />
+							</group>
+							<group string="Period">
+								<field name="decision" />
+								<field name="start" />
+								<field name="finish" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

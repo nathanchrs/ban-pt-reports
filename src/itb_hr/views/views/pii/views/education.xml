@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="pii_education_search_view" model="ir.ui.view">
+			<field name="name">pii_education_search</field>
+			<field name="model">pii.education</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="partner_id" string='Anggota'/>
+					<field name="major" string="Jurusan"/>
+					<filter name="active" string="Aktif" domain="[('finish', '&gt;=', fields.Datetime.now())]"/>
+					<filter name="sarjana" string="Sarjana" domain="[('degree','ilike','sarjana')]"/>
+					<filter name="master" string="Master" domain="[('degree','ilike','master')]"/>
+					<filter name="doktor" string="Doktor" domain="[('degree','ilike','doktor')]"/>
+					<separator/>
+					<group expand="0" string="Group By">
+						<filter name="degree" string="Degree" context="{'group_by': 'degree'}"/>
+						<filter name="finish_year" string="Tahun Lulus" context="{'group_by': 'finish:year'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record id="pii_education_graph_view" model="ir.ui.view">
+			<field name="name">pii_education_graph</field>
+			<field name="model">pii.education</field>
+			<field name="arch" type="xml">
+				<graph type="bar" stacked="True">
+					<field name="finish" interval="year" />
+					<field name="degree" />
+				</graph>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="pii_education_list_view">
+			<field name="name">pii_education_list</field>
+			<field name="model">pii.education</field>
+			<field name="arch" type="xml">
+				<tree string="Education List">
+					<field name="partner_id" />
+					<field name="major" />
+					<field name="degree" />
+					<field name="country_id" />
+					<field name="finish" />
+					<field name="ipk" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="pii_education_form_view">
+			<field name="name">pii_education_form</field>
+			<field name="model">pii.education</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="partner_id" placeholder="Anggota" /></h1>
+						<group>
+							<group>
+								<field name="name" />
+								<field name="major" />
+								<field name="degree" />
+								<field name="country_id" />
+								<field name="city" />
+							</group>
+							<group>
+								<field name="finish" />
+								<field name="thesis" />	
+								<field name="ipk" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

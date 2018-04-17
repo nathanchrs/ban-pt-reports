@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="grade_search_view" model="ir.ui.view">
+			<field name="name">grade_search</field>
+			<field name="model">itb.academic_grade</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="partner_id" string='Name' filter_domain="[('partner_id.name','ilike',self)]" />
+					<field name="course_id" string='Course' filter_domain="[('course_id.name','ilike',self)]"/>
+					<field name="grade" string='Grade' filter_domain="[('grade','ilike',self)]"/>
+					<filter name="season" string="Last Season" domain="[(1,'=',1)]"/>
+					<group expand="0" string="Group By">
+						<filter name="course_id" string="Course" context="{'group_by': 'course_id'}"/>
+						<filter name="partner_id" string="Name" context="{'group_by': 'partner_id'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="grade_list_view">
+			<field name="name">grade_list</field>
+			<field name="model">itb.academic_grade</field>
+			<field name="arch" type="xml">
+				<tree string="Grade List">
+					<field name="partner_id" />
+					<field name="course_id" />
+					<field name="grade" />
+				</tree>
+			</field>
+		</record>
+</odoo>

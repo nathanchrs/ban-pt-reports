@@ -27,3 +27,6 @@ class Record_3A_311(models.Model):
     # The report this record belongs to
     report = fields.Many2one(comodel_name='banpt_report_generator.report')
     report_refresh_date = fields.Datetime(related='report.refresh_date')
+
+def refresh(reports):
+    pass

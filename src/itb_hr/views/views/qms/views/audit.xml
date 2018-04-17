@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="audit_list_view" model="ir.ui.view">
+		<field name="name">audit_list</field>
+		<field name="model">qms.audit</field>
+		<field name="arch" type="xml">
+			<tree string="Audit List">
+				<field name="partner_id" />
+				<field name="date" />
+				<field name="auditor_ids" />
+				<field name="score" />
+				<field name="grade" />
+                <field name="closing_date" />
+				<field name="state" />
+			</tree>
+		</field>
+	</record>
+	<record id="audit_form_view" model="ir.ui.view" >
+		<field name="name">audit_form</field>
+		<field name="model">qms.audit</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>
+					<button name="cancel" string="Cancel" type="object" />
+					<button name="confirm" string="Confirm" type="object" />
+					<button name="run" string="Run" type="object" />
+					<button name="close" string="Close" type="object" />
+					<field name="state" widget="statusbar" clickable="True" />
+				</header>
+				<sheet>
+                    <div class="oe_title">
+                        <h1><field name="partner_id" placeholder="Vendor"/></h1>
+                    </div>
+					<group>
+						<group>
+							<field name="date" />
+							<field name="auditor_ids" widget="many2many_tags" />
+							<field name="special" />
+						</group>
+						<group>
+							<field name="reference" />
+							<field name="score" attrs="{'invisible':[('state','in',['draft','confirmed'])]}" />
+							<field name="grade" attrs="{'invisible':[('state','in',['draft','confirmed'])]}"/>
+						</group>
+                    </group>
+                    <notebook>
+						<page string="CAPA" attrs="{'invisible':[('state','in',['draft','confirmed'])]}">
+                            <field name="capa_ids" context="{'audit_id':active_id,'vendor_id':partner_id}">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="action" />
+                                    <field name="action_date" />
+                                    <field name="action_by" domain="[('parent_id','=',vendor_id)]" />
+                                    <field name="state" />
+                                    <field name="verified_by" attrs="{'invisible':[('state','=','close')]}" />
+                                </tree>
+					        </field>
+                        </page>
+                        <page string="Positives" attrs="{'invisible':[('state','in',['draft','confirmed'])]}">
+                            <field name="positive" />
+                        </page>
+						<page string="Auditees">
+                            <field name="auditee_ids" context="{'audit_id':active_id,'vendor_id':partner_id}">
+								<tree editable="bottom">
+									<field name="auditee" domain="[('parent_id','=',vendor_id)]" />
+								</tree>
+							</field>
+                        </page>
+                    </notebook>
+				</sheet>
+			</form>
+		</field>
+	</record>
+</odoo>

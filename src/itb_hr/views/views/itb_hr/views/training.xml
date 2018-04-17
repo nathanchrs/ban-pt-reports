@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="training_search_view" model="ir.ui.view">
+			<field name="name">training_search</field>
+			<field name="model">itb.hr_training</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" string='Training Name'/>
+					<field name="employee_id" string='Employee'/>
+					<field name="provider" string='Provider'/>
+					<field name="research_group_id" string='Research group' filter_domain="['|',('employee_id.name','ilike',self),('research_group_id','ilike',self)]"/>
+					<filter name="instructor" string="Instructor" domain="[('role_ids.name','ilike','Instructor')]"/>
+					<filter name="participant" string="Participant" domain="[('role_ids.name','ilike','Participant')]"/>
+					<separator/>
+					<filter name="national" string="National" domain="[('role_ids.name','like','National')]"/>
+					<filter name="international" string="International" domain="[('role_ids.name','ilike','International')]"/>
+					<!--group expand="0" string="Group By">
+						<filter name="roles" string="Roles" context="{'group_by': 'role_ids'}"/>
+						<filter name="year" string="Year" context="{'group_by': 'start:year'}"/>
+					</group-->
+				</search>
+			</field>
+		</record>
+		<record id="training_graph_view" model="ir.ui.view">
+			<field name="name">training_graph</field>
+			<field name="model">itb.hr_training</field>
+			<field name="arch" type="xml">
+				<graph type="bar" stacked="True">
+					<field name="start" interval="year" />
+					<!--field name="role_ids" /-->
+				</graph>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="training_list_view">
+			<field name="name">training_list</field>
+			<field name="model">itb.hr_training</field>
+			<field name="arch" type="xml">
+				<tree string="Training List">
+					<field name="employee_id" />
+					<field name="name" string="Training"/>
+					<field name="country_id" />
+					<!--field name="role_ids" string="Roles" /-->
+					<field name="start" />
+					<field name="finish" />
+					<field name="provider" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="training_form_view">
+			<field name="name">training_form</field>
+			<field name="model">itb.hr_training</field>
+			<field name="arch" type="xml">
+				<form>
+					<header>
+						<field name="state" widget="statusbar"/>
+						<button name="action_state_valid" type="object" string="Validate" groups="base.gr_ibos_hr_manager,base.gr_ibos_hr_officer" attrs="{'invisible':[('state','=','valid')]}" class="oe_highlight"/>
+						<button name="action_state_draft" type="object" string="Reset to draft" groups="base.gr_ibos_hr_manager,base.gr_ibos_hr_officer" attrs="{'invisible':[('state','=','draft')]}" class="oe_highlight"/>
+					</header>
+					<sheet>
+						<h1><field name="employee_id" /></h1>
+						<group>
+							<group string="Training">
+								<field name="name" />
+								<field name="country_id" />
+								<field name="provider" />
+								<!--field name="role_ids" widget="many2many_tags" options="{'no_create': True}" string="Roles" /-->
+							</group>
+							<group string="Period">
+								<field name="start" />
+								<field name="finish" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

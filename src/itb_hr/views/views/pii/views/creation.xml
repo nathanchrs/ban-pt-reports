@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="creation_list_view" model="ir.ui.view">
+		<field name="name">creation_list</field>
+		<field name="model">pii.creation</field>
+		<field name="arch" type="xml">
+			<tree string="Karya Temuan/Inovasi/Paten dan Implementasi Teknologi Baru">
+				<field name="name" />
+                <field name="partner_id" />
+                <field name="year" />
+				<field name="publisher" />
+				<field name="note" />
+			</tree>
+		</field>
+	</record>
+	<record id="creation_form_view" model="ir.ui.view" >
+		<field name="name">creation_form</field>
+		<field name="model">pii.creation</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+                    <div class="oe_title">
+                        <h1><field name="partner_id" placeholder="Anggota"/></h1>
+                    </div>
+					<group>						
+						<field name="name" />
+						<field name="year" />
+						<field name="publisher" />
+						<field name="note" />
+                    </group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+    <record id="creation_search_view" model="ir.ui.view">
+		<field name="name">creation_search</field>
+		<field name="model">pii.creation</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name" string='Karya' filter_domain="['|',('name','ilike',self),('note','ilike',self)]"/>
+                <field name="publisher" string='Media Publikasi'/>
+				<group expand="0" string="Group By">
+					<filter name="year" string="Tahun" context="{'group_by': 'year'}"/>
+				</group>
+			</search>
+		</field>
+	</record>
+	<record id="creation_graph_view" model="ir.ui.view">
+		<field name="name">creation_graph</field>
+		<field name="model">pii.creation</field>
+		<field name="arch" type="xml">
+			<graph type="bar" stacked="True">
+				<field name="year" />
+			</graph>
+		</field>
+	</record>
+	<record id="creation_pivot_view" model="ir.ui.view">
+		<field name="name">creation_pivot</field>
+		<field name="model">pii.creation</field>
+		<field name="arch" type="xml">
+			<pivot>
+				<field name="year" type="col" />
+				<field name="publisher" type="row"  />
+			</pivot>
+		</field>
+	</record>		
+</odoo>

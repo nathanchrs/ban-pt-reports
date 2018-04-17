@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!--template id="assets_backend" name="tree view menu" inherit_id="web.assets_backend">               
+				<xpath expr="." position="inside">                   
+					<script type="text/javascript" src="/tree_menu/static/src/js/tree_view_button.js"></script>               
+				</xpath>           
+		</template-->       
+		<!--act_window id="itb_plan.int_act" name="Set Planning ITB" src_model="itb.plan_int" res_model="itb.plan_send_itb" view_mode="form" target="new" multi="True" context="{'parent_id': active_ids}"/-->
+		<record model="ir.ui.view" id="plan_int_search_view">
+			<field name="name">plan_int_search</field>
+			<field name="model">itb.plan_int</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" string="All" filter_domain="['|',('name','ilike',self),('budget','ilike',self),('state','ilike',self)]"/>
+					<filter name="state_draft" string="Draft" domain="[('state','=','draft')]" />
+					<filter name="state_confirm" string="Confirm" domain="[('state','=','confirm')]" />
+					<filter name="state_validate" string="Validate" domain="[('state','=','validate')]" />
+					<group expand="0" string="Group By">
+						<filter string="state" domain="[]" context="{'group_by':'state'}" />
+						<filter string="budget" domain="[]" context="{'group_by':'budget'}" />
+						<filter name="group_plan_unit_id" string="Unit" context="{'group_by':'unit_id'}" />
+						<filter name="group_plan_year" string="Year" context="{'group_by':'year'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="plan_int_list_view">
+			<field name="name">plan_list_int</field>
+			<field name="model">itb.plan_int</field>
+			<field name="arch" type="xml">
+				<tree string="Plan List Internal">
+					<!--button class="oe_highlight" name="set_state_validate" string="Set State Validate" type="object" /-->
+					<field name="name" />
+					<field name="budget" />
+					<field name="percent_budget" string="% Budget" widget="percentpie" />
+					<field name="percent_performance" string="% Performance" widget="percentpie"/>
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="plan_int_form_view">
+			<field name="name">plan_form_int</field>
+			<field name="model">itb.plan_int</field>
+			<field name="arch" type="xml">
+				<form>
+					<header>
+						<button name="action_state_confirmed" type="object" string="Confirm" states="draft" />
+						<button name="action_state_validated" type="object" string="Validate" states="confirm" />
+						<button name="action_state_abort" type="object" string="Abort" states="confirm" />
+						<button name="action_state_archived" type="object" string="Archive" states="validate" />
+						<field name="state" widget="statusbar" />
+						<!--button name="simpan" type="object" string="Set Plan ITB"/-->
+						<!--button class="oe_highlight" name="generate_plan_itb" string="Generate Plan ITB" type="object" states="validate"/-->
+					</header>
+					<sheet>
+						<!-- <h1><field name="name_view" readonly="1" /></h1> -->
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="unit_id" string="Unit" />
+								<field name="year" />
+							</group>
+							<group>							
+								<div name="buttons" class="oe_right oe_button_box">
+									<button type="action" class="oe_stat_button" icon="fa-money">
+										<field name="budget" string="Budget" widget="statinfo" />
+									</button>
+									<button type="action" class="oe_stat_button">
+										<field name="percent_budget" widget="percentpie" string="Budget" />
+									</button>
+									<button type="action" class="oe_stat_button">
+										<field name="percent_performance" widget="percentpie" string="Performance" />
+									</button>
+								</div>
+							</group>
+						</group>
+						<notebook>
+							<page string="Initiative">
+								<field name="plan_line_ids">
+									<tree editable="bottom">
+										<field name="name" />
+										<field name="program_id" string="Program" />
+										<field name="activity_id" string="Activity" />
+										<field name="subactivity_id" string="Sub Activity" />
+									</tree>
+								</field>	
+							</page>
+							<page string="Budget">
+								<field name="spending_ids" context="{'plan_int_id': active_id}">
+									<tree editable="bottom">
+										<field name="plan_line_id" string="Initiative" />
+										<field name="name" />
+										<field name="type" widget="selection" />
+										<field name="source" widget="selection" />
+										<field name="month" />
+										<field name="price_id" string="Price" />
+										<field name="volume" readonly="1"/>
+										<field name="total" string="Amount" />
+									</tree>
+								</field>	
+							</page>
+							<page string="Performance">
+							<field name="target_ids" context="{'plan_int_id': active_id}">
+									<tree editable="bottom">
+										<field name="plan_line_id" string="Initiative" />
+										<field name="indicator_id" string="Indicator" />
+										<field name="standard" readonly="1" />
+										<field name="plan" string="Target" />
+									</tree>
+								</field>	
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+		</record>
+		<record model="ir.ui.view" id="plan_int_graph_view">
+			<field name="name">plan_graph_int</field>
+			<field name="model">itb.plan_int</field>
+			<field name="arch" type="xml">
+				<graph type="bar" stacked="True">
+					<field name="unit_id" />
+					<field name="year" />
+					<field name="budget" type="measure" />
+				</graph>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="plan_int_pivot_view">
+			<field name="name">plan_pivot_int</field>
+			<field name="model">itb.plan_int</field>
+			<field name="arch" type="xml">
+				<pivot>
+					<field name="unit_id" />
+					<field name="year" type="col" />
+					<field name="budget" type="measure" />
+				</pivot>
+			</field>
+		</record>
+		<record id="dialog_form_view" model="ir.ui.view">
+			<field name="name">plan_dialog_form</field>
+			<field name="model">itb.plan_dialog</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Confirm dialog">
+					<field name="yes_no" readonly="1" />
+						<footer>
+							<button class="oe_highlight" type="object" name="isi" string="Yes" />
+							<button class="oe_highlight" type="object" name="no" string="No" />
+						</footer>
+					<!--/field-->
+				</form>
+			</field>
+		</record>
+	</data>
+</odoo>

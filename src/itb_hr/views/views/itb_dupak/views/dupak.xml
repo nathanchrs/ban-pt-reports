@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="dupak_search_view" model="ir.ui.view">
+			<field name="name">dupak_search</field>
+			<field name="model">itb.dupak</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="employee_id" string='Name' filter_domain="[('employee_id.name','ilike',self)]" />
+					<field name="pangkat_id" string='Pangkat' filter_domain="[('pangkat_id.name','ilike',self)]"/>
+                    <field name="jabatan_id" string='Jabatan' filter_domain="[('jabatan_id.name','ilike',self)]"/>
+					<filter name="on_progress" string="On Progress" domain="[(state,'in',['confirm','review','itb','dikti'])]"/>
+                    <separator />
+					<filter name="this_year" string="This Year" domain="[(1,'=',1)]"/>					
+					<filter name="last_year" string="Last Year" domain="[(1,'=',1)]"/>					
+					<group expand="0" string="Group By">
+						<filter name="pangkat_id" string="Pangkat" context="{'group_by': 'pangkat_id'}"/>
+						<filter name="jabatan_id" string="Jabatan" context="{'group_by': 'jabatan_id'}"/>
+						<filter name="date_confirm" string="Submit Date" context="{'group_by': 'date_confirm'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+        <record model="ir.ui.view" id="dupak_list_view">
+			<field name="name">dupak_list</field>
+			<field name="model">itb.dupak</field>
+			<field name="arch" type="xml">
+				<tree string="Dupak List">
+					<field name="employee_id" />
+					<field name="pangkat_id" />
+					<field name="jabatan_id" />
+					<field name="last_score" />
+                    <field name="total_score" />
+                    <field name="final_score" />
+					<field name="date_confirm" string="Submit" />
+                    <field name="state" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="dupak_form_view">
+			<field name="name">dupak_form</field>
+			<field name="model">itb.dupak</field>
+			<field name="arch" type="xml">
+				<form>
+                    <header>
+						<button name="update_dupak" type="object" string="Update"/>		
+						<field name="state" widget="statusbar" />
+					</header>
+					<sheet>
+						<h1><field name="employee_id" /></h1>
+						<group>
+							<group>
+								<field name="pangkat_id" />
+								<field name="jabatan_id" />
+								<field name="start" />
+                                <field name="finish" />
+                                <field name="date_confirm" />
+                                <field name="date_itb" />
+                                <field name="date_dikti" />
+                                <field name="date_decision" />
+                                <field name="reference" />
+                                <field name="signed_by" />
+							</group>
+							<group>
+								<field name="education_score" />
+                                <field name="pendidikan_score" />
+                                <field name="penelitian_score" />
+                                <field name="pengabdian_score" />
+                                <field name="penunjang_score" />
+                                <field name="last_score" />
+								<field name="total_score" />
+                                <field name="final_score" />
+							</group>
+							<group>
+								<field name="school_file" states='review' />
+								<field name="university_file" states='itb' />
+                                <field name="dikti_file" states='dikti' />
+							</group>
+							<group>
+								<field name="education_final" states='dikti' />
+                                <field name="pendidikan_final" states='dikti' />
+                                <field name="penelitian_final" states='dikti' />
+                                <field name="pengabdian_final" states='dikti' />
+                                <field name="penunjang_final" states='dikti' />
+								<field name="total_score_final" states='dikti' />
+							</group>
+						</group>
+                        <group>
+                            <field name="line_ids" widget="one2many_list" context="{'group_by':'code'}">
+                                <tree editable="bottom">
+									<field name="code" />
+                                    <field name="standard_id" />
+									<field name="name" />
+                                    <field name="period" />
+                                    <field name="reference" />
+									<field name="score" />
+                                </tree>
+                            </field>
+                        </group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<report id="dupak_xlsx" model="itb.dupak" string="DUPAK Excel" report_type="xlsx" 
+		name="itb.dupak.xlsx" file="itb.dupak.xlsx" attachment_use="False"/>
+</odoo>

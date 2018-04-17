@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<act_window id="tnix.tempatkan_wizard_action" name="Tempatkan" src_model="tnix.kandidat" res_model="tnix.tempatkan_wizard" view_mode="form" target="new" multi="True" groups="base.group_erp_manager" />
+		
+        <record id="tempatkan_wizard_view" model="ir.ui.view">
+			<field name="name">Tempatkan Kandidat</field>
+			<field name="model">tnix.tempatkan_wizard</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+						<field name="tipe" />
+                        <field name="posisi_id" attrs="{'invisible':[('tipe','!=','bebas')]}" />
+                        <field name="tanggal_keputusan" />
+					</group>
+					<footer>
+                        <button type="object" name="tempatkan" string="Tempatkan" class="oe_highlight" attrs="{'invisible':[('tipe','=',False)]}" />
+                    	<button special="cancel" string="Cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+	</data>
+</odoo>

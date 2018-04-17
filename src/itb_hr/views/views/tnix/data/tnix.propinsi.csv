@@ -1,0 +1,35 @@
+id,nama,kesatuan_id/id
+tnix.propinsi_1,Sumut,tnix.kesatuan_dam_i
+tnix.propinsi_2,Sumbar,tnix.kesatuan_dam_i
+tnix.propinsi_3,Riau,tnix.kesatuan_dam_i
+tnix.propinsi_4,Kep. Riau,tnix.kesatuan_dam_i
+tnix.propinsi_5,Sumsel,tnix.kesatuan_dam_ii
+tnix.propinsi_6,Jambi,tnix.kesatuan_dam_ii
+tnix.propinsi_7,Bengkulu,tnix.kesatuan_dam_ii
+tnix.propinsi_8,Kep. Bangka Belitung,tnix.kesatuan_dam_ii
+tnix.propinsi_9,Lampung,tnix.kesatuan_dam_ii
+tnix.propinsi_10,Jabar,tnix.kesatuan_dam_iii
+tnix.propinsi_11,Banten,tnix.kesatuan_dam_iii
+tnix.propinsi_12,Aceh,tnix.kesatuan_dam_im
+tnix.propinsi_13,Jateng,tnix.kesatuan_dam_iv
+tnix.propinsi_14,DI Yogyakarta,tnix.kesatuan_dam_iv
+tnix.propinsi_15,Bali,tnix.kesatuan_dam_ix
+tnix.propinsi_16,NTB,tnix.kesatuan_dam_ix
+tnix.propinsi_17,NTT,tnix.kesatuan_dam_ix
+tnix.propinsi_18,DKI Jakarta,tnix.kesatuan_dam_jaya
+tnix.propinsi_19,Jatim,tnix.kesatuan_dam_v
+tnix.propinsi_20,Kaltim,tnix.kesatuan_dam_vi
+tnix.propinsi_21,Kalut,tnix.kesatuan_dam_vi
+tnix.propinsi_22,Kalsel,tnix.kesatuan_dam_vi
+tnix.propinsi_23,Sulbar,tnix.kesatuan_dam_vii
+tnix.propinsi_24,Sulsel,tnix.kesatuan_dam_vii
+tnix.propinsi_25,Sulteng,tnix.kesatuan_dam_vii
+tnix.propinsi_26,Kalbar,tnix.kesatuan_dam_xii
+tnix.propinsi_27,Kalteng,tnix.kesatuan_dam_xii
+tnix.propinsi_28,Sulut,tnix.kesatuan_dam_xiii
+tnix.propinsi_29,Gorontalo,tnix.kesatuan_dam_xiii
+tnix.propinsi_30,Sultra,tnix.kesatuan_dam_xiii
+tnix.propinsi_31,Maluku,tnix.kesatuan_dam_xvi
+tnix.propinsi_32,Maluku Utara,tnix.kesatuan_dam_xvi
+tnix.propinsi_33,Papua,tnix.kesatuan_dam_xvii
+tnix.propinsi_34,Papua Barat,tnix.kesatuan_dam_xviii

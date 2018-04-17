@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="language_list_view" model="ir.ui.view">
+		<field name="name">language_list</field>
+		<field name="model">pii.language</field>
+		<field name="arch" type="xml">
+			<tree string="Penguasaan Bahasa">
+				<field name="name" />
+                <field name="partner_id" />
+                <field name="reading" />
+				<field name="writing" />
+				<field name="speaking" />
+				<field name="listening" />
+			</tree>
+		</field>
+	</record>
+	<record id="language_form_view" model="ir.ui.view" >
+		<field name="name">language_form</field>
+		<field name="model">pii.language</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+                    <div class="oe_title">
+                        <h1><field name="partner_id" placeholder="Anggota"/></h1>
+                    </div>
+					<group>						
+						<field name="name" />
+						<field name="reading" />
+						<field name="writing" />
+						<field name="speaking" />
+                        <field name="listening" />
+                    </group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+    <record id="language_search_view" model="ir.ui.view">
+		<field name="name">language_search</field>
+		<field name="model">pii.language</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name" string='Bahasa'/>
+                <separator/>
+				<field name="reading" string='Fasih' filter_domain="['|',('reading','ilike','fasih'),('writing','ilike','fasih'),('speaking','ilike','fasih'),('listening','ilike','fasih')]"/>
+				<field name="writing" string='Cukup' filter_domain="['|',('reading','ilike','cukup'),('writing','ilike','cukup'),('speaking','cukup','fasih'),('listening','ilike','cukup')]"/>
+				<group expand="0" string="Group By">
+					<filter name="name" string="Bahasa" context="{'group_by': 'name'}"/>
+				</group>
+			</search>
+		</field>
+	</record>
+	<record id="language_graph_view" model="ir.ui.view">
+		<field name="name">language_graph</field>
+		<field name="model">pii.language</field>
+		<field name="arch" type="xml">
+			<graph type="bar" stacked="True">
+				<field name="name" />
+				<field name="reading" />
+			</graph>
+		</field>
+	</record>
+	<record id="language_pivot_view" model="ir.ui.view">
+		<field name="name">language_pivot</field>
+		<field name="model">pii.language</field>
+		<field name="arch" type="xml">
+			<pivot>
+				<field name="reading" type="col" />
+				<field name="name" type="row"  />
+			</pivot>
+		</field>
+	</record>		
+</odoo>

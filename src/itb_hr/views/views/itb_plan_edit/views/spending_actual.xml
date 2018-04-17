@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!--act_window id="itb_plan.plan_confirmation_wizard" name="Set Confirmation" src_model="itb.plan_spending_actual" res_model="itb.plan_confirmation_wizard" view_mode="form" target="new" multi="True" context="{'parent_id': active_ids}"/-->
+		<!--act_window id="itb_plan.plan_send_req_wizard_act" name="Send to Request" src_model="itb.plan_spending_actual" res_model="itb.plan_send_request_wizard" view_mode="form" target="new" multi="True" context="{'parent_id': active_ids}"/-->
+		<act_window id="itb_plan.plan_send_log_wizard_act" name="Send to Logistik" src_model="itb.plan_spending_actual" res_model="itb.plan_send_logistik_wizard" view_mode="form" target="new" multi="True" context="{'parent_id': active_ids}"/>
+		<act_window id="itb_plan.plan_set_source_wizard_act" name="Set new source" src_model="itb.plan_spending_actual" res_model="itb.plan_set_source_wizard" view_mode="form" target="new" multi="True" context="{'parent_id': active_ids}"/>
+		<record id="action_server_set_confirmation" model="ir.actions.server">
+			<field name="code">action=model.set_confirmation(cr, uid, context.get('active_ids', []), context=context)</field>
+			<field eval="5" name="sequence"/>
+			<field name="use_relational_model">base</field>
+			<field name="use_create">new</field>
+			<field name="state">code</field>
+			<field name="type">ir.actions.server</field>
+			<field name="model_id" ref="itb_plan.model_itb_plan_spending_actual"/>
+			<field eval="[(6,0,[])]" name="child_ids"/>
+			<field eval="0" name="link_new_record"/>
+			<field name="condition">True</field>
+			<field name="name">Set FRA</field>
+			<field model="ir.values" name="menu_ir_values_id" search="[('name', '=', u'Run Set FRA')]"/>
+		</record>
+		<!--record id="action_server_set_confirmation2"
+				model="ir.actions.act_window.view">
+			<field name="act_window_id" ref="action_server_set_confirmation" />
+			<field name="view_id" ref="spending_actual_list_view" />
+			<field name="view_mode">form</field>
+			<field name="sequence">10</field>
+		</record-->
+		<!--act_window id="action_server_set_confirmation" name="Set Confirmationcc" src_model="itb.plan_spending_actual" res_model="itb.plan_confirmation_wizard" view_mode="form" target="new" multi="True" context="{'parent_id': active_ids}"/-->
+		<record model="ir.ui.view" id="spending_actual_search_view">
+			<field name="name">spending_actual_search</field>
+			<field name="model">itb.plan_spending_actual</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" string="Spending" />
+					<field name="plan_id" string="Plan" />
+					<filter name="Q1" string="Q1" domain="[('month','in',['Jan','Feb','Mar'])]" />
+					<filter name="Q2" string="Q2" domain="[('month','in',['Apr','May','Jun'])]" />
+					<filter name="Q3" string="Q3" domain="[('month','in',['Jul','Aug','Sep'])]" />
+					<filter name="Q4" string="Q4" domain="[('month','in',['Oct','Nov','Dec'])]" />
+					<filter name="Draft" string="Draft" domain="[('state','=','draft')]" />
+					<filter name="FRA" string="FRA" domain="[('state','=','confirm')]" />
+					<separator />
+					<filter name="barang" string="Barang" domain="[('type','=','barang')]" />
+					<filter name="jasa" string="Jasa" domain="[('type','=','jasa')]" />
+					<filter name="modal" string="Modal" domain="[('type','=','modal')]" />
+					<filter name="pegawai" string="Pegawai" domain="[('type','=','pegawai')]" />
+					<filter name="no_manager" string="No Manager" domain="[('user_ids','=',False)]" />
+					<group string="Group By">
+						<filter name="plan" string="Plan" context="{'group_by':'plan_id'}" />
+						<filter name="initiative" string="Initiative" context="{'group_by':'plan_line_id'}" />
+						<filter name="type" string="Type" context="{'group_by':'type'}" />
+						<filter name="month" string="Month" context="{'group_by':'day:month'}" />
+						<filter name="state" string="Status" context="{'group_by':'state'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="spending_actual_graph_view">
+			<field name="name">spending_actual_graph</field>
+			<field name="model">itb.plan_spending_actual</field>
+			<field name="arch" type="xml">
+				<graph type="pivot">
+					<field name="plan_id" type="row" />
+					<field name="plan_line_id" type="row" />
+					<field name="type" type="col" />
+					<field name="day" interval="month" type="col" />
+					<field name="total" type="measure" />
+					<field name="used" type="measure" />
+					<field name="available" type="measure" />
+					<field name="paid" type="measure" />
+				</graph>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="spending_actual_list_view">
+            <field name="name">spending_actual_list</field>
+            <field name="model">itb.plan_spending_actual</field>
+            <field name="arch" type="xml">
+                <tree string="Spending Actual List">
+					<field name="name" />
+					<!--field name="plan_id" string="Plan" /-->
+					<field name="plan_line_id" string="Initiative" />
+					<field name="type" />
+					<field name="source" />
+					<field name="month" />
+					<field name="total" string="Amount" />
+					<field name="used" string="Used" />
+					<field name="available" string="Available" />
+					<field name="paid" string="Paid" />
+					<field name="percent_budget" string="% Used" />
+					<!--field name="active" string="Active" /-->
+					<field name="logistic" string="Logistic" />
+					<field name="confirmation_ref" string="No FRA" />
+					<field name="confirmation_date" string="FRA Date" />
+					<!--field name="confirmation_note" string="Confirmation Note" /-->
+					<field name="state" string="State" />
+                </tree>
+            </field>
+        </record>
+		<record model="ir.ui.view" id="spending_actual_form_view">
+            <field name="name">spending_actual_form</field>
+            <field name="model">itb.plan_spending_actual</field>
+            <field name="arch" type="xml">
+                <form>
+					<header>
+						<button name="action_state_confirmed" type="object" string="Confirm" states="draft" />
+						<button name="action_state_abort" type="object" string="Abort" states="confirm" />
+						<field name="state" widget="statusbar" />
+						<!--button name="simpan" type="object" string="Set Plan ITB"/-->
+						<button class="oe_highlight" name="set_confirmed_actual" string="set confirmed actual" type="object" />
+					</header>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="plan_id" string="Plan" />
+								<field name="plan_line_id" string="Initiative" />
+								<field name="type" />
+								<field name="source"  />
+								<field name="month" />
+								<field name="price_id" string="Price" />
+								<field name="volume" />
+							</group>
+							<group>
+								<field name="total" string="Amount" />
+								<field name="used" string="Used" />
+								<field name="available" string="Available" />
+								<field name="paid" string="Paid" />
+								<field name="percent_budget" string="%" />
+							</group>
+							<group>
+								<field name="confirmation_ref" string="No FRA" />
+								<field name="confirmation_date" string="FRA Date" />
+								<field name="confirmation_note" string="FRA Note" />
+								<field name="active" string="Active" />
+								<field name="logistic" string="Logistic" />
+							</group>
+                		</group>
+						<h3>Request Plan</h3>
+						<field name="request_line_ids">
+							<tree editable="bottom">
+								<field name="request_id" string="Name" />
+								<field name="initiative" string="initiative"/>
+								<field name="unit_id" string="Unit"/>
+								<field name="used" string="Used"/>
+								<field name="total" string="Total" />
+							</tree>
+						</field>
+						<notebook>
+							<page>
+								<field name="user_ids" />
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+		<record id="plan_wizard_confirmation_form_view" model="ir.ui.view">
+			<field name="name">plan_wizard_confirmation_form</field>
+			<field name="model">itb.plan_confirmation_wizard</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Confirm wizard">
+					<group>
+						<field name="state" string="State"/>
+						<field name="month" string="Month" options="{'no_create': True, 'no_create_edit':True}"/>
+					</group>
+					<group>
+						<field name="confirmation_ref" string="No FRA" />
+						<field name="confirmation_date" string="FRA Date" />
+						<field name="confirmation_note" string="FRA Note" />
+					</group>
+					<footer>
+						<button class="oe_highlight" type="object" name="yes" string="Yes" />
+						<button class="oe_highlight" type="object" name="no" string="No" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<record id="plan_wizard_logistik_form_view" model="ir.ui.view">
+			<field name="name">plan_wizard_logistik_form</field>
+			<field name="model">itb.plan_send_logistik_wizard</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Send to Logistik">
+					<group>
+						<h1><field name="name" string="Name"/></h1>
+					</group>
+					<group>
+						<group>
+							<field name="pay_to" string="Paid To"/>
+							<!--field name="total" /-->
+							<field name="due" string="Due date"/>
+							<field name="day" string="Invoice date"/>
+							<field name="reference" />
+							<!--field name="is_reconciled" /-->
+						</group>
+						<group>
+							<field name="note" string="Note" />
+						</group>
+					</group>
+					<footer>
+						<button class="oe_highlight" type="object" name="yes" string="Yes" />
+						<button class="oe_highlight" type="object" name="no" string="No" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<record id="plan_wizard_send_request_form_view" model="ir.ui.view">
+			<field name="name">plan_wizard_send_request_form</field>
+			<field name="model">itb.plan_send_request_wizard</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Send to Request">
+					<group>
+						<h1><field name="name" string="Name"/></h1>
+					</group>
+					<group>
+						<group>
+							<field name="pay_to" string="Paid To"/>
+							<field name="total" />
+							<field name="due" string="Due date"/>
+							<field name="day" string="Invoice date"/>
+							<field name="reference" />
+							<!--field name="is_reconciled" /-->
+						</group>
+						<group>
+							<field name="note" string="Note" />
+						</group>
+					</group>
+					<footer>
+						<button class="oe_highlight" type="object" name="yes" string="Yes" />
+						<button class="oe_highlight" type="object" name="no" string="No" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<record id="view_report_spending_actual_pivot" model="ir.ui.view">
+            <field name="name">spending_actual_pivot</field>
+            <field name="model">itb.plan_spending_actual</field>
+            <field name="arch" type="xml">
+                <pivot string="spending Actual">
+                    <field name="day" interval="month" type="col" />
+                    <field name="unit_id" type="row"/>
+					<field name="total" type="measure" />
+					<field name="used" type="measure" />
+					<field name="available" type="measure" />
+				</pivot>
+            </field>
+        </record>
+		<record id="plan_wizard_source_form_view" model="ir.ui.view">
+			<field name="name">plan_wizard_source_form</field>
+			<field name="model">itb.plan_set_source_wizard</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Set New Source">
+					<group>
+						<field name="source" string="New Source" />
+					</group>
+					<footer>
+						<button class="oe_highlight" type="object" name="yes" string="Yes" attrs="{'invisible': [('source','not in', ['dm','boptn'])]}"/>
+						<button class="oe_highlight" type="object" name="no" string="No" />
+					</footer>
+				</form>
+			</field>
+		</record>
+	</data>
+</odoo>

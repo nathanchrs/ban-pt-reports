@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="dialog_form_view" model="ir.ui.view">
+        <field name="name">plan_dialog_form</field>
+        <field name="model">itb.plan_dialog</field>
+        <!--field name="type">form</field-->
+        <field name="arch" type="xml">
+            <form string="Confirm dialog">
+                <field name="yes_no" readonly="1" />
+                    <footer>
+                        <button class="oe_highlight" name="yes" string="Yes" />
+                        <button class="oe_highlight" name="no" string="No" />
+                    </footer>
+                <!--/field-->
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record model="ir.ui.view" id="training_form_inherited_dupak_view">
+		<field name="name">training_dupak_form</field>
+		<field name="model">itb.hr_training</field>
+        <field name="inherit_id" ref="itb_hr.training_form_view" />
+		<field name="arch" type="xml">
+			<field name="finish" position="after">
+				<field name="standard_id" />				
+			</field>
+        </field>
+	</record>
+    <record model="ir.ui.view" id="training_list_inherited_dupak_view">
+		<field name="name">training_dupak_list</field>
+		<field name="model">itb.hr_training</field>
+        <field name="inherit_id" ref="itb_hr.training_list_view" />
+		<field name="arch" type="xml">
+			<field name="finish" position="after">
+				<field name="standard_id" />				
+			</field>
+        </field>
+	</record>
+</odoo>

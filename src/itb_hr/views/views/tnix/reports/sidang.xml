@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="report_bahan_sidang"
+        string="Bahan Sidang"
+        model="tnix.kandidat"
+        report_type="qweb-html"
+        groups="base.group_erp_manager"
+        name="tnix.report_bahan_sidang_template"
+    />
+
+    <template id="report_bahan_sidang_template">
+        <t t-call="report.html_container">
+            <t t-call="report.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="row">
+                        <h1>BAHAN SIDANG PATJAB LULUSAN DIKSARCAB POM TA <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/> </h1>
+                    </div>
+                    <div class="row">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">NOMOR</th>
+                                    <th rowspan="2">NAMA</th>
+                                    <th rowspan="2">PKT/ <br/>KORPS / <br/>NRP</th>
+                                    <th rowspan="2">TEMPAT &amp; <br/>TANGGAL LAHIR</th>
+                                    <th rowspan="2">STS<br/>UMUR</th>
+                                    <th rowspan="2">ANGKET</th>
+                                    <th rowspan="2">SARAN<br/>BINCAB</th>
+                                    <th rowspan="2">SARAN<br/>APLIKASI</th>
+                                    <th rowspan="2">SARAN<br/>SPERSAD</th>
+                                    <th rowspan="2">HASIL<br/>SIDANG</th>
+                                    <th rowspan="2">KETERANGAN</th>
+                                </tr>
+                                <tr>
+                                    <th>URT</th>
+                                    <th>BAG</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                    <td>11</td>
+                                    <td>12</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 <t t-foreach="docs" t-as="o">
+                                 <tr>
+                                    <td><span t-esc="o_index + 1" /></td>
+                                    <td><span t-field="o.diktuk"/></td>
+                                    <td><span t-field="o.nama"/></td>
+                                    <td><span t-field="o.pangkat"/><br/><span t-field="o.kecabangan_id.nama"/><br/><span t-field="o.nrp"/></td>
+                                    <td><span t-field="o.propinsi_lahir.nama"/><br/><span t-field="o.tanggal_lahir" t-options ='{"format": "dd-MM-yyyy"}'/></td>
+                                    <td>TK<br/><span t-field="o.umur"/></td>
+                                    <td>#1:<span t-field="o.minat_detil"/><br/><br/>#2:<span t-field="o.minat2_detil"/></td>
+                                    <td><span t-field="o.rekomendasi_bincab_detil"/></td>
+                                    <td>#1:<span t-field="o.rekomendasi1.nama"/><br/><br/>#2:<span t-field="o.rekomendasi2.nama"/></td>
+                                    <td><span t-field="o.rekomendasi_spersad_detil"/></td>
+                                    <td><span t-field="o.penempatan_detil"/></td>
+                                    <td>Rank Akmil:<span t-field="o.ranking"/>/...<br/>Rank Sarcab:<span t-field="o.ranking_sarcab"/>/...</td>
+                                 </tr>
+                                 </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

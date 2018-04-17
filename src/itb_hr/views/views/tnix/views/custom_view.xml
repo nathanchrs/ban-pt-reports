@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="custom_view" name="custom_view" inherit_id="web.assets_backend">
+			<xpath expr="." position="inside">
+				<link rel="stylesheet" href="/tnix/static/src/css/styles.css" />
+			</xpath>
+		</template>
+		<template id="custom_view_log" name="custom_view_log" inherit_id="web.login_layout">
+			<xpath expr="." position="inside">
+				<link rel="stylesheet" href="/tnix/static/src/css/styles.css" />
+			</xpath>
+		</template>
+        <template id="custom_js" inherit_id="web.assets_backend" name="custom_js" >
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/tnix/static/src/js/tnix.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record model="ir.ui.view" id="thesis_structure_list_view">
+			<field name="name">thesis_structure_list</field>
+			<field name="model">itb.academic_structure</field>
+			<field name="field_parent">child_ids</field>
+			<field name="arch" type="xml">
+				<tree toolbar="True" string="Thesis Structure List">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="thesis_stucture_form_view">
+			<field name="name">thesis_structure_form</field>
+			<field name="model">itb.academic_structure</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<field name="parent_id" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

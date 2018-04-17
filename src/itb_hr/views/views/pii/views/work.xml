@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="pii_work_search_view" model="ir.ui.view">
+			<field name="name">pii_work_search</field>
+			<field name="model">pii.work</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="partner_id" string='Anggota'/>
+					<field name="company"/>
+					<group expand="0" string="Group By">
+						<filter name="year" string="Mulai" context="{'group_by': 'start:year'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record id="pii_work_graph_view" model="ir.ui.view">
+			<field name="name">pii_work_graph</field>
+			<field name="model">pii.work</field>
+			<field name="arch" type="xml">
+				<graph type="bar" stacked="True">
+					<field name="start" interval="year" />
+					<field name="company" />
+				</graph>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="pii_work_list_view">
+			<field name="name">pii_work_list</field>
+			<field name="model">pii.work</field>
+			<field name="arch" type="xml">
+				<tree string="Pekerjaan">
+					<field name="partner_id" />
+					<field name="name" />
+					<field name="company" />
+					<field name="start" />
+					<field name="finish" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="pii_work_form_view">
+			<field name="name">pii_work_form</field>
+			<field name="model">pii.work</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="partner_id" placeholder="Anggota" /></h1>
+						<group>
+							<group>
+								<field name="company"/>
+								<field name="name" />
+								<field name="start" />
+								<field name="finish" />
+							</group>
+							<group>
+								<field name="note" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

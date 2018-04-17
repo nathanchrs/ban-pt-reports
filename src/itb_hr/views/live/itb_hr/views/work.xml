@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="work_search_view" model="ir.ui.view">
+			<field name="name">work_search</field>
+			<field name="model">itb.hr_work</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="employee_id" string='Employee Name'/>
+					<field name="company" string='Company Name'/>
+					<field name="country_id" string="Country"/>
+					<filter name="active" string="Active" domain="['&amp;', ('start', '&lt;=', fields.Datetime.now()), ('finish', '&gt;=', fields.Datetime.now())]"/>
+					<field name="research_group_id" string='Research group' filter_domain="['|',('employee_id.name','ilike',self),('research_group_id','ilike',self)]"/>
+					<separator/>
+					<filter name="national" string="National" domain="[('company_scope','like','National')]"/>
+					<filter name="global" string="Global" domain="[('company_scope','ilike','Global')]"/>
+					<group expand="0" string="Group By">
+						<filter name="company_scope" string="Company Scope" context="{'group_by': 'company_scope'}"/>
+						<filter name="start_year" string="Start Year" context="{'group_by': 'start:year'}"/>
+						<filter name="finish_year" string="Finish Year" context="{'group_by': 'finish:year'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record id="work_graph_view" model="ir.ui.view">
+			<field name="name">work_graph</field>
+			<field name="model">itb.hr_work</field>
+			<field name="arch" type="xml">
+				<graph type="bar" stacked="True">
+					<field name="company_scope" />
+					<field name="country_id" />
+				</graph>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="work_list_view">
+			<field name="name">work_list</field>
+			<field name="model">itb.hr_work</field>
+			<field name="arch" type="xml">
+				<tree string="Work List">
+					<field name="employee_id" />
+					<field name="name" />
+					<field name="company" />
+					<field name="company_scope" />
+					<field name="country_id" />
+					<field name="start" />
+					<field name="finish" />
+					<field name="duration" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="work_form_view">
+			<field name="name">work_form</field>
+			<field name="model">itb.hr_work</field>
+			<field name="arch" type="xml">
+				<form>
+					<header>
+						<field name="state" widget="statusbar"/>
+						<button name="action_state_valid" type="object" string="Validate" groups="base.gr_ibos_hr_manager,base.gr_ibos_hr_officer" attrs="{'invisible':[('state','=','valid')]}" class="oe_highlight"/>
+						<button name="action_state_draft" type="object" string="Reset to draft" groups="base.gr_ibos_hr_manager,base.gr_ibos_hr_officer" attrs="{'invisible':[('state','=','draft')]}" class="oe_highlight"/>
+					</header>
+					<sheet>
+						<h1><field name="employee_id" /></h1>
+						<h3><field name="name" /></h3>
+						<group>
+							<group string="Company">
+								<field name="company" string="Name" />
+								<field name="company_scope" />
+								<field name="country_id" />
+								<field name="city" />
+								<field name="reference" />
+								<field name="signed_by" />
+							</group>
+							<group string="Period">
+								<field name="decision" />
+								<field name="start" />
+								<field name="finish" />
+								<field name="duration" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

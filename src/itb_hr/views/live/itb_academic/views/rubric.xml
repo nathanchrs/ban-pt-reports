@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="rubric_search_view" model="ir.ui.view">
+			<field name="name">rubric_search</field>
+			<field name="model">itb.academic_rubric</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" filter_domain="['|','|',('name','ilike',self),('code','ilike',self),('note','ilike',self)]" />
+				</search>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="rubric_list_view">
+			<field name="name">rubric_list</field>
+			<field name="model">itb.academic_rubric</field>
+			<field name="arch" type="xml">
+				<tree string="Rubric List">
+					<field name="name" />
+					<field name="code" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="rubric_form_view">
+			<field name="name">rubric_form</field>
+			<field name="model">itb.academic_rubric</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>
+								<field name="code" />
+                                <field name="active" />
+							</group>
+							<group>
+								<field name="note" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Criteria">
+								<field name="criteria_ids" />
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

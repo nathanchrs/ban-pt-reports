@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <report 
+            id="action_membership_report" 
+            string="Membership Report"
+            model="itb.hr_report_membership"
+            report_type="qweb-html"
+            name="itb_hr.report_membership"
+        />
+        <template id="report_membership">
+            <t t-call="report.html_container">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th width="50">No</th>
+                                    <th>Nama</th>
+                                    <th>Organization</th>
+                                    <th>Year</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="i" t-value="1"> </t>
+                                <t t-foreach="docs" t-as="doc">
+                                    <tr>
+                                        <td><t t-esc="i" /></td>
+                                        <td><span t-field="doc.name" /></td>
+                                        <td><span t-field="doc.organization" /></td>
+                                        <td><span t-field="doc.year" /></td>
+                                    </tr>
+                                <t t-set="i" t-value="i+1"> </t>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>    
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

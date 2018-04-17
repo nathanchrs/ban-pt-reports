@@ -1,0 +1,20 @@
+{ 
+    'name': 'ITB DUPAK', 
+    'description': 'PNS Career Advancement, the ITB way',
+    'category': 'Employees',
+    'author': 'Housny M.', 
+    'depends': ['itb_hr','itb_academic'],
+    'data': [
+        'views/menu.xml',
+        'views/dupak.xml',
+        'views/assignment.xml',
+        'views/training.xml',
+        'views/publication.xml',
+        'views/project.xml',
+        'views/duty.xml',
+    ], 
+    'version': '0.1',
+	'application':True,
+	'installable': True,
+	'auto_install': False, 
+} 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<act_window id="tnix.seleksi_wizard_action" name="Hasil Seleksi" src_model="tnix.kandidat" res_model="tnix.seleksi_wizard" view_mode="form" target="new" multi="True" groups="base.group_erp_manager" />
+		
+        <record id="seleksi_wizard_view" model="ir.ui.view">
+			<field name="name">Hasil Seleksi</field>
+			<field name="model">tnix.seleksi_wizard</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+						<field name="kesatuan" />
+                        <field name="catatan" />
+					</group>
+					<footer>
+                        <button type="object" name="seleksi" string="Simpan" class="oe_highlight" attrs="{'invisible':[('kesatuan','=',False)]}" />
+                    	<button special="cancel" string="Cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+	</data>
+</odoo>

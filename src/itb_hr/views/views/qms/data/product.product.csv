@@ -1,0 +1,117 @@
+name,id,purchase_ok,sale_ok,default_code,categ_id/id
+Masako,qms_product_sale_1,TRUE,TRUE,MA,qms_product_category_saleable
+Saori Saus Rasa Mentega,qms_product_sale_2,TRUE,TRUE,SAM,qms_product_category_saleable
+Sajiku Bumbu Nasi Goreng Rasa Pedas,qms_product_sale_3,TRUE,TRUE,SAP,qms_product_category_saleable
+Sajiku Tepung Bumbu,qms_product_sale_4,TRUE,TRUE,SAT,qms_product_category_saleable
+Sajiku Bumbu Nasi Goreng Rasa Ayam,qms_product_sale_5,TRUE,TRUE,SAY,qms_product_category_saleable
+Saori Teriyaki,qms_product_sale_6,TRUE,TRUE,TE,qms_product_category_saleable
+Saori Tiram,qms_product_sale_7,TRUE,TRUE,TI,qms_product_category_saleable
+Chicken Extract Meat Powder,qms_product_sale_8,TRUE,TRUE,CEM,qms_product_category_saleable
+Garam,qms_product_material_1,TRUE,FALSE,,qms_product_category_rawmat_1
+"Garam ""K1-Ps""",qms_product_material_2,TRUE,FALSE,,qms_product_category_rawmat_1
+Garam Table Salt K20/40,qms_product_material_3,TRUE,FALSE,,qms_product_category_rawmat_1
+Garam Iodized Refined Salt (Js),qms_product_material_4,TRUE,FALSE,,qms_product_category_rawmat_1
+Garam Beryodium (Garam Inti Samudra) Gs 25 Si,qms_product_material_5,TRUE,FALSE,,qms_product_category_rawmat_1
+Garam Halus Beryodium Tpo M/Yd,qms_product_material_6,TRUE,FALSE,,qms_product_category_rawmat_1
+Gula,qms_product_material_7,TRUE,FALSE,,qms_product_category_rawmat_2
+Gula Kristal Putih,qms_product_material_8,TRUE,FALSE,,qms_product_category_rawmat_2
+Garlic Powder 1210/C,qms_product_material_9,TRUE,FALSE,,qms_product_category_rawmat_3
+Garlic Powder Af-14,qms_product_material_10,TRUE,FALSE,,qms_product_category_rawmat_3
+Garlic Granule,qms_product_material_11,TRUE,FALSE,,qms_product_category_rawmat_3
+Dehydrated Garlic,qms_product_material_12,TRUE,FALSE,,qms_product_category_rawmat_3
+Garlic Powder 5960,qms_product_material_13,TRUE,FALSE,,qms_product_category_rawmat_3
+Garlic Powder 6021081,qms_product_material_14,TRUE,FALSE,,qms_product_category_rawmat_3
+Garlic Powder Mt-648838,qms_product_material_15,TRUE,FALSE,,qms_product_category_rawmat_4
+ Garlic Powder Gp-01 (Type B-Aj),qms_product_material_16,TRUE,FALSE,,qms_product_category_rawmat_3
+Garlic Powder 80-120Mesh,qms_product_material_17,TRUE,FALSE,,qms_product_category_rawmat_3
+Fried Garlic Powder,qms_product_material_18,TRUE,FALSE,,qms_product_category_rawmat_3
+Bawang Putih Goreng,qms_product_material_19,TRUE,FALSE,,qms_product_category_rawmat_3
+Garlic Paste,qms_product_material_20,TRUE,FALSE,,qms_product_category_rawmat_3
+Low Bac Fancy Onion Powder 555X.000,qms_product_material_21,TRUE,FALSE,,qms_product_category_rawmat_5
+100260 Onion Powder Premium 100K,qms_product_material_22,TRUE,FALSE,,qms_product_category_rawmat_5
+100053 Onion Powder Special 100K,qms_product_material_23,TRUE,FALSE,,qms_product_category_rawmat_5
+Shallot Granule,qms_product_material_24,TRUE,FALSE,,qms_product_category_rawmat_5
+Bawang Merah Goreng,qms_product_material_25,TRUE,FALSE,,qms_product_category_rawmat_5
+Fried Shallot Granule Sr-B01,qms_product_material_26,TRUE,FALSE,,qms_product_category_rawmat_5
+White Pepper Seed,qms_product_material_27,TRUE,FALSE,,qms_product_category_rawmat_6
+White Pepper Seeds Treated,qms_product_material_28,TRUE,FALSE,,qms_product_category_rawmat_6
+Chicken Fat,qms_product_material_29,TRUE,FALSE,,qms_product_category_rawmat_7
+Chicken Fat Cl-2901,qms_product_material_30,TRUE,FALSE,,qms_product_category_rawmat_7
+Chicken Fat 813 Cal,qms_product_material_31,TRUE,FALSE,,qms_product_category_rawmat_7
+Chicken Fat Be-11,qms_product_material_32,TRUE,FALSE,,qms_product_category_rawmat_7
+Cemp,qms_product_material_33,TRUE,FALSE,,qms_product_category_rawmat_8
+Frozen Chicken,qms_product_material_34,TRUE,FALSE,,qms_product_category_rawmat_9
+Meaty Flavour Seasoning Mn,qms_product_material_35,TRUE,FALSE,,qms_product_category_rawmat_10
+Meaty Flavour Seasoning Tz,qms_product_material_36,TRUE,FALSE,,qms_product_category_rawmat_11
+Kcl (Kalium Klorida),qms_product_material_37,TRUE,FALSE,,qms_product_category_rawmat_12
+Lactic Acid Powder (Purac Powder 60),qms_product_material_38,TRUE,FALSE,,qms_product_category_rawmat_13
+Dl-Methionine,qms_product_material_39,TRUE,FALSE,,qms_product_category_rawmat_14
+Vitamin E (Dl-Alpha Tocopheryl Acetate),qms_product_material_40,TRUE,FALSE,,qms_product_category_rawmat_15
+Star-Dri 100 Maltodextrin,qms_product_material_41,TRUE,FALSE,,qms_product_category_rawmat_16
+Maltodextrine 11 De,qms_product_material_42,TRUE,FALSE,,qms_product_category_rawmat_16
+Ajimate M-A200-J,qms_product_material_43,TRUE,FALSE,,qms_product_category_rawmat_17
+Ajimate M-A200,qms_product_material_44,TRUE,FALSE,,qms_product_category_rawmat_17
+M-Rbf-J,qms_product_material_45,TRUE,FALSE,,qms_product_category_rawmat_18
+Tepung Tapioka Gunung Agung (Merah),qms_product_material_46,TRUE,FALSE,,qms_product_category_rawmat_19
+Tepung Tapioka Gunung Agung (Hijau),qms_product_material_47,TRUE,FALSE,,qms_product_category_rawmat_19
+"Tapioca Starch ""Three Triangles""",qms_product_material_48,TRUE,FALSE,,qms_product_category_rawmat_19
+Tapioca Starch,qms_product_material_49,TRUE,FALSE,,qms_product_category_rawmat_19
+Tepung Tapioka Cap Kodok,qms_product_material_50,TRUE,FALSE,,qms_product_category_rawmat_19
+Tepung Terigu Kompas,qms_product_material_51,TRUE,FALSE,,qms_product_category_rawmat_20
+Tepung Terigu Gatot Kaca,qms_product_material_52,TRUE,FALSE,,qms_product_category_rawmat_20
+Tepung Terigu Beruang Biru,qms_product_material_53,TRUE,FALSE,,qms_product_category_rawmat_20
+Tepung Terigu Naga Hijau,qms_product_material_54,TRUE,FALSE,,qms_product_category_rawmat_20
+Tepung Terigu Falcon Nila,qms_product_material_55,TRUE,FALSE,,qms_product_category_rawmat_20
+Soy Sauce Powder R1607004,qms_product_material_56,TRUE,FALSE,,qms_product_category_rawmat_21
+"Oleoresin Capsicum, African, Ns 01-100-03-03",qms_product_material_57,TRUE,FALSE,,qms_product_category_rawmat_22
+035091714 Paprika Oleoresin 2000 Asta,qms_product_material_58,TRUE,FALSE,,qms_product_category_rawmat_22
+Bubuk Karie,qms_product_material_59,TRUE,FALSE,,qms_product_category_rawmat_23
+Bubuk Cabe,qms_product_material_60,TRUE,FALSE,,qms_product_category_rawmat_24
+Red Chilli Powder,qms_product_material_61,TRUE,FALSE,,qms_product_category_rawmat_24
+Chilli Powder 15K-25K Shu 600000002875,qms_product_material_62,TRUE,FALSE,,qms_product_category_rawmat_24
+Turmeric Powder,qms_product_material_63,TRUE,FALSE,,qms_product_category_rawmat_25
+Ginger Paste,qms_product_material_64,TRUE,FALSE,,qms_product_category_rawmat_26
+Clove Powder,qms_product_material_65,TRUE,FALSE,,qms_product_category_rawmat_27
+Beatreme C-9004,qms_product_material_66,TRUE,FALSE,,qms_product_category_rawmat_28
+Ajimate M-Super-P,qms_product_material_67,TRUE,FALSE,,qms_product_category_rawmat_29
+Rbd Soybean Oil,qms_product_material_68,TRUE,FALSE,,qms_product_category_rawmat_30
+Aji-Aroma M-Rck100,qms_product_material_69,TRUE,FALSE,,qms_product_category_rawmat_31
+Ajimate M-Super Kmi,qms_product_material_70,TRUE,FALSE,,qms_product_category_rawmat_32
+Oyster Juice Roty,qms_product_material_71,TRUE,FALSE,,qms_product_category_rawmat_33
+Hokinan,qms_product_material_72,TRUE,FALSE,,qms_product_category_rawmat_34
+Intermediate Water,qms_product_material_73,TRUE,FALSE,,qms_product_category_rawmat_35
+M-Pe (Pepper Enhancer),qms_product_material_74,TRUE,FALSE,,qms_product_category_support_mat_1
+Garlic Flavor 592767 Cbt,qms_product_material_75,TRUE,FALSE,,qms_product_category_support_mat_2
+Ultraseal 151 Garlic Flavour P-091781,qms_product_material_76,TRUE,FALSE,,qms_product_category_support_mat_3
+Black Pepper Flv Pwd S-4546,qms_product_material_77,TRUE,FALSE,,qms_product_category_support_mat_4
+Black Pepper Flv P-013805,qms_product_material_78,TRUE,FALSE,,qms_product_category_support_mat_4
+Chillies Flavor Powder D-4276,qms_product_material_79,TRUE,FALSE,,qms_product_category_support_mat_5
+Kaffir Lime Flavour 427-00134-04,qms_product_material_80,TRUE,FALSE,,qms_product_category_support_mat_6
+Kaffir Lime Flavour 427-00134-05,qms_product_material_81,TRUE,FALSE,,qms_product_category_support_mat_6
+D Boiled Chicken Flavor 918627,qms_product_material_82,TRUE,FALSE,,qms_product_category_support_mat_7
+Chicken Flavor 590857 Cb,qms_product_material_83,TRUE,FALSE,,qms_product_category_support_mat_7
+Beef Flavour Ssf 401-K,qms_product_material_84,TRUE,FALSE,,qms_product_category_support_mat_8
+Soy Sauce Flavor R1514827,qms_product_material_85,TRUE,FALSE,,qms_product_category_support_mat_9
+Enhancer (M-St),qms_product_material_86,TRUE,FALSE,,qms_product_category_support_mat_10
+"Msg (Ne)
+",qms_product_material_87,TRUE,FALSE,,qms_product_category_support_mat_11
+Msg (Nex),qms_product_material_88,TRUE,FALSE,,qms_product_category_support_mat_11
+Ajitide I + G,qms_product_material_89,TRUE,FALSE,,qms_product_category_support_mat_12
+Bc420 Powdered Caramel Color,qms_product_material_90,TRUE,FALSE,,qms_product_category_support_mat_13
+858 Powdered Caramel Color,qms_product_material_91,TRUE,FALSE,,qms_product_category_support_mat_13
+Powdered Caramel Color Cap-001,qms_product_material_92,TRUE,FALSE,,qms_product_category_support_mat_13
+Powdered Caramel Color Cdp-004,qms_product_material_93,TRUE,FALSE,,qms_product_category_support_mat_13
+503251 Carmine 52% P-Wd,qms_product_material_94,TRUE,FALSE,,qms_product_category_support_mat_13
+Caramel Color Src3340,qms_product_material_95,TRUE,FALSE,,qms_product_category_support_mat_13
+Sodium Bicarbonate,qms_product_material_96,TRUE,FALSE,,qms_product_category_support_mat_14
+Sodium Bicarbonate (Food Additive) Bicar Food,qms_product_material_97,TRUE,FALSE,,qms_product_category_support_mat_14
+Citric Acid Anhydrous,qms_product_material_98,TRUE,FALSE,,qms_product_category_support_mat_15
+Lactic Acid (Purac Fcc 88),qms_product_material_99,TRUE,FALSE,,qms_product_category_support_mat_16
+Potassium Sorbate Granules,qms_product_material_100,TRUE,FALSE,,qms_product_category_support_mat_17
+Potassium Sorbate,qms_product_material_101,TRUE,FALSE,,qms_product_category_support_mat_17
+Xanthan Gum Food Grade Ziboxan F200,qms_product_material_102,TRUE,FALSE,,qms_product_category_support_mat_18
+Adamyl 2050 Fg,qms_product_material_103,TRUE,FALSE,,qms_product_category_support_mat_19
+Resistamyl 347,qms_product_material_104,TRUE,FALSE,,qms_product_category_support_mat_19
+Sucralose,qms_product_material_105,TRUE,FALSE,,qms_product_category_support_mat_20
+Acetic Acid,qms_product_material_106,TRUE,FALSE,,qms_product_category_support_mat_21
+Distilled Monoglycerides (Myverol 18-04 K),qms_product_material_107,TRUE,FALSE,,qms_product_category_support_mat_22

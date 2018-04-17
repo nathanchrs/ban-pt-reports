@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="capa_list_view" model="ir.ui.view">
+		<field name="name">capa_list</field>
+		<field name="model">qms.capa</field>
+		<field name="arch" type="xml">
+			<tree string="CAPA List">
+				<field name="name" />
+                <field name="source" />
+                <field name="problem_date" />
+				<field name="action_date" />
+				<field name="action_by" />
+				<field name="verified_by" />
+				<field name="state" />
+			</tree>
+		</field>
+	</record>
+	<record id="capa_form_view" model="ir.ui.view" >
+		<field name="name">capa_form</field>
+		<field name="model">qms.capa</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>
+					<field name="state" widget="statusbar" clickable="True" />
+				</header>
+				<sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Problem overview"/></h1>
+                    </div>
+                    <group colspan="4" col="4">
+                        <separator colspan="4" string="Problem"/>
+                        <field name="problem_by"/>
+                        <field name="problem_date"/>
+                        <field name="problem" colspan="4" nolabel="1"/>
+                    </group>
+                    <group>
+                        <field name="cause" />
+                    </group>
+                    <group colspan="4" col="4">
+                        <separator colspan="4" string="Actions"/>
+                        <field name="action_by"/>
+                        <field name="action_date"/>
+                        <field name="action" colspan="4" nolabel="1"/>
+                    </group>
+                    <group colspan="4" col="4">
+                        <separator colspan="4" string="Verification"/>
+                        <field name="verified"/>
+                        <field name="verified_by"/>
+                        <field name="verification" colspan="4" nolabel="1"/>
+                    </group>
+
+				</sheet>
+			</form>
+		</field>
+	</record>
+</odoo>

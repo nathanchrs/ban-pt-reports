@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_record_3a_5122_tree">
+            <field name="name">3A-5.1.2.2 Struktur Kurikulum Berdasarkan Urutan Mata Kuliah</field>
+            <field name="model">banpt_report_generator.record_3a_5122</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" decoration-info="write_date > report_refresh_date">
+                    <field name="write_date" invisible="1" />
+                    <field name="report_refresh_date" invisible="1" />
+                    <field name="smt" />
+                    <field name="kode_mk" />
+                    <field name="nama_mk" />
+                    <field name="bobot_sks" />
+                    <field name="sks_mk_dalam_kurikulum_inti" />
+                    <field name="sks_mk_dalam_kurikulum_institusional" />
+                    <field name="bobot_tugas" />
+                    <field name="kelengkapan_deskripsi" />
+                    <field name="kelengkapan_silabus" />
+                    <field name="kelengkapan_sap" />
+                    <field name="unit_penyelenggara" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_record_3a_5122_form">
+            <field name="name">3A-5.1.2.2 Struktur Kurikulum Berdasarkan Urutan Mata Kuliah</field>
+            <field name="model">banpt_report_generator.record_3a_5122</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="3A-5.1.2.2 Struktur Kurikulum Berdasarkan Urutan Mata Kuliah">
+                    <group>
+                        <field name="smt" />
+                        <field name="kode_mk" />
+                        <field name="nama_mk" />
+                        <field name="bobot_sks" />
+                        <field name="sks_mk_dalam_kurikulum_inti" />
+                        <field name="sks_mk_dalam_kurikulum_institusional" />
+                        <field name="bobot_tugas" />
+                        <field name="kelengkapan_deskripsi" />
+                        <field name="kelengkapan_silabus" />
+                        <field name="kelengkapan_sap" />
+                        <field name="unit_penyelenggara" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+         <record model="ir.actions.act_window" id="view_record_3a_5122_action">
+            <field name="name">3A-5.1.2.2 Struktur Kurikulum Berdasarkan Urutan Mata Kuliah</field>
+            <field name="res_model">banpt_report_generator.record_3a_5122</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="view_record_3a_5122_tree_action">
+            <field name="sequence" eval="0" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_record_3a_5122_tree" />
+            <field name="act_window_id" ref="view_record_3a_5122_action" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="view_record_3a_5122_form_action">
+            <field name="sequence" eval="1" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_record_3a_5122_form" />
+            <field name="act_window_id" ref="view_record_3a_5122_action" />
+        </record>
+    </data>
+</odoo>

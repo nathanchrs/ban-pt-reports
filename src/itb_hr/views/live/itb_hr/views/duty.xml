@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+		<record id="duty_search_view" model="ir.ui.view">
+			<field name="name">duty_search</field>
+			<field name="model">itb.hr_duty</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" filter_domain="['|',('name','ilike',self),('reference','ilike',self)]"/>
+					<field name="employee_ids" string='Employee' filter_domain="[('employee_ids.employee_id.name','ilike',self)]"/>
+					<field name="employee_ids" string='research group' filter_domain="[('employee_ids.research_group','ilike',self)]"/>
+					<filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+					<filter name="validate" string="Official" domain="[('state','=','valid')]"/>
+                    <separator/>
+					<filter name="expired" string="Expired" domain="[('finish','&lt;=',current_date)]"/>
+					<group expand="0" string="Group By">
+						<filter name="year" string="Year" context="{'group_by': 'start:year'}"/>
+						<filter name="month" string="Month" context="{'group_by': 'start:month'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		<record id="duty_graph_view" model="ir.ui.view">
+			<field name="name">duty_graph</field>
+			<field name="model">itb.hr_duty</field>
+			<field name="arch" type="xml">
+				<graph type="bar" stacked="True">
+					<field name="start" interval="month" />
+					<field name="state" />
+				</graph>
+			</field>
+		</record>
+		<record id="duty_pivot_view" model="ir.ui.view">
+			<field name="name">duty_pivot</field>
+			<field name="model">itb.hr_duty</field>
+			<field name="arch" type="xml">
+				<pivot>
+					<field name="start" type="col" interval="month" />
+					<field name="state" type="row" />
+				</pivot>
+			</field>
+		</record>		
+		<record model="ir.ui.view" id="duty_list_view">
+			<field name="name">duty_list</field>
+			<field name="model">itb.hr_duty</field>
+			<field name="arch" type="xml">
+				<tree string="duty List">
+					<field name="name" />
+					<field name="reference" />
+					<field name="start" />
+					<field name="finish" />
+					<field name="partner_id" />
+					<field name="state" />
+					<field name="is_foreign" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="duty_form_view">
+			<field name="name">duty_form</field>
+			<field name="model">itb.hr_duty</field>
+			<field name="arch" type="xml">
+				<form>
+					<header>
+						<field name="state" widget="statusbar"/>
+						<button name="action_state_valid" type="object" string="Validate" groups="base.gr_ibos_hr_manager,base.gr_ibos_hr_officer" attrs="{'invisible':[('state','=','valid')]}" class="oe_highlight"/>
+						<button name="action_state_draft" type="object" string="Reset to draft" groups="base.gr_ibos_hr_manager,base.gr_ibos_hr_officer" attrs="{'invisible':[('state','=','draft')]}" class="oe_highlight"/>
+						<!--button class="oe_highlight" name="get_allname" type="object" string="generate data" /-->
+					</header>
+					<sheet>
+						<h1><field name="name" /></h1>
+						<group>
+							<group>	
+								<field name="reference" />
+								<field name="start" />
+                                <field name="finish" />
+								<field name="location" />
+							</group>
+							<group>
+								<field name="partner_id" />
+								<field name="reference_partner" />
+								<field name="note" />
+								<field name="is_foreign" />
+							</group>
+						</group>
+						<group>
+							<field name="employee_ids" context="{'duty_id':active_id}">
+								<tree string="Employees" editable="bottom">
+									<field name="employee_id" />
+								</tree>
+							</field>
+                        </group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+</odoo>

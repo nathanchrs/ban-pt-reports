@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="dosen_index">
+            <title>Faculty</title>
+            <t t-foreach="hrs" t-as="hr">
+                <strong><t t-esc="hr.id" /></strong>
+                <b><t t-esc="hr.name" /></b>
+            </t>
+        </template>
+    </data>
+</odoo>

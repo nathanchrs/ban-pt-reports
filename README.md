@@ -2,6 +2,12 @@
 
 An Odoo 10 add-on module which generates BAN-PT accreditation reports for STEI ITB from existing data on Odoo.
 
+## Catatan untuk Penilaian IF3250 PPL
+
+- Repositori di [Gitlab IF](http://gitlab.informatika.org/IF3250-I-1/banpt_report_generator) merupakan hasil pemindahan repositori secara manual (*add remote*) dari repositori di [Github](https://github.com/nathanchrs/ban-pt-reports).
+- *Pull request* di Github tidak dapat di-*import*, karena fitur *import from Github* pada Gitlab IF *error* jika digunakan. Agar mudah dicari, semua *pull request* tetap dilakukan di Github.
+- Direktori `src/itb_academic` dan `src/itb_hr` mengandung kode yang diberikan oleh `product owner`, sehingga seharusnya tidak diperhitungkan dalam pengukuran jumlah baris kode. Kedua direktori tersebut di-*commit* sementara untuk mempermudah *automated testing* dan konfigurasi CI.
+
 ## Running using Docker in development
 
 Prerequisites: [Docker Engine](https://docs.docker.com/engine/installation/) and [Docker Compose](https://docs.docker.com/compose/install/) must be installed; Internet access for pulling dependencies and Docker images (note: proxy might cause problems).
@@ -10,9 +16,8 @@ Note: Docker commands might need root privileges/sudo. If this happens, you prob
 
 1. Clone this repository.
 2. Navigate to the project directory.
-3. Download the [STEI iBOS modules](https://drive.google.com/file/d/1hDzI-os3yfAAKPkcoV-XaeT6E-z75IlW/view?usp=sharing), extract and place the `itb_academic` and `itb_hr` directories in the `src` directory.
-4. Run `docker-compose up` to start the application and its supporting services (PostgreSQL). Docker will download images if necessary. Wait until all tests are done.
-5. Access Odoo on port 8069. Login with `admin` as the username and password.
+3. Run `docker-compose up` to start the application and its supporting services (PostgreSQL). Docker will download images if necessary. Wait until all tests are done.
+4. Access Odoo on port 8069. Login with `admin` as the username and password.
 
 - To stop the containers, run `docker-compose stop`.
 - To start the application again, simply run `docker-compose up` or `docker-compose up -d` to run in the background (if you don't need to recreate containers, you can also use `docker-compose start`).
@@ -68,6 +73,8 @@ To run tests, run `docker-compose -f docker-compose.test.yml up --abort-on-conta
 
 For convenience, to see only relevant test output, use `docker-compose -f docker-compose.test.yml up --abort-on-container-exit | grep banpt_report_generator`.
 
+For automated testing, to return with a non-zero exit code on test failure, use `docker-compose -f docker-compose.test.yml up --abort-on-container-exit | grep FAIL; test $? -eq 1`.
+
 ### Code generator
 
 Automatically create views, imports, manifest, and model access files from model files.
@@ -78,11 +85,37 @@ Check changes first by running a Git diff before committing.
 
 A pgAdmin 4 container is provided on port 5050. Use `odoo` as the username and password.
 After login, add new server. Use `postgres` as the hostname, `odoo` as the user and password.
-Note: the pgAdmin instance can't be used for backup or restore since the PostgreSQL binaries are installed in a separate container.
+Note: to use the pgAdmin instance for backup or restore, add `/usr/bin` as the PostgreSQL binary path in the `Preferences` menu in pgAdmin. Exported files are in the `/var/lib/pgadmin/storage/odoo` directory in the `pgadmin` container by default. Use `docker cp <PGADMIN_CONTAINER_NAME>:/var/lib/pgadmin/storage/odoo/<FILE_NAME> <DESTINATION_FILE_NAME>` to copy exported files from the container to the host.
 
 ### Restore/Import sample DB to the PostgreSQL container
 
 1. Ensure the PostgreSQL container is running (`docker-compose up`).
-2. Get the name of the PostgreSQL Docker container using `docker ps` (should be like `banptreports_postgres_1`).
-3. Create the database if it does not exist yet: `docker exec -i <POSTGRESQL_CONTAINER_NAME> createdb -U odoo <DESTINATION_DB>`.
-4. Run `docker exec -i <POSTGRESQL_CONTAINER_NAME> psql -U odoo <DESTINATION_DB> < <FILE_TO_IMPORT_FROM_HOST>`.
+2. In pgAdmin, expand server -> odoo -> Databases -> banpt -> Schemas -> public -> Tables (If server empty, create new server).
+2. Add column in certain table (type: varchar).
+
+| Tables                | Column            |
+|-----------------------|:-----------------:|
+| hr_employee           | nik               |
+| itb_hr_assignment     | standard_id       |
+| itb_hr_award          | standard_id       |
+| itb_hr_duty_employee  | standard_id       |
+| itb_hr_duty_employee  | research_group_id |
+| itb_hr_project        | standard_id       |
+| itb_hr_publication    | standard_id       |
+| itb_hr_training       | standard_id       |
+
+3. Download the file in https://drive.google.com/drive/u/1/folders/1SViDQyP-gfCJYOsdDJ7Pc9jWtREzFCYq (ibos2.sql)
+4. Get the name of the PostgreSQL Docker container using `docker ps` (should be like `banptreports_postgres_1`).
+5. Create the database if it does not exist yet: `docker exec -i <POSTGRESQL_CONTAINER_NAME> createdb -U odoo <DESTINATION_DB>`.
+6. Run `docker exec -i <POSTGRESQL_CONTAINER_NAME> psql -U odoo -v ON_ERROR_STOP=1 <DESTINATION_DB> < <FILE_TO_IMPORT_FROM_HOST>`.
+7. If failed, do the step from the beginning (`docker-compose down -v && docker-compose up`).
+
+## Source/sample data notes
+
+### Dosen
+- Set correct dosen prodi IDs on `prodi` field of `hr.employee` model
+- Add `gelar` field in `itb.hr_education` model
+
+### Identitas
+- Add missing fields to `itb_academic_program`
+- Add table recording akreditasi BAN-PT results for each prodi
