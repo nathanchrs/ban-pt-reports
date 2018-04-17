@@ -12,3 +12,13 @@ def parse_datetime(datetime_str):
 
 def n_mins_before_now(n):
     return datetime.now() - timedelta(minutes=n)
+
+def calculate_ts_year(year, report_year):
+    if year - report_year > 0:
+        return 'TS+' + str(year - report_year)
+    if year - report_year < 0:
+        return 'TS-' + str(report_year - year)
+    return 'TS'
+
+def get_year(date_str):
+    return parse_date(date_str).year
