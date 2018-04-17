@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import logging
 from odoo import models, fields, api
-from .. import utils
-
-_logger = logging.getLogger(__name__)
+from .. import utils, constants
 
 class Record_3A_311(models.Model):
     _name = 'banpt_report_generator.record_3a_311'
@@ -33,8 +30,6 @@ class Record_3A_311(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    TRANSFER_STUDENT_NIM_START = 600
-
     for report in reports:
         # Clear report table for this report
         report.record_3a_311.unlink()
@@ -64,27 +59,26 @@ def refresh(reports):
 
             for student in students:
                 nim_two_digit_year = student.student_id[3:5]
-                nim_last_digits = student.student_id[-3:]
 
                 # Calculate mahasiswa baru info
                 if nim_two_digit_year == two_digit_year:
-                    if int(nim_last_digits) >= TRANSFER_STUDENT_NIM_START:
+                    if utils.nim_type(student.student_id) == constants.TRANSFER_STUDENT:
                         mahasiswa_baru_transfer = mahasiswa_baru_transfer + 1
-                    else:
+                    elif utils.nim_type(student.student_id) == constants.REGULAR_STUDENT:
                         mahasiswa_baru_reguler = mahasiswa_baru_reguler + 1
 
                 # Calculate total mahasiswa info
                 if int(nim_two_digit_year) >= int(two_digit_year) and ((not student.graduate_date) or (utils.get_year(student.graduate_date) <= int(record_year))):
-                    if int(nim_last_digits) >= TRANSFER_STUDENT_NIM_START:
+                    if utils.nim_type(student.student_id) == constants.TRANSFER_STUDENT:
                         total_mahasiswa_transfer = total_mahasiswa_transfer + 1
-                    else:
+                    elif utils.nim_type(student.student_id) == constants.REGULAR_STUDENT:
                         total_mahasiswa_reguler = total_mahasiswa_reguler + 1
 
                 # Calculate lulusan info
                 if student.graduate_date and utils.get_year(student.graduate_date) == int(record_year):
-                    if int(nim_last_digits) >= TRANSFER_STUDENT_NIM_START:
+                    if utils.nim_type(student.student_id) == constants.TRANSFER_STUDENT:
                         lulusan_transfer = lulusan_transfer + 1
-                    else:
+                    elif utils.nim_type(student.student_id) == constants.REGULAR_STUDENT:
                         lulusan_reguler = lulusan_reguler + 1
                         if student.ipk:
                             ipk = float(student.ipk)

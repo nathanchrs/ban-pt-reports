@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from datetime import date, datetime, timedelta
+from . import constants
 
 def parse_date(date_str):
     "Parses a date string of the format YYYY-MM-DD"
@@ -22,3 +23,11 @@ def calculate_ts_year(year, report_year):
 
 def get_year(date_str):
     return parse_date(date_str).year
+
+def nim_type(nim_str):
+    nim_last_digits = nim_str[-3:]
+    if int(nim_last_digits) >= constants.TRANSFER_STUDENT_NIM_START and int(nim_last_digits) <= constants.TRANSFER_STUDENT_NIM_END:
+        return constants.TRANSFER_STUDENT
+    if int(nim_last_digits) >= constants.NONREGULAR_STUDENT_NIM_START and int(nim_last_digits) <= constants.NONREGULAR_STUDENT_NIM_END:
+        return constants.NONREGULAR_STUDENT
+    return constants.REGULAR_STUDENT
