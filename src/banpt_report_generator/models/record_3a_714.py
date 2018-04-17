@@ -14,4 +14,8 @@ class Record_3A_714(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    pass
+    for report in reports:
+        # Clear Record_3A_714 table
+        report.record_3a_714.unlink()
+
+        # Add HAKI table
