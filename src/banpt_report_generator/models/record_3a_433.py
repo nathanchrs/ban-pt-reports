@@ -27,3 +27,31 @@ def refresh(reports):
         report.record_3a_433.unlink()
 
         # Add aktivitas dosen tetap
+        semester_even = reports.env['itb.academic_semester'].search([['year', '=', report.year], ['type', '=', 'even']])
+        semester_odd = reports.env['itb.academic_semester'].search([['year', '=', report.year - 1], ['type', '=', 'odd']])
+        instructors = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]]) # TODO; add WHERE statement with sesuai prodi
+        for instructor in instructors:
+            course_evens = reports.env['itb.academic_course'].search([['semester_id', '=', semester_even.id], ['instructor_ids', '=', instructor.id]])
+            course_odds = reports.env['itb.academic_course'].search([['semester_id', '=', semester_odd.id], ['instructor_ids', '=', instructor.id]])
+            sks_ps_sendiri_even = 0
+            sks_ps_sendiri_odd = 0
+            for course_even in course_evens:
+                catalog_even = reports.env['itb.academic_catalog'].search([['id', '=', course_even.catalog_id]])
+                sks_ps_sendiri_even += catalog_even.credit
+            for course_odd in course_odds:
+                catalog_odd = reports.env['itb.academic_catalog'].search([['id', '=', course_odd.catalog_id]])
+                sks_ps_sendiri_odd += catalog_odd.credit
+
+            new_record_3a_433 = {
+                'nama_dosen': instructor.name_related,
+                'sks_ps_sendiri': sks_ps_sendiri_even,
+                'sks_ps_lain_pt_sendiri': sks_ps_sendiri_odd,
+                'sks_pt_lain': sks_ps_sendiri_even,
+                'sks_penelitian': sks_ps_sendiri_odd,
+                'sks_pengmas': 0,
+                'sks_mgmt_pt_sendiri': 0,
+                'sks_mgmt_pt_lain': 0,
+                'sks_total': 0,
+            }
+
+            report.write({'record_3a_433': [(0, 0, new_record_3a_433)]})
