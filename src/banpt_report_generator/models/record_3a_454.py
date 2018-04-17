@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from datetime import datetime, timedelta
 
 class Record_3A_454(models.Model):
     _name = 'banpt_report_generator.record_3a_454'
