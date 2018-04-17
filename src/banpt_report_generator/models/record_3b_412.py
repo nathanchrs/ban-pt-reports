@@ -2,7 +2,7 @@
 
 from odoo import models, fields, api
 
-class record_3b_412(models.Model):
+class Record_3B_412(models.Model):
 	_name = 'banpt_report_generator.record_3b_412'
 	_rec_name = 'hal'
 	_title = '3B-4.1.2 Penggantian dan Pengembangan Dosen Tetap'

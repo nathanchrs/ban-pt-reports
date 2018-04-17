@@ -31,9 +31,12 @@ from . import record_3a_6212
 from . import record_3a_622
 from . import record_3a_623
 from . import record_3a_631
-from . import record_3b_6111
-from . import record_3b_6112
-from . import record_3b_6113
+from . import record_3a_632
+from . import record_3a_633
+from . import record_3a_6411
+from . import record_3a_6412
+from . import record_3a_643
+from . import record_3a_652
 from . import record_3a_711
 from . import record_3a_712
 from . import record_3a_713
@@ -45,6 +48,9 @@ from . import record_3b_312
 from . import record_3b_321
 from . import record_3b_411
 from . import record_3b_412
+from . import record_3b_6111
+from . import record_3b_6112
+from . import record_3b_6113
 from . import record_3b_642
 from . import record_3b_711
 from . import record_3b_721
@@ -96,9 +102,6 @@ class Report(models.Model):
     record_3a_6412 = fields.One2many(comodel_name='banpt_report_generator.record_3a_6412', inverse_name='report')
     record_3a_643 = fields.One2many(comodel_name='banpt_report_generator.record_3a_643', inverse_name='report')
     record_3a_652 = fields.One2many(comodel_name='banpt_report_generator.record_3a_652', inverse_name='report')
-    record_3b_6111 = fields.One2many(comodel_name='banpt_report_generator.record_3b_6111', inverse_name='report')
-    record_3b_6112 = fields.One2many(comodel_name='banpt_report_generator.record_3b_6112', inverse_name='report')
-    record_3b_6113 = fields.One2many(comodel_name='banpt_report_generator.record_3b_6113', inverse_name='report')
     record_3a_711 = fields.One2many(comodel_name='banpt_report_generator.record_3a_711', inverse_name='report')
     record_3a_712 = fields.One2many(comodel_name='banpt_report_generator.record_3a_712', inverse_name='report')
     record_3a_713 = fields.One2many(comodel_name='banpt_report_generator.record_3a_713', inverse_name='report')
@@ -110,6 +113,9 @@ class Report(models.Model):
     record_3b_321 = fields.One2many(comodel_name='banpt_report_generator.record_3b_321', inverse_name='report')
     record_3b_411 = fields.One2many(comodel_name='banpt_report_generator.record_3b_411', inverse_name='report')
     record_3b_412 = fields.One2many(comodel_name='banpt_report_generator.record_3b_412', inverse_name='report')
+    record_3b_6111 = fields.One2many(comodel_name='banpt_report_generator.record_3b_6111', inverse_name='report')
+    record_3b_6112 = fields.One2many(comodel_name='banpt_report_generator.record_3b_6112', inverse_name='report')
+    record_3b_6113 = fields.One2many(comodel_name='banpt_report_generator.record_3b_6113', inverse_name='report')
     record_3b_642 = fields.One2many(comodel_name='banpt_report_generator.record_3b_642', inverse_name='report')
     record_3b_711 = fields.One2many(comodel_name='banpt_report_generator.record_3b_711', inverse_name='report')
     record_3b_721 = fields.One2many(comodel_name='banpt_report_generator.record_3b_721', inverse_name='report')
@@ -120,15 +126,15 @@ class Report(models.Model):
         values['state'] = 'pending_review'
         return super(Report, self).write(values)
 
-    @api.one
+    @api.multi
     def approve(self):
-
         "Set state to 'approved'; bypass edit object check."
         super(Report, self).write({'state': 'approved'})
 
-    @api.one
+    @api.multi
     def refresh(self):
         "Load or refresh report data from iBOS, then update the refresh_date."
+
         dosen.refresh(self)
         identitas.refresh(self)
         pengisi.refresh(self)
@@ -159,20 +165,26 @@ class Report(models.Model):
         record_3a_622.refresh(self)
         record_3a_623.refresh(self)
         record_3a_631.refresh(self)
-        record_3b_6111.refresh(self)
-        record_3b_6112.refresh(self)
-        record_3b_6113.refresh(self)
+        record_3a_632.refresh(self)
+        record_3a_633.refresh(self)
+        record_3a_6411.refresh(self)
+        record_3a_6412.refresh(self)
+        record_3a_643.refresh(self)
+        record_3a_652.refresh(self)
         record_3a_711.refresh(self)
         record_3a_712.refresh(self)
         record_3a_713.refresh(self)
         record_3a_714.refresh(self)
-        record_3a_721.refresh(self) 
+        record_3a_721.refresh(self)
         record_3a_731.refresh(self)
         record_3a_732.refresh(self)
         record_3b_312.refresh(self)
         record_3b_321.refresh(self)
         record_3b_411.refresh(self)
         record_3b_412.refresh(self)
+        record_3b_6111.refresh(self)
+        record_3b_6112.refresh(self)
+        record_3b_6113.refresh(self)
         record_3b_642.refresh(self)
         record_3b_711.refresh(self)
         record_3b_721.refresh(self)

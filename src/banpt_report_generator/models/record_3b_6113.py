@@ -29,6 +29,5 @@ def refresh(reports):
                 'jumlah_dana_ts_1': 0, # TODO
                 'jumlah_dana_ts': 0, # TODO
             }
-            
+
             report.write({'record_3b_6113': [(0, 0, new_3b_6113)]})
-        
