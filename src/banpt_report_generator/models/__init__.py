@@ -31,6 +31,7 @@ from . import record_3a_513
 from . import record_3a_541
 from . import record_3a_542
 from . import record_3a_551
+from . import record_3a_552
 from . import record_3a_6211
 from . import record_3a_6212
 from . import record_3a_622

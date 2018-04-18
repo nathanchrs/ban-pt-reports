@@ -50,6 +50,7 @@
         'views/record_3a_541_views.xml',
         'views/record_3a_542_views.xml',
         'views/record_3a_551_views.xml',
+        'views/record_3a_552_views.xml',
         'views/record_3a_6211_views.xml',
         'views/record_3a_6212_views.xml',
         'views/record_3a_622_views.xml',
