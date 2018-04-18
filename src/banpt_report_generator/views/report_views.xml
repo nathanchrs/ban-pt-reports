@@ -125,7 +125,7 @@
                                     <a href="#tab_record_3a_622" aria-controls="tab_record_3a_622" role="tab" data-toggle="tab">3A-6.2.2 Dana Untuk Kegiatan Penelitian</a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#tab_record_3a_623" aria-controls="tab_record_3a_623" role="tab" data-toggle="tab">3A-6.3.1 Dana Pelayanan/Pengabdian Kepada Masyarakat</a>
+                                    <a href="#tab_record_3a_623" aria-controls="tab_record_3a_623" role="tab" data-toggle="tab">3A-6.2.3 Dana Pelayanan/Pengabdian Kepada Masyarakat</a>
                                 </li>
                                 <li role="presentation">
                                     <a href="#tab_record_3a_631" aria-controls="tab_record_3a_631" role="tab" data-toggle="tab">3A-6.3.1 Data Ruang Kerja Dosen Tetap</a>
@@ -319,7 +319,7 @@
                                 <field name="record_3a_622" />
                             </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_623">
-                                <h3 class="banpt_notebook_page_title">3A-6.3.1 Dana Pelayanan/Pengabdian Kepada Masyarakat</h3>
+                                <h3 class="banpt_notebook_page_title">3A-6.2.3 Dana Pelayanan/Pengabdian Kepada Masyarakat</h3>
                                 <field name="record_3a_623" />
                             </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_631">
