@@ -2,9 +2,6 @@
 
 from odoo import models, fields, api
 from .. import utils, constants
-import logging
-
-_logger = logging.getLogger(__name__)
 
 class Record_3A_314(models.Model):
     _name = 'banpt_report_generator.record_3a_314'

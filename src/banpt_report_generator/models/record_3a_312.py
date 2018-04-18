@@ -39,7 +39,7 @@ def refresh(reports):
             mahasiswa_baru_nonreguler = 0
             mahasiswa_baru_transfer = 0
 
-            for student in students:                
+            for student in students:
                 # Calculate mahasiswa baru info
                 if utils.get_nim_year(student.student_id) == record_year:
                     if utils.nim_type(student.student_id) == constants.TRANSFER_STUDENT:
