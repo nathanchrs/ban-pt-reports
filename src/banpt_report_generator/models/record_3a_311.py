@@ -64,7 +64,7 @@ def refresh(reports):
                         mahasiswa_baru_reguler += 1
 
                 # Calculate total mahasiswa info
-                if utils.get_nim_year(student.student_id) >= record_year and ((not student.graduate_date) or (utils.get_year(student.graduate_date) > int(record_year))):
+                if utils.get_nim_year(student.student_id) <= record_year and ((not student.graduate_date) or (utils.get_year(student.graduate_date) >= int(record_year))):
                     if utils.nim_type(student.student_id) == constants.TRANSFER_STUDENT:
                         total_mahasiswa_transfer += 1
                     elif utils.nim_type(student.student_id) == constants.REGULAR_STUDENT:
