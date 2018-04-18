@@ -55,6 +55,8 @@ from . import record_3b_6113
 from . import record_3b_642
 from . import record_3b_711
 from . import record_3b_721
+from . import record_3b_731
+from . import record_3b_732
 
 class Report(models.Model):
     _name = 'banpt_report_generator.report'
@@ -121,6 +123,8 @@ class Report(models.Model):
     record_3b_642 = fields.One2many(comodel_name='banpt_report_generator.record_3b_642', inverse_name='report')
     record_3b_711 = fields.One2many(comodel_name='banpt_report_generator.record_3b_711', inverse_name='report')
     record_3b_721 = fields.One2many(comodel_name='banpt_report_generator.record_3b_721', inverse_name='report')
+    record_3b_731 = fields.One2many(comodel_name='banpt_report_generator.record_3b_731', inverse_name='report')
+    record_3b_732 = fields.One2many(comodel_name='banpt_report_generator.record_3b_732', inverse_name='report')
 
     @api.multi
     def write(self, values):
@@ -191,5 +195,7 @@ class Report(models.Model):
         record_3b_642.refresh(self)
         record_3b_711.refresh(self)
         record_3b_721.refresh(self)
+        record_3b_731.refresh(self)
+        record_3b_732.refresh(self)
 
         self.write({'refresh_date': fields.datetime.now()})
