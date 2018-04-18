@@ -113,6 +113,9 @@
                                     <a href="#tab_record_3a_541" aria-controls="tab_record_3a_541" role="tab" data-toggle="tab">3A-5.4.1 Dosen Pembimbing Akademik dan Jumlah Mahasiswa</a>
                                 </li>
                                 <li role="presentation">
+                                    <a href="#tab_record_3a_542" aria-controls="tab_record_3a_542" role="tab" data-toggle="tab">3A-5.4.2 Not Found</a>
+                                </li>
+                                <li role="presentation">
                                     <a href="#tab_record_3a_551" aria-controls="tab_record_3a_551" role="tab" data-toggle="tab">3A-5.5.1 Dosen Pembimbing Tugas Akhir dan Jumlah Mahasiswa</a>
                                 </li>
                                 <li role="presentation">
@@ -301,6 +304,10 @@
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_541">
                                 <h3 class="banpt_notebook_page_title">3A-5.4.1 Dosen Pembimbing Akademik dan Jumlah Mahasiswa</h3>
                                 <field name="record_3a_541" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_542">
+                                <h3 class="banpt_notebook_page_title">3A-5.4.2 Not Found</h3>
+                                <field name="record_3a_542" />
                             </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_551">
                                 <h3 class="banpt_notebook_page_title">3A-5.5.1 Dosen Pembimbing Tugas Akhir dan Jumlah Mahasiswa</h3>

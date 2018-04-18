@@ -25,6 +25,7 @@ from . import record_3a_5121
 from . import record_3a_5122
 from . import record_3a_513
 from . import record_3a_541
+from . import record_3a_542
 from . import record_3a_551
 from . import record_3a_6211
 from . import record_3a_6212
@@ -91,6 +92,7 @@ class Report(models.Model):
     record_3a_5122 = fields.One2many(comodel_name='banpt_report_generator.record_3a_5122', inverse_name='report')
     record_3a_513 = fields.One2many(comodel_name='banpt_report_generator.record_3a_513', inverse_name='report')
     record_3a_541 = fields.One2many(comodel_name='banpt_report_generator.record_3a_541', inverse_name='report')
+    record_3a_542 = fields.One2many(comodel_name='banpt_report_generator.record_3a_542', inverse_name='report')
     record_3a_551 = fields.One2many(comodel_name='banpt_report_generator.record_3a_551', inverse_name='report')
     record_3a_6211 = fields.One2many(comodel_name='banpt_report_generator.record_3a_6211', inverse_name='report')
     record_3a_6212 = fields.One2many(comodel_name='banpt_report_generator.record_3a_6212', inverse_name='report')
@@ -161,6 +163,7 @@ class Report(models.Model):
         record_3a_5122.refresh(self)
         record_3a_513.refresh(self)
         record_3a_541.refresh(self)
+        record_3a_542.refresh(self)
         record_3a_551.refresh(self)
         record_3a_6211.refresh(self)
         record_3a_6212.refresh(self)
