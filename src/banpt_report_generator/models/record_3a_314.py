@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from .. import utils, constants
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class Record_3A_314(models.Model):
     _name = 'banpt_report_generator.record_3a_314'
@@ -21,5 +25,42 @@ class Record_3A_314(models.Model):
     report = fields.Many2one(comodel_name='banpt_report_generator.report')
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
+
 def refresh(reports):
-    pass
+    for report in reports:
+        # Clear report table for this report
+        report.record_3a_314.unlink()
+
+        # Add records according to report table format
+        for record_year in range(report.year - 6, report.year + 1):
+            students = reports.env['res.partner'].search([
+                ['is_participant', '=', True],
+                ['student_id', '=like', report.prodi.prefix + '_____']
+            ])
+
+            jumlah_mahasiswa = [0, 0, 0, 0, 0, 0, 0]
+            lulusan_sampai_ts = 0
+
+            for student in students:
+                if utils.nim_type(student.student_id) == constants.REGULAR_STUDENT:
+                    if utils.get_nim_year(student.student_id) == record_year:
+                        if utils.nim_type(student.student_id) == constants.REGULAR_STUDENT:
+                            for column_year in range(record_year, report.year + 1):
+                                if (not student.graduate_date) or (utils.get_year(student.graduate_date) > int(column_year)):
+                                    jumlah_mahasiswa[report.year - column_year] += 1
+                        if student.graduate_date:
+                            lulusan_sampai_ts += 1
+
+            new_record = {
+                'tahun_masuk': utils.calculate_ts_year(record_year, report.year),
+                'ts6': jumlah_mahasiswa[6],
+                'ts5': jumlah_mahasiswa[5],
+                'ts4': jumlah_mahasiswa[4],
+                'ts3': jumlah_mahasiswa[3],
+                'ts2': jumlah_mahasiswa[2],
+                'ts1': jumlah_mahasiswa[1],
+                'ts0': jumlah_mahasiswa[0],
+                'lulusan_reguler_sampai_ts': lulusan_sampai_ts
+            }
+
+            report.write({'record_3a_314': [(0, 0, new_record)]})
