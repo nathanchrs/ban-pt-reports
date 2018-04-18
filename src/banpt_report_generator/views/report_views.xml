@@ -122,6 +122,9 @@
                                     <a href="#tab_record_3a_552" aria-controls="tab_record_3a_552" role="tab" data-toggle="tab">3A-5.5.2 Penyelesaian Tugas Akhir atau Skripsi</a>
                                 </li>
                                 <li role="presentation">
+                                    <a href="#tab_record_3a_56" aria-controls="tab_record_3a_56" role="tab" data-toggle="tab">3A-5.6 Not Found</a>
+                                </li>
+                                <li role="presentation">
                                     <a href="#tab_record_3a_6211" aria-controls="tab_record_3a_6211" role="tab" data-toggle="tab">3A-6.2.1.1 Jenis Dana Perolehan dan Alokasi Dana</a>
                                 </li>
                                 <li role="presentation">
@@ -319,6 +322,10 @@
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_552">
                                 <h3 class="banpt_notebook_page_title">3A-5.5.2 Penyelesaian Tugas Akhir atau Skripsi</h3>
                                 <field name="record_3a_552" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_56">
+                                <h3 class="banpt_notebook_page_title">3A-5.6 Not Found</h3>
+                                <field name="record_3a_56" />
                             </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_6211">
                                 <h3 class="banpt_notebook_page_title">3A-6.2.1.1 Jenis Dana Perolehan dan Alokasi Dana</h3>
