@@ -202,6 +202,12 @@
                                 <li role="presentation">
                                     <a href="#tab_record_3b_721" aria-controls="tab_record_3b_721" role="tab" data-toggle="tab">3B-7.2.1 Kegiatan Pelayanan/Pengabdian kepada Masyarakat</a>
                                 </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_731" aria-controls="tab_record_3b_731" role="tab" data-toggle="tab">3B-7.3.1 Not Found</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_732" aria-controls="tab_record_3b_732" role="tab" data-toggle="tab">3B-7.3.2 Not Found</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="tab-content">
@@ -421,6 +427,14 @@
                             <div role="tabpanel" class="tab-pane" id="tab_record_3b_721">
                                 <h3 class="banpt_notebook_page_title">3B-7.2.1 Kegiatan Pelayanan/Pengabdian kepada Masyarakat</h3>
                                 <field name="record_3b_721" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_731">
+                                <h3 class="banpt_notebook_page_title">3B-7.3.1 Not Found</h3>
+                                <field name="record_3b_731" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_732">
+                                <h3 class="banpt_notebook_page_title">3B-7.3.2 Not Found</h3>
+                                <field name="record_3b_732" />
                             </div>
                         </div>
                     </div>
