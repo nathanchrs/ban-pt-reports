@@ -29,8 +29,6 @@ def refresh(reports):
 
         # Add records according to report table format
         for record_year in range(report.year - 4, report.year + 1):
-            two_digit_year = str(record_year)[-2:]
-
             students = reports.env['res.partner'].search([
                 ['is_participant', '=', True],
                 ['student_id', '=like', report.prodi.prefix + '_____']
@@ -41,22 +39,20 @@ def refresh(reports):
             mahasiswa_baru_nonreguler = 0
             mahasiswa_baru_transfer = 0
 
-            for student in students:
-                nim_two_digit_year = student.student_id[3:5]
-
+            for student in students:                
                 # Calculate mahasiswa baru info
-                if nim_two_digit_year == two_digit_year:
+                if utils.get_nim_year(student.student_id) == record_year:
                     if utils.nim_type(student.student_id) == constants.TRANSFER_STUDENT:
-                        mahasiswa_baru_transfer = mahasiswa_baru_transfer + 1
+                        mahasiswa_baru_transfer += 1
                     elif utils.nim_type(student.student_id) == constants.NONREGULAR_STUDENT:
                         mahasiswa_baru_nonreguler = mahasiswa_baru_nonreguler + 1
 
                 # Calculate total mahasiswa info
-                if int(nim_two_digit_year) >= int(two_digit_year) and ((not student.graduate_date) or (utils.get_year(student.graduate_date) <= int(record_year))):
+                if utils.get_nim_year(student.student_id) >= record_year and ((not student.graduate_date) or (utils.get_year(student.graduate_date) > int(record_year))):
                     if utils.nim_type(student.student_id) == constants.TRANSFER_STUDENT:
-                        total_mahasiswa_transfer = total_mahasiswa_transfer + 1
+                        total_mahasiswa_transfer += 1
                     elif utils.nim_type(student.student_id) == constants.NONREGULAR_STUDENT:
-                        total_mahasiswa_nonreguler = total_mahasiswa_nonreguler + 1
+                        total_mahasiswa_nonreguler += 1
 
             # TODO: daya tampung
             # TODO: calon mahasiswa

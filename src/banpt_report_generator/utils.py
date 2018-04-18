@@ -24,6 +24,10 @@ def calculate_ts_year(year, report_year):
 def get_year(date_str):
     return parse_date(date_str).year
 
+def get_nim_year(nim_str):
+    nim = int(nim_str[3:5])
+    return nim + (2000 if nim < 70 else 1900)
+
 def nim_type(nim_str):
     nim_last_digits = nim_str[-3:]
     if int(nim_last_digits) >= constants.TRANSFER_STUDENT_NIM_START and int(nim_last_digits) <= constants.TRANSFER_STUDENT_NIM_END:
