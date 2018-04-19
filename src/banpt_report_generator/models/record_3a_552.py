@@ -32,4 +32,3 @@ def refresh(reports):
             'keterangan': 'semester',
         }
         report.write({'record_3a_552': [(0, 0, line_2_record_3a_552)]})
-

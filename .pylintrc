@@ -57,6 +57,7 @@ confidence=
 
 # Temporarily disable unused-argument (TODO: reenable later)
 disable=unused-argument,
+        too-many-statements,
         missing-docstring,
         duplicate-code,
         fixme,

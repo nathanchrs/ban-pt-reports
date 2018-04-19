@@ -27,7 +27,7 @@ def refresh(reports):
         report.record_3a_461.unlink()
 
         h, w = 5, 8
-        count_matrix = [[0 for x in range(w)] for y in range(h)]
+        count_matrix = [[0 for _ in range(w)] for _ in range(h)]
 
         instructors = reports.env['hr.employee'].search([])
         for instructor in instructors:
