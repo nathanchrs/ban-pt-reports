@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 class Record_3B_622(models.Model):
-    _name = 'banpt_report_generator.record_3a_622'
+    _name = 'banpt_report_generator.record_3b_622'
     _rec_name = 'not_found'
     _title = '3B-6.2.2 Not Found'
 
