@@ -21,7 +21,7 @@ def refresh(reports):
         report.record_3a_5121.unlink()
 
         wajib = 0
-        curriculums = reports.env['itb.academic_curriculum'].search([['program_id', '=', report.prodi.id], ['year', '<', report.year]], order='year desc', limit=1)
+        curriculums = reports.env['itb.academic_curriculum'].search([['program_id', '=', report.prodi.id], ['year', '<=', report.year]], order='year desc', limit=1)
         for curriculum_id in curriculums:
             curriculum_lines = reports.env['itb.academic_curriculum_line'].search([['curriculum_id', '=', curriculum_id.id], ['category', '=', 'wajib']], order='semester')
             for curriculum_line in curriculum_lines:
@@ -29,21 +29,18 @@ def refresh(reports):
                 wajib += catalog[0].credit
 
         pilihan = 0
-        curriculums = reports.env['itb.academic_curriculum'].search([['program_id', '=', report.prodi.id], ['year', '<', report.year]], order='year desc', limit=1)
         for curriculum_id in curriculums:
             curriculum_lines = reports.env['itb.academic_curriculum_line'].search([['curriculum_id', '=', curriculum_id.id], ['category', '=', 'opsional']], order='semester')
             for curriculum_line in curriculum_lines:
                 catalog = reports.env['itb.academic_catalog'].search([['id', '=', curriculum_line.catalog_id.id]])
                 pilihan += catalog[0].credit
 
-        curriculums = reports.env['itb.academic_curriculum'].search([['program_id', '=', report.prodi.id], ['year', '<', report.year]], order='year desc', limit=1)
         for curriculum_id in curriculums:
             curriculum_lines = reports.env['itb.academic_curriculum_line'].search([['curriculum_id', '=', curriculum_id.id], ['category', '=', 'opsional-external']], order='semester')
             for curriculum_line in curriculum_lines:
                 catalog = reports.env['itb.academic_catalog'].search([['id', '=', curriculum_line.catalog_id.id]])
                 pilihan += catalog[0].credit
 
-        curriculums = reports.env['itb.academic_curriculum'].search([['program_id', '=', report.prodi.id], ['year', '<', report.year]], order='year desc', limit=1)
         for curriculum_id in curriculums:
             curriculum_lines = reports.env['itb.academic_curriculum_line'].search([['curriculum_id', '=', curriculum_id.id], ['category', '=', 'opsional-luar']], order='semester')
             for curriculum_line in curriculum_lines:
