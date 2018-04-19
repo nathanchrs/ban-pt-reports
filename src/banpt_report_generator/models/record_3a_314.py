@@ -43,9 +43,9 @@ def refresh(reports):
                     if utils.get_nim_year(student.student_id) == record_year:
                         if utils.nim_type(student.student_id) == constants.REGULAR_STUDENT:
                             for column_year in range(record_year, report.year + 1):
-                                if (not student.graduate_date) or (utils.get_year(student.graduate_date) > int(column_year)):
+                                if (not student.graduate_date) or (utils.get_year(student.graduate_date) >= int(column_year)):
                                     jumlah_mahasiswa[report.year - column_year] += 1
-                        if student.graduate_date:
+                        if student.graduate_date and utils.get_year(student.graduate_date) <= report.year:
                             lulusan_sampai_ts += 1
 
             new_record = {
@@ -56,7 +56,7 @@ def refresh(reports):
                 'ts3': jumlah_mahasiswa[3],
                 'ts2': jumlah_mahasiswa[2],
                 'ts1': jumlah_mahasiswa[1],
-                'ts0': jumlah_mahasiswa[0],
+                'ts': jumlah_mahasiswa[0],
                 'lulusan_reguler_sampai_ts': lulusan_sampai_ts
             }
 
