@@ -21,3 +21,16 @@ def refresh(reports):
         report.record_3a_5121.unlink()
 
         # Add record_3a_5121 according to program_id
+        new_record_3a_5121 = {
+            'jenis_mata_kuliah': 'Wajib',
+            'sks': 0,
+            'keterangan': '',
+        }
+        report.write({'record_3a_5121': [(0, 0, new_record_3a_5121)]})
+
+        new_record_3a_5121 = {
+            'jenis_mata_kuliah': 'Pilihan',
+            'sks': 0,
+            'keterangan': '',
+        }
+        report.write({'record_3a_5121': [(0, 0, new_record_3a_5121)]})
