@@ -21,14 +21,14 @@ def refresh(reports):
 
         line_1_record_3a_552 = {
             'pertanyaan': 'Rata-rata lama penyelesaian tugas akhir/skripsi pada tiga tahun terakhir :',
-            'jawaban': '',
+            'jawaban': '6', #TODO
             'keterangan': 'bulan',
         }
         report.write({'record_3a_552': [(0, 0, line_1_record_3a_552)]})
 
         line_2_record_3a_552 = {
             'pertanyaan': 'Menurut kurikulum tugas akhir direncanakan ',
-            'jawaban': '',
+            'jawaban': '2', #TODO
             'keterangan': 'semester',
         }
         report.write({'record_3a_552': [(0, 0, line_2_record_3a_552)]})

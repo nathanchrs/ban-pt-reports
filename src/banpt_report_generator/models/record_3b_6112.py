@@ -17,4 +17,22 @@ class Record_3B_6112(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
+<<<<<<< HEAD
     pass
+=======
+    for report in reports:
+        # Clean record_3b_6112 table
+        report.record_3b_6112.unlink()
+
+        # Add record_3b_6112 according to program_id
+        programs = reports.env['itb.academic_program'].search([])
+        for program in programs:
+            new_3b_6112 = {
+                'jenis_penggunaan': program.name,
+                'jumlah_dana_ts_2': 0, # TODO
+                'jumlah_dana_ts_1': 0, # TODO
+                'jumlah_dana_ts': 0, # TODO
+            }
+
+            report.write({'record_3b_6112': [(0, 0, new_3b_6112)]})
+>>>>>>> master
