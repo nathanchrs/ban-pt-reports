@@ -17,8 +17,4 @@ class Record_3A_711(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    for report in reports:
-        # Clear Record_3A_711 table
-        report.record_3a_711.unlink()
-
-        # Add penelitian dosen tetap
+    pass

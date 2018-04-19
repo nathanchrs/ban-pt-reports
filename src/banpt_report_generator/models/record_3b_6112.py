@@ -17,6 +17,4 @@ class Record_3B_6112(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    for report in reports:
-        # Clean record_3b_6112 table
-        report.record_3b_6112.unlink()
+    pass

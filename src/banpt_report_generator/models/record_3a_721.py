@@ -17,8 +17,4 @@ class Record_3A_721(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    for report in reports:
-        # Clear Record_3A_721 table
-        report.record_3a_721.unlink()
-
-        # Add pengmas table
+    pass
