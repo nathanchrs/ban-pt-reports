@@ -23,7 +23,7 @@ def refresh(reports):
         instructors = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]])
         for instructor in instructors:
             new_record_3a_551 = {
-                'nama': instructor.name_related,
+                'nama_dosen': instructor.name_related,
                 'jumlah_mahasiswa_bimbingan': 0,
             }
 
