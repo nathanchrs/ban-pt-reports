@@ -23,48 +23,48 @@ def refresh(reports):
         #add record_3a_6411
         new_record_3a_6411 = {
             'jenis_pustaka': 'Buku Teks',
-            'jumlah_judul': 3762,
-            'jumlah_copy': 9140,
+            'jumlah_judul': 3762, #TODO
+            'jumlah_copy': 9140, #TODO
         }
 
         report.write({'record_3a_6411': [(0, 0, new_record_3a_6411)]})
 
         new_record_3a_6411 = {
             'jenis_pustaka': 'Jurnal Nasional Yang Terakreditasi',
-            'jumlah_judul': 6,
-            'jumlah_copy': 0,
+            'jumlah_judul': 6, #TODO
+            'jumlah_copy': 0, #TODO
         }
 
         report.write({'record_3a_6411': [(0, 0, new_record_3a_6411)]})
 
         new_record_3a_6411 = {
             'jenis_pustaka': 'Jurnal Internasional',
-            'jumlah_judul': 18,
-            'jumlah_copy': 0,
+            'jumlah_judul': 18, #TODO
+            'jumlah_copy': 0, #TODO
         }
 
         report.write({'record_3a_6411': [(0, 0, new_record_3a_6411)]})
 
         new_record_3a_6411 = {
             'jenis_pustaka': 'Prosiding',
-            'jumlah_judul': 48,
-            'jumlah_copy': 0,
+            'jumlah_judul': 48, #TODO
+            'jumlah_copy': 0, #TODO
         }
 
         report.write({'record_3a_6411': [(0, 0, new_record_3a_6411)]})
 
         new_record_3a_6411 = {
             'jenis_pustaka': 'Skripsi/Tesis',
-            'jumlah_judul': 6,
-            'jumlah_copy': 0,
+            'jumlah_judul': 6, #TODO
+            'jumlah_copy': 0, #TODO
         }
 
         report.write({'record_3a_6411': [(0, 0, new_record_3a_6411)]})
 
         new_record_3a_6411 = {
             'jenis_pustaka': 'Disertasi',
-            'jumlah_judul': 21,
-            'jumlah_copy': 30,
+            'jumlah_judul': 21, #TODO
+            'jumlah_copy': 30, #TODO
         }
 
         report.write({'record_3a_6411': [(0, 0, new_record_3a_6411)]})
