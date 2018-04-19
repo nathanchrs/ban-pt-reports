@@ -56,7 +56,13 @@
                                     <a href="#tab_record_3a_312" aria-controls="tab_record_3a_312" role="tab" data-toggle="tab">3A-3.1.2 Data Mahasiswa Non-Reguler</a>
                                 </li>
                                 <li role="presentation">
+                                    <a href="#tab_record_3a_313" aria-controls="tab_record_3a_313" role="tab" data-toggle="tab">3A-3.1.3 Not Found</a>
+                                </li>
+                                <li role="presentation">
                                     <a href="#tab_record_3a_314" aria-controls="tab_record_3a_314" role="tab" data-toggle="tab">3A-3.1.4 Jumlah Mahasiswa Reguler 7 Tahun Terakhir</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_32" aria-controls="tab_record_3a_32" role="tab" data-toggle="tab">3A-3.2 Not Found</a>
                                 </li>
                                 <li role="presentation">
                                     <a href="#tab_record_3a_331" aria-controls="tab_record_3a_331" role="tab" data-toggle="tab">3A-3.3.1 Evaluasi Kinerja Lulusan</a>
@@ -92,7 +98,7 @@
                                     <a href="#tab_record_3a_453" aria-controls="tab_record_3a_453" role="tab" data-toggle="tab">3A-4.5.3 Kegiatan Dosen Tetap</a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#tab_record_3a_454" aria-controls="tab_record_3a_454" role="tab" data-toggle="tab">3A-4.5.4 Pencapai Prestasi/Reputasi Dosen</a>
+                                    <a href="#tab_record_3a_454" aria-controls="tab_record_3a_454" role="tab" data-toggle="tab">3A-4.5.4 Pencapaian Prestasi/Reputasi Dosen</a>
                                 </li>
                                 <li role="presentation">
                                     <a href="#tab_record_3a_455" aria-controls="tab_record_3a_455" role="tab" data-toggle="tab">3A-4.5.5 Keikutsertaan Dosen Tetap Dalam Organisasi Keilmuan/Profesi</a>
@@ -110,10 +116,25 @@
                                     <a href="#tab_record_3a_513" aria-controls="tab_record_3a_513" role="tab" data-toggle="tab">3A-5.1.3 Mata Kuliah Pilihan</a>
                                 </li>
                                 <li role="presentation">
+                                    <a href="#tab_record_3a_514" aria-controls="tab_record_3a_514" role="tab" data-toggle="tab">3A-5.1.4 Not Found</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_52" aria-controls="tab_record_3a_52" role="tab" data-toggle="tab">3A-5.2 Not Found</a>
+                                </li>
+                                <li role="presentation">
                                     <a href="#tab_record_3a_541" aria-controls="tab_record_3a_541" role="tab" data-toggle="tab">3A-5.4.1 Dosen Pembimbing Akademik dan Jumlah Mahasiswa</a>
                                 </li>
                                 <li role="presentation">
+                                    <a href="#tab_record_3a_542" aria-controls="tab_record_3a_542" role="tab" data-toggle="tab">3A-5.4.2 Not Found</a>
+                                </li>
+                                <li role="presentation">
                                     <a href="#tab_record_3a_551" aria-controls="tab_record_3a_551" role="tab" data-toggle="tab">3A-5.5.1 Dosen Pembimbing Tugas Akhir dan Jumlah Mahasiswa</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_552" aria-controls="tab_record_3a_552" role="tab" data-toggle="tab">3A-5.5.2 Penyelesaian Tugas Akhir atau Skripsi</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_56" aria-controls="tab_record_3a_56" role="tab" data-toggle="tab">3A-5.6 Not Found</a>
                                 </li>
                                 <li role="presentation">
                                     <a href="#tab_record_3a_6211" aria-controls="tab_record_3a_6211" role="tab" data-toggle="tab">3A-6.2.1.1 Jenis Dana Perolehan dan Alokasi Dana</a>
@@ -129,6 +150,90 @@
                                 </li>
                                 <li role="presentation">
                                     <a href="#tab_record_3a_631" aria-controls="tab_record_3a_631" role="tab" data-toggle="tab">3A-6.3.1 Data Ruang Kerja Dosen Tetap</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_632" aria-controls="tab_record_3a_632" role="tab" data-toggle="tab">3A-6.3.2 Not Found</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_633" aria-controls="tab_record_3a_633" role="tab" data-toggle="tab">3A-6.3.3 Not Found</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_6411" aria-controls="tab_record_3a_6411" role="tab" data-toggle="tab">3A-6.4.1.1 Pustaka</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_6412" aria-controls="tab_record_3a_6412" role="tab" data-toggle="tab">3A-6.4.1.2 Pustaka</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_643" aria-controls="tab_record_3a_643" role="tab" data-toggle="tab">3A-6.4.3 Not Found</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_652" aria-controls="tab_record_3a_652" role="tab" data-toggle="tab">3A-6.5.2 Aksesibilitas Tiap Jenis Data</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_711" aria-controls="tab_record_3a_711" role="tab" data-toggle="tab">3A-7.1.1 Penelitian Dosen Tetap</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_712" aria-controls="tab_record_3a_712" role="tab" data-toggle="tab">3A-7.1.2 Penelitian Dosen Tetap</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_713" aria-controls="tab_record_3a_713" role="tab" data-toggle="tab">3A-7.1.3 Judul Artikel Ilmiah/Karya Ilmiah/Karya Seni/Buku</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_714" aria-controls="tab_record_3a_714" role="tab" data-toggle="tab">3A-7.1.4 Hak Atas Kekayaan Intelektual</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_721" aria-controls="tab_record_3a_721" role="tab" data-toggle="tab">3A-7.2.1 Kegiatan Pelayanan/Pengabdian Pada Masyarakat (PKM)</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_731" aria-controls="tab_record_3a_731" role="tab" data-toggle="tab">3A-7.3.1 Not Found</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3a_732" aria-controls="tab_record_3a_732" role="tab" data-toggle="tab">3A-7.3.2 Not Found</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_312" aria-controls="tab_record_3b_312" role="tab" data-toggle="tab">3B-3.1.2 Mahasiswa dan Lulusan</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_321" aria-controls="tab_record_3b_321" role="tab" data-toggle="tab">3B-3.2.1 Mahasiswa dan Lulusan</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_411" aria-controls="tab_record_3b_411" role="tab" data-toggle="tab">3B-4.1.1 Dosen Tetap yang Bidang Keahliannya Sesuai Bidang PS</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_412" aria-controls="tab_record_3b_412" role="tab" data-toggle="tab">3B-4.1.2 Penggantian dan Pengembangan Dosen Tetap</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_42" aria-controls="tab_record_3b_42" role="tab" data-toggle="tab">3B-4.2 Tenaga Kependidikan</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_6111" aria-controls="tab_record_3b_6111" role="tab" data-toggle="tab">3B-6.1.1.1 Jumlah Dana Yang Diterima Fakultas</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_6112" aria-controls="tab_record_3b_6112" role="tab" data-toggle="tab">3B-6.1.1.2 Penggunaan Dana</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_6113" aria-controls="tab_record_3b_6113" role="tab" data-toggle="tab">3B-6.1.1.3 Penggunaan Dana Untuk Tridarma</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_622" aria-controls="tab_record_3b_622" role="tab" data-toggle="tab">3B-6.2.2 Not Found</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_632" aria-controls="tab_record_3b_632" role="tab" data-toggle="tab">3B-6.3.2 Not Found</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_642" aria-controls="tab_record_3b_642" role="tab" data-toggle="tab">3B-6.4.2 Aksesibilitas Data</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_711" aria-controls="tab_record_3b_711" role="tab" data-toggle="tab">3B-7.1.1 Penelitian</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_721" aria-controls="tab_record_3b_721" role="tab" data-toggle="tab">3B-7.2.1 Kegiatan Pelayanan/Pengabdian kepada Masyarakat</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_731" aria-controls="tab_record_3b_731" role="tab" data-toggle="tab">3B-7.3.1 Not Found</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab_record_3b_732" aria-controls="tab_record_3b_732" role="tab" data-toggle="tab">3B-7.3.2 Not Found</a>
                                 </li>
                             </ul>
                         </div>
@@ -154,9 +259,17 @@
                                 <h3 class="banpt_notebook_page_title">3A-3.1.2 Data Mahasiswa Non-Reguler</h3>
                                 <field name="record_3a_312" />
                             </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_313">
+                                <h3 class="banpt_notebook_page_title">3A-3.1.3 Not Found</h3>
+                                <field name="record_3a_313" />
+                            </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_314">
                                 <h3 class="banpt_notebook_page_title">3A-3.1.4 Jumlah Mahasiswa Reguler 7 Tahun Terakhir</h3>
                                 <field name="record_3a_314" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_32">
+                                <h3 class="banpt_notebook_page_title">3A-3.2 Not Found</h3>
+                                <field name="record_3a_32" />
                             </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_331">
                                 <h3 class="banpt_notebook_page_title">3A-3.3.1 Evaluasi Kinerja Lulusan</h3>
@@ -203,7 +316,7 @@
                                 <field name="record_3a_453" />
                             </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_454">
-                                <h3 class="banpt_notebook_page_title">3A-4.5.4 Pencapai Prestasi/Reputasi Dosen</h3>
+                                <h3 class="banpt_notebook_page_title">3A-4.5.4 Pencapaian Prestasi/Reputasi Dosen</h3>
                                 <field name="record_3a_454" />
                             </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_455">
@@ -226,13 +339,33 @@
                                 <h3 class="banpt_notebook_page_title">3A-5.1.3 Mata Kuliah Pilihan</h3>
                                 <field name="record_3a_513" />
                             </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_514">
+                                <h3 class="banpt_notebook_page_title">3A-5.1.4 Not Found</h3>
+                                <field name="record_3a_514" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_52">
+                                <h3 class="banpt_notebook_page_title">3A-5.2 Not Found</h3>
+                                <field name="record_3a_52" />
+                            </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_541">
                                 <h3 class="banpt_notebook_page_title">3A-5.4.1 Dosen Pembimbing Akademik dan Jumlah Mahasiswa</h3>
                                 <field name="record_3a_541" />
                             </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_542">
+                                <h3 class="banpt_notebook_page_title">3A-5.4.2 Not Found</h3>
+                                <field name="record_3a_542" />
+                            </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_551">
                                 <h3 class="banpt_notebook_page_title">3A-5.5.1 Dosen Pembimbing Tugas Akhir dan Jumlah Mahasiswa</h3>
                                 <field name="record_3a_551" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_552">
+                                <h3 class="banpt_notebook_page_title">3A-5.5.2 Penyelesaian Tugas Akhir atau Skripsi</h3>
+                                <field name="record_3a_552" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_56">
+                                <h3 class="banpt_notebook_page_title">3A-5.6 Not Found</h3>
+                                <field name="record_3a_56" />
                             </div>
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_6211">
                                 <h3 class="banpt_notebook_page_title">3A-6.2.1.1 Jenis Dana Perolehan dan Alokasi Dana</h3>
@@ -253,6 +386,118 @@
                             <div role="tabpanel" class="tab-pane" id="tab_record_3a_631">
                                 <h3 class="banpt_notebook_page_title">3A-6.3.1 Data Ruang Kerja Dosen Tetap</h3>
                                 <field name="record_3a_631" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_632">
+                                <h3 class="banpt_notebook_page_title">3A-6.3.2 Not Found</h3>
+                                <field name="record_3a_632" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_633">
+                                <h3 class="banpt_notebook_page_title">3A-6.3.3 Not Found</h3>
+                                <field name="record_3a_633" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_6411">
+                                <h3 class="banpt_notebook_page_title">3A-6.4.1.1 Pustaka</h3>
+                                <field name="record_3a_6411" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_6412">
+                                <h3 class="banpt_notebook_page_title">3A-6.4.1.2 Pustaka</h3>
+                                <field name="record_3a_6412" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_643">
+                                <h3 class="banpt_notebook_page_title">3A-6.4.3 Not Found</h3>
+                                <field name="record_3a_643" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_652">
+                                <h3 class="banpt_notebook_page_title">3A-6.5.2 Aksesibilitas Tiap Jenis Data</h3>
+                                <field name="record_3a_652" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_711">
+                                <h3 class="banpt_notebook_page_title">3A-7.1.1 Penelitian Dosen Tetap</h3>
+                                <field name="record_3a_711" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_712">
+                                <h3 class="banpt_notebook_page_title">3A-7.1.2 Penelitian Dosen Tetap</h3>
+                                <field name="record_3a_712" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_713">
+                                <h3 class="banpt_notebook_page_title">3A-7.1.3 Judul Artikel Ilmiah/Karya Ilmiah/Karya Seni/Buku</h3>
+                                <field name="record_3a_713" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_714">
+                                <h3 class="banpt_notebook_page_title">3A-7.1.4 Hak Atas Kekayaan Intelektual</h3>
+                                <field name="record_3a_714" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_721">
+                                <h3 class="banpt_notebook_page_title">3A-7.2.1 Kegiatan Pelayanan/Pengabdian Pada Masyarakat (PKM)</h3>
+                                <field name="record_3a_721" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_731">
+                                <h3 class="banpt_notebook_page_title">3A-7.3.1 Not Found</h3>
+                                <field name="record_3a_731" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3a_732">
+                                <h3 class="banpt_notebook_page_title">3A-7.3.2 Not Found</h3>
+                                <field name="record_3a_732" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_312">
+                                <h3 class="banpt_notebook_page_title">3B-3.1.2 Mahasiswa dan Lulusan</h3>
+                                <field name="record_3b_312" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_321">
+                                <h3 class="banpt_notebook_page_title">3B-3.2.1 Mahasiswa dan Lulusan</h3>
+                                <field name="record_3b_321" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_411">
+                                <h3 class="banpt_notebook_page_title">3B-4.1.1 Dosen Tetap yang Bidang Keahliannya Sesuai Bidang PS</h3>
+                                <field name="record_3b_411" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_412">
+                                <h3 class="banpt_notebook_page_title">3B-4.1.2 Penggantian dan Pengembangan Dosen Tetap</h3>
+                                <field name="record_3b_412" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_42">
+                                <h3 class="banpt_notebook_page_title">3B-4.2 Tenaga Kependidikan</h3>
+                                <field name="record_3b_42" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_6111">
+                                <h3 class="banpt_notebook_page_title">3B-6.1.1.1 Jumlah Dana Yang Diterima Fakultas</h3>
+                                <field name="record_3b_6111" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_6112">
+                                <h3 class="banpt_notebook_page_title">3B-6.1.1.2 Penggunaan Dana</h3>
+                                <field name="record_3b_6112" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_6113">
+                                <h3 class="banpt_notebook_page_title">3B-6.1.1.3 Penggunaan Dana Untuk Tridarma</h3>
+                                <field name="record_3b_6113" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_622">
+                                <h3 class="banpt_notebook_page_title">3B-6.2.2 Not Found</h3>
+                                <field name="record_3b_622" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_632">
+                                <h3 class="banpt_notebook_page_title">3B-6.3.2 Not Found</h3>
+                                <field name="record_3b_632" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_642">
+                                <h3 class="banpt_notebook_page_title">3B-6.4.2 Aksesibilitas Data</h3>
+                                <field name="record_3b_642" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_711">
+                                <h3 class="banpt_notebook_page_title">3B-7.1.1 Penelitian</h3>
+                                <field name="record_3b_711" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_721">
+                                <h3 class="banpt_notebook_page_title">3B-7.2.1 Kegiatan Pelayanan/Pengabdian kepada Masyarakat</h3>
+                                <field name="record_3b_721" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_731">
+                                <h3 class="banpt_notebook_page_title">3B-7.3.1 Not Found</h3>
+                                <field name="record_3b_731" />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab_record_3b_732">
+                                <h3 class="banpt_notebook_page_title">3B-7.3.2 Not Found</h3>
+                                <field name="record_3b_732" />
                             </div>
                         </div>
                     </div>

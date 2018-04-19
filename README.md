@@ -90,9 +90,25 @@ Note: to use the pgAdmin instance for backup or restore, add `/usr/bin` as the P
 ### Restore/Import sample DB to the PostgreSQL container
 
 1. Ensure the PostgreSQL container is running (`docker-compose up`).
-2. Get the name of the PostgreSQL Docker container using `docker ps` (should be like `banptreports_postgres_1`).
-3. Create the database if it does not exist yet: `docker exec -i <POSTGRESQL_CONTAINER_NAME> createdb -U odoo <DESTINATION_DB>`.
-4. Run `docker exec -i <POSTGRESQL_CONTAINER_NAME> psql -U odoo -v ON_ERROR_STOP=1 <DESTINATION_DB> < <FILE_TO_IMPORT_FROM_HOST>`.
+2. In pgAdmin, expand server -> odoo -> Databases -> banpt -> Schemas -> public -> Tables (If server empty, create new server).
+2. Add column in certain table (type: varchar).
+
+| Tables                | Column            |
+|-----------------------|:-----------------:|
+| hr_employee           | nik               |
+| itb_hr_assignment     | standard_id       |
+| itb_hr_award          | standard_id       |
+| itb_hr_duty_employee  | standard_id       |
+| itb_hr_duty_employee  | research_group_id |
+| itb_hr_project        | standard_id       |
+| itb_hr_publication    | standard_id       |
+| itb_hr_training       | standard_id       |
+
+3. Download the file in https://drive.google.com/drive/u/1/folders/1SViDQyP-gfCJYOsdDJ7Pc9jWtREzFCYq (ibos2.sql)
+4. Get the name of the PostgreSQL Docker container using `docker ps` (should be like `banptreports_postgres_1`).
+5. Create the database if it does not exist yet: `docker exec -i <POSTGRESQL_CONTAINER_NAME> createdb -U odoo <DESTINATION_DB>`.
+6. Run `docker exec -i <POSTGRESQL_CONTAINER_NAME> psql -U odoo -v ON_ERROR_STOP=1 <DESTINATION_DB> < <FILE_TO_IMPORT_FROM_HOST>`.
+7. If failed, do the step from the beginning (`docker-compose down -v && docker-compose up`).
 
 ## Source/sample data notes
 
@@ -103,3 +119,12 @@ Note: to use the pgAdmin instance for backup or restore, add `/usr/bin` as the P
 ### Identitas
 - Add missing fields to `itb_academic_program`
 - Add table recording akreditasi BAN-PT results for each prodi
+
+### Record 3a_5122
+- Add `sks_mk_dalam_kurikulum_inti` field in `itb.academic_catalog` model
+- Add `sks_mk_dalam_kurikulum_institusional` field in `itb.academic_catalog` model
+- Add `bobot_tugas` field in `itb.academic_catalog` model
+- Add `kelengkapan_sap` field in `itb.academic_catalog` model
+
+### Record 3a_513
+- Add `bobot_tugas` field in `itb.academic_catalog` model

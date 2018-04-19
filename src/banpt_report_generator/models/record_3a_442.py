@@ -19,4 +19,38 @@ class Record_3A_442(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    pass
+    for report in reports:
+        # Clear Record_3A_442 table
+        report.record_3a_442.unlink()
+
+        # Add aktivitas mengajar dosen tidak tetap
+        semester_even = reports.env['itb.academic_semester'].search([['year', '=', report.year], ['type', '=', 'even']])
+        semester_odd = reports.env['itb.academic_semester'].search([['year', '=', report.year - 1], ['type', '=', 'odd']])
+        instructors = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]]) # TODO: add WHERE statement with dosen tidak tetap
+        for instructor in instructors:
+            course_evens = reports.env['itb.academic_course'].search([['semester_id', '=', semester_even.id], ['program_id', '=', 11]]) # TODO: change to instructor_id
+            course_odds = reports.env['itb.academic_course'].search([['semester_id', '=', semester_odd.id], ['program_id', '=', 11]]) # TODO: change to instructor_id
+            for course_even in course_evens:
+                catalog_even = reports.env['itb.academic_catalog'].search([['id', '=', course_even.catalog_id.id]])
+                new_record_3a_442 = {
+                    'nama_dosen': instructor.name_related,
+                    'kode_matkul': catalog_even.code,
+                    'nama_matkul': catalog_even.name,
+                    'jumlah_sks_matkul': catalog_even.credit,
+                    'jumlah_pertemuan_terencana_matkul': 0, # TODO: find where to get lecture info
+                    'jumlah_pertemuan_terlaksana_matkul': 0, # TODO: find where to get lecture info
+                }
+
+                report.write({'record_3a_442': [(0, 0, new_record_3a_442)]})
+            for course_odd in course_odds:
+                catalog_odd = reports.env['itb.academic_catalog'].search([['id', '=', course_odd.catalog_id.id]])
+                new_record_3a_442 = {
+                    'nama_dosen': instructor.name_related,
+                    'kode_matkul': catalog_odd.code,
+                    'nama_matkul': catalog_odd.name,
+                    'jumlah_sks_matkul': catalog_odd.credit,
+                    'jumlah_pertemuan_terencana_matkul': 0, # TODO: find where to get lecture
+                    'jumlah_pertemuan_terlaksana_matkul': 0, # TODO: find where to get lecture
+                }
+
+                report.write({'record_3a_442': [(0, 0, new_record_3a_442)]})
