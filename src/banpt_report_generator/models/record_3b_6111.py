@@ -27,7 +27,7 @@ def refresh(reports):
         for program in programs:
             new_record_3b_6111 = {
                 'sumber_dana': 'dummy',
-                'jenis_penggunaan': program.name,
+                'jenis_dana': program.name,
                 'jumlah_dana_ts_2': 0, # TODO
                 'jumlah_dana_ts_1': 0, # TODO
                 'jumlah_dana_ts': 0, # TODO

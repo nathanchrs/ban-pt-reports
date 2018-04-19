@@ -16,4 +16,55 @@ class Record_3A_6411(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    pass
+    for report in reports:
+        # Clear record_3a_6411 table
+        report.record_3a_6411.unlink()
+
+        #add record_3a_6411
+        new_record_3a_6411 = {
+            'jenis_pustaka': 'Buku Teks',
+            'jumlah_judul': 3762,
+            'jumlah_copy': 9140,
+        }
+
+        report.write({'record_3a_6411': [(0, 0, new_record_3a_6411)]})
+
+        new_record_3a_6411 = {
+            'jenis_pustaka': 'Jurnal Nasional Yang Terakreditasi',
+            'jumlah_judul': 6,
+            'jumlah_copy': 0,
+        }
+
+        report.write({'record_3a_6411': [(0, 0, new_record_3a_6411)]})
+
+        new_record_3a_6411 = {
+            'jenis_pustaka': 'Jurnal Internasional',
+            'jumlah_judul': 18,
+            'jumlah_copy': 0,
+        }
+
+        report.write({'record_3a_6411': [(0, 0, new_record_3a_6411)]})
+
+        new_record_3a_6411 = {
+            'jenis_pustaka': 'Prosiding',
+            'jumlah_judul': 48,
+            'jumlah_copy': 0,
+        }
+
+        report.write({'record_3a_6411': [(0, 0, new_record_3a_6411)]})
+
+        new_record_3a_6411 = {
+            'jenis_pustaka': 'Skripsi/Tesis',
+            'jumlah_judul': 6,
+            'jumlah_copy': 0,
+        }
+
+        report.write({'record_3a_6411': [(0, 0, new_record_3a_6411)]})
+
+        new_record_3a_6411 = {
+            'jenis_pustaka': 'Disertasi',
+            'jumlah_judul': 21,
+            'jumlah_copy': 30,
+        }
+
+        report.write({'record_3a_6411': [(0, 0, new_record_3a_6411)]})
