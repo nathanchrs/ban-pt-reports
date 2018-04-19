@@ -16,4 +16,17 @@ class Record_3A_541(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    pass
+    for report in reports:
+        # Clear record_3a_541 table
+        report.record_3a_541.unlink()
+
+        # add record_3a_541 according to program_id
+        instructors = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]])
+        for instructor in instructors:
+            new_record_3a_541 = {
+                'nama': instructor.name_related,
+                'jumlah_mahasiswa_bimbingan': 0,
+                'pertemuan_per_semester': 0,
+            }
+
+            report.write({'record_3a_541': [(0, 0, new_record_3a_541)]})

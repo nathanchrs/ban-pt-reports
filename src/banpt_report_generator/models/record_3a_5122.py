@@ -24,4 +24,28 @@ class Record_3A_5122(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    pass
+    for report in reports:
+        #Clear record_3a_5122 table
+        report.record_3a_5122.unlink()
+
+        #add record_3a_5122 according to program_id
+        courses = reports.env['itb.academic_course'].search([['program_id', '=', report.prodi.id]])
+        for course in courses:
+            curriculums = reports.env['itb.academic_curriculum_line'].search([['catalog_id', '=', course.catalog_id.id], ['year', '=', report.year]], order='semester')
+            for curriculum in curriculums:
+                catalog = reports.env['itb.academic_catalog'].search([['id', '=', curriculum.catalog_id.id]])
+                program = reports.env['itb.academic_program'].search([['id', '=', course.program_id.id]])
+                new_record_3a_5122 = {
+                    'smt': '0',
+                    'kode_mk': catalog[0].code if catalog else '',
+                    'nama_mk': catalog[0].name if catalog else '',
+                    'bobot_sks': catalog[0].credit if catalog else 0,
+                    'sks_mk_dalam_kurikulum_inti': '', # TODO
+                    'sks_mk_dalam_kurikulum_institusional': '', # TODO
+                    'bobot_tugas': '', # TODO
+                    'kelengkapan_deskripsi': 'v' if catalog[0].note else '',
+                    'kelengkapan_silabus': 'v' if catalog[0].syllabus else '',
+                    'kelengkapan_sap': '', # TODO
+                    'unit_penyelenggara': program[0].name if program else '',
+                }
+                report.write({'record_3a_5122': [(0, 0, new_record_3a_5122)]})
