@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <record model="ir.ui.view" id="view_record_3a_731_tree">
-            <field name="name">Not Found</field>
+            <field name="name">3A-7.3.1 Not Found</field>
             <field name="model">banpt_report_generator.record_3a_731</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
@@ -23,11 +23,11 @@
         </record>
 
         <record model="ir.ui.view" id="view_record_3a_731_form">
-            <field name="name">Not Found</field>
+            <field name="name">3A-7.3.1 Not Found</field>
             <field name="model">banpt_report_generator.record_3a_731</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="Not Found">
+                <form string="3A-7.3.1 Not Found">
                     <group>
                         <field name="not_found" />
                         <field name="sks_ps_sendiri" />
@@ -44,7 +44,7 @@
         </record>
 
          <record model="ir.actions.act_window" id="view_record_3a_731_action">
-            <field name="name">Not Found</field>
+            <field name="name">3A-7.3.1 Not Found</field>
             <field name="res_model">banpt_report_generator.record_3a_731</field>
             <field name="view_mode">tree,form</field>
             <field name="view_type">form</field>
