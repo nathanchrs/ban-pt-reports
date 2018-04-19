@@ -10,7 +10,9 @@ from . import identitas
 from . import pengisi
 from . import record_3a_311
 from . import record_3a_312
+from . import record_3a_313
 from . import record_3a_314
+from . import record_3a_32
 from . import record_3a_331
 from . import record_3a_431
 from . import record_3a_432
@@ -28,6 +30,8 @@ from . import record_3a_461
 from . import record_3a_5121
 from . import record_3a_5122
 from . import record_3a_513
+from . import record_3a_514
+from . import record_3a_52
 from . import record_3a_541
 from . import record_3a_542
 from . import record_3a_551
@@ -59,6 +63,8 @@ from . import record_3b_42
 from . import record_3b_6111
 from . import record_3b_6112
 from . import record_3b_6113
+from . import record_3b_622
+from . import record_3b_632
 from . import record_3b_642
 from . import record_3b_711
 from . import record_3b_721
