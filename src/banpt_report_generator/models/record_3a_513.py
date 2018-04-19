@@ -23,10 +23,10 @@ def refresh(reports):
         #Clear record_3a_513 tabel
         report.record_3a_513.unlink()
 
-        add record_3a_513 according to program_id
+        # add record_3a_513 according to program_id
         courses = reports.env['itb.academic_course'].search([['program_id', '=', report.prodi.id]])
         for course in courses:
-            optional_courses = reports.env['itb.academic_curriculum_line'].search([['catalog_id', '=', course.catalog_id.id], ['category', '=', 'opsional'], ['year', '=', report.year]]])
+            optional_courses = reports.env['itb.academic_curriculum_line'].search([['catalog_id', '=', course.catalog_id.id], ['category', '=', 'opsional'], ['year', '=', report.year]])
             for optional in optional_courses:
                 catalog = reports.env['itb.academic_catalog'].search([['id', '=', optional.catalog_id.id]])
                 semester = reports.env['itb.academic_semester'].search([['id', '=', course.semester_id.id]])
@@ -41,7 +41,7 @@ def refresh(reports):
                 }
                 report.write({'record_3a_513': [(0, 0, new_record_3a_513)]})
 
-            optional_courses = reports.env['itb.academic_curriculum_line'].search([['catalog_id', '=', course.catalog_id.id], ['category', '=', 'opsional-luar'], ['year', '=', report.year]]])
+            optional_courses = reports.env['itb.academic_curriculum_line'].search([['catalog_id', '=', course.catalog_id.id], ['category', '=', 'opsional-luar'], ['year', '=', report.year]])
             for optional in optional_courses:
                 catalog = reports.env['itb.academic_catalog'].search([['id', '=', optional.catalog_id.id]])
                 semester = reports.env['itb.academic_semester'].search([['id', '=', course.semester_id.id]])
@@ -56,7 +56,7 @@ def refresh(reports):
                 }
                 report.write({'record_3a_513': [(0, 0, new_record_3a_513)]})
 
-            optional_courses = reports.env['itb.academic_curriculum_line'].search([['catalog_id', '=', course.catalog_id.id], ['category', '=', 'opsional-external'], ['year', '=', report.year]]])
+            optional_courses = reports.env['itb.academic_curriculum_line'].search([['catalog_id', '=', course.catalog_id.id], ['category', '=', 'opsional-external'], ['year', '=', report.year]])
             for optional in optional_courses:
                 catalog = reports.env['itb.academic_catalog'].search([['id', '=', optional.catalog_id.id]])
                 semester = reports.env['itb.academic_semester'].search([['id', '=', course.semester_id.id]])
