@@ -24,7 +24,7 @@ def refresh(reports):
         for instructor in instructors:
             new_record_3a_551 = {
                 'nama_dosen': instructor.name_related,
-                'jumlah_mahasiswa_bimbingan': 0,
+                'jumlah_mahasiswa_bimbingan': 0, #TODO
             }
 
             report.write({'record_3a_551': [(0, 0, new_record_3a_551)]})
