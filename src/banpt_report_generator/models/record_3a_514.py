@@ -8,7 +8,7 @@ class Record_3A_514(models.Model):
     _title = '3A-5.1.4 Not Found'
 
     not_found = fields.Char(string='Not Found', required=True)
-    
+
     # The report this record belongs to
     report = fields.Many2one(comodel_name='banpt_report_generator.report')
     report_refresh_date = fields.Datetime(related='report.refresh_date')
