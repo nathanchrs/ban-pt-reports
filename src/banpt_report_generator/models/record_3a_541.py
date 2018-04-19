@@ -21,3 +21,12 @@ def refresh(reports):
         report.record_3a_541.unlink()
 
         # add record_3a_541 according to program_id
+        instructors = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]])
+        for instructor in instructors:
+            new_record_3a_541 = {
+                'nama': instructor.name_related,
+                'jumlah_mahasiswa_bimbingan': 0,
+                'pertemuan_per_semester': 0,
+            }
+
+            report.write({'record_3a_541': [(0, 0, new_record_3a_541)]})
