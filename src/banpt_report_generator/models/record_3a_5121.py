@@ -20,17 +20,49 @@ def refresh(reports):
         # Clear record_3a_5121 table
         report.record_3a_5121.unlink()
 
+        wajib = 0
+
+        courses = reports.env['itb.academic_course'].search([['program_id', '=', report.prodi.id]])
+        for course in courses:
+            optional_courses = reports.env['itb.academic_curriculum_line'].search([['catalog_id', '=', course.catalog_id.id], ['category', '=', 'wajib'], ['year', '=', report.year]])
+            for optional in optional_courses:
+                catalog = reports.env['itb.academic_catalog'].search([['id', '=', optional.catalog_id.id]])
+                wajib += catalog[0].credit
+
+        pilihan = 0
+
+        courses = reports.env['itb.academic_course'].search([['program_id', '=', report.prodi.id]])
+        for course in courses:
+            optional_courses = reports.env['itb.academic_curriculum_line'].search([['catalog_id', '=', course.catalog_id.id], ['category', '=', 'opsional'], ['year', '=', report.year]])
+            for optional in optional_courses:
+                catalog = reports.env['itb.academic_catalog'].search([['id', '=', optional.catalog_id.id]])
+                pilihan += catalog[0].credit
+
+        courses = reports.env['itb.academic_course'].search([['program_id', '=', report.prodi.id]])
+        for course in courses:
+            optional_courses = reports.env['itb.academic_curriculum_line'].search([['catalog_id', '=', course.catalog_id.id], ['category', '=', 'opsional-external'], ['year', '=', report.year]])
+            for optional in optional_courses:
+                catalog = reports.env['itb.academic_catalog'].search([['id', '=', optional.catalog_id.id]])
+                pilihan += catalog[0].credit
+
+        courses = reports.env['itb.academic_course'].search([['program_id', '=', report.prodi.id]])
+        for course in courses:
+            optional_courses = reports.env['itb.academic_curriculum_line'].search([['catalog_id', '=', course.catalog_id.id], ['category', '=', 'opsional-luar'], ['year', '=', report.year]])
+            for optional in optional_courses:
+                catalog = reports.env['itb.academic_catalog'].search([['id', '=', optional.catalog_id.id]])
+                pilihan += catalog[0].credit
+
         # Add record_3a_5121 according to program_id
         new_record_3a_5121 = {
             'jenis_mata_kuliah': 'Wajib',
-            'sks': 0,
+            'sks': wajib,
             'keterangan': '',
         }
         report.write({'record_3a_5121': [(0, 0, new_record_3a_5121)]})
 
         new_record_3a_5121 = {
             'jenis_mata_kuliah': 'Pilihan',
-            'sks': 0,
+            'sks': pilihan,
             'keterangan': '',
         }
         report.write({'record_3a_5121': [(0, 0, new_record_3a_5121)]})
