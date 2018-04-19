@@ -6,7 +6,7 @@ def seed(context):
     prodi_if = context.env['itb.academic_program'].create(dict(
         name='Teknik Informatika', name_en='Informatics', prefix='135', degree='s1', active=True
     ))
-    prodi_el = context.env['itb.academic_program'].create(dict(
+    context.env['itb.academic_program'].create(dict(
         name='Teknik Elektro', name_en='Electrical Engineering', prefix='182', degree='s1', active=True
     ))
 
