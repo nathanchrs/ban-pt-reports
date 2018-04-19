@@ -32,12 +32,12 @@ def refresh(reports):
         instructors = reports.env['hr.employee'].search([])
         for instructor in instructors:
             #Create count matrix (4 Tendik * 8 Pendidikan Terakhir)
-            index_i = get_index_from_tendik(instructor.tendik)
-            index_j = get_index_from_last_edu(instructor.last_edu)
-            count_matrix[index_i][index_j] += 1
-            count_matrix[4][index_j] += 1
+            x = get_index_from_tendik(instructor.tendik)
+            y = get_index_from_last_edu(instructor.last_edu)
+            count_matrix[x][y] += 1
+            count_matrix[4][y] += 1
 
-        line_1_record_3b_42 = {
+        record_3b_42 = {
             'jenis_tenaga_kependidikan': 'Pustakawan',
             'jumlah_S3': count_matrix[0][0],
             'jumlah_S2': count_matrix[0][1],
@@ -49,9 +49,9 @@ def refresh(reports):
             'jumlah_SMA_SMK': count_matrix[0][7],
             'unit_kerja': 'UPT Perpustakaan ITB',
         }
-        report.write({'record_3b_42': [(0, 0, line_1_record_3b_42)]})
+        report.write({'record_3b_42': [(0, 0, record_3b_42)]})
 
-        line_2_record_3b_42 = {
+        record_3b_42 = {
             'jenis_tenaga_kependidikan': 'Laboran/ Teknisi/ Analis/ Operator/ Programmer',
             'jumlah_S3': count_matrix[1][0],
             'jumlah_S2': count_matrix[1][1],
@@ -63,9 +63,9 @@ def refresh(reports):
             'jumlah_SMA_SMK': count_matrix[1][7],
             'unit_kerja': 'STEI',
         }
-        report.write({'record_3b_42': [(0, 0, line_2_record_3b_42)]})
+        report.write({'record_3b_42': [(0, 0, record_3b_42)]})
 
-        line_3_record_3b_42 = {
+        record_3b_42 = {
             'jenis_tenaga_kependidikan': 'Administrasi',
             'jumlah_S3': count_matrix[2][0],
             'jumlah_S2': count_matrix[2][1],
@@ -77,9 +77,9 @@ def refresh(reports):
             'jumlah_SMA_SMK': count_matrix[2][7],
             'unit_kerja': 'STEI',
         }
-        report.write({'record_3b_42': [(0, 0, line_3_record_3b_42)]})
+        report.write({'record_3b_42': [(0, 0, record_3b_42)]})
 
-        line_4_record_3b_42 = {
+        record_3b_42 = {
             'jenis_tenaga_kependidikan': 'Lainnya',
             'jumlah_S3': count_matrix[3][0],
             'jumlah_S2': count_matrix[3][1],
@@ -91,9 +91,9 @@ def refresh(reports):
             'jumlah_SMA_SMK': count_matrix[3][7],
             'unit_kerja': 'STEI',
         }
-        report.write({'record_3b_42': [(0, 0, line_4_record_3b_42)]})
+        report.write({'record_3b_42': [(0, 0, record_3b_42)]})
 
-        line_5_record_3b_42 = {
+        record_3b_42 = {
             'jenis_tenaga_kependidikan': 'Total',
             'jumlah_S3': count_matrix[4][0],
             'jumlah_S2': count_matrix[4][1],
@@ -105,7 +105,7 @@ def refresh(reports):
             'jumlah_SMA_SMK': count_matrix[4][7],
             'unit_kerja': '',
         }
-        report.write({'record_3b_42': [(0, 0, line_5_record_3b_42)]})
+        report.write({'record_3b_42': [(0, 0, record_3b_42)]})
 
 def get_index_from_last_edu(x):
     return {

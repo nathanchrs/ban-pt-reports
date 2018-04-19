@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo.tests import common
-from . import testutils
+from .. import utils
 
 def seed_report_1(context):
     prodi_if = context.env['itb.academic_program'].create(dict(
@@ -38,6 +38,6 @@ class TestReport(common.TransactionCase):
         record = seed_report_1(self)
         record.refresh()
         self.assertGreater(
-            testutils.parse_datetime(record.refresh_date),
-            testutils.n_mins_before_now(1)
+            utils.parse_datetime(record.refresh_date),
+            utils.n_mins_before_now(1)
         )
