@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from odoo.tests import common
-from . import testutils
 
 def seed(context):
     prodi_if = context.env['itb.academic_program'].create(dict(

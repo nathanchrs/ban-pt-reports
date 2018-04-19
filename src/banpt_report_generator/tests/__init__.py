@@ -5,3 +5,6 @@
 
 from . import test_report
 from . import test_dosen
+from . import test_record_3a_311
+from . import test_record_3a_312
+from . import test_record_3a_314
