@@ -32,7 +32,7 @@ def refresh(reports):
         program = reports.env['itb.academic_program'].search([['id', '=', report.prodi.id]])
         curriculums = reports.env['itb.academic_curriculum'].search([['program_id', '=', report.prodi.id], ['year', '<', report.year]], order='year desc', limit=1)
         for curriculum_id in curriculums:
-            curriculum_lines = reports.env['itb.academic_curriculum_line'].search([['curriculum_id', '=', curriculum_id.id]])
+            curriculum_lines = reports.env['itb.academic_curriculum_line'].search([['curriculum_id', '=', curriculum_id.id]], order='semester')
             for curriculum_line in curriculum_lines:
                 catalog = reports.env['itb.academic_catalog'].search([['id', '=', curriculum_line.catalog_id.id]])
                 new_record_3a_5122 = {
