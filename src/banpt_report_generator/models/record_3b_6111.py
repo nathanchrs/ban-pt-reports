@@ -18,9 +18,6 @@ class Record_3B_6111(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-<<<<<<< HEAD
-    pass
-=======
     for report in reports:
         # Clean record_3b_6111 table
         report.record_3b_6111.unlink()
@@ -37,4 +34,3 @@ def refresh(reports):
             }
 
             report.write({'record_3b_6111': [(0, 0, new_record_3b_6111)]})
->>>>>>> master
