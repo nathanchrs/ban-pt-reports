@@ -34,7 +34,7 @@ def refresh(reports):
                 new_record_3a_513 = {
                     'smt': semester[0].name if semester else '',
                     'kode_mk': catalog[0].code if catalog else '',
-                    'nama_mk': course.name,
+                    'nama_mk': catalog[0].name if catalog else '',
                     'bobot_sks': catalog[0].credit if catalog else 0,
                     'bobot_tugas': '', # TODO add bobot tugas in itb.academic_catalog
                     'unit_penyelenggara': program[0].name if program else '',
@@ -49,7 +49,7 @@ def refresh(reports):
                 new_record_3a_513 = {
                     'smt': semester[0].name if semester else '',
                     'kode_mk': catalog[0].code if catalog else '',
-                    'nama_mk': course.name,
+                    'nama_mk': catalog[0].code if catalog else '',
                     'bobot_sks': catalog[0].credit if catalog else 0,
                     'bobot_tugas': '', # TODO add bobot tugas in itb.academic_catalog
                     'unit_penyelenggara': program[0].name if program else '',
@@ -64,7 +64,7 @@ def refresh(reports):
                 new_record_3a_513 = {
                     'smt': semester[0].name if semester else '',
                     'kode_mk': catalog[0].code if catalog else '',
-                    'nama_mk': course.name,
+                    'nama_mk': catalog[0].code if catalog else '',
                     'bobot_sks': catalog[0].credit if catalog else 0,
                     'bobot_tugas': '', # TODO add bobot tugas in itb.academic_catalog
                     'unit_penyelenggara': program[0].name if program else '',
