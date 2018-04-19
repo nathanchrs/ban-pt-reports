@@ -51,13 +51,13 @@ def refresh(reports):
         new_record_3a_5121 = {
             'jenis_mata_kuliah': 'Wajib',
             'sks': wajib,
-            'keterangan': '',
+            'keterangan': '', #TODO
         }
         report.write({'record_3a_5121': [(0, 0, new_record_3a_5121)]})
 
         new_record_3a_5121 = {
             'jenis_mata_kuliah': 'Pilihan',
             'sks': pilihan,
-            'keterangan': '',
+            'keterangan': '', #TODO
         }
         report.write({'record_3a_5121': [(0, 0, new_record_3a_5121)]})
