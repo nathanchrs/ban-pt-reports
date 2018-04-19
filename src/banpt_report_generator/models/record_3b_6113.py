@@ -21,7 +21,8 @@ def refresh(reports):
         # Clean record_3b_6113 table
         report.record_3b_6113.unlink()
 
-        programs = reports.env['itb.academic_program'].search([['id', '=', report.prodi.id]])
+        # Add record_3b_6113 according to program_id
+        programs = reports.env['itb.academic_program'].search([])
         for program in programs:
             new_3b_6113 = {
                 'nama_prodi': program.name,
