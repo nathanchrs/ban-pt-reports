@@ -26,13 +26,24 @@ def refresh(reports):
         report.record_3a_713.unlink()
 
         # Add judul artikel ilmiah or others table
-        instructors = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]]) # TODO; add WHERE statement with sesuai prodi
+        instructors = reports.env['hr.employee'].search([
+            ['is_faculty', '=', True],
+            ['prodi', '=', report.prodi.id]
+        ])
+
         for instructor in instructors:
-            publication_authors = reports.env['itb.hr_publication_author'].search([['employee_id', '=', instructor.id]])
+            publication_authors = reports.env['itb.hr_publication_author'].search([
+                ['employee_id', '=', instructor.id]
+            ])
+
             for publication_author in publication_authors:
-                publications = reports.env['itb.hr_publication'].search([['id', '=', publication_author.publication_id.id]])
+                publications = reports.env['itb.hr_publication'].search([
+                    ['id', '=', publication_author.publication_id.id]
+                ])
+
                 for publication in publications:
                     tahun = datetime.strptime(publication.day, "%Y-%m-%d")
+
                     if ((int(tahun.year) >= report.year - 3) and ((int(tahun.year) <= report.year))):
                         pub_type = publication.media_id.name
                         new_record_3a_713 = {

@@ -22,16 +22,26 @@ def refresh(reports):
         report.record_3a_622.unlink()
 
         # Add funding for research table according to lecturer
-        lecturers = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]])
+        lecturers = reports.env['hr.employee'].search([
+            ['is_faculty', '=', True],
+            ['prodi', '=', report.prodi.id]
+        ])
+
         for lecturer in lecturers:
-            projects_team = reports.env['itb.hr_project_team'].search([['employee_id', '=', lecturer.id]])
+            projects_team = reports.env['itb.hr_project_team'].search([
+                ['employee_id', '=', lecturer.id]
+            ])
+
             for project_team in projects_team:
-                project = reports.env['itb.hr_project'].search([['id', '=', project_team.project_id.id]])
+                project = reports.env['itb.hr_project'].search([
+                    ['id', '=', project_team.project_id.id]
+                ])
+
                 if ((project.tahun >= report.year - 3) and ((project.tahun <= report.year)) and ('penelitian' in project.tipe)):
                     new_record_3a_622 = {
                         'tahun': project.tahun,
                         'judul_penelitian': project.name,
-                        'sumber_jenis_dana': project.mitra,
+                        'sumber_jenis_dana': project.mitra, # TODO: ganti dengan SISPRAN NOTE + Reference
                         'jumlah_dana': project.nilai / 1000000,
                     }
 

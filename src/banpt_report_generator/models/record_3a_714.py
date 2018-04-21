@@ -14,4 +14,27 @@ class Record_3A_714(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    pass
+    for report in reports:
+        report.record_3a_714.unlink()
+
+        lecturers = reports.env['hr.employee'].search([
+            ['is_faculty', '=', True],
+            ['prodi', '=', report.prodi.id]
+        ])
+
+        for lecturer in lecturers:
+            projects_team = reports.env['itb.hr_project_team'].search([
+                ['employee_id', '=', lecturer.id]
+            ])
+
+            for project_team in projects_team:
+                project = reports.env['itb.hr_project'].search([
+                    ['id', '=', project_team.project_id.id]
+                ])
+
+                if ((project.tahun >= report.year - 3) and ((project.tahun <= report.year)) and ('other' in project.tipe) or ('paten' in project.tipe)):
+                    new_record_3a_714 = {
+                        'karya_haki': project.name,
+                    }
+
+                    report.write({'record_3a_714': [(0, 0, new_record_3a_714)]})
