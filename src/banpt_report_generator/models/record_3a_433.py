@@ -27,44 +27,73 @@ def refresh(reports):
         report.record_3a_433.unlink()
 
         # Add aktivitas dosen tetap
-        semester_even = reports.env['itb.academic_semester'].search([['year', '=', report.year], ['type', '=', 'even']])
-        semester_odd = reports.env['itb.academic_semester'].search([['year', '=', report.year - 1], ['type', '=', 'odd']])
-        dosen_employees = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]]) # TODO; add WHERE statement with sesuai prodi
+        semester_even = reports.env['itb.academic_semester'].search([
+            ['year', '=', report.year],
+            ['type', '=', 'even']
+        ])
+
+        semester_odd = reports.env['itb.academic_semester'].search([
+            ['year', '=', report.year - 1],
+            ['type', '=', 'odd']
+        ])
+
+        dosen_employees = reports.env['hr.employee'].search([
+            ['is_faculty', '=', True],
+            ['prodi', '=', report.prodi.id]
+        ]) # TODO; add WHERE statement with dosen_tetap sesuai prodi
+
         for dosen in dosen_employees:
-            instructors_even = reports.env['itb.academic_instructor'].search([['employee_id', '=', dosen.id], ['semester', '=', semester_even.name]])
-            instructors_odd = reports.env['itb.academic_instructor'].search([['employee_id', '=', dosen.id], ['semester', '=', semester_odd.name]])
+            instructors_even = reports.env['itb.academic_instructor'].search([
+                ['employee_id', '=', dosen.id],
+                ['semester', '=', semester_even.name]
+            ])
+
+            instructors_odd = reports.env['itb.academic_instructor'].search([
+                ['employee_id', '=', dosen.id],
+                ['semester', '=', semester_odd.name]
+            ])
+
+            projects_team = reports.env['itb.hr_project_team'].search([
+                ['employee_id', '=', dosen.id]
+            ])
+
             sks_ps_sendiri = 0
             sks_ps_lain_pt_sendiri = 0
-            sks_mgmt_pt_sendiri = 0
+            sks_penelitian = 0
+            sks_pengmas = 0
+            # sks_mgmt_pt_sendiri = 0
+
+            for project_team in projects_team:
+                project = reports.env['itb.hr_project'].search([
+                    ['id', '=', project_team.project_id.id]
+                ])
+                if ((project.tahun >= report.year - 1) and ((project.tahun <= report.year)) and ('penelitian' in project.tipe)):
+                    sks_penelitian += 1
+                elif ((project.tahun >= report.year - 1) and ((project.tahun <= report.year)) and ('pengabdian' in project.tipe)):
+                    sks_pengmas += 1
+
             for instructor_even in instructors_even:
                 if instructor_even.course_id.program_id.id == report.prodi.id:
                     sks_ps_sendiri += instructor_even.credit
-                    if 'Manajemen' in instructor_even.course_id.name:
-                        sks_mgmt_pt_sendiri += instructor_even.credit
                 else:
                     sks_ps_lain_pt_sendiri += instructor_even.credit
-                    if 'Manajemen' in instructor_even.course_id.name:
-                        sks_mgmt_pt_sendiri += instructor_even.credit
+
             for instructor_odd in instructors_odd:
                 if instructor_odd.course_id.program_id.id == report.prodi.id:
                     sks_ps_sendiri += instructor_odd.credit
-                    if 'Manajemen' in instructor_odd.course_id.name:
-                        sks_mgmt_pt_sendiri += instructor_odd.credit
                 else:
                     sks_ps_lain_pt_sendiri += instructor_odd.credit
-                    if 'Manajemen' in instructor_odd.course_id.name:
-                        sks_mgmt_pt_sendiri += instructor_odd.credit
 
             new_record_3a_433 = {
                 'nama_dosen': dosen.name_related,
                 'sks_ps_sendiri': sks_ps_sendiri,
                 'sks_ps_lain_pt_sendiri': sks_ps_lain_pt_sendiri,
-                'sks_pt_lain': 0, # TODO: need more information
-                'sks_penelitian': 0, # TODO: need more information
-                'sks_pengmas': 0, # TODO: need more information
-                'sks_mgmt_pt_sendiri': sks_mgmt_pt_sendiri,
-                'sks_mgmt_pt_lain': 0, # TODO: need more information
-                'sks_total': sks_ps_sendiri + sks_ps_lain_pt_sendiri,
+                'sks_pt_lain': 0, # TODO: based on itb.hr_work
+                'sks_penelitian': sks_penelitian,
+                'sks_pengmas': sks_pengmas,
+                'sks_mgmt_pt_sendiri': 0, # TODO: based on itb.hr_assignment -> hr_job
+                'sks_mgmt_pt_lain': 0, # TODO: based on itb.hr_work
+                'sks_total': sks_ps_sendiri + sks_ps_lain_pt_sendiri + sks_penelitian + sks_pengmas,
             }
 
             report.write({'record_3a_433': [(0, 0, new_record_3a_433)]})

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from .. import constants
 
 class Record_3A_435(models.Model):
     _name = 'banpt_report_generator.record_3a_435'
@@ -24,33 +25,74 @@ def refresh(reports):
         report.record_3a_435.unlink()
 
         # Add aktivitas mengajar dosen tetap
-        semester_even = reports.env['itb.academic_semester'].search([['year', '=', report.year], ['type', '=', 'even']])
-        semester_odd = reports.env['itb.academic_semester'].search([['year', '=', report.year - 1], ['type', '=', 'odd']])
-        dosen_employees = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]]) # TODO: add WHERE statement with sesuai prodi
+        semester_even = reports.env['itb.academic_semester'].search([
+            ['year', '=', report.year],
+            ['type', '=', 'even']
+        ])
+
+        semester_odd = reports.env['itb.academic_semester'].search([
+            ['year', '=', report.year - 1],
+            ['type', '=', 'odd']
+        ])
+
+        dosen_employees = reports.env['hr.employee'].search([
+            ['is_faculty', '=', True],
+            ['prodi', '=', report.prodi.id]
+        ]) # TODO: add WHERE statement with sesuai prodi
+
         for dosen in dosen_employees:
-            instructors_even = reports.env['itb.academic_instructor'].search([['employee_id', '=', dosen.id], ['semester', '=', semester_even.name]])
-            instructors_odd = reports.env['itb.academic_instructor'].search([['employee_id', '=', dosen.id], ['semester', '=', semester_odd.name]])
+            instructors_even = reports.env['itb.academic_instructor'].search([
+                ['employee_id', '=', dosen.id],
+                ['semester', '=', semester_even.name]
+            ])
+
+            instructors_odd = reports.env['itb.academic_instructor'].search([
+                ['employee_id', '=', dosen.id],
+                ['semester', '=', semester_odd.name]
+            ])
+
             for instructor_even in instructors_even:
-                catalog_even = reports.env['itb.academic_catalog'].search([['id', '=', instructor_even.course_id.catalog_id.id]])
+                catalog_even = reports.env['itb.academic_catalog'].search([
+                    ['id', '=', instructor_even.course_id.catalog_id.id]
+                ])
+
+                pertemuan_terlaksana_even = 0
+
+                lectures_even = reports.env['itb.academic_lecture'].search([
+                    ['course_id', '=', instructor_even.course_id.id]
+                ])
+                pertemuan_terlaksana_even = len(lectures_even)
+
                 new_record_3a_435 = {
                     'nama_dosen': dosen.name_related,
                     'kode_matkul': catalog_even.code,
                     'nama_matkul': catalog_even.name,
                     'jumlah_sks_matkul': catalog_even.credit,
-                    'jumlah_pertemuan_terencana_matkul': 0, # TODO: find where to get lecture info
-                    'jumlah_pertemuan_terlaksana_matkul': 0, # TODO: find where to get lecture info
+                    'jumlah_pertemuan_terencana_matkul': ((catalog_even.credit + 1) // 2) * constants.LECTURE_PER_CREDIT,
+                    'jumlah_pertemuan_terlaksana_matkul': pertemuan_terlaksana_even,
                 }
 
                 report.write({'record_3a_435': [(0, 0, new_record_3a_435)]})
+
             for instructor_odd in instructors_odd:
-                catalog_odd = reports.env['itb.academic_catalog'].search([['id', '=', instructor_odd.course_id.catalog_id.id]])
+                catalog_odd = reports.env['itb.academic_catalog'].search([
+                    ['id', '=', instructor_odd.course_id.catalog_id.id]
+                ])
+
+                pertemuan_terlaksana_odd = 0
+
+                lectures_odd = reports.env['itb.academic_lecture'].search([
+                    ['course_id', '=', instructor_odd.course_id.id]
+                ])
+                pertemuan_terlaksana_odd = len(lectures_odd)
+
                 new_record_3a_435 = {
                     'nama_dosen': dosen.name_related,
                     'kode_matkul': catalog_odd.code,
                     'nama_matkul': catalog_odd.name,
                     'jumlah_sks_matkul': catalog_odd.credit,
-                    'jumlah_pertemuan_terencana_matkul': 0, # TODO: find where to get lecture
-                    'jumlah_pertemuan_terlaksana_matkul': 0, # TODO: find where to get lecture
+                    'jumlah_pertemuan_terencana_matkul': ((catalog_odd.credit + 1) // 2) * constants.LECTURE_PER_CREDIT,
+                    'jumlah_pertemuan_terlaksana_matkul': pertemuan_terlaksana_odd,
                 }
 
                 report.write({'record_3a_435': [(0, 0, new_record_3a_435)]})

@@ -32,7 +32,7 @@ def refresh(reports):
                         'tahun': project.tahun,
                         'judul_penelitian': project.name,
                         'sumber_jenis_dana': project.mitra,
-                        'jumlah_dana': project.nilai,
+                        'jumlah_dana': project.nilai / 1000000,
                     }
 
                     report.write({'record_3a_622': [(0, 0, new_record_3a_622)]})
