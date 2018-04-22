@@ -59,7 +59,7 @@ def refresh(reports):
                 'nidn': instructor.nidn or '',
                 'tanggal_lahir': instructor.birthday,
                 'jabatan': instructor.last_jabatan,
-                'sertifikasi' : 'ya' if certificate else 'tidak', # TODO: still assumption
+                'sertifikasi' : 'ya' if certificate else 'tidak', # TODO: data not available, fill with random first
                 'asal_pt_s1': education_s1[0].school if education_s1 else '',
                 'bidang_keahlian_s1': education_s1[0].major if education_s1 else '',
                 'gelar_s1': '', # TODO: add gelar field in itb.hr_education
