@@ -41,7 +41,7 @@ def refresh(reports):
                     new_record_3a_623 = {
                         'tahun': project.tahun,
                         'judul_kegiatan': project.name,
-                        'sumber_jenis_dana': project.mitra, # TODO: ganti dengan SISPRAN NOTE + Reference
+                        'sumber_jenis_dana': '%s - %s' % (project.deskripsi_sispran, project.reference),
                         'jumlah_dana': project.nilai / 1000000,
                     }
 
