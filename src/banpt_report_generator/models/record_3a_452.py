@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from .. import utils
 
 class Record_3A_452(models.Model):
     _name = 'banpt_report_generator.record_3a_452'
@@ -20,7 +21,28 @@ class Record_3A_452(models.Model):
 
 def refresh(reports):
     for report in reports:
-        # Clear Record_3A_452
         report.record_3a_452.unlink()
 
-        # Add peningkatan kemampuan dosen
+        instructors = reports.env['hr.employee'].search([
+            ['is_faculty', '=', True],
+            ['prodi', '=', report.prodi.id]
+        ]) # TODO: add WHERE statement with dosen_tetap sesuai prodi
+
+        for instructor in instructors:
+            instructors_learn = reports.env['itb.hr_education'].search([
+                ['employee_id', '=', instructor.id],
+            ])
+
+            for instructor_learn in instructors_learn:
+                year = utils.get_year(instructor_learn.finish)
+                if year >= report.year - 3:
+                    new_record_3a_452 = {
+                        'nama_dosen': instructor_learn.employee_id.name_related,
+                        'jenjang_pendidikan': instructor_learn.degree,
+                        'bidang_studi': instructor_learn.major,
+                        'perguruan_tinggi': instructor_learn.school,
+                        'negara': instructor_learn.city,
+                        'tahun_pelaksanaan': year
+                    }
+
+                    report.write({'record_3a_452': [(0, 0, new_record_3a_452)]})

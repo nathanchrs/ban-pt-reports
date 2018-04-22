@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from .. import utils
 
 class Record_3A_453(models.Model):
     _name = 'banpt_report_generator.record_3a_453'
@@ -20,7 +21,37 @@ class Record_3A_453(models.Model):
 
 def refresh(reports):
     for report in reports:
-        # Clear Record_3A_453
         report.record_3a_453.unlink()
 
-        # Add kegiatan dosen tetap
+        lecturers = reports.env['hr.employee'].search([
+            ['is_faculty', '=', True],
+            ['prodi', '=', report.prodi.id]
+        ])
+
+        for lecturer in lecturers:
+            publication_authors = reports.env['itb.hr_publication_author'].search([
+                ['employee_id', '=', lecturer.id]
+            ])
+
+            for publication_author in publication_authors:
+                publications = reports.env['itb.hr_publication'].search([
+                    ['id', '=', publication_author.publication_id.id]
+                ])
+
+                for publication in publications:
+                    year = utils.get_year(publication.day)
+
+                    if ((year >= report.year - 3) and (year <= report.year)):
+                        pub_type = publication.media_id.name
+
+                        if 'Proceeding' in pub_type:
+                            new_record_3a_453 = {
+                                'nama_dosen': lecturer.name_related,
+                                'jenis_kegiatan': publication.publisher,
+                                'tempat': '', # TODO: find where to get seminar place, option parse publisher
+                                'tahun': year,
+                                'sebagai_penyaji': 'checklist',
+                                'sebagai_peserta': '',
+                            }
+
+                            report.write({'record_3a_453': [(0, 0, new_record_3a_453)]})

@@ -32,12 +32,33 @@ def refresh(reports):
         report.record_3a_441.unlink()
 
         # Add dosen tidak tetap
-        instructors = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]]) # TODO: add WHERE statement with dosen tidak tetap
+        instructors = reports.env['hr.employee'].search([
+            ['is_faculty', '=', True],
+            ['prodi', '=', report.prodi.id],
+            ['employment_type', '=', 'contract']
+        ])
+
         for instructor in instructors:
-            education_s1 = reports.env['itb.hr_education'].search([['employee_id', '=', instructor.id], ['degree', '=', 'undergraduate']])
-            education_s2 = reports.env['itb.hr_education'].search([['employee_id', '=', instructor.id], ['degree', '=', 'graduate']])
-            education_s3 = reports.env['itb.hr_education'].search([['employee_id', '=', instructor.id], ['degree', '=', 'doctoral']])
-            certificate = reports.env['itb.hr_education'].search([['employee_id', '=', instructor.id], ['certificate_signer', '!=', '']])
+            education_s1 = reports.env['itb.hr_education'].search([
+                ['employee_id', '=', instructor.id],
+                ['degree', '=', 'undergraduate']
+            ])
+
+            education_s2 = reports.env['itb.hr_education'].search([
+                ['employee_id', '=', instructor.id],
+                ['degree', '=', 'graduate']
+            ])
+
+            education_s3 = reports.env['itb.hr_education'].search([
+                ['employee_id', '=', instructor.id],
+                ['degree', '=', 'doctoral']
+            ])
+
+            certificate = reports.env['itb.hr_education'].search([
+                ['employee_id', '=', instructor.id],
+                ['certificate_signer', '!=', '']
+            ])
+
             new_record_3a_441 = {
                 'nama': instructor.name_related,
                 'nidn': instructor.nidn or '',
