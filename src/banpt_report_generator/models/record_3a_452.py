@@ -34,7 +34,9 @@ def refresh(reports):
             ])
 
             for instructor_learn in instructors_learn:
-                year = utils.get_year(instructor_learn.finish)
+                year = False
+                if instructor_learn.finish:
+                    year = utils.get_year(instructor_learn.finish)
                 if year >= report.year - 3:
                     new_record_3a_452 = {
                         'nama_dosen': instructor_learn.employee_id.name_related,

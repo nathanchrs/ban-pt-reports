@@ -34,7 +34,8 @@ def refresh(reports):
         # Add dosen tetap diluar PS according to prodi
         instructors = reports.env['hr.employee'].search([
             ['is_faculty', '=', True],
-            ['prodi', '=', report.prodi.id]
+            ['prodi', '=', report.prodi.id],
+            ['employment_type', '!=', 'contract']
         ]) # TODO: add WHERE statement with dosen_tetap diluar prodi
 
         for instructor in instructors:
