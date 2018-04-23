@@ -24,8 +24,11 @@ def refresh(reports):
         for instructor in instructors:
             count = 0
             for thesis in reports.env['itb.academic_thesis'].search([]):
-                if instructor.name_related in thesis.supervisors.split(', '):
-                    count += 1
+                start_year, start_month, start_day = thesis.start.split('-')
+                finish_year, finish_month, finish_day = thesis.finish.split('-')
+                if int(start_year) <= report.year and int(start_year) > report.year -3 and int(finish_year) <= report.year and int(finish_year) > report.year -3:
+                    if instructor.name_related in thesis.supervisors.split(', '):
+                        count += 1
             new_record_3a_551 = {
                 'nama_dosen': instructor.name_related,
                 'jumlah_mahasiswa_bimbingan': count,
