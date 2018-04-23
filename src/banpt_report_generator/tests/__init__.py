@@ -8,3 +8,5 @@ from . import test_dosen
 from . import test_record_3a_311
 from . import test_record_3a_312
 from . import test_record_3a_314
+from . import test_record_3a_431
+from . import test_record_3a_432
