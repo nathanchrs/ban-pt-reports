@@ -22,9 +22,16 @@ def refresh(reports):
         # add record_3a_551 according to program_id
         instructors = reports.env['hr.employee'].search([['is_faculty', '=', True], ['prodi', '=', report.prodi.id]])
         for instructor in instructors:
+            count = 0
+            for thesis in reports.env['itb.academic_thesis'].search([]):
+                start_year, start_month, start_day = thesis.start.split('-')
+                finish_year, finish_month, finish_day = thesis.finish.split('-')
+                if int(start_year) <= report.year and int(start_year) > report.year -3 and int(finish_year) <= report.year and int(finish_year) > report.year -3:
+                    if instructor.name_related in thesis.supervisors.split(', '):
+                        count += 1
             new_record_3a_551 = {
                 'nama_dosen': instructor.name_related,
-                'jumlah_mahasiswa_bimbingan': 0, #TODO
+                'jumlah_mahasiswa_bimbingan': count,
             }
 
             report.write({'record_3a_551': [(0, 0, new_record_3a_551)]})
