@@ -64,29 +64,35 @@ def seed(context):
 
     return report_1, report_2
 
-class TestRecord_3A_5121(common.TransactionCase):
+class TestRecord_3A_5122(common.TransactionCase):
     def test_refresh(self):
         report_1, report_2 = seed(self)
 
         report_1.refresh()
         report_2.refresh()
 
-        catalog_1 = report_1.record_3a_5121.search([['jenis_mata_kuliah', '=', 'Wajib']])
-        self.assertEqual(catalog_1[0].jenis_mata_kuliah, 'Wajib')
-        self.assertEqual(catalog_1[0].sks, 2)
-        self.assertEqual(catalog_1[0].keterangan, '')
+        catalog_1 = report_1.record_3a_5122.search([['kode_mk', '=', 'k01']])
+        self.assertEqual(catalog_1.smt, '0')
+        self.assertEqual(catalog_1.kode_mk, 'k01')
+        self.assertEqual(catalog_1.nama_mk, 'Katalog 1')
+        self.assertEqual(catalog_1.bobot_sks, 2)
+        self.assertEqual(catalog_1.sks_mk_dalam_kurikulum_inti, '')
+        self.assertEqual(catalog_1.sks_mk_dalam_kurikulum_institusional, '')
+        self.assertEqual(catalog_1.bobot_tugas, '')
+        self.assertEqual(catalog_1.kelengkapan_deskripsi, 'v')
+        self.assertEqual(catalog_1.kelengkapan_silabus, 'v')
+        self.assertEqual(catalog_1.kelengkapan_sap, '')
+        self.assertEqual(catalog_1.unit_penyelenggara, 'Teknik Informatika')
 
-        catalog_11 = report_1.record_3a_5121.search([['jenis_mata_kuliah', '=', 'Pilihan']])
-        self.assertEqual(catalog_11[0].jenis_mata_kuliah, 'Pilihan')
-        self.assertEqual(catalog_11[0].sks, 0)
-        self.assertEqual(catalog_11[0].keterangan, '')
-
-        catalog_2 = report_2.record_3a_5121.search([['jenis_mata_kuliah', '=', 'Pilihan']])
-        self.assertEqual(catalog_2[1].jenis_mata_kuliah, 'Pilihan')
-        self.assertEqual(catalog_2[1].sks, 3)
-        self.assertEqual(catalog_2[1].keterangan, '')
-
-        catalog_22 = report_2.record_3a_5121.search([['jenis_mata_kuliah', '=', 'Wajib']])
-        self.assertEqual(catalog_22[1].jenis_mata_kuliah, 'Wajib')
-        self.assertEqual(catalog_22[1].sks, 0)
-        self.assertEqual(catalog_22[1].keterangan, '')
+        catalog_2 = report_2.record_3a_5122.search([['kode_mk', '=', 'k02']])
+        self.assertEqual(catalog_2.smt, '0')
+        self.assertEqual(catalog_2.kode_mk, 'k02')
+        self.assertEqual(catalog_2.nama_mk, 'Katalog 2')
+        self.assertEqual(catalog_2.bobot_sks, 3)
+        self.assertEqual(catalog_2.sks_mk_dalam_kurikulum_inti, '')
+        self.assertEqual(catalog_2.sks_mk_dalam_kurikulum_institusional, '')
+        self.assertEqual(catalog_2.bobot_tugas, '')
+        self.assertEqual(catalog_2.kelengkapan_deskripsi, 'v')
+        self.assertEqual(catalog_2.kelengkapan_silabus, 'v')
+        self.assertEqual(catalog_2.kelengkapan_sap, '')
+        self.assertEqual(catalog_2.unit_penyelenggara, 'Teknik Elektro')
