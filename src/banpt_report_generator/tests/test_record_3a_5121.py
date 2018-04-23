@@ -18,7 +18,7 @@ def seed(context):
         code='code2',
         credit=3
     ))
-    
+
     catalog_3 = context.env['itb.academic_catalog'].create(dict(
         name='Catalog 3',
         code='code3',
