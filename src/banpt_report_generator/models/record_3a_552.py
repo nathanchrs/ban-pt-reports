@@ -18,18 +18,20 @@ class Record_3A_552(models.Model):
 def refresh(reports):
     for report in reports:
         report.record_3a_552.unlink()
-        sum = 0
+        sum_time = 0
         count = 0
+        avg = 0
         thesises = reports.env['itb.academic_thesis'].search([])
         for thesis in thesises:
             start_year, start_month, start_day = thesis.start.split('-')
             finish_year, finish_month, finish_day = thesis.finish.split('-')
             if int(start_year) <= report.year and int(start_year) > report.year -3 and int(finish_year) <= report.year and int(finish_year) > report.year -3:
-                sum += (int(finish_year) - int(start_year)) * 365
-                sum += (int(finish_month) - int(start_month)) * 30
-                sum += (int(finish_day) - int(start_day))
+                sum_time += (int(finish_year) - int(start_year)) * 365
+                sum_time += (int(finish_month) - int(start_month)) * 30
+                sum_time += (int(finish_day) - int(start_day))
                 count += 1
-        avg = float(sum / count) / 30
+        if sum_time != 0:
+            avg = float(sum_time / count) / 30
         line_1_record_3a_552 = {
             'pertanyaan': 'Rata-rata lama penyelesaian tugas akhir/skripsi pada tiga tahun terakhir :',
             'jawaban': "%.2f" % avg,
