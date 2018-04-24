@@ -9,7 +9,7 @@ class Record_3A_461(models.Model):
 
     jenis_tenaga_kependidikan = fields.Text(string='Jenis Tenaga Kependidikan')
     jumlah_S3 = fields.Integer(string='Pendidikan Terakhir S3')
-    Jumlah_S2 = fields.Integer(string='Pendidikan Terakhir S2')
+    jumlah_S2 = fields.Integer(string='Pendidikan Terakhir S2')
     jumlah_S1 = fields.Integer(string='Pendidikan Terakhir S1')
     jumlah_D4 = fields.Integer(string='Pendidikan Terakhir D4')
     jumlah_D3 = fields.Integer(string='Pendidikan Terakhir D3')
