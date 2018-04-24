@@ -30,7 +30,7 @@ class Project(models.Model):
 		for project in self:
 			if project.start:
 				year = datetime.strptime(project.start, '%Y-%m-%d').strftime('%Y')
-				project.year = int(year)
+				project.tahun = int(year)
 	
 
 class Project_Type(models.Model):

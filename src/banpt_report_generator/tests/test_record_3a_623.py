@@ -36,6 +36,6 @@ class TestRecord_3A_623(common.TransactionCase):
 
         project_1_test = report_1.record_3a_623.search([['judul_kegiatan', '=', 'test_1']])
         self.assertEqual(project_1_test.judul_kegiatan, 'test_1')
-        self.assertEqual(project_1_test.tahun, 2014)
+        self.assertEqual(int(project_1_test.tahun), 2014)
         self.assertEqual(project_1_test.sumber_jenis_dana, 'DES-01 - REF-01')
         self.assertEqual(project_1_test.jumlah_dana, 1000000/1000000)

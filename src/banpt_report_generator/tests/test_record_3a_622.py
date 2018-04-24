@@ -15,7 +15,15 @@ def seed(context):
         prodi=prodi_if.id
     ))
 
-    project_1 = context.env['itb.hr_project'].create(dict(name='test_1', tipe='penelitian', start='2014-03-09', state='valid', deskripsi_sispran='DES-01', reference='REF-01', nilai=1000000))
+    project_1 = context.env['itb.hr_project'].create(dict(
+        name='test_1',
+        tipe='penelitian',
+        start='2014-03-09',
+        state='valid',
+        deskripsi_sispran='DES-01',
+        reference='REF-01',
+        nilai=1000000
+    ))
 
     context.env['itb.hr_project_team'].create(dict(employee_id=dosen_if_1.id, role='leader', project_id=project_1.id))
 
