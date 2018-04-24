@@ -32,10 +32,11 @@ def refresh(reports):
         instructors = reports.env['hr.employee'].search([])
         for instructor in instructors:
             #Create count matrix (4 Tendik * 8 Pendidikan Terakhir)
-            index_i = get_index_from_tendik(instructor.tendik)
-            index_j = get_index_from_last_edu(instructor.last_edu)
-            count_matrix[index_i][index_j] += 1
-            count_matrix[4][index_j] += 1
+            if instructor.tendik and instructor.last_edu:
+                index_i = get_index_from_tendik(instructor.tendik)
+                index_j = get_index_from_last_edu(instructor.last_edu)
+                count_matrix[index_i][index_j] += 1
+                count_matrix[4][index_j] += 1
 
         line_1_record_3a_461 = {
             'jenis_tenaga_kependidikan': 'Pustakawan',

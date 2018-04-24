@@ -258,7 +258,7 @@ def seed(context):
         degree='doctoral',
         employee_id=employee18.id
     ))
-    
+
     employee19 = context.env['hr.employee'].create(dict(
         name='pramu7',
         nidn='015-AAA-123-BBB7',
