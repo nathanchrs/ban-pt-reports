@@ -125,7 +125,6 @@ def seed(context):
         birthday='1970-03-22',
         is_faculty=True,
         tendik='laboran/teknisi/analis/operator/programmer',
-        last_edu='diploma',
         prodi=prodi_if.id
     ))
     context.env['itb.hr_education'].create(dict(
@@ -140,7 +139,6 @@ def seed(context):
         birthday='1970-03-22',
         is_faculty=True,
         tendik='laboran/teknisi/analis/operator/programmer',
-        last_edu='senior-high',
         prodi=prodi_if.id
     ))
     context.env['itb.hr_education'].create(dict(
