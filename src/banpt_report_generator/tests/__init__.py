@@ -17,3 +17,6 @@ from . import test_record_3a_442
 from . import test_record_3a_5121
 from . import test_record_3a_622
 from . import test_record_3a_623
+from . import test_record_3a_711
+from . import test_record_3a_712
+from . import test_record_3a_721
