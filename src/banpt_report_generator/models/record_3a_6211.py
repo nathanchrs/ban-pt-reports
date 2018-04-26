@@ -72,5 +72,3 @@ def refresh(reports):
         }
 
         report.write({'record_3a_6211': [(0, 0, new_record_3a_6211)]})
-
-    pass

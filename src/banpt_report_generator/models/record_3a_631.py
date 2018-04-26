@@ -16,4 +16,42 @@ class Record_3A_631(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    pass
+    for report in reports:
+        # Clear record_3a_631 table
+        report.record_3a_631.unlink()
+
+        #add record_3a_631
+        new_record_3a_631 = {
+            'ruang_kerja_dosen': 'Satu ruang untuk lebih dari 4 dosen',
+            'jumlah_ruang': 0, #TODO
+            'jumlah_luas': 0, #TODO
+        }
+
+        report.write({'record_3a_631': [(0, 0, new_record_3a_631)]})
+
+        #add record_3a_631
+        new_record_3a_631 = {
+            'ruang_kerja_dosen': 'Satu ruang untuk 3-4 dosen',
+            'jumlah_ruang': 3, #TODO
+            'jumlah_luas': 174, #TODO
+        }
+
+        report.write({'record_3a_631': [(0, 0, new_record_3a_631)]})
+
+        #add record_3a_631
+        new_record_3a_631 = {
+            'ruang_kerja_dosen': 'Satu ruang untuk 2 dosen',
+            'jumlah_ruang': 1, #TODO
+            'jumlah_luas': 60, #TODO
+        }
+
+        report.write({'record_3a_631': [(0, 0, new_record_3a_631)]})
+
+        #add record_3a_631
+        new_record_3a_631 = {
+            'ruang_kerja_dosen': 'Satu ruang untuk 1 dosen (bukan pejabat struktural)',
+            'jumlah_ruang': 2, #TODO
+            'jumlah_luas': 48, #TODO
+        }
+
+        report.write({'record_3a_631': [(0, 0, new_record_3a_631)]})
