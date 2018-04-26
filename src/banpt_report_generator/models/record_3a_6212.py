@@ -43,7 +43,7 @@ def refresh(reports):
 
         #add record_3a_6212
         new_record_3a_6212 = {
-            'jenis_penggunaan': 'Pengabdian kepada Masyarakat',
+            'jenis_penggunaan': 'Pengabdian Kepada Masyarakat',
             'penggunaan_ts_2': 0, #TODO
             'penggunaan_ts_1': 0, #TODO
             'penggunaan_ts': 0, #TODO
