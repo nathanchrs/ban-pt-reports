@@ -7,7 +7,7 @@ class Record_3A_721(models.Model):
     _rec_name = 'sumber_dana'
     _title = '3A-7.2.1 Kegiatan Pelayanan/Pengabdian Pada Masyarakat (PKM)'
 
-    sumber_dana = fields.Text(string='Sumber Dana Kegiatan Pelayanan/Pengabdian pada Masyarakat', required=True)
+    sumber_dana = fields.Text(string='Sumber Dana Kegiatan Pelayanan/Pengabdian pada Masyarakat')
     ts_2 = fields.Integer(string='TS-2')
     ts_1 = fields.Integer(string='TS-1')
     ts = fields.Integer(string='TS')

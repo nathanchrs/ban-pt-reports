@@ -37,7 +37,8 @@ def refresh(reports):
 
         dosen_employees = reports.env['hr.employee'].search([
             ['is_faculty', '=', True],
-            ['prodi', '=', report.prodi.id]
+            ['prodi', '=', report.prodi.id],
+            ['employment_type', '!=', 'contract']
         ]) # TODO: add WHERE statement with sesuai prodi
 
         for dosen in dosen_employees:

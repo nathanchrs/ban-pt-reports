@@ -9,6 +9,7 @@
                 <tree editable="bottom" decoration-info="write_date > report_refresh_date">
                     <field name="write_date" invisible="1" />
                     <field name="report_refresh_date" invisible="1" />
+                    <field name="no" />
                     <field name="nama" />
                     <field name="instansi" />
                     <field name="nama_kegiatan" />
@@ -24,6 +25,7 @@
             <field name="arch" type="xml">
                 <form string="3A-4.5.1 Kegiatan Tenaga Ahli/Pakar (Tidak Termasuk Dosen Tetap)">
                     <group>
+                        <field name="no" />
                         <field name="nama" />
                         <field name="instansi" />
                         <field name="nama_kegiatan" />
