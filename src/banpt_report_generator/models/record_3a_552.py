@@ -29,7 +29,10 @@ def refresh(reports):
                 sum_ += (int(finish_month) - int(start_month)) * 30
                 sum_ += (int(finish_day) - int(start_day))
                 count += 1
-        avg = float(sum_ / count) / 30
+        if count != 0:
+            avg = float(sum_ / count) / 30
+        else:
+            avg = 0.00
         line_1_record_3a_552 = {
             'pertanyaan': 'Rata-rata lama penyelesaian tugas akhir/skripsi pada tiga tahun terakhir :',
             'jawaban': "%.2f" % avg,
