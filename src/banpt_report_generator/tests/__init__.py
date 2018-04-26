@@ -30,5 +30,7 @@ from . import test_record_3a_6411
 from . import test_record_3a_652
 from . import test_record_3a_711
 from . import test_record_3a_712
+from . import test_record_3a_713
+from . import test_record_3a_714
 from . import test_record_3a_721
 from . import test_record_3b_642

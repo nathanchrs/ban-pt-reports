@@ -16,12 +16,4 @@ class Record_3A_712(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    for report in reports:
-        report.record_3a_712.unlink()
-
-        new_record_3a_712 = {
-            'mhs_ta_penelitian_dosen': 'tidak', # TODO: just default value for dummy data
-            'jml_mhs_ta_penelitian_dosen': 0, # TODO: just default value for dummy data
-            'jml_mhs_ta_total': 0, # TODO: just default value for dummy data
-        }
-        report.write({'record_3a_712': [(0, 0, new_record_3a_712)]})
+    pass

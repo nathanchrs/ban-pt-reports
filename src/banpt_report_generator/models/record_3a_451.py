@@ -18,15 +18,4 @@ class Record_3A_451(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    for report in reports:
-        report.record_3a_451.unlink()
-
-        # TODO: add refresh method
-        new_record_3a_451 = {
-            'no': 1, # TODO: default value just for dummy
-            'nama': 'Not Found', # TODO: default value just for dummy
-            'instansi': 'Not Found', # TODO: default value just for dummy
-            'nama_kegiatan': 'Not Found', # TODO: default value just for dummy
-        }
-
-        report.write({'record_3a_451': [(0, 0, new_record_3a_451)]})
+    pass
