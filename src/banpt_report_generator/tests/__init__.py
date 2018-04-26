@@ -14,6 +14,8 @@ from . import test_record_3a_434
 from . import test_record_3a_435
 from . import test_record_3a_441
 from . import test_record_3a_442
+from . import test_record_3a_452
+from . import test_record_3a_453
 from . import test_record_3a_5121
 from . import test_record_3a_622
 from . import test_record_3a_623

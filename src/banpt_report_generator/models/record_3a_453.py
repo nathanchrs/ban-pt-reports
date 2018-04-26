@@ -25,7 +25,8 @@ def refresh(reports):
 
         lecturers = reports.env['hr.employee'].search([
             ['is_faculty', '=', True],
-            ['prodi', '=', report.prodi.id]
+            ['prodi', '=', report.prodi.id],
+            ['employment_type', '!=', 'contract']
         ])
 
         for lecturer in lecturers:
@@ -41,7 +42,7 @@ def refresh(reports):
                 for publication in publications:
                     year = utils.get_year(publication.day)
 
-                    if ((year >= report.year - 3) and (year <= report.year)):
+                    if ((int(year) >= report.year - 2) and (int(year) <= report.year)):
                         pub_type = publication.media_id.name
 
                         if 'Proceeding' in pub_type:
