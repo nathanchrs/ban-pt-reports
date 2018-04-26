@@ -18,4 +18,59 @@ class Record_3A_6211(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
+    for report in reports:
+        # Clear record_3a_6211 table
+        report.record_3a_6211.unlink()
+
+        #add record_3a_6211
+        new_record_3a_6211 = {
+            'sumber_dana': 'PT Sendiri',
+            'jenis_dana': 'DM', #TODO
+            'jumlah_dana_ts_2': 1437, #TODO
+            'jumlah_dana_ts_1': 1084, #TODO
+            'jumlah_dana_ts': 1021, #TODO
+        }
+
+        report.write({'record_3a_6211': [(0, 0, new_record_3a_6211)]})
+
+        new_record_3a_6211 = {
+            'sumber_dana': 'Pemerintah Pusat',
+            'jenis_dana': 'DIPA', #TODO
+            'jumlah_dana_ts_2': 2698, #TODO
+            'jumlah_dana_ts_1': 1125, #TODO
+            'jumlah_dana_ts': 1056, #TODO
+        }
+
+        report.write({'record_3a_6211': [(0, 0, new_record_3a_6211)]})
+
+        new_record_3a_6211 = {
+            'sumber_dana': 'Diknas',
+            'jenis_dana': 'DIPA IL', #TODO
+            'jumlah_dana_ts_2': 1222, #TODO
+            'jumlah_dana_ts_1': 742, #TODO
+            'jumlah_dana_ts': 350, #TODO
+        }
+
+        report.write({'record_3a_6211': [(0, 0, new_record_3a_6211)]})
+
+        new_record_3a_6211 = {
+            'sumber_dana': 'Sumber Lain',
+            'jenis_dana': 'DIPA', #TODO
+            'jumlah_dana_ts_2': 0, #TODO
+            'jumlah_dana_ts_1': 0, #TODO
+            'jumlah_dana_ts': 0, #TODO
+        }
+
+        report.write({'record_3a_6211': [(0, 0, new_record_3a_6211)]})
+
+        new_record_3a_6211 = {
+            'sumber_dana': 'Sumber Lain',
+            'jenis_dana': 'DM', #TODO
+            'jumlah_dana_ts_2': 139, #TODO
+            'jumlah_dana_ts_1': 32, #TODO
+            'jumlah_dana_ts': 1146, #TODO
+        }
+
+        report.write({'record_3a_6211': [(0, 0, new_record_3a_6211)]})
+
     pass
