@@ -17,4 +17,56 @@ class Record_3A_721(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-    pass
+    for report in reports:
+        # Clear record_3a_721 table
+        report.record_3a_721.unlink()
+
+        #add record_3a_721
+        new_record_3a_721 = {
+            'sumber_biaya': 'Pembiayaan sendiri oleh dosen',
+            'ts_2': 0, #TODO
+            'ts_1': 0, #TODO
+            'ts': 0, #TODO
+        }
+
+        report.write({'record_3a_721': [(0, 0, new_record_3a_721)]})
+
+        #add record_3a_721
+        new_record_3a_721 = {
+            'sumber_biaya': 'PT yang bersangkutan',
+            'ts_2': 3, #TODO
+            'ts_1': 3, #TODO
+            'ts': 3, #TODO
+        }
+
+        report.write({'record_3a_721': [(0, 0, new_record_3a_721)]})
+
+        #add record_3a_721
+        new_record_3a_721 = {
+            'sumber_biaya': 'Depdiknas',
+            'ts_2': 0, #TODO
+            'ts_1': 0, #TODO
+            'ts': 0, #TODO
+        }
+
+        report.write({'record_3a_721': [(0, 0, new_record_3a_721)]})
+
+        #add record_3a_721
+        new_record_3a_721 = {
+            'sumber_biaya': 'Pembiayaan dalam negeri di luar Depdiknas',
+            'ts_2': 1 #TODO
+            'ts_1': 2, #TODO
+            'ts': 0, #TODO
+        }
+
+        report.write({'record_3a_721': [(0, 0, new_record_3a_721)]})
+
+        #add record_3a_721
+        new_record_3a_721 = {
+            'sumber_biaya': 'Institusi luar negeri',
+            'ts_2': 0, #TODO
+            'ts_1': 0, #TODO
+            'ts': 0, #TODO
+        }
+
+        report.write({'record_3a_721': [(0, 0, new_record_3a_721)]})
