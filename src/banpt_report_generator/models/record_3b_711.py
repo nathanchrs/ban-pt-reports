@@ -25,125 +25,26 @@ def refresh(reports):
         report.record_3b_711.unlink()
 
         # Add research data
-        if_judul_ts_2 = count_project_title(report, 11, report.year - 2)
-        if_judul_ts_1 = count_project_title(report, 11, report.year - 1)
-        if_judul_ts = count_project_title(report, 11, report.year)
+        programs = reports.env['itb.academic_program'].search([])
+        for program in programs:
+            judul_ts_2 = count_project_title(report, program.id, report.year - 2)
+            judul_ts_1 = count_project_title(report, program.id, report.year - 1)
+            judul_ts = count_project_title(report, program.id, report.year)
 
-        el_judul_ts_2 = count_project_title(report, 12, report.year - 2)
-        el_judul_ts_1 = count_project_title(report, 12, report.year - 1)
-        el_judul_ts = count_project_title(report, 12, report.year)
+            dana_ts_2 = count_project_cost(report, program.id, report.year - 2)
+            dana_ts_1 = count_project_cost(report, program.id, report.year - 1)
+            dana_ts = count_project_cost(report, program.id, report.year)
 
-        ep_judul_ts_2 = count_project_title(report, 13, report.year - 2)
-        ep_judul_ts_1 = count_project_title(report, 13, report.year - 1)
-        ep_judul_ts = count_project_title(report, 13, report.year)
-
-        et_judul_ts_2 = count_project_title(report, 14, report.year - 2)
-        et_judul_ts_1 = count_project_title(report, 14, report.year - 1)
-        et_judul_ts = count_project_title(report, 14, report.year)
-
-        sti_judul_ts_2 = count_project_title(report, 15, report.year - 2)
-        sti_judul_ts_1 = count_project_title(report, 15, report.year - 1)
-        sti_judul_ts = count_project_title(report, 15, report.year)
-
-        eb_judul_ts_2 = count_project_title(report, 16, report.year - 2)
-        eb_judul_ts_1 = count_project_title(report, 16, report.year - 1)
-        eb_judul_ts = count_project_title(report, 16, report.year)
-
-        if_dana_ts_2 = count_project_cost(report, 11, report.year - 2)
-        if_dana_ts_1 = count_project_cost(report, 11, report.year - 1)
-        if_dana_ts = count_project_cost(report, 11, report.year)
-
-        el_dana_ts_2 = count_project_cost(report, 12, report.year - 2)
-        el_dana_ts_1 = count_project_cost(report, 12, report.year - 1)
-        el_dana_ts = count_project_cost(report, 12, report.year)
-
-        ep_dana_ts_2 = count_project_cost(report, 13, report.year - 2)
-        ep_dana_ts_1 = count_project_cost(report, 13, report.year - 1)
-        ep_dana_ts = count_project_cost(report, 13, report.year)
-
-        et_dana_ts_2 = count_project_cost(report, 14, report.year - 2)
-        et_dana_ts_1 = count_project_cost(report, 14, report.year - 1)
-        et_dana_ts = count_project_cost(report, 14, report.year)
-
-        sti_dana_ts_2 = count_project_cost(report, 15, report.year - 2)
-        sti_dana_ts_1 = count_project_cost(report, 15, report.year - 1)
-        sti_dana_ts = count_project_cost(report, 15, report.year)
-
-        eb_dana_ts_2 = count_project_cost(report, 16, report.year - 2)
-        eb_dana_ts_1 = count_project_cost(report, 16, report.year - 1)
-        eb_dana_ts = count_project_cost(report, 16, report.year)
-
-        if_record_3b_711 = {
-            'program_studi': 'Teknik Informatika',
-            'jumlah_judul_penelitian_ts_2': if_judul_ts_2,
-            'jumlah_judul_penelitian_ts_1': if_judul_ts_1,
-            'jumlah_judul_penelitian_ts': if_judul_ts,
-            'total_dana_penelitian_ts_2': if_dana_ts_2,
-            'total_dana_penelitian_ts_1': if_dana_ts_1,
-            'total_dana_penelitian_ts': if_dana_ts,
-        }
-
-        report.write({'record_3b_711': [(0, 0, if_record_3b_711)]})
-
-        el_record_3b_711 = {
-            'program_studi': 'Teknik Elektro',
-            'jumlah_judul_penelitian_ts_2': el_judul_ts_2,
-            'jumlah_judul_penelitian_ts_1': el_judul_ts_1,
-            'jumlah_judul_penelitian_ts': el_judul_ts,
-            'total_dana_penelitian_ts_2': el_dana_ts_2,
-            'total_dana_penelitian_ts_1': el_dana_ts_1,
-            'total_dana_penelitian_ts': el_dana_ts,
-        }
-
-        report.write({'record_3b_711': [(0, 0, el_record_3b_711)]})
-
-        ep_record_3b_711 = {
-            'program_studi': 'Teknik Tenaga Listrik',
-            'jumlah_judul_penelitian_ts_2': ep_judul_ts_2,
-            'jumlah_judul_penelitian_ts_1': ep_judul_ts_1,
-            'jumlah_judul_penelitian_ts': ep_judul_ts,
-            'total_dana_penelitian_ts_2': ep_dana_ts_2,
-            'total_dana_penelitian_ts_1': ep_dana_ts_1,
-            'total_dana_penelitian_ts': ep_dana_ts,
-        }
-
-        report.write({'record_3b_711': [(0, 0, ep_record_3b_711)]})
-
-        et_record_3b_711 = {
-            'program_studi': 'Teknik Telekomunikasi',
-            'jumlah_judul_penelitian_ts_2': et_judul_ts_2,
-            'jumlah_judul_penelitian_ts_1': et_judul_ts_1,
-            'jumlah_judul_penelitian_ts': et_judul_ts,
-            'total_dana_penelitian_ts_2': et_dana_ts_2,
-            'total_dana_penelitian_ts_1': et_dana_ts_1,
-            'total_dana_penelitian_ts': et_dana_ts,
-        }
-
-        report.write({'record_3b_711': [(0, 0, et_record_3b_711)]})
-
-        sti_record_3b_711 = {
-            'program_studi': 'Sistem & Teknologi Informasi',
-            'jumlah_judul_penelitian_ts_2': sti_judul_ts_2,
-            'jumlah_judul_penelitian_ts_1': sti_judul_ts_1,
-            'jumlah_judul_penelitian_ts': sti_judul_ts,
-            'total_dana_penelitian_ts_2': sti_dana_ts_2,
-            'total_dana_penelitian_ts_1': sti_dana_ts_1,
-            'total_dana_penelitian_ts': sti_dana_ts,
-        }
-
-        report.write({'record_3b_711': [(0, 0, sti_record_3b_711)]})
-
-        eb_record_3b_711 = {
-            'program_studi': 'Teknik Biomedis',
-            'jumlah_judul_penelitian_ts_2': eb_judul_ts_2,
-            'jumlah_judul_penelitian_ts_1': eb_judul_ts_1,
-            'jumlah_judul_penelitian_ts': eb_judul_ts,
-            'total_dana_penelitian_ts_2': eb_dana_ts_2,
-            'total_dana_penelitian_ts_1': eb_dana_ts_1,
-            'total_dana_penelitian_ts': eb_dana_ts,
-        }
-
-        report.write({'record_3b_711': [(0, 0, eb_record_3b_711)]})
+            new_record_3b_711 = {
+                'program_studi': program.name,
+                'jumlah_judul_penelitian_ts_2': judul_ts_2,
+                'jumlah_judul_penelitian_ts_1': judul_ts_1,
+                'jumlah_judul_penelitian_ts': judul_ts,
+                'total_dana_penelitian_ts_2': dana_ts_2,
+                'total_dana_penelitian_ts_1': dana_ts_1,
+                'total_dana_penelitian_ts': dana_ts,
+            }
+            report.write({'record_3b_711': [(0, 0, new_record_3b_711)]})
 
 def count_project_title(report, prodi_id, year):
     count_project = 0
