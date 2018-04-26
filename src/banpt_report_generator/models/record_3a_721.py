@@ -18,44 +18,56 @@ class Record_3A_721(models.Model):
 
 def refresh(reports):
     for report in reports:
+        # Clear record_3a_721 table
         report.record_3a_721.unlink()
 
-        line_1_record_3a_721 = {
-            'sumber_dana': 'Pembiayaan sendiri oleh peneliti',
-            'ts_2': 0, # TODO: just dummy data
-            'ts_1': 0, # TODO: just dummy data
-            'ts': 0, # TODO: just dummy data
+        #add record_3a_721
+        new_record_3a_721 = {
+            'sumber_biaya': 'Pembiayaan sendiri oleh dosen',
+            'ts_2': 0, #TODO
+            'ts_1': 0, #TODO
+            'ts': 0, #TODO
         }
-        report.write({'record_3a_721': [(0, 0, line_1_record_3a_721)]})
 
-        line_2_record_3a_721 = {
-            'sumber_dana': 'PT yang bersangkutan',
-            'ts_2': 0, # TODO: just dummy data
-            'ts_1': 0, # TODO: just dummy data
-            'ts': 0, # TODO: just dummy data
-        }
-        report.write({'record_3a_721': [(0, 0, line_2_record_3a_721)]})
+        report.write({'record_3a_721': [(0, 0, new_record_3a_721)]})
 
-        line_3_record_3a_721 = {
-            'sumber_dana': 'Depdiknas',
-            'ts_2': 0, # TODO: just dummy data
-            'ts_1': 0, # TODO: just dummy data
-            'ts': 0, # TODO: just dummy data
+        #add record_3a_721
+        new_record_3a_721 = {
+            'sumber_biaya': 'PT yang bersangkutan',
+            'ts_2': 3, #TODO
+            'ts_1': 3, #TODO
+            'ts': 3, #TODO
         }
-        report.write({'record_3a_721': [(0, 0, line_3_record_3a_721)]})
 
-        line_4_record_3a_721 = {
-            'sumber_dana': 'Institusi dalam negeri di luar Depdiknas',
-            'ts_2': 0, # TODO: just dummy data
-            'ts_1': 0, # TODO: just dummy data
-            'ts': 0, # TODO: just dummy data
-        }
-        report.write({'record_3a_721': [(0, 0, line_4_record_3a_721)]})
+        report.write({'record_3a_721': [(0, 0, new_record_3a_721)]})
 
-        line_5_record_3a_721 = {
-            'sumber_dana': 'Institusi luar negeri',
-            'ts_2': 0, # TODO: just dummy data
-            'ts_1': 0, # TODO: just dummy data
-            'ts': 0, # TODO: just dummy data
+        #add record_3a_721
+        new_record_3a_721 = {
+            'sumber_biaya': 'Depdiknas',
+            'ts_2': 0, #TODO
+            'ts_1': 0, #TODO
+            'ts': 0, #TODO
         }
-        report.write({'record_3a_721': [(0, 0, line_5_record_3a_721)]})
+
+        report.write({'record_3a_721': [(0, 0, new_record_3a_721)]})
+
+        #add record_3a_721
+        new_record_3a_721 = {
+            'sumber_biaya': 'Pembiayaan dalam negeri di luar Depdiknas',
+            'ts_2': 1, #TODO
+            'ts_1': 2, #TODO
+            'ts': 0, #TODO
+        }
+
+        report.write({'record_3a_721': [(0, 0, new_record_3a_721)]})
+
+        #add record_3a_721
+        new_record_3a_721 = {
+            'sumber_biaya': 'Institusi luar negeri',
+            'ts_2': 0, #TODO
+            'ts_1': 0, #TODO
+            'ts': 0, #TODO
+        }
+
+        report.write({'record_3a_721': [(0, 0, new_record_3a_721)]})
+        
