@@ -90,3 +90,4 @@ def refresh(reports):
         }
 
         report.write({'record_3a_6212': [(0, 0, new_record_3a_6212)]})
+        

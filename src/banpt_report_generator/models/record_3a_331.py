@@ -19,7 +19,7 @@ class Record_3A_331(models.Model):
     report_refresh_date = fields.Datetime(related='report.refresh_date')
 
 def refresh(reports):
-     for report in reports:
+    for report in reports:
         report.record_3a_331.unlink()
 
         new_3a_331 = {

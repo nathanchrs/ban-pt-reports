@@ -54,7 +54,7 @@ def refresh(reports):
         #add record_3a_721
         new_record_3a_721 = {
             'sumber_biaya': 'Pembiayaan dalam negeri di luar Depdiknas',
-            'ts_2': 1 #TODO
+            'ts_2': 1, #TODO
             'ts_1': 2, #TODO
             'ts': 0, #TODO
         }
@@ -70,3 +70,4 @@ def refresh(reports):
         }
 
         report.write({'record_3a_721': [(0, 0, new_record_3a_721)]})
+        
