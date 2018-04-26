@@ -8,6 +8,7 @@ from . import test_dosen
 from . import test_record_3a_311
 from . import test_record_3a_312
 from . import test_record_3a_314
+from . import test_record_3a_331
 from . import test_record_3a_431
 from . import test_record_3a_432
 from . import test_record_3a_433
@@ -27,6 +28,8 @@ from . import test_record_3a_6212
 from . import test_record_3a_622
 from . import test_record_3a_623
 from . import test_record_3a_6411
+from . import test_record_3a_6211
+from . import test_record_3a_631
 from . import test_record_3a_652
 from . import test_record_3a_711
 from . import test_record_3a_712
