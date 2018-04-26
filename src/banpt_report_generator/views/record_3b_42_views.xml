@@ -11,7 +11,7 @@
                     <field name="report_refresh_date" invisible="1" />
                     <field name="jenis_tenaga_kependidikan" />
                     <field name="jumlah_S3" />
-                    <field name="Jumlah_S2" />
+                    <field name="jumlah_S2" />
                     <field name="jumlah_S1" />
                     <field name="jumlah_D4" />
                     <field name="jumlah_D3" />
@@ -32,7 +32,7 @@
                     <group>
                         <field name="jenis_tenaga_kependidikan" />
                         <field name="jumlah_S3" />
-                        <field name="Jumlah_S2" />
+                        <field name="jumlah_S2" />
                         <field name="jumlah_S1" />
                         <field name="jumlah_D4" />
                         <field name="jumlah_D3" />

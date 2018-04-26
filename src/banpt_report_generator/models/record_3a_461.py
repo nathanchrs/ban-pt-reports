@@ -9,7 +9,7 @@ class Record_3A_461(models.Model):
 
     jenis_tenaga_kependidikan = fields.Text(string='Jenis Tenaga Kependidikan')
     jumlah_S3 = fields.Integer(string='Pendidikan Terakhir S3')
-    Jumlah_S2 = fields.Integer(string='Pendidikan Terakhir S2')
+    jumlah_S2 = fields.Integer(string='Pendidikan Terakhir S2')
     jumlah_S1 = fields.Integer(string='Pendidikan Terakhir S1')
     jumlah_D4 = fields.Integer(string='Pendidikan Terakhir D4')
     jumlah_D3 = fields.Integer(string='Pendidikan Terakhir D3')
@@ -32,10 +32,11 @@ def refresh(reports):
         instructors = reports.env['hr.employee'].search([])
         for instructor in instructors:
             #Create count matrix (4 Tendik * 8 Pendidikan Terakhir)
-            index_i = get_index_from_tendik(instructor.tendik)
-            index_j = get_index_from_last_edu(instructor.last_edu)
-            count_matrix[index_i][index_j] += 1
-            count_matrix[4][index_j] += 1
+            if instructor.tendik and instructor.last_edu:
+                index_i = get_index_from_tendik(instructor.tendik)
+                index_j = get_index_from_last_edu(instructor.last_edu)
+                count_matrix[index_i][index_j] += 1
+                count_matrix[4][index_j] += 1
 
         line_1_record_3a_461 = {
             'jenis_tenaga_kependidikan': 'Pustakawan',
