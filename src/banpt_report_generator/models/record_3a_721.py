@@ -23,7 +23,7 @@ def refresh(reports):
 
         #add record_3a_721
         new_record_3a_721 = {
-            'sumber_biaya': 'Pembiayaan sendiri oleh dosen',
+            'sumber_dana': 'Pembiayaan sendiri oleh dosen',
             'ts_2': 0, #TODO
             'ts_1': 0, #TODO
             'ts': 0, #TODO
@@ -33,7 +33,7 @@ def refresh(reports):
 
         #add record_3a_721
         new_record_3a_721 = {
-            'sumber_biaya': 'PT yang bersangkutan',
+            'sumber_dana': 'PT yang bersangkutan',
             'ts_2': 0, #TODO
             'ts_1': 0, #TODO
             'ts': 0, #TODO
@@ -43,7 +43,7 @@ def refresh(reports):
 
         #add record_3a_721
         new_record_3a_721 = {
-            'sumber_biaya': 'Depdiknas',
+            'sumber_dana': 'Depdiknas',
             'ts_2': 0, #TODO
             'ts_1': 0, #TODO
             'ts': 0, #TODO
@@ -53,7 +53,7 @@ def refresh(reports):
 
         #add record_3a_721
         new_record_3a_721 = {
-            'sumber_biaya': 'Pembiayaan dalam negeri di luar Depdiknas',
+            'sumber_dana': 'Pembiayaan dalam negeri di luar Depdiknas',
             'ts_2': 0, #TODO
             'ts_1': 0, #TODO
             'ts': 0, #TODO
@@ -63,7 +63,7 @@ def refresh(reports):
 
         #add record_3a_721
         new_record_3a_721 = {
-            'sumber_biaya': 'Institusi luar negeri',
+            'sumber_dana': 'Institusi luar negeri',
             'ts_2': 0, #TODO
             'ts_1': 0, #TODO
             'ts': 0, #TODO

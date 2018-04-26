@@ -35,8 +35,8 @@ class TestRecord_3A_721(common.TransactionCase):
         self.assertEqual(project_1_test.ts_1, 1)
         self.assertEqual(project_1_test.ts, 0)
 
-        project_2_test = report_1.record_3a_721.search([['sumber_dana', '=', 'Pembiayaan sendiri oleh peneliti']])
-        self.assertEqual(project_2_test.sumber_dana, 'Pembiayaan sendiri oleh peneliti')
+        project_2_test = report_1.record_3a_721.search([['sumber_dana', '=', 'Pembiayaan sendiri oleh dosen']])
+        self.assertEqual(project_2_test.sumber_dana, 'Pembiayaan sendiri oleh dosen')
         self.assertEqual(project_2_test.ts_2, 0)
         self.assertEqual(project_2_test.ts_1, 0)
         self.assertEqual(project_2_test.ts, 0)
@@ -53,8 +53,8 @@ class TestRecord_3A_721(common.TransactionCase):
         self.assertEqual(project_4_test.ts_1, 0)
         self.assertEqual(project_4_test.ts, 0)
 
-        project_5_test = report_1.record_3a_721.search([['sumber_dana', '=', 'Institusi dalam negeri di luar Depdiknas']])
-        self.assertEqual(project_5_test.sumber_dana, 'Institusi dalam negeri di luar Depdiknas')
+        project_5_test = report_1.record_3a_721.search([['sumber_dana', '=', 'Pembiayaan dalam negeri di luar Depdiknas']])
+        self.assertEqual(project_5_test.sumber_dana, 'Pembiayaan dalam negeri di luar Depdiknas')
         self.assertEqual(project_5_test.ts_2, 0)
         self.assertEqual(project_5_test.ts_1, 0)
         self.assertEqual(project_5_test.ts, 0)
