@@ -4,21 +4,22 @@
 # Import all test classes here
 
 from . import test_report
-from . import test_dosen
-from . import test_record_3a_311
-from . import test_record_3a_312
-from . import test_record_3a_314
-from . import test_record_3a_431
-from . import test_record_3a_432
-from . import test_record_3a_434
-from . import test_record_3a_435
-from . import test_record_3a_441
-from . import test_record_3a_442
-from . import test_record_3a_452
-from . import test_record_3a_453
-from . import test_record_3a_5121
-from . import test_record_3a_622
-from . import test_record_3a_623
-from . import test_record_3a_711
-from . import test_record_3a_712
-from . import test_record_3a_721
+# from . import test_dosen
+# from . import test_record_3a_311
+# from . import test_record_3a_312
+# from . import test_record_3a_314
+# from . import test_record_3a_431
+# from . import test_record_3a_432
+from . import test_record_3a_433
+# from . import test_record_3a_434
+# from . import test_record_3a_435
+# from . import test_record_3a_441
+# from . import test_record_3a_442
+# from . import test_record_3a_452
+# from . import test_record_3a_453
+# from . import test_record_3a_5121
+# from . import test_record_3a_622
+# from . import test_record_3a_623
+# from . import test_record_3a_711
+# from . import test_record_3a_712
+# from . import test_record_3a_721
