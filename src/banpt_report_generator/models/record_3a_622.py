@@ -37,7 +37,7 @@ def refresh(reports):
                     ['id', '=', project_team.project_id.id]
                 ])
 
-                if ((project.tahun >= report.year - 3) and ((project.tahun <= report.year)) and ('penelitian' in project.tipe)):
+                if ((project.tahun >= report.year - 2) and ((project.tahun <= report.year)) and ('penelitian' in project.tipe)):
                     new_record_3a_622 = {
                         'tahun': project.tahun,
                         'judul_penelitian': project.name,

@@ -25,7 +25,8 @@ def refresh(reports):
 
         instructors = reports.env['hr.employee'].search([
             ['is_faculty', '=', True],
-            ['prodi', '=', report.prodi.id]
+            ['prodi', '=', report.prodi.id],
+            ['employment_type', '!=', 'contract']
         ]) # TODO: add WHERE statement with dosen_tetap sesuai prodi
 
         for instructor in instructors:
@@ -37,7 +38,7 @@ def refresh(reports):
                 year = False
                 if instructor_learn.finish:
                     year = utils.get_year(instructor_learn.finish)
-                if year >= report.year - 3:
+                if int(year) >= report.year - 2:
                     new_record_3a_452 = {
                         'nama_dosen': instructor_learn.employee_id.name_related,
                         'jenjang_pendidikan': instructor_learn.degree,
