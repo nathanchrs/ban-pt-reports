@@ -32,7 +32,7 @@ def refresh(reports):
                     ['id', '=', project_team.project_id.id]
                 ])
 
-                if ((project.tahun >= report.year - 2) and ((project.tahun <= report.year)) and ('other' in project.tipe) or ('paten' in project.tipe)):
+                if ((project.tahun >= report.year - 2) and ((project.tahun <= report.year)) and (project.tipe == 'pendidikan')): # TODO: need to add 'other' and 'paten' in itb.hr_project.tipe, and change project.tipe == 'other or 'paten
                     new_record_3a_714 = {
                         'karya_haki': project.name,
                     }
